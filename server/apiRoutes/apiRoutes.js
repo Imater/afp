@@ -1,0 +1,48 @@
+import { Router } from 'express';
+import api from '../api';
+
+const apiRoutes = Router();
+
+apiRoutes.get('/', (req, res) => {
+  res.end('Welcome to api routes');
+});
+
+apiRoutes.get('/hello', (req, res) => {
+  res.end('hello');
+});
+
+
+apiRoutes.get('/bid', (req, res) => {
+  console.info('get bid');
+  api.getLotById(2).then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
+apiRoutes.post('/user', (req, res) => {
+  api.createUser(req.body).then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
+apiRoutes.put('/user', (req, res) => {
+  api.userInfo(req.body).then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
+apiRoutes.put('/user/email', (req, res) => {
+  api.restorePassword(req.body).then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
+export default apiRoutes;
