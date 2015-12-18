@@ -56,7 +56,7 @@ app.use('/api', apiRoutes);
 
 if (!isProduction && !isTest) {
   webpackDevServer();
-  app.all('/bundle/*', (req, res) => {
+  app.all('/build/*', (req, res) => {
     proxy.web(req, res, {
       target: 'http://localhost:8085'
     });

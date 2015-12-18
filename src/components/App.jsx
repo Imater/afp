@@ -19,9 +19,26 @@ import i18n from 'i18next-client';
     render() {
       return (
         <div className="app-wrapper">
-          <main className="app-content">
-            {this.props.children}
-          </main>
+          <div className="sidebar">
+            <a href="/" className="sidebar-logo"></a>
+            <ul className="menu">
+              <li><a href="#">о фестивале</a></li>
+              <li><a href="#">line-up</a></li>
+              <li><a href="#">технологии</a></li>
+              <li><a href="#">спорт</a></li>
+              <li><a href="#">новости</a></li>
+              <li><a href="#">партнеры</a></li>
+              <li><a href="#">медиа</a></li>
+              <li><a href="#">контакты</a></li>
+            </ul>
+            <a href="#" className="buy-ticket">Купить билет</a>
+          </div>
+          <div className="wrapper">
+            <div className="container">
+              Hello
+              {this.props.children}
+            </div>
+          </div>
         </div>
       );
     }
