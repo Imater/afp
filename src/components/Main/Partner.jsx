@@ -54,14 +54,14 @@ const partners = [
 class News extends Component {
   render() {
     return (
-      <div className="page news-page">
+      <div className="page news-page" id="partners">
         <div className="row">
           <div className="left-col padding-left-50">
             <div className="col-title">
               <span>Партнеры</span><br />
-              <a href="#" className="active">2016</a>
-              <a href="#">2015</a>
-              <a href="#">2014</a>
+              {/*<a href="#" className="active">2016</a>*/}
+              <a href="#" className="active">2015</a>
+              {/*<a href="#">2014</a>*/}
             </div>
           </div>
           <div className="right-col padding-right-40 text-right">

@@ -6,12 +6,12 @@ import i18n from 'i18next-client';
 class Technology extends Component {
   render() {
     return (
-      <div>
+      <div id="technology">
         <div className="row">
           <div className="left-col">
             <div className="technology-item"><span>Технологии</span></div>
           </div>
-          <div className="right-col">
+          <div className="right-col" id="sport">
             <div className="sport-item"><span>Спорт</span></div>
           </div>
         </div>

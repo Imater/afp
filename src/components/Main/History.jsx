@@ -17,7 +17,9 @@ class History extends Component {
             </div>
           </div>
           <div className="right-col text-right padding-right-40">
-            <a href="#" className="language">en</a>
+            <a href='javascript:void(0)' className="language" onClick={this.props.changeLanguage.bind(this, this.props.language==='eng' ? 'ru' : 'eng')}>
+              {this.props.language==='eng' ? 'en' : 'ru'}
+            </a>
           </div>
         </div>
         <div className="row vertical-center-row padding-left-50">
@@ -26,15 +28,6 @@ class History extends Component {
           <div className="was-block sound-block" data-name="звука">1МВТ</div>
           <div className="was-block viewer-block" data-name="зрителей">50 000</div>
           <div className="was-block hectare-block" data-name="гектаров">75</div>
-        </div>
-        <div className="row bottom-row how-was-row">
-          <div className="left-col padding-left-50">
-            <div className="how-it-was">Alfa Future Prople 2015<br />Как это было</div>
-          </div>
-          <div className="right-col padding-right-40 text-right">
-            <a href="#" className="eubea"></a>
-            <a href="#" className="kudago"></a>
-          </div>
         </div>
         <div className="row bottom-row social-row">
           <div className="left-col padding-left-50 text-left">

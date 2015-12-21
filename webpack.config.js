@@ -13,7 +13,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
 
-  devtool: 'eval',
+  devtool: 'inline-source-map',
   watch: true,
   cache: true,
 

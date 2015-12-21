@@ -6,9 +6,10 @@ import i18n from 'i18next-client';
 class News extends Component {
   render() {
     return (
-				<div className="page news-page">
+				<div className="page news-page" id="news">
 					<div className="row">
 						<div className="left-col padding-left-50">
+              <a name="news"></a>
 							<div className="news-title">Новости</div>
 						</div>
 						<div className="right-col padding-right-40 text-right">

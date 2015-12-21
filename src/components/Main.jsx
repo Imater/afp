@@ -9,17 +9,20 @@ import Technology from './Main/Technology';
 import News from './Main/News';
 import Partner from './Main/Partner';
 import Footer from './Main/Footer';
+import ScrollLink from 'react-scroll';
+
+const ScrollElement = ScrollLink.Element;
 
 if (process.env.BROWSER) {
-  require('../../assets/style.less');
+  require('./Main.less');
 }
 
 class Main extends Component {
   render() {
     return (
       <div>
-        <About />
-        <History />
+        <About language={this.props.language} changeLanguage={this.props.changeLanguage} />
+        <History language={this.props.language} changeLanguage={this.props.changeLanguage} />
         <LineUp />
         <Technology />
         <News />

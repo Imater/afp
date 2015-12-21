@@ -176,7 +176,7 @@ body{
 		display: inline-block;
 		margin-top: 40px;
 		margin-left: 40px;
-		margin-bottom: 204px;
+		margin-bottom: 18vh;
 	}
 	.menu{
 		padding-left: 30px;
@@ -190,10 +190,9 @@ body{
 			color: #9B9B9B;
 			text-transform: uppercase;
 			text-decoration: none;
-		}
-		a:hover{
-			color: #ffffff;
-			text-decoration: none;
+      &:hover, &.active{
+        color: #ffffff;
+      }
 		}
 	}
 }
@@ -208,6 +207,9 @@ body{
 		background-image: url('img/alfa-logo.png');
 		display: inline-block;
 		margin-bottom: 47px;
+    &.eng {
+      background-image: url('img/alfa-logo-eng.png');
+    }
 	}
 	.container{
 		margin-left: 250px;
@@ -330,8 +332,16 @@ h1{
 		height: 50px;
 	}
 }
+.hide-bg {
+  .how-it-was {
+    &.stop:before {
+      background-image: url("svg/stop-button.svg");
+    }
+  }
+}
 .plus18{
 	font-family: 'sf_ui_displaybold';
+  opacity: 0.5;
 	font-size: 14px;
 	line-height: 33px;
 	color: #FFFFFF;
@@ -415,20 +425,16 @@ h1{
 .social{
 	li{
 		display: inline-block;
+    padding: 2px;
 	}
 	a{
 		display: inline-block;
 		width: 36px;
 		height: 36px;
-
+    transition: @time all;
+    opacity: 0.7;
 		&:hover{
-			path{
-				fill: rgba(255, 255, 255, 1);
-				transition: @time all;
-			}
-		}
-		path{
-			fill: rgba(255, 255, 255, 0.5);
+      opacity: 1;
 		}
 	}
 }
@@ -610,45 +616,69 @@ h1{
 				&.dj1{
 					background-image: url('img/dj1.png');
 					background-repeat: no-repeat;
-					width: 322px;
+          background-size: contain;
+					width: 405px;
 					height: 395px;
 					bottom: -3px;
+          &:before {
+            content: 'axwell ^ ingrosso';
+            font-family: 'sf_ui_displayregular';
+            color: #FFF;
+            font-size: 30px;
+            margin-top: -150px;
+            margin-left: 20px;
+            display: block;
+            text-transform: uppercase;
+          }
 				}
 				&.dj2{
-					background-image: url('img/dj2.png');
+					background-image: url('img/dj2-old.png');
 					background-repeat: no-repeat;
+          background-size: contain;
 					width: 335px;
 					height: 394px;
-					left: 329px;
+					left: 279px;
+          &:before {
+            font-family: 'sf_ui_displayregular';
+            color: #FFF;
+            font-size: 30px;
+            margin-top: -150px;
+            margin-left: 70px;
+            display: block;
+            text-transform: uppercase;
+          }
 				}
 				&.dj3{
 					background-image: url('img/dj3.png');
 					background-repeat: no-repeat;
 					width: 346px;
 					height: 387px;
-					left: 613px;
+					left: 463px;
+					bottom: -8px;
 				}
 				&.dj4{
 					background-image: url('img/dj4.png');
 					background-repeat: no-repeat;
-					width: 310px;
+					width: 340px;
 					height: 394px;
-					left: 909px;
-					bottom: -2px;
+					left: 699px;
+					bottom: -8px;
 				}
 				&.dj5{
-					background-image: url('img/dj4.png');
+					background-image: url('img/dj3.png');
 					background-repeat: no-repeat;
 					width: 310px;
 					height: 394px;
-					left: 1199px;
+					left: 950px;
+					bottom: -8px;
 				}
 				&.dj6{
 					background-image: url('img/dj4.png');
 					background-repeat: no-repeat;
 					width: 310px;
 					height: 394px;
-					left: 1489px;
+					left: 1189px;
+					bottom: -8px;
 				}
 			}
 		}
@@ -676,9 +706,13 @@ h1{
 }
 .technology-item{
 	background-image: url('img/tech.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .sport-item{
 	background-image: url('img/sport.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .festival-block{
 	background-color: #000;
@@ -771,22 +805,10 @@ h1{
 		margin-right: 56px;
 		vertical-align: middle;
 		margin-bottom: 50px;
-
+    opacity: 0.7;
+    transition: @time opacity;
 		&:hover{
-			text{
-				fill: rgba(255, 255, 255, 1);
-			}
-			path{
-				fill: rgba(255, 255, 255, 1);
-			}
-		}
-		text{
-			fill: rgba(255, 255, 255, 0.5);
-			transition: @time all;
-		}
-		path{
-			fill: rgba(255, 255, 255, 0.5);
-			transition: @time all;
+      opacity: 1;
 		}
 	}
 }
@@ -847,22 +869,10 @@ footer{
 		position: absolute;
 		top: 0px;
 		right: 5px;
-
-		path{
-			fill: rgba(255, 255, 255, 0.5);
-			transition: @time all;
-		}
-		rect{
-			stroke: rgba(255, 255, 255, 0.5);
-			transition: @time all;
-		}
-		&:hover{
-			path{
-				fill: rgba(255, 255, 255, 1);
-			}
-			rect{
-				stroke: rgba(255, 255, 255, 1);
-			}
+    transition: @time all;
+    opacity: 0.5;
+		&:hover {
+      opacity: 1;
 		}
 	}
 	.googleplay{
@@ -870,23 +880,11 @@ footer{
 		width: 161px;
 		height: 51px;
 		margin-bottom: 35px;
-
-		path{
-			fill: rgba(255, 255, 255, 0.5);
-			transition: @time all;
-		}
-		rect{
-			stroke: rgba(255, 255, 255, 0.5);
-			transition: @time all;
-		}
-		&:hover{
-			path{
-				fill: rgba(255, 255, 255, 1);
-			}
-			rect{
-				stroke: rgba(255, 255, 255, 1);
-			}
-		}
+    transition: @time all;
+    opacity: 0.7;
+		&:hover {
+      opacity: 1;
+    }
 	}
 	input[type="text"]{
 		width: 100%;
@@ -936,18 +934,15 @@ footer{
 		color: rgba(255, 255, 255, 0.3);
 		position: relative;
 		left: 40px;
+    img {
+      margin: 0 5px;
+      transition: @time all;
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+      }
+    }
 
-		path{
-			fill: rgba(255, 255, 255, 0.3);
-			transition: @time all;
-
-
-		}
-		&:hover{
-			path{
-				fill: rgba(255, 255, 255, 1);
-			}
-		}
 	}
 }
 .ticket-menu{
@@ -959,41 +954,39 @@ footer{
 			display: inline-block;
 			margin-right: 39px;
 			color: #fff;
-
-			&:before{
-				color: #000;
-				background-color: rgba(255, 255, 255, 0.4);
-				content: attr(data-num);
-				width: 20px;
-				height: 20px;
-				text-align: center;
-				display: inline-block;
-				line-height: 21px;
-				border-radius: 20px;
-			}
 			a{
 				font-family: 'sf_ui_displaymedium';
 				font-size: 14px;
 				color: rgba(255, 255, 255, 0.4);
 				line-height: 46px;
-			}
-			&.active{
-				&:before{
-					background-color: @blue;
-				}
-				a{
-					color: #fff
-				}
-			}
-			&:hover{
-				&:before{
-					background-color: rgba(255, 255, 255, 0.8);
-					transition: @time all;
-				}
-				a{
-					color: rgba(255, 255, 255, 0.8);
-					transition: @time all;
-				}
+        b {
+          color: #000;
+          background-color: rgba(255, 255, 255, 0.4);
+          content: attr(data-num);
+          width: 20px;
+          height: 20px;
+          text-align: center;
+          display: inline-block;
+          line-height: 21px;
+          border-radius: 20px;
+          margin: 0 5px;
+        }
+        &.active{
+          b {
+            background-color: @blue;
+          }
+          color: #fff;
+        }
+        &:hover{
+          &:before{
+            background-color: rgba(255, 255, 255, 0.8);
+            transition: @time all;
+          }
+          a{
+            color: rgba(255, 255, 255, 0.8);
+            transition: @time all;
+          }
+        }
 			}
 		}
 	}
@@ -1039,7 +1032,7 @@ footer{
 }
 .result-block{
 	position: absolute;
-	right: 20%;
+	right: 10%;
 	top: 112px;
 
 	span{
@@ -1110,7 +1103,7 @@ footer{
 
 			li{
 				display: inline-block;
-				margin-left: 26px;
+				margin-left: 20px;
 
 				&:first-child{
 					margin-left: 0px;
@@ -1216,7 +1209,7 @@ footer{
 	}
 }
 .tickets > ul > li{
-	width: 600px;
+	max-width: 620px;
 	margin-bottom: 40px;
 }
 .summ{
@@ -1279,21 +1272,15 @@ footer{
 			padding-top: 24px;
 			margin-bottom: 24px;
 		}
-		svg{
+		img {
 			margin-right: 20px;
 			vertical-align: middle;
 			cursor: pointer;
-
-			path{
-				stroke: rgba(255, 255, 255, 0.5);
-				transition: @time all;
-			}
-
-			&:hover{
-				path{
-					stroke: rgba(255, 255, 255, 1);
-				}
-			}
+      transition: @time all;
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+      }
 		}
 	}
 	label{
@@ -1517,37 +1504,37 @@ footer{
 }
 
 
-@media only screen and (-moz-min-device-pixel-ratio: 1.5),
-		only screen and (-o-min-device-pixel-ratio: 3/2),
-		only screen and (-webkit-min-device-pixel-ratio: 1.5),
-		only screen and (min-devicepixel-ratio: 1.5),
-		only screen and (min-resolution: 1.5dppx) {
-	.sidebar-logo{
-		background-image: url('img/afp-logo@2x.png');
-	}
-	.main-page{
-		background-image: url('img/01-back-video@2x.png');
-	}
-	.second-page{
-		background-image: url('img/second@2x.png');
-	}
-	.buy-ticket{
-		background-image: url('img/materials@2x.png');
-	}
-	.logo{
-		background-image: url('img/alfa-logo@2x.png');
-	}
-	.eubea{
-		background-image: url('img/eubea@2x.png');
-	}
-	.kudago{
-		background-image: url('img/kudago@2x.png');
-	}
-	.festival-location:before{
-		background-image: url('img/festival-location@2x.png');
-	}
-	.festival-map{
-		background-image: url('img/map@2x.png');
-	}
-}
+//@media only screen and (-moz-min-device-pixel-ratio: 1.5),
+//		only screen and (-o-min-device-pixel-ratio: 3/2),
+//		only screen and (-webkit-min-device-pixel-ratio: 1.5),
+//		only screen and (min-devicepixel-ratio: 1.5),
+//		only screen and (min-resolution: 1.5dppx) {
+//	.sidebar-logo{
+//		background-image: url('img/afp-logo@2x.png');
+//	}
+//	.main-page{
+//		background-image: url('img/01-back-video@2x.png');
+//	}
+//	.second-page{
+//		background-image: url('img/second@2x.png');
+//	}
+//	.buy-ticket{
+//		background-image: url('img/materials@2x.png');
+//	}
+//	.logo{
+//		background-image: url('img/alfa-logo@2x.png');
+//	}
+//	.eubea{
+//		background-image: url('img/eubea@2x.png');
+//	}
+//	.kudago{
+//		background-image: url('img/kudago@2x.png');
+//	}
+//	.festival-location:before{
+//		background-image: url('img/festival-location@2x.png');
+//	}
+//	.festival-map{
+//		background-image: url('img/map@2x.png');
+//	}
+//}
 

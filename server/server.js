@@ -85,7 +85,7 @@ app.use((req, res, next) => {
     } else {
       api.getAllLots().then(function(lotsFromDb){
         const store = createAppStore({
-          todos: fromJS(lotsFromDb),
+          todos: fromJS({}),
           i18: {
             language: needEng ? 'eng' : 'ru'
           },

@@ -1,7 +1,6 @@
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import webpackConfig from '../webpack.config.js';
-console.info('!!!!!!!!!!', webpackConfig.output.publicPath);
 
 export default function() {
     const compiler = webpack(webpackConfig);

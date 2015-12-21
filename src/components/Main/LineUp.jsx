@@ -7,7 +7,7 @@ import Social from '../Social';
 class History extends Component {
   render() {
     return (
-      <div className="page djs-page">
+      <div className="page djs-page" id="lineup">
         <div className="djs-block">
           <div className="row">
             <div className="left-col padding-left-50">
