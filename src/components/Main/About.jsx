@@ -34,22 +34,22 @@ class About extends Component {
       <div className="page main-page" id="about">
         <div className="row">
           <div className="fullscreen-bg">
-            <video ref="video" poster="/assets/img/01-back-video@2x.png" className="bg-video">
+            <video ref="video" className="bg-video">
               <source src="assets/video/afp.mp4" type="video/mp4" />
             </video>
           </div>
-          <div className="left-col padding-left-50">
+          <div className="left-col padding-left-50 hide-on-video">
             <a href="#" className={classNames('logo', this.props.language)}></a>
           </div>
-          <div className="right-col text-right padding-right-40">
+          <div className="right-col text-right padding-right-40" hide-on-video>
             <a href='javascript:void(0)' className="language" onClick={this.props.changeLanguage.bind(this, this.props.language==='eng' ? 'ru' : 'eng')}>
               {this.props.language==='eng' ? 'en' : 'ru'}
             </a>
           </div>
         </div>
-        <div className="row padding-left-50">
-          <h1>{i18n.t('about.mainFestival')} <br />{i18n.t('about.musicAndTechnology')} </h1>
-          <div className="festival-date">22-24 июля 2016 года</div>
+        <div className="row padding-left-50 hide-on-video">
+          <h1>{i18n.t('about.mainFestival')} <br />{i18n.t('about.musicAndTechnology')}</h1>
+          <div className="festival-date">{i18n.t('about.festivalDate')}</div>
         </div>
         <div className="row bottom-row how-was-row">
           <div className="left-col padding-left-50">
@@ -57,7 +57,7 @@ class About extends Component {
               Alfa Future People 2015<br />{i18n.t('about.howItWas')}
             </div>
           </div>
-          <div className="right-col padding-right-40 text-right">
+          <div className="right-col padding-right-40 text-right hide-on-video">
             <a href="#" className="eubea"></a>
             <a href="#" className="kudago"></a>
           </div>

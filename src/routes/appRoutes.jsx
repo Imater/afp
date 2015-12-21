@@ -1,12 +1,13 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
+import $ from 'jquery';
 
 import App from '../components/App';
 import Main from '../containers/Main';
 import Ticket from '../components/Ticket/Ticket';
 import Personal from '../components/Ticket/Personal';
 import Buy from '../components/Ticket/Buy';
-import $ from 'jquery';
+import Status from '../components/Ticket/Status';
 import smoothScroll from '../utils/smoothScroll';
 
 function scrollTo(name) {
@@ -38,5 +39,6 @@ export default (
     <Route path='/ticket' component={Ticket} />
     <Route path='/ticket/personal' component={Personal} />
     <Route path='/ticket/buy' component={Buy} />
+    <Route path='/ticket/status' component={Status} />
   </Route>
 );

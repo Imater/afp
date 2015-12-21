@@ -28,7 +28,7 @@ import TopMenu from './TopMenu';
           <a href="#" className="close-page"></a>
           <div className="tickets">
 					<ul>
-						<li>
+						<li className="big">
 							<div className="two-step">
 								<div className="row two-step-row">
 									<div className="left-col">

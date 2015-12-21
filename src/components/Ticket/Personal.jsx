@@ -27,7 +27,7 @@ import TopMenu from './TopMenu';
           <a href="#" className="close-page"></a>
           <div className="tickets">
             <ul>
-              <li>
+              <li className="big">
                 <div className="two-step">
                   <div className="row two-step-row">
                     <div className="left-col">
@@ -45,24 +45,24 @@ import TopMenu from './TopMenu';
                   <form action="">
                     <div className="row">
                       <div className="two-step-title">Укажите ваши данные</div>
-                      <label for="form-name">Как вас зовут?</label>
+                      <label htmlFor="form-name">Как вас зовут?</label>
                       <input type="text" id="form-name" placeholder="" />
-                      <label for="form-email">Адрес электронной почты</label>
+                      <label htmlFor="form-email">Адрес электронной почты</label>
                       <input type="text" id="form-email" placeholder="" />
                       <div className="row">
                         <div className="left-col pr-40">
-                          <label for="form-phone">Телефон</label>
+                          <label htmlFor="form-phone">Телефон</label>
                           <input type="text" id="form-phone" placeholder="" />
                         </div>
                         <div className="right-col pr-60">
-                          <label for="form-promo">Промокод</label>
+                          <label htmlFor="form-promo">Промокод</label>
                           <input type="text" id="form-promo" placeholder="" />
                         </div>
                       </div>
                       <div className="row">
                         <div className="left-col pr-40">
                           <input type="checkbox" id="offer" />
-                          <label for="offer">Согласен с <a href="#">офертой</a></label>
+                          <label htmlFor="offer">Согласен с <a href="#">офертой</a></label>
                         </div>
                         <div className="right-col pr-60">
                           <a href="#" className="buy-button">Перейти к оплате</a>

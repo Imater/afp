@@ -35,7 +35,7 @@ if (process.env.BROWSER) {
     }
 
     componentDidMount() {
-      $('body').show();
+      $('body').fadeIn();
     }
 
     render() {

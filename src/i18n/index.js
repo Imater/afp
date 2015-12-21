@@ -16,7 +16,16 @@ const resources = {
       about: {
         mainFestival: 'Главный фестиваль',
         musicAndTechnology: 'музыки и технологий',
-        howItWas: 'Как это было'
+        howItWas: 'Как это было',
+        festivalDate: '22-24 июля 2016 года'
+      },
+      history: {
+        howItWas: 'Как это было',
+        scene: 'сцен',
+        dj: 'диджеев',
+        sound: 'звука',
+        viewer: 'зрителей',
+        hectare: 'гектаров'
       }
     }
   },
@@ -36,8 +45,18 @@ const resources = {
       about: {
         mainFestival: 'The main festival',
         musicAndTechnology: 'of music and technology',
-        howItWas: 'how it was'
+        howItWas: 'how it was',
+        festivalDate: '22-24 July 2016'
+      },
+      history: {
+        howItWas: 'How it was',
+        scene: 'scenes',
+        dj: 'djs',
+        sound: 'sound',
+        viewer: 'viewers',
+        hectare: 'hectares'
       }
+
     }
   }
 };
