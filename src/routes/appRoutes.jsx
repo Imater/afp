@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
+import { Route, IndexRoute, Redirect, IndexRedirect } from 'react-router';
 import $ from 'jquery';
 
 import App from '../components/App';
@@ -8,6 +8,11 @@ import Ticket from '../components/Ticket/Ticket';
 import Personal from '../components/Ticket/Personal';
 import Buy from '../components/Ticket/Buy';
 import Status from '../components/Ticket/Status';
+import LineUp from '../containers/LineUp';
+import Technology from '../containers/Technology';
+import Sport from '../containers/Sport';
+import About from '../containers/About';
+import News from '../containers/News';
 import smoothScroll from '../utils/smoothScroll';
 
 function scrollTo(name) {
@@ -26,16 +31,25 @@ function scrollTo(name) {
   }
 }
 
+function defaultPath(defaultName) {
+  return function(nextState, replaceState) {
+    if(!nextState.params.part) {
+      replaceState(null, `${nextState.location.pathname}/${defaultName}`);
+    }
+  }
+}
+
 export default (
   <Route path='/' component={App}>
     <IndexRoute component={Main} />
-    <Route path='/lineup' component={Main} onEnter={scrollTo('lineup')} />
-    <Route path='/technology' component={Main} onEnter={scrollTo('technology')} />
-    <Route path='/sport' component={Main} onEnter={scrollTo('sport')} />
-    <Route path='/news' component={Main} onEnter={scrollTo('news')} />
-    <Route path='/partners' component={Main} onEnter={scrollTo('partners')} />
-    <Route path='/media' component={Main} onEnter={scrollTo('media')} />
-    <Route path='/contacts' component={Main} onEnter={scrollTo('contacts')} />
+    <Route path='/lineup(/:part)' component={LineUp} onEnter={defaultPath('main')}/>
+    <Route path='/about(/:part)' component={About} onEnter={defaultPath('main')}/>
+    <Route path='/technology(/:part)' component={Technology} onEnter={defaultPath('virtuality')}/>
+    <Route path='/sport(/:part)' component={Sport} onEnter={defaultPath('workout')} />
+    <Route path='/news(/:part)' component={News} onEnter={defaultPath('main')} />
+    <Route path='/partners(/:part)' component={Main} onEnter={defaultPath('workout')} />
+    <Route path='/media(/:part)' component={Main} onEnter={defaultPath('2015')} />
+    <Route path='/contacts(/:part)' component={Main} onEnter={defaultPath('main')} />
     <Route path='/ticket' component={Ticket} />
     <Route path='/ticket/personal' component={Personal} />
     <Route path='/ticket/buy' component={Buy} />

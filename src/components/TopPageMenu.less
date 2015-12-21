@@ -1,0 +1,25 @@
+.top-page-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.6);
+  ul {
+    list-style-type: none;
+    li {
+      display: inline-block;
+      font-family: 'sf_ui_displaymedium';
+      font-size: 14px;
+      a {
+        display: inline-block;
+        color: rgba(255, 255, 255, 0.4);
+        padding: 10px 20px;
+        &.active {
+          color: rgba(255, 255, 255, 1);
+          background-color: rgba(8, 75, 238, 0.5);
+        }
+      }
+    }
+  }
+}

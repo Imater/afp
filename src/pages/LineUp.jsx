@@ -2,12 +2,16 @@ import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 import { Link } from 'react-router';
 import i18n from 'i18next-client';
-import Social from '../Social';
+import Social from '../components/Social';
+import TopPageMenu from '../components/TopPageMenu';
+import { lineUpItems } from '../components/settings';
 
-class History extends Component {
+class LineUp extends Component {
   render() {
+    const { language } = this.props;
     return (
       <div className="page djs-page" id="lineup">
+        <TopPageMenu items={lineUpItems} language={language} />
         <div className="djs-block">
           <div className="row">
             <div className="left-col padding-left-50">
@@ -35,4 +39,4 @@ class History extends Component {
   }
 }
 
-export default History;
+export default LineUp;

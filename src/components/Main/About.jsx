@@ -10,8 +10,14 @@ class About extends Component {
   componentDidMount () {
     var video = this.refs.video;
     video.addEventListener('ended', () => {
-      video.load();
+      this.stopPlay();
     });
+  }
+
+  stopPlay() {
+    $('.main-page').removeClass('hide-bg');
+    this.refs.video.currentTime = 0;;
+    this.refs.video.load();
   }
 
   play () {
@@ -20,9 +26,7 @@ class About extends Component {
       $('.main-page').addClass('hide-bg');
     } else {
       this.refs.video.pause();
-      $('.main-page').removeClass('hide-bg');
-      this.refs.video.currentTime = 0;;
-      this.refs.video.load();
+      this.stopPlay();
     }
   }
 

@@ -26,6 +26,10 @@ const resources = {
         sound: 'звука',
         viewer: 'зрителей',
         hectare: 'гектаров'
+      },
+      pages: {
+        sportAndExtrime: 'СПОРТ ПЛОЩАДКИ И ЭКСТРЕМАЛЬНЫЕ ШОУ',
+        wonderTechnology: 'УДИВИТЕЛЬНЫЕ ИЗОБРЕТЕНИЯ  И САМЫЕ ИНТЕРЕСНЫЕ НОВЫЕ ТЕХНОЛОГИИ'
       }
     }
   },
@@ -55,6 +59,10 @@ const resources = {
         sound: 'sound',
         viewer: 'viewers',
         hectare: 'hectares'
+      },
+      pages: {
+        sportAndExtrime: 'SPORT PLAYGROUNDS AND EXTREME SHOWS',
+        wonderTechnology: 'TECHNOLOGIES OF THE FUTURE'
       }
 
     }

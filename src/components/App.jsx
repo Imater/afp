@@ -13,6 +13,7 @@ const SLink = ScrollLink.Link;
 
 if (process.env.BROWSER) {
   require('../../assets/style.less');
+  require('./App.less');
 }
 
 @connect(
@@ -35,7 +36,7 @@ if (process.env.BROWSER) {
     }
 
     componentDidMount() {
-      $('body').fadeIn();
+      $('body').show();
     }
 
     render() {
@@ -48,9 +49,9 @@ if (process.env.BROWSER) {
                 menuItems.map((item, key) => {
                   return (
                     <li key={key}>
-                      <Link to={item.link}
-                        className={this.props.location.pathname===item.link ? 'active' : ''}
-                        onClick={this.scrollTo.bind(this, item.link)}>
+                      <Link to={item.url}
+                        className={this.props.location.pathname.indexOf(item.url) !== -1 ? 'active' : ''}
+                        onClick={this.scrollTo.bind(this, item.url)}>
                           {i18n.t(item.title)}
                       </Link>
                     </li>

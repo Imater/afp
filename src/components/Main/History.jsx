@@ -8,8 +8,8 @@ import Social from '../Social';
 
 const stats = {
   '2014': {
-    scene: 5,
-    dj: 29,
+    scene: 3,
+    dj: 30,
     sound: '1МВТ',
     viewer: '30 000',
     hectare: '50'
