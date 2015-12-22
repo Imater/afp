@@ -146,7 +146,6 @@
 }
 html{
 	font-size: 100%;
-  overflow-x: hidden;
 }
 li{
 	list-style-type: none;
@@ -172,6 +171,7 @@ body{
 
 	.sidebar-logo{
 		background-image: url('img/afp-logo.png');
+		background-image: url('svg/alfa-logo.svg');
 		width: 182px;
 		height: 51px;
 		display: inline-block;
@@ -206,6 +206,7 @@ body{
 		width: 168px;
 		height: 54px;
 		background-image: url('img/alfa-logo.png');
+		background-image: url('svg/afp-logo.svg');
 		background-repeat: no-repeat;
 		display: inline-block;
 		margin-bottom: 47px;
@@ -259,6 +260,7 @@ body{
 		display: inline-block;
 		width: 50%;
 		float: left;
+    z-index: 1;
 		&.pr-40{
 			width: 40%;
 		}
@@ -267,6 +269,7 @@ body{
 		display: inline-block;
 		width: 50%;
 		float: right;
+    z-index: 1;
 		&.pr-60{
 			width: 60%;
 			padding-left: 26px;
@@ -636,6 +639,7 @@ h1{
 					width: 472px;
 					height: 395px;
 					bottom: -3px;
+          z-index: 1;
           &:before {
             content: 'axwell ^ ingrosso';
             font-family: 'sf_ui_displayregular';
@@ -655,6 +659,7 @@ h1{
 					height: 394px;
 					left: 359px;
 					bottom: -3px;
+          z-index: 0;
           &:before {
             font-family: 'sf_ui_displayregular';
             color: #FFF;
@@ -722,6 +727,7 @@ h1{
 	}
 }
 .technology-item{
+  content: '';
 	background-image: url('img/tech.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -1496,11 +1502,12 @@ footer{
 	font-size: 16px;
 	line-height: 48px;
 	color: #fff;
-	border: 1px solid rgba(255,255,255,0.5);
+	border: 1px solid rgba(255,255,255,0.3);
 	padding-left: 27px;
 	padding-right: 26px;
 	display: inline-block;
 	transition: @time all;
+  border-radius: 2px;
 
 	&:hover{
 		border: 1px solid #fff;

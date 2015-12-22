@@ -8,6 +8,7 @@ import LineUp from './Main/LineUp';
 import Technology from './Main/Technology';
 import News from './Main/News';
 import Partner from './Main/Partner';
+import Counter from './Main/Counter';
 import Footer from './Main/Footer';
 import ScrollLink from 'react-scroll';
 
@@ -27,6 +28,7 @@ class Main extends Component {
         <Technology />
         <News />
         <Partner />
+        <Counter />
         <Footer />
       </div>
     );

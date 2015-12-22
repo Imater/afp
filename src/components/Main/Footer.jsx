@@ -39,7 +39,7 @@ class Footer extends Component {
                   <input type="text" placeholder="Как вас зовут?" />
                   <input type="text" placeholder="Адрес электронной почты" />
                   <input type="text" className="half-width" placeholder="Телефон" />
-                  <input type="submit" value="Подписаться" />
+                  <input type="submit" value="Подписаться" title="Подписаться на новости"/>
                 </form>
               </div>
             </div>

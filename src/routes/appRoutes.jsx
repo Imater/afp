@@ -43,7 +43,7 @@ function defaultPath(defaultName) {
 }
 
 export default (
-  <Route path='/' component={App}>
+  <Route path='/' component={App} scrollStrategy='imitateBrowser'>
     <IndexRoute component={Main} />
     <Route path='/lineup(/:part)' component={LineUp} onEnter={defaultPath('main')}/>
     <Route path='/about(/:part)' component={About} onEnter={defaultPath('main')}/>

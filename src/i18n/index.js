@@ -26,6 +26,7 @@ const resources = {
         allNews: 'Все новости',
         partners: 'Партнёры',
         allPartners: 'Партнёры',
+        beforeFestivalTitle: 'до Alfa Future People 2016 осталось'
       },
       history: {
         howItWas: 'Как это было',
@@ -69,6 +70,7 @@ const resources = {
         allNews: 'All news',
         partners: 'Partners',
         allPartners: 'All partners',
+        beforeFestivalTitle: 'Time to Alfa Future People 2016'
       },
       history: {
         howItWas: 'How it was',

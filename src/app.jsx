@@ -23,7 +23,7 @@ const store = createAppStore(initialState);
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={history} children={appRoutes}/>
+    <Router history={history} children={appRoutes} scrollStrategy='imitateBrowser' />
   </Provider>,
   document.getElementById('app')
 );

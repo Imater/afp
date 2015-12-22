@@ -41,7 +41,7 @@ class Sport extends Component {
               return (
                 <div className="item" key={key}>
                   <h3>{type[language === 'eng' ? 'title_eng': 'title']}</h3>
-                  <p>{type[language === 'eng' ? 'text_eng': 'text']}</p>
+                  <div>{type[language === 'eng' ? 'text_eng': 'text']}</div>
                   <div>
                     <Gallery images={type.images} />
                   </div>
