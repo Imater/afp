@@ -104,7 +104,9 @@ class History extends Component {
         </div>
         <div className="row bottom-row social-row">
           <div className="left-col padding-left-50 text-left">
-            <div className="festival-location">Нижний Новгород, аэродром на берегу Волги</div>
+            <div className="festival-location">
+              <Link to='/about/map'>{i18n.t('about.novgorod')}</Link>
+            </div>
             <div className="plus18">18+</div>
           </div>
           <div className="right-col padding-right-40 text-right">

@@ -4124,3 +4124,43 @@
 {"level":"trace","message":"| Update db model: oauthRefreshToken","timestamp":"2015-12-21T21:23:20.466Z"}
 {"level":"trace","message":"| Update db model: user","timestamp":"2015-12-21T21:23:20.479Z"}
 {"level":"trace","message":"sync tables finished","timestamp":"2015-12-21T21:23:21.295Z"}
+{"level":"trace","message":"| Update db model: bid","timestamp":"2015-12-22T04:28:49.223Z"}
+{"level":"trace","message":"| Update db model: lot","timestamp":"2015-12-22T04:28:49.228Z"}
+{"level":"trace","message":"| Update db model: lotphoto","timestamp":"2015-12-22T04:28:49.232Z"}
+{"level":"trace","message":"| Update db model: oauthAccessToken","timestamp":"2015-12-22T04:28:49.235Z"}
+{"level":"trace","message":"| Update db model: oauthClient","timestamp":"2015-12-22T04:28:49.237Z"}
+{"level":"trace","message":"| Update db model: oauthRefreshToken","timestamp":"2015-12-22T04:28:49.239Z"}
+{"level":"trace","message":"| Update db model: user","timestamp":"2015-12-22T04:28:49.242Z"}
+{"level":"trace","message":"sync tables finished","timestamp":"2015-12-22T04:28:54.974Z"}
+{"level":"trace","message":"| Update db model: bid","timestamp":"2015-12-22T05:54:30.543Z"}
+{"level":"trace","message":"| Update db model: lot","timestamp":"2015-12-22T05:54:30.549Z"}
+{"level":"trace","message":"| Update db model: lotphoto","timestamp":"2015-12-22T05:54:30.553Z"}
+{"level":"trace","message":"| Update db model: oauthAccessToken","timestamp":"2015-12-22T05:54:30.556Z"}
+{"level":"trace","message":"| Update db model: oauthClient","timestamp":"2015-12-22T05:54:30.558Z"}
+{"level":"trace","message":"| Update db model: oauthRefreshToken","timestamp":"2015-12-22T05:54:30.560Z"}
+{"level":"trace","message":"| Update db model: user","timestamp":"2015-12-22T05:54:30.563Z"}
+{"level":"trace","message":"sync tables finished","timestamp":"2015-12-22T05:54:35.131Z"}
+{"level":"trace","message":"| Update db model: bid","timestamp":"2015-12-22T06:09:22.836Z"}
+{"level":"trace","message":"| Update db model: lot","timestamp":"2015-12-22T06:09:22.842Z"}
+{"level":"trace","message":"| Update db model: lotphoto","timestamp":"2015-12-22T06:09:22.846Z"}
+{"level":"trace","message":"| Update db model: oauthAccessToken","timestamp":"2015-12-22T06:09:22.848Z"}
+{"level":"trace","message":"| Update db model: oauthClient","timestamp":"2015-12-22T06:09:22.850Z"}
+{"level":"trace","message":"| Update db model: oauthRefreshToken","timestamp":"2015-12-22T06:09:22.852Z"}
+{"level":"trace","message":"| Update db model: user","timestamp":"2015-12-22T06:09:22.855Z"}
+{"level":"trace","message":"sync tables finished","timestamp":"2015-12-22T06:09:29.183Z"}
+{"level":"trace","message":"| Update db model: bid","timestamp":"2015-12-22T06:09:58.958Z"}
+{"level":"trace","message":"| Update db model: lot","timestamp":"2015-12-22T06:09:58.965Z"}
+{"level":"trace","message":"| Update db model: lotphoto","timestamp":"2015-12-22T06:09:58.969Z"}
+{"level":"trace","message":"| Update db model: oauthAccessToken","timestamp":"2015-12-22T06:09:58.971Z"}
+{"level":"trace","message":"| Update db model: oauthClient","timestamp":"2015-12-22T06:09:58.974Z"}
+{"level":"trace","message":"| Update db model: oauthRefreshToken","timestamp":"2015-12-22T06:09:58.976Z"}
+{"level":"trace","message":"| Update db model: user","timestamp":"2015-12-22T06:09:58.980Z"}
+{"level":"trace","message":"sync tables finished","timestamp":"2015-12-22T06:10:04.544Z"}
+{"level":"trace","message":"| Update db model: bid","timestamp":"2015-12-22T06:12:02.820Z"}
+{"level":"trace","message":"| Update db model: lot","timestamp":"2015-12-22T06:12:02.826Z"}
+{"level":"trace","message":"| Update db model: lotphoto","timestamp":"2015-12-22T06:12:02.830Z"}
+{"level":"trace","message":"| Update db model: oauthAccessToken","timestamp":"2015-12-22T06:12:02.832Z"}
+{"level":"trace","message":"| Update db model: oauthClient","timestamp":"2015-12-22T06:12:02.833Z"}
+{"level":"trace","message":"| Update db model: oauthRefreshToken","timestamp":"2015-12-22T06:12:02.836Z"}
+{"level":"trace","message":"| Update db model: user","timestamp":"2015-12-22T06:12:02.838Z"}
+{"level":"trace","message":"sync tables finished","timestamp":"2015-12-22T06:12:08.280Z"}

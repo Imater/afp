@@ -10,10 +10,14 @@ class News extends Component {
 					<div className="row">
 						<div className="left-col padding-left-50">
               <a name="news"></a>
-							<div className="news-title">Новости</div>
+              <div className="news-title">
+                {i18n.t('about.news')}
+              </div>
 						</div>
 						<div className="right-col padding-right-40 text-right">
-							<a href="#" className="transparent-button">Все новости</a>
+              <Link to="/news" className="transparent-button">
+                {i18n.t('about.allNews')}
+              </Link>
 						</div>
 					</div>
 					<div className="row">

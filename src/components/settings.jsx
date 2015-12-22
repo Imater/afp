@@ -167,6 +167,45 @@ export const newsItems = [
   },
 ];
 
+export const partnerItems = [
+  {
+    title: '2015',
+    title_eng: '2015',
+    url: '/partners/main'
+  },
+  {
+    title: '2014',
+    title_eng: '2014',
+    url: '/partners/main2014'
+  },
+];
+
+export const mediaItems = [
+  {
+    title: '2015',
+    title_eng: '2015',
+    url: '/media/main'
+  },
+  {
+    title: '2014',
+    title_eng: '2014',
+    url: '/media/main2014'
+  }
+];
+
+export const contactItems = [
+  {
+    title: 'Администрация AFP',
+    title_eng: 'AFP stuff',
+    url: '/contacts/main'
+  },
+  {
+    title: 'Как доехать',
+    title_eng: 'How to get there',
+    url: '/contacts/map'
+  }
+];
+
 
 export const typesSport = [
   {
@@ -437,4 +476,52 @@ export const typesNews = [
     preview_eng: 'Alfa Future People Festival proudly presents the first headliners of 2016 - world-famous duet AXWELL ^ INGROSSO.',
     image: '/assets/img/news/dj1.jpg',
   },
+];
+
+export const partners = [
+  {
+    file: 'logo-alfa.svg'
+  },
+  {
+    file: 'logo-ucs.svg'
+  },
+  {
+    file: 'logo-alfa-insurance.svg'
+  },
+  {
+    file: 'logo-mf.svg'
+  },
+  {
+    file: 'logo-beeline.svg'
+  },
+  {
+    file: 'logo-mentos.svg'
+  },
+  {
+    file: 'logo-master.svg'
+  },
+  {
+    file: 'logo-k.svg'
+  },
+  {
+    file: 'logo-mini.svg'
+  },
+  {
+    file: 'logo-axe.svg'
+  },
+  {
+    file: 'logo-europa.svg'
+  },
+  {
+    file: 'logo-mtv.svg'
+  },
+  {
+    file: 'logo-gopro.svg'
+  },
+  {
+    file: 'logo-twize.svg'
+  },
+  {
+    file: 'logo-pepsi.svg'
+  }
 ];

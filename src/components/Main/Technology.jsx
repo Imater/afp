@@ -9,10 +9,18 @@ class Technology extends Component {
       <div id="technology">
         <div className="row">
           <div className="left-col">
-            <div className="technology-item"><span>Технологии</span></div>
+            <Link to="/technology">
+              <div className="technology-item">
+                <span>{i18n.t('about.technology')}</span>
+              </div>
+            </Link>
           </div>
           <div className="right-col" id="sport">
-            <div className="sport-item"><span>Спорт</span></div>
+            <Link to="/sport">
+              <div className="sport-item">
+                <span>{i18n.t('about.sport')}</span>
+              </div>
+            </Link>
           </div>
         </div>
         <div className="festival-block">

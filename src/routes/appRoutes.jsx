@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, IndexRoute, Redirect, IndexRedirect } from 'react-router';
 import $ from 'jquery';
 
+import smoothScroll from '../utils/smoothScroll';
 import App from '../components/App';
 import Main from '../containers/Main';
 import Ticket from '../components/Ticket/Ticket';
@@ -13,7 +14,9 @@ import Technology from '../containers/Technology';
 import Sport from '../containers/Sport';
 import About from '../containers/About';
 import News from '../containers/News';
-import smoothScroll from '../utils/smoothScroll';
+import Partners from '../containers/Partners';
+import Media from '../containers/Media';
+import Contacts from '../containers/Contacts';
 
 function scrollTo(name) {
   return () => {
@@ -47,9 +50,9 @@ export default (
     <Route path='/technology(/:part)' component={Technology} onEnter={defaultPath('virtuality')}/>
     <Route path='/sport(/:part)' component={Sport} onEnter={defaultPath('workout')} />
     <Route path='/news(/:part)' component={News} onEnter={defaultPath('main')} />
-    <Route path='/partners(/:part)' component={Main} onEnter={defaultPath('workout')} />
-    <Route path='/media(/:part)' component={Main} onEnter={defaultPath('2015')} />
-    <Route path='/contacts(/:part)' component={Main} onEnter={defaultPath('main')} />
+    <Route path='/partners(/:part)' component={Partners} onEnter={defaultPath('main')} />
+    <Route path='/media(/:part)' component={Media} onEnter={defaultPath('main')} />
+    <Route path='/contacts(/:part)' component={Contacts} onEnter={defaultPath('main')} />
     <Route path='/ticket' component={Ticket} />
     <Route path='/ticket/personal' component={Personal} />
     <Route path='/ticket/buy' component={Buy} />

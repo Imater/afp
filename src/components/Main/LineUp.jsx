@@ -16,7 +16,11 @@ class History extends Component {
               </div>
             </div>
             <div className="right-col padding-right-40 text-right">
-              <a href="#" className="line-up-button transparent-button">Line-up фестиваля</a>
+              <Link to="/lineup" className="line-up-button transparent-button">
+                {
+                  i18n.t('about.lineup')
+                }
+              </Link>
             </div>
           </div>
           <div className="row line-up">

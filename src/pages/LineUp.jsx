@@ -6,6 +6,10 @@ import Social from '../components/Social';
 import TopPageMenu from '../components/TopPageMenu';
 import { lineUpItems } from '../components/settings';
 
+if (process.env.BROWSER) {
+  require('./Lineup.less');
+}
+
 class LineUp extends Component {
   render() {
     const { language } = this.props;

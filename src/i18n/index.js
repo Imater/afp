@@ -17,7 +17,15 @@ const resources = {
         mainFestival: 'Главный фестиваль',
         musicAndTechnology: 'музыки и технологий',
         howItWas: 'Как это было',
-        festivalDate: '22-24 июля 2016 года'
+        festivalDate: '22-24 июля 2016 года',
+        lineup: 'Line-up фестиваля',
+        novgorod: 'Нижний Новгород, аэродром на берегу Волги',
+        technology: 'Технологии',
+        sport: 'Спорт',
+        news: 'Новости',
+        allNews: 'Все новости',
+        partners: 'Партнёры',
+        allPartners: 'Партнёры',
       },
       history: {
         howItWas: 'Как это было',
@@ -29,7 +37,9 @@ const resources = {
       },
       pages: {
         sportAndExtrime: 'СПОРТ ПЛОЩАДКИ И ЭКСТРЕМАЛЬНЫЕ ШОУ',
-        wonderTechnology: 'УДИВИТЕЛЬНЫЕ ИЗОБРЕТЕНИЯ  И САМЫЕ ИНТЕРЕСНЫЕ НОВЫЕ ТЕХНОЛОГИИ'
+        wonderTechnology: 'УДИВИТЕЛЬНЫЕ ИЗОБРЕТЕНИЯ  И САМЫЕ ИНТЕРЕСНЫЕ НОВЫЕ ТЕХНОЛОГИИ',
+        media: 'Фото и видео',
+        contacts: 'Контакты'
       }
     }
   },
@@ -50,7 +60,15 @@ const resources = {
         mainFestival: 'The main festival',
         musicAndTechnology: 'of music and technology',
         howItWas: 'how it was',
-        festivalDate: '22-24 July 2016'
+        festivalDate: '22-24 July 2016',
+        lineup: 'Line-up of festivel',
+        novgorod: 'Nizhny Novgorod, on the Volga River airport',
+        technology: 'Technology',
+        sport: 'Sport',
+        news: 'News',
+        allNews: 'All news',
+        partners: 'Partners',
+        allPartners: 'All partners',
       },
       history: {
         howItWas: 'How it was',
@@ -62,7 +80,9 @@ const resources = {
       },
       pages: {
         sportAndExtrime: 'SPORT PLAYGROUNDS AND EXTREME SHOWS',
-        wonderTechnology: 'TECHNOLOGIES OF THE FUTURE'
+        wonderTechnology: 'TECHNOLOGIES OF THE FUTURE',
+        media: 'MEDIA',
+        contacts: 'CONTACTS'
       }
 
     }
