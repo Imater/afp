@@ -1,5 +1,62 @@
+@import '../utils/common.less';
+
 .djs-page {
+  min-height: 300px;
   .djs-block {
     padding-top: 70px;
+  }
+  .djs-list {
+    padding-top: 120px;
+    h3 {
+      padding-left: 10%;
+    }
+    .dj-wrapper {
+      display: inline-block;
+      box-sizing: border-box;
+      position: relative;
+      .dj-item {
+        .dj-image {
+          content: '';
+          background-size: cover;
+          background-position: center;
+          height: 100%;
+        }
+        .dj-title {
+          opacity: 1;
+          display: block;
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          right: 10px;
+          transition: 0.2s opacity;
+        }
+        .dj-preview {
+          opacity: 0;
+          display: block;
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          right: 10px;
+          font-size: 12px;
+          transition: 0.2s opacity;
+        }
+        .dj-overlay {
+          .gradient-overlay();
+          opacity: 0.5;
+        }
+      }
+      &:hover {
+        .dj-title {
+          opacity: 0;
+        }
+        .dj-preview {
+          opacity: 1;
+        }
+        .dj-overlay {
+          top: 0;
+          background: rgba(0,0,0,0.8);
+        }
+      }
+    }
   }
 }

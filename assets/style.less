@@ -197,6 +197,26 @@ body{
 		}
 	}
 }
+.years-selector {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding-left: 35px;
+  a {
+    color: #FFF;
+    opacity: 0.5;
+    padding: 0 10px;
+    font-family: 'sf_ui_displayregular';
+    font-size: 22px;
+    transition: @time opacity;
+    &.active, &:hover {
+      color: #FFF;
+      opacity: 1;
+    }
+  }
+}
 .wrapper{
 	width: 100%;
 	display: inline-block;

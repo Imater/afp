@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import i18n from 'i18next-client';
 import Social from '../components/Social';
 import TopPageMenu from '../components/TopPageMenu';
-import { technologyItems } from '../components/settings';
+import { aboutItems } from '../components/settings';
 
 if (process.env.BROWSER) {
   require('./About.less');
@@ -30,7 +30,7 @@ class About extends Component {
     const { language } = this.props;
     return (
       <div className="page About" id="lineup">
-        <TopPageMenu items={technologyItems} language={language} />
+        <TopPageMenu items={aboutItems} language={language} />
         <div className="page-block">
           <h2>
             {main[language].title}

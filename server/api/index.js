@@ -22,43 +22,15 @@ const addInfoToItems = function(items){
   });
 };
 
-api.getAllLots = function(id){
+api.getAllDjs = function(id){
   return new Promise((request, reject) => {
-    db.models.lot.findAll({
+    db.models.dj.findAll({
       where: {
         visible: 1
       },
-      include: [{
-        model: db.models.bid,
-        attributes: [
-          'id',
-          'userId',
-          'price',
-          'createdAt'
-        ],
-        where: {
-          visible: 1,
-          userId: {
-            $ne: null
-          }
-        },
-        required: false,
-        include: [{
-          model: db.models.user,
-          as: 'bidUser',
-          attributes: [
-            'firstname',
-            'lastname',
-            'middlename'
-          ],
-          required: false
-        }]
-      }, {
-        model: db.models.lotphoto
-      }],
-      order: [[{model: db.models.bid}, 'createdAt', 'DESC']]
-    }).then(function(lotsFromDb){
-      request(addInfoToItems(lotsFromDb));
+      order: [['order', 'DESC']]
+    }).then(function(djsFromDb){
+      request(djsFromDb);
     }).catch(function(err){
       console.error(err);
     });

@@ -9,6 +9,12 @@ module.exports = function (sequelize, DataTypes) {
     image: {
       type: DataTypes.STRING
     },
+    year: {
+      type: DataTypes.STRING
+    },
+    top: {
+      type: DataTypes.STRING
+    },
     title: {
       type: DataTypes.STRING
     },

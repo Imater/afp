@@ -83,9 +83,11 @@ app.use((req, res, next) => {
     } else if (renderProps == null) {
       res.send(404, 'Not found');
     } else {
-      api.getAllLots().then(function(lotsFromDb){
+      api.getAllDjs().then(function(djsFromDb){
         const store = createAppStore({
-          todos: fromJS({}),
+          todos: fromJS({
+            djs: djsFromDb
+          }),
           i18: {
             language: needEng ? 'eng' : 'ru'
           },

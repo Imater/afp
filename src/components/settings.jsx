@@ -35,38 +35,86 @@ export const menuItems = [
   }
 ];
 
-export const lineUpItems = [
+export const lineUpItems = {
+  '2016': [
+    {
+      title: 'Main stage',
+      title_eng: 'Main stage',
+      url: '/lineup/2016/main'
+    }
+  ],
+  '2015': [
+    {
+      title: 'Main stage',
+      title_eng: 'Main stage',
+      url: '/lineup/2015/main'
+    },
+    {
+      title: 'Live & Bass stage',
+      title_eng: 'Live & Bass stage',
+      url: '/lineup/2015/live'
+    },
+    {
+      title: 'Tot:Spot',
+      title_eng: 'Tot:Spot',
+      url: '/lineup/2015/tot'
+    },
+    {
+      title: 'Mendeleev Stage',
+      title_eng: 'Mendeleev Stage',
+      url: '/lineup/2015/mendeleev'
+    },
+    {
+      title: 'Flat 247',
+      title_eng: 'Flat 247',
+      url: '/lineup/2015/flat'
+    },
+    {
+      title: 'Circle',
+      title_eng: 'Circle',
+      url: '/lineup/2015/circle'
+    }
+  ]
+};
+
+export const aboutItems = [
   {
-    title: 'Main stage',
-    title_eng: 'Main stage',
-    url: '/lineup/main'
+    title: 'Как добраться',
+    title_eng: 'How to get there',
+    url: '/about/map'
   },
   {
-    title: 'Live & Bass stage',
-    title_eng: 'Live & Bass stage',
-    url: '/lineup/live'
+    title: 'Карта фестиваля',
+    title_eng: 'Festival map',
+    url: '/about/insideMap'
   },
   {
-    title: 'Tot:Spot',
-    title_eng: 'Tot:Spot',
-    url: '/lineup/tot'
+    title: 'Где жить',
+    title_eng: 'Where to live',
+    url: '/about/live'
   },
   {
-    title: 'Mendeleev Stage',
-    title_eng: 'Mendeleev Stage',
-    url: '/lineup/mendeleev'
+    title: 'Фудкорт',
+    title_eng: 'Food',
+    url: '/about/food'
   },
   {
-    title: 'Flat 247',
-    title_eng: 'Flat 247',
-    url: '/lineup/flat'
+    title: 'Советы',
+    title_eng: 'Advises',
+    url: '/about/advises'
   },
   {
-    title: 'Circle',
-    title_eng: 'Circle',
-    url: '/lineup/citcle'
+    title: 'FAQ',
+    title_eng: 'FAQ',
+    url: '/about/faq'
+  },
+  {
+    title: 'Правила',
+    title_eng: 'Rules',
+    url: '/about/rules'
   }
 ];
+
 
 export const technologyItems = [
   {

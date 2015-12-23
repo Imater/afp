@@ -19,7 +19,6 @@ class Contacts extends Component {
     const main = typesSport;
     return (
       <div className="page Contacts">
-        <TopPageMenu items={contactItems} language={language} />
         <div className="page-block">
           <h2>
             {i18n.t('pages.contacts')}

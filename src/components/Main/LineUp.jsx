@@ -16,7 +16,7 @@ class History extends Component {
               </div>
             </div>
             <div className="right-col padding-right-40 text-right">
-              <Link to="/lineup" className="line-up-button transparent-button">
+              <Link to="lineup" className="line-up-button transparent-button">
                 {
                   i18n.t('about.lineup')
                 }
