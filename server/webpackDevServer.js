@@ -18,6 +18,7 @@ export default function() {
     var bundler = new WebpackDevServer(compiler, {
         publicPath: webpackConfig.output.publicPath,
         hot: true,
+        cache: true,
         quiet: false,
         noInfo: false,
         headers: {

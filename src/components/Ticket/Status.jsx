@@ -26,7 +26,9 @@ import TopMenu from './TopMenu';
             <TopMenu />
           </div>
           <a href="#" className="close-page"></a>
-          <div className="tickets">
+          <div className="tickets" style={{
+            height: '100%'
+          }}>
             <h2>Оплата прошла успешно</h2>
           </div>
         </div>

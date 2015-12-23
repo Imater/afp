@@ -3,7 +3,6 @@ import { findDOMNode } from 'react-dom';
 import { Link } from 'react-router';
 import i18n from 'i18next-client';
 
-const target = new Date('Jul 22 2016 15:00:00');
 
 class Counter extends Component {
   state = {
@@ -16,6 +15,7 @@ class Counter extends Component {
 
   componentDidMount() {
     this.interval = setInterval(this.tick.bind(this), 30000);
+    this.tick();
   }
 
   componentWillUnmount() {
@@ -23,6 +23,7 @@ class Counter extends Component {
   }
 
   tick () {
+    var target = new Date('Jul 22 2016 15:00:00');
     var time = new Date(Date.now());
     var t = target - (new Date());
     var seconds = Math.floor( (t/1000) % 60 );

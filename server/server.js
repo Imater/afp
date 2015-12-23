@@ -46,7 +46,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use('/assets', express.static(path.join(__dirname, '..', 'assets')));
-app.use('/uploads', express.static(path.join(__dirname, '..', '..', 'uploads')));
+app.use('/upload', express.static(path.join(__dirname, '..', 'upload')));
 app.use('/locales', express.static(path.join(__dirname, '..', 'assets', 'locales')));
 app.use('/favicon.ico', express.static(path.join(__dirname, '..', 'assets', 'images', 'favicon.ico')));
 

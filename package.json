@@ -5,9 +5,12 @@
   "main": "server/index.js",
   "scripts": {
     "start": "babel-node ./index.js",
+    "v": "babel-node",
     "prod": "NODE_ENV=production babel-node ./index.js",
     "dev": "npm run start",
     "build": "NODE_ENV=production webpack --progress --color -p --config webpack.prod.config.js",
+    "watch": "nodemon --exec npm run start",
+    "watch2": "node ./index.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "imater",
@@ -43,7 +46,6 @@
     "winston": "^2.1.1"
   },
   "devDependencies": {
-    "babel": "^6.3.13",
     "babel-cli": "^6.3.17",
     "babel-core": "^6.3.17",
     "babel-loader": "^6.2.0",
