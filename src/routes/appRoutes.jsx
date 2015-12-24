@@ -45,7 +45,7 @@ function defaultPath(defaultName) {
 export default (
   <Route path='/' component={App} scrollStrategy='imitateBrowser'>
     <IndexRoute component={Main} />
-    <Route name="lineup" path='/lineup(/:year)(/:part)' component={LineUp} onEnter={defaultPath('2015/main')}/>
+    <Route name="lineup" path='/lineup(/:year)(/:part)' component={LineUp} onEnter={defaultPath('2016/main')}/>
     <Route path='/about(/:part)' component={About} onEnter={defaultPath('map')}/>
     <Route path='/technology(/:part)' component={Technology} onEnter={defaultPath('virtuality')}/>
     <Route path='/sport(/:part)' component={Sport} onEnter={defaultPath('workout')} />

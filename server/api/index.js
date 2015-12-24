@@ -28,7 +28,7 @@ api.getAllDjs = function(id){
       where: {
         visible: 1
       },
-      order: [['order', 'DESC']]
+      order: [['stage', 'ASC'], ['order', 'ASC']]
     }).then(function(djsFromDb){
       request(djsFromDb);
     }).catch(function(err){

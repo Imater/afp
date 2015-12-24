@@ -33,6 +33,12 @@ module.exports = function (sequelize, DataTypes) {
     description_eng: {
       type: DataTypes.TEXT
     },
+    stage: {
+      type: DataTypes.INTEGER
+    },
+    visible: {
+      type: DataTypes.INTEGER
+    },
     order: {
       type: DataTypes.INTEGER
     }

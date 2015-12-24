@@ -41,6 +41,7 @@ class Counter extends Component {
     return (
       <div id="counter">
         <div className="before-festival">
+          <div className='bg-overlay'></div>
           <div className="row">
             <div className="left-col padding-left-50">
               <div className="before-festival-title">
