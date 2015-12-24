@@ -37,6 +37,29 @@ api.getAllDjs = function(id){
   });
 };
 
+api.getNews = function(id){
+  return new Promise((request, reject) => {
+    db.models.cms_news_item.findAll({
+      where: {
+        enabled: true
+      },
+      include: [
+        {
+          model: db.models.cms_news_item_data
+        },
+        {
+          model: db.models.cms_news_item_image
+        }
+      ],
+      order: [['date', 'DESC']]
+    }).then(function(djsFromDb){
+      request(djsFromDb);
+    }).catch(function(err){
+      console.error(err);
+    });
+  });
+};
+
 api.getLotById = function(id){
   return new Promise((request, reject) => {
     db.models.lot.findOne({

@@ -4588,3 +4588,32 @@
 {"level":"trace","message":"| Update db model: oauthRefreshToken","timestamp":"2015-12-24T07:53:20.125Z"}
 {"level":"trace","message":"| Update db model: user","timestamp":"2015-12-24T07:53:20.128Z"}
 {"level":"trace","message":"sync tables finished","timestamp":"2015-12-24T07:53:27.873Z"}
+{"level":"trace","message":"| Update db model: bid","timestamp":"2015-12-24T08:31:13.340Z"}
+{"level":"trace","message":"| Update db model: dj","timestamp":"2015-12-24T08:31:13.346Z"}
+{"level":"trace","message":"| Update db model: lot","timestamp":"2015-12-24T08:31:13.355Z"}
+{"level":"trace","message":"| Update db model: lotphoto","timestamp":"2015-12-24T08:31:13.357Z"}
+{"level":"trace","message":"| Update db model: oauthAccessToken","timestamp":"2015-12-24T08:31:13.359Z"}
+{"level":"trace","message":"| Update db model: oauthClient","timestamp":"2015-12-24T08:31:13.362Z"}
+{"level":"trace","message":"| Update db model: oauthRefreshToken","timestamp":"2015-12-24T08:31:13.364Z"}
+{"level":"trace","message":"| Update db model: user","timestamp":"2015-12-24T08:31:13.367Z"}
+{"level":"trace","message":"sync tables finished","timestamp":"2015-12-24T08:31:20.338Z"}
+{"level":"trace","message":"| Update db model: bid","timestamp":"2015-12-24T09:36:44.856Z"}
+{"level":"trace","message":"| Update db model: dj","timestamp":"2015-12-24T09:36:44.878Z"}
+{"level":"trace","message":"| Update db model: lot","timestamp":"2015-12-24T09:36:44.883Z"}
+{"level":"trace","message":"| Update db model: lotphoto","timestamp":"2015-12-24T09:36:44.886Z"}
+{"level":"trace","message":"| Update db model: cms_news_item_data","timestamp":"2015-12-24T09:36:44.901Z"}
+{"level":"trace","message":"| Update db model: oauthAccessToken","timestamp":"2015-12-24T09:36:44.904Z"}
+{"level":"trace","message":"| Update db model: oauthClient","timestamp":"2015-12-24T09:36:44.906Z"}
+{"level":"trace","message":"| Update db model: oauthRefreshToken","timestamp":"2015-12-24T09:36:44.908Z"}
+{"level":"trace","message":"| Update db model: user","timestamp":"2015-12-24T09:36:44.910Z"}
+{"level":"trace","message":"sync tables finished","timestamp":"2015-12-24T09:36:46.116Z"}
+{"level":"trace","message":"| Update db model: bid","timestamp":"2015-12-24T09:38:09.584Z"}
+{"level":"trace","message":"| Update db model: dj","timestamp":"2015-12-24T09:38:09.591Z"}
+{"level":"trace","message":"| Update db model: lot","timestamp":"2015-12-24T09:38:09.596Z"}
+{"level":"trace","message":"| Update db model: lotphoto","timestamp":"2015-12-24T09:38:09.598Z"}
+{"level":"trace","message":"| Update db model: cms_news_item_data","timestamp":"2015-12-24T09:38:09.600Z"}
+{"level":"trace","message":"| Update db model: oauthAccessToken","timestamp":"2015-12-24T09:38:09.602Z"}
+{"level":"trace","message":"| Update db model: oauthClient","timestamp":"2015-12-24T09:38:09.605Z"}
+{"level":"trace","message":"| Update db model: oauthRefreshToken","timestamp":"2015-12-24T09:38:09.610Z"}
+{"level":"trace","message":"| Update db model: user","timestamp":"2015-12-24T09:38:09.614Z"}
+{"level":"trace","message":"sync tables finished","timestamp":"2015-12-24T09:38:10.686Z"}

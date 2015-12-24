@@ -45,4 +45,13 @@ apiRoutes.put('/user/email', (req, res) => {
   });
 });
 
+apiRoutes.get('/news', (req, res) => {
+  console.info('get news');
+  api.getNews().then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
 export default apiRoutes;
