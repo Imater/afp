@@ -83,10 +83,16 @@ app.use((req, res, next) => {
     } else if (renderProps == null) {
       res.send(404, 'Not found');
     } else {
-      api.getAllDjs().then(function(djsFromDb){
+      Promise.all([
+        api.getAllDjs(),
+        api.getNews(),
+        api.getGallery()
+      ]).then(function(results){
         const store = createAppStore({
           todos: fromJS({
-            djs: djsFromDb
+            djs: results[0],
+            news: results[1],
+            gallery: results[2]
           }),
           i18: {
             language: needEng ? 'eng' : 'ru'
@@ -103,7 +109,7 @@ app.use((req, res, next) => {
         );
 
         var state = store.getState();
-        const initialState = JSON.stringify(state);
+        const initialState = JSON.stringify(state, null, '  ');
         const langJson = JSON.stringify({language: needEng ? 'eng' : 'ru'});
         let resultHtml = indexHtml
         .replace('${initialView}', initialView)

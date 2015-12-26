@@ -2,17 +2,51 @@
 
 .Media {
   color: #FFF;
-  .page-block {
-    background-image: url('../../assets/img/ticket-overlay.jpg');
-  }
-  .icons {
-    text-align: center;
-    padding: 50px 0;
-    img {
-      margin: 0 auto;
+  .Galleries {
+    .partHeaderWrapper {
+      display: block;
+      background: #BFBFFF;
+      height: 30vh;
+      max-height: 400px;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      .bg-gradient();
+      h3 {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        bottom: 50px;
+        left: 10%;
+      }
+      .bg-image {
+      }
     }
-  }
-  .partners-list {
-    padding-left: 10%;
+    .covers-wrapper {
+      a {
+        color: #FFF;
+      }
+      .cover {
+        display: inline-block;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        .bg-gradient();
+        h4 {
+          margin: 0;
+          padding: 0;
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          right: 20px;
+          font-size: 15px;
+          color: #FFFFFF;
+          line-height: 18px;
+          font-family: 'sf_ui_displaysemibold';
+        }
+      }
+    }
   }
 }

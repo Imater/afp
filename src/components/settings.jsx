@@ -232,12 +232,12 @@ export const mediaItems = [
   {
     title: '2015',
     title_eng: '2015',
-    url: '/media/main'
+    url: '/media/2015'
   },
   {
     title: '2014',
     title_eng: '2014',
-    url: '/media/main2014'
+    url: '/media/2014'
   }
 ];
 

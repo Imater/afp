@@ -23,6 +23,7 @@ module.exports = function (sequelize, DataTypes) {
     associate: function (models) {
       models.cms_news_item.hasMany(models.cms_news_item_data, { foreignKey: 'item_id'});
       models.cms_news_item.hasMany(models.cms_news_item_image, { foreignKey: 'item_id'});
+      models.cms_news_item.hasMany(models.cms_lang_translate_value, { foreignKey: 'target_id'});
     },
     timestamps: false,
     tableName: 'cms_news_item'

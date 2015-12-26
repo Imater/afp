@@ -68,10 +68,8 @@ class LineUp extends Component {
     windowWidth: ((typeof window === "object") ? window.innerWidth : 1024)
   }
   componentDidMount() {
-    console.info($('window').width());
     let self = this;
     window.onresize = function() {
-      console.info('resize');
       self.tick();
     };
   }
@@ -88,7 +86,8 @@ class LineUp extends Component {
     const lang = language === 'eng' ? '_eng' : '';
     const djs = this.props.listData.get('djs');
     let count = parseInt(this.state.windowWidth / 300);
-    let box = (this.state.windowWidth-275)/count;
+    let box = parseInt((this.state.windowWidth-275)/count);
+    let boxProcent = 100/count;
     return (
       <div className="page djs-page" id="lineup">
         <TopPageMenu items={lineUpItems[this.props.routeParams.year]} language={language} />
@@ -116,7 +115,7 @@ class LineUp extends Component {
                       djsFiltered.map((dj, key) => {
                         return (
                           <div className="dj-wrapper" key={`${keyScene} ${key}`} style={{
-                            width: box,
+                            width: `${boxProcent}%`,
                             height: box
                           }}>
                             <div className="dj-item">

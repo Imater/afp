@@ -22,15 +22,17 @@ const addInfoToItems = function(items){
   });
 };
 
+const JSONify = (items) => items.map((item) => item.toJSON());
+
 api.getAllDjs = function(id){
   return new Promise((request, reject) => {
     db.models.dj.findAll({
       where: {
         visible: 1
       },
-      order: [['stage', 'ASC'], ['order', 'ASC']]
+      order: [['stage', 'ASC'], ['order', 'ASC']],
     }).then(function(djsFromDb){
-      request(djsFromDb);
+      request(JSONify(djsFromDb));
     }).catch(function(err){
       console.error(err);
     });
@@ -45,15 +47,59 @@ api.getNews = function(id){
       },
       include: [
         {
-          model: db.models.cms_news_item_data
+          model: db.models.cms_news_item_data,
+          attributes: [
+            'key',
+            'data',
+          ],
         },
         {
-          model: db.models.cms_news_item_image
+          model: db.models.cms_news_item_image,
+          attributes: [
+            'name',
+          ],
+        },
+        {
+          model: db.models.cms_lang_translate_value,
+          attributes: [
+            'translate_id',
+            'lang_id',
+            'value',
+          ],
         }
       ],
-      order: [['date', 'DESC']]
-    }).then(function(djsFromDb){
-      request(djsFromDb);
+      order: [['date', 'DESC']],
+    }).then(function(newsFromDb){
+      request(JSONify(newsFromDb));
+    }).catch(function(err){
+      console.error(err);
+    });
+  });
+};
+
+api.getGallery = function(id){
+  return new Promise((request, reject) => {
+    db.models.cms_gallery_gallery.findAll({
+      where: {
+       enabled: true
+      },
+      include: [
+        {
+          model: db.models.cms_gallery_item,
+          attributes: [
+            'name',
+            'link',
+            'title'
+          ],
+          where: {
+            enabled: true
+          },
+          order: [['pos', 'ASC']]
+        }
+      ],
+      order: [['gallery_id', 'DESC']],
+    }).then(function(galleryFromDb){
+      request(JSONify(galleryFromDb));
     }).catch(function(err){
       console.error(err);
     });
@@ -152,7 +198,6 @@ api.saveBid = function(body){
 
 api.createUser = function(body, withoutEmail){
   return new Promise((request, reject) => {
-    console.info('GOI');
     db.models.user.create(body).then(function(user){
       if(!withoutEmail){
         api.sendMail(user.toJSON(), function(err, info){
