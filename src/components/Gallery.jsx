@@ -17,7 +17,7 @@ class Gallery extends Component {
       return;
     }
     var nextIndex = this.state.index + increment;
-    if(nextIndex === 0) {
+    if(nextIndex <= 0) {
       nextIndex = this.props.images.length;
     } else if (nextIndex >= this.props.images.length){
       nextIndex = 0;
@@ -33,12 +33,23 @@ class Gallery extends Component {
     if(!images) {
       return (<div></div>);
     }
+    const getPhoto = (add) => {
+      let image = images.filter((img, key) => {
+        return key === this.state.index + add;
+      });
+      if(!image[0]) {
+        return undefined;
+      } else {
+        return image[0].url;
+      }
+    }
+    console.info(getPhoto(1));
     return (
       <div className='Gallery'>
         <div className="galleryItems">
           <div className="galleryItem galleryItemPrev">
             <div className="galleryImage" style={{
-                backgroundImage: `url('/assets/img/technology/tech1.jpg')`
+                backgroundImage: `url('${getPhoto(-1)}')`
               }}>
             </div>
             <div className="galleryInfo">
@@ -47,7 +58,7 @@ class Gallery extends Component {
           </div>
           <div className="galleryItem">
             <div className="galleryImage" style={{
-                backgroundImage: `url('/assets/img/technology/tech2.jpg')`
+                backgroundImage: `url('${getPhoto(0)}')`
               }}>
             </div>
             <div className="galleryInfo">
@@ -56,7 +67,7 @@ class Gallery extends Component {
           </div>
           <div className="galleryItem galleryItemNext">
             <div className="galleryImage" style={{
-                backgroundImage: `url('/assets/img/technology/tech3.jpg')`
+                backgroundImage: `url('${getPhoto(1)}')`
               }}>
             </div>
             <div className="galleryInfo">
@@ -66,8 +77,8 @@ class Gallery extends Component {
           <div className="galleryCounter">
             <span>3</span> из <span>8</span>
           </div>
-          <div className="galleryPrev">←</div>
-          <div className="galleryNext">→</div>
+          <div className="galleryPrev" onClick={() => this.nextSlide(-1)}>←</div>
+          <div className="galleryNext" onClick={() => this.nextSlide(1)}>→</div>
         </div>
         {
           images.map((image, key) => {

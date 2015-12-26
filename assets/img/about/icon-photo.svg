@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="12px" viewBox="0 0 16 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="05-About" sketch:type="MSArtboardGroup" transform="translate(-500.000000, -4471.000000)" fill="#FFFFFF">
+            <g id="vip" sketch:type="MSLayerGroup" transform="translate(250.000000, 4092.000000)">
+                <g id="Photo" transform="translate(234.000000, 368.000000)" sketch:type="MSShapeGroup">
+                    <path d="M31,13 L28,13 C27.85072,13.2170811 27.34992,12.8794595 27,12 L27,12 C26.70608,11.3394054 26.20528,11 26,11 L22,11 C21.79488,11 21.29408,11.3394054 21,12 L21,12 C20.65008,12.8776757 20.14928,13.2161081 20,13 L17,13 C16.36,13.2341081 16,13.6009189 16,14 L16,22 C16,22.6281622 16.36,23 17,23 L31,23 C31.64,23 32,22.6281622 32,22 L32,14 C32,13.6009189 31.64,13.2344324 31,13 L31,13 Z M21.0402832,18 C21.0402832,15.9140476 22.3434226,15 24,15 C25.6568731,15 27.0402832,15.915083 27.0402832,18 C27.0402832,19.2292532 26.2412109,21 24,21 C21.7587891,21 21.0402832,19.2280699 21.0402832,18 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

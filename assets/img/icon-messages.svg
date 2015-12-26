@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="68px" height="64px" viewBox="0 0 68 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 408 + Rectangle 408</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="05-About" sketch:type="MSArtboardGroup" transform="translate(-1083.000000, -6189.000000)" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round">
+            <g id="Dop" sketch:type="MSLayerGroup" transform="translate(250.000000, 6150.000000)">
+                <g id="Rectangle-408-+-Rectangle-408" transform="translate(834.000000, 40.000000)" sketch:type="MSShapeGroup">
+                    <path d="M0,24.0092902 C0,21.7950204 1.78913646,20 4.00172845,20 L41.9982716,20 C44.2083651,20 46,21.7965084 46,24.0092902 L46,51.240589 C46,53.4548589 44.2169221,55.2498793 42.0058635,55.2498793 L15.6864692,55.2498793 L8.10091146,62 L8.00981988,55.2498793 L4.00490994,55.2498793 C1.79305926,55.2498793 0,53.4533709 0,51.240589 L0,24.0092902 Z" id="Rectangle-408"></path>
+                    <path d="M20,4.00929024 C20,1.79502038 21.7891365,0 24.0017284,0 L61.9982716,0 C64.2083651,0 66,1.79650839 66,4.00929024 L66,31.240589 C66,33.4548589 64.2169221,35.2498793 62.0058635,35.2498793 L35.6864692,35.2498793 L28.1009115,42 L28.0098199,35.2498793 L24.0049099,35.2498793 C21.7930593,35.2498793 20,33.4533709 20,31.240589 L20,4.00929024 Z" id="Rectangle-408" transform="translate(43.000000, 21.000000) scale(-1, 1) translate(-43.000000, -21.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="50px" height="36px" viewBox="0 0 50 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>Book</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="05-About" sketch:type="MSArtboardGroup" transform="translate(-484.000000, -3976.000000)" stroke-linecap="round" stroke="#126BEE">
+            <g id="Group" sketch:type="MSLayerGroup" transform="translate(-235.000000, 2784.000000)">
+                <g id="Rules" transform="translate(719.000000, 1190.000000)" sketch:type="MSShapeGroup">
+                    <g id="Book" transform="translate(0.000000, 3.000000)">
+                        <path d="M6,0 L22.2260906,0 C22.2260906,0 25,0.317383521 25,3.6495899 C25,6.98179629 25,29 25,29 C25,29 24.9702516,26.3178263 21,26 C20.3157825,26.0699822 6,26 6,26 L6,0 Z" id="Path-5100" stroke-width="2" stroke-linejoin="round"></path>
+                        <path d="M25,0 L41.2260906,0 C41.2260906,0 44,0.317383521 44,3.6495899 C44,6.98179629 44,29 44,29 C44,29 43.9702516,26.3178263 40,26 C39.3047215,26.0711136 25,26 25,26 L25,0 Z" id="Path-5100" stroke-width="2" stroke-linejoin="round" transform="translate(34.500000, 14.500000) scale(-1, 1) translate(-34.500000, -14.500000) "></path>
+                        <path d="M5.6184054,2.0030372 C5.6184054,2.0030372 1.00299009,1.9969802 1.00298988,6.60075778 C1.00298966,11.2045354 1,27 1,27 C1,27 0.709880385,31.3100575 6,31 C11.1460007,31.3100574 21,31 21,31 C21,31 21.7474193,34 25.2397419,34 C28.7320645,34 29,31 29,31 L45,31 C45,31 48.9999994,31.2204139 49,27 C49.0000002,22.9109009 48.9999998,6.60075778 48.9999998,6.60075778 C48.9999998,6.60075778 49.0000002,1.86316782 44.1450848,2.0030372" id="Path-5110" stroke-width="2" stroke-linejoin="round"></path>
+                        <path d="M10,5.5 L20,5.5" id="Path-5101"></path>
+                        <path d="M10,10.5 L20,10.5" id="Path-5101-Copy"></path>
+                        <path d="M10,15.5 L20,15.5" id="Path-5101-Copy-2"></path>
+                        <path d="M10,20.5 L20,20.5" id="Path-5101-Copy-3"></path>
+                        <path d="M30,5.5 L40,5.5" id="Path-5101" transform="translate(35.000000, 5.500000) scale(-1, 1) translate(-35.000000, -5.500000) "></path>
+                        <path d="M30,10.5 L40,10.5" id="Path-5101-Copy" transform="translate(35.000000, 10.500000) scale(-1, 1) translate(-35.000000, -10.500000) "></path>
+                        <path d="M30,15.5 L40,15.5" id="Path-5101-Copy-2" transform="translate(35.000000, 15.500000) scale(-1, 1) translate(-35.000000, -15.500000) "></path>
+                        <path d="M30,20.5 L40,20.5" id="Path-5101-Copy-3" transform="translate(35.000000, 20.500000) scale(-1, 1) translate(-35.000000, -20.500000) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

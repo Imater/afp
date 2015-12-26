@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="70px" height="69px" viewBox="0 0 70 69" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>burger</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="05-About" sketch:type="MSArtboardGroup" transform="translate(-868.000000, -5283.000000)" stroke-linecap="round" stroke="#126BEE" stroke-linejoin="round">
+            <g id="Foodcourt" sketch:type="MSLayerGroup" transform="translate(250.000000, 5060.000000)">
+                <g id="eat" transform="translate(618.000000, 224.000000)" sketch:type="MSShapeGroup">
+                    <g id="burger">
+                        <path d="M67,58 C67,58 67,67 55.2944782,67 L15.7055218,67 C4,67 4,58 4,58 L67,58 Z" id="Shape" stroke-width="2"></path>
+                        <path d="M35.9622441,12.0562213 C35.3177492,12.0189127 34.6683239,12 34.0144846,12 C20.7642447,12 9.32673075,19.7671095 4,31 L64,30.9390707 L64,30.9390707 C59.7523263,22.0286433 51.6558183,15.3088023 41.8630105,12.9337207" id="Oval-96" stroke-width="2"></path>
+                        <circle id="Oval-96" cx="44.5" cy="2.5" r="2.5"></circle>
+                        <path d="M3,35.1203012 L31.5203456,35.1203012 L44.7460994,42 L49.4174083,35 L67,35" id="Path-4750" stroke-width="2"></path>
+                        <path d="M53.8802817,40 L66.3974501,40 C68.3870835,40 70,41.5709366 70,43.5 C70,45.4329966 68.3859597,47 66.3988598,47 L3.60114016,47 C1.61228537,47 0,45.4290634 0,43.5 C0,41.5670034 1.60845514,40 3.61197995,40 L29.806338,40" id="Rectangle-289" stroke-width="2"></path>
+                        <path d="M4,51.0543562 C8.00433782,51.0543562 7.98764209,54.9579178 11.1422554,54.9579178 C14.2968687,54.9579178 14.6553874,51.070137 18.272648,51.070137 C21.8899086,51.070137 22.1412232,55 25.0203571,55 C27.8994909,55 28.700007,51.1205479 32.2381826,51.1205479 C35.7763582,51.1205479 35.8475347,54.9127671 38.7438036,54.9127671 C41.6400725,54.9127671 42.9405816,51 45.7828091,51 C48.6250366,51 49.4303857,54.8588493 52.5516075,54.8588493 C55.6728293,54.8588493 56.2558616,51.0543562 59.7360416,51.0543562 C63.2162215,51.0543562 63.0532185,54.8509589 67,54.8509589" id="Path-4752"></path>
+                        <path d="M37,17 L43,5" id="Path-4753"></path>
+                        <path d="M14,24 L18,23" id="Path-4755"></path>
+                        <path d="M26,18 L28,16" id="Path-4756"></path>
+                        <path d="M25,23 L27,25" id="Path-4757"></path>
+                        <path d="M34,21 L36,24" id="Path-4758"></path>
+                        <path d="M42,19 L45,21" id="Path-4759"></path>
+                        <path d="M51,23 L54,23" id="Path-4760"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

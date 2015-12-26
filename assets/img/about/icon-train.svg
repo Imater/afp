@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="43px" height="42px" viewBox="0 0 43 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>train</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="05-About" sketch:type="MSArtboardGroup" transform="translate(-705.000000, -1630.000000)" stroke="#126BEE">
+            <g id="How" sketch:type="MSLayerGroup" transform="translate(481.000000, 1304.000000)">
+                <g id="Group" transform="translate(4.000000, 316.000000)" sketch:type="MSShapeGroup">
+                    <g id="train" transform="translate(221.000000, 11.000000)">
+                        <g id="Group">
+                            <path d="M30,40 L24.3533518,36 L5.6470935,36.0004562 L0,40 L30,40 Z" id="Path" stroke-width="2" stroke-linejoin="round"></path>
+                            <path d="M25.1674628,1.63908834 C23.5544865,0.862937254 21.1089067,0.200488875 17.4017937,0 L12.6008969,0.00627943485 C1.9955157,0.637811168 1.54349776,5.42274052 1.54349776,5.42274052 L0,15.8829334 L0,22.8921283 L0,28.8122898 L0,30.6422965 C0,31.3922404 0.608520179,32 1.35874439,32 L2.72421525,32 L9.10627803,32 L20.8950673,32 L28.1363229,32 L28.6426009,32 C29.3932735,32 30,31.3922404 30,30.6422965 L30,30.0103162 L30,20.8921283" id="Shape" stroke-width="2"></path>
+                            <path d="M27,20.8571429 C27,21.2851144 26.3280329,22 25.9047619,22 L4.0952381,22 C3.67152031,22 3,21.2851144 3,20.8571429 L3,16.2857143 L4.0952381,7.14285714 C3.96818663,6.45940032 4.40246324,6 5.19047619,6 L20.8095238,6" id="Path"></path>
+                            <path d="M6,23 C7.65651565,23 9,24.3424888 9,26 C9,27.6575112 7.65651565,29 6,29 C4.34404484,29 3,27.6575112 3,26 C3,24.3424888 4.34404484,23 6,23 L6,23 Z" id="Path"></path>
+                            <path d="M27,26 C27,27.6575112 25.6575112,29 24,29 C22.3436099,29 21,27.6575112 21,26 C21,24.3424888 22.3430493,23 24,23 C25.6580717,23.0005605 27,24.3424888 27,26 L27,26 Z" id="Path"></path>
+                        </g>
+                        <g id="Oval-217-+-Path-7717" transform="translate(20.000000, 0.000000)" stroke-linecap="round" stroke-linejoin="round">
+                            <circle id="Oval-217" stroke-width="2" cx="10.5" cy="10.5" r="10.5"></circle>
+                            <path d="M10.5812217,3.40402704 L10.5812217,10.4971577 L14.5564003,14.4723362" id="Path-7717"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

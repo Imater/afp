@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="54px" height="70px" viewBox="0 0 54 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>Beer</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="05-About" sketch:type="MSArtboardGroup" transform="translate(-880.000000, -5183.000000)" stroke="#126BEE">
+            <g id="Foodcourt" sketch:type="MSLayerGroup" transform="translate(250.000000, 5060.000000)">
+                <g id="drink" transform="translate(631.000000, 124.000000)" sketch:type="MSShapeGroup">
+                    <g id="Beer">
+                        <path d="M40,16 L40,62.0095608 C40,65.317989 37.3235601,68 33.9946773,68 L10.0053227,68 C6.68867454,68 4,65.3137533 4,62.0095608 L4,16 L4,16" id="Rectangle-289" stroke-width="2" stroke-linejoin="round"></path>
+                        <path d="M60,30 L60,38.0018149 C60,41.314521 57.3152423,44 53.9932975,44 L38.0067025,44 C34.6892923,44 32,41.3172241 32,38.0018149 L32,30 L32,30" id="Rectangle-289" stroke-width="2" stroke-linejoin="round" transform="translate(46.000000, 37.000000) rotate(-90.000000) translate(-46.000000, -37.000000) "></path>
+                        <path d="M16.5491363,15.8639926 L39.9829955,15.8639926 C39.9829955,15.8639926 42,16.7529275 42,12.5956055 C42,8.43828356 37.3309832,8.56387798 36.4627979,9.68054433 C36.4627979,6.32810175 33.4804708,3.35244282 30.4528899,3.35244253 C27.4253089,3.35244225 27.4577736,3.50100558 25.1439246,5.17869293 C22.7971189,1.35857001 20.0956608,0 17.165474,0 C14.2352872,0 10.8481349,1.41428115 9.35033085,6.00312012 C5.91202202,4.43587768 0,4.76965585 0,10.4341109 C0,16.0985659 4.16679745,15.8639926 4.16679745,15.8639926 L8.90620703,15.8639926 L8.90620703,22.2260478 C8.90620703,22.2260478 8.77678749,26 12.4905545,26 C16.2043216,26 16.5491363,21.9443264 16.5491363,21.9443264 L16.5491363,15.8639926 Z" id="Path-4761" stroke-width="2" stroke-linejoin="round"></path>
+                        <path d="M4,62 L40,62" id="Path-4757" stroke-linecap="round"></path>
+                        <path d="M13,53 L13,31" id="Path-4758" stroke-linecap="round"></path>
+                        <path d="M22,26 L22,54" id="Path-4759" stroke-linecap="round"></path>
+                        <path d="M31,26 L31,54" id="Path-4760" stroke-linecap="round"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
