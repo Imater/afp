@@ -54,4 +54,13 @@ apiRoutes.get('/news', (req, res) => {
   });
 });
 
+apiRoutes.get('/gallery', (req, res) => {
+  console.info('get gallery');
+  api.getGallery().then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
 export default apiRoutes;

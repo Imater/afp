@@ -20,7 +20,6 @@ server.listen(PORT, function() {
 //});
 
 process.once('SIGUSR2', function () {
-  console.info(1);
   process.kill(process.pid, 'SIGUSR2');
 });
 

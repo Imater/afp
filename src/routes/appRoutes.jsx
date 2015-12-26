@@ -16,6 +16,7 @@ import About from '../containers/About';
 import News from '../containers/News';
 import Partners from '../containers/Partners';
 import Media from '../containers/Media';
+import Album from '../containers/Album';
 import Contacts from '../containers/Contacts';
 
 function scrollTo(name) {
@@ -51,7 +52,8 @@ export default (
     <Route path='/sport(/:part)' component={Sport} onEnter={defaultPath('workout')} />
     <Route path='/news(/:part)' component={News} onEnter={defaultPath('main')} />
     <Route path='/partners(/:part)' component={Partners} onEnter={defaultPath('main')} />
-    <Route path='/media(/:part)' component={Media} onEnter={defaultPath('main')} />
+    <Route path='/media(/:part)' component={Media} onEnter={defaultPath('2015')} />
+    <Route path='/media(/:part)(/:album)(/:photo)' component={Album} />
     <Route path='/contacts(/:part)' component={Contacts} onEnter={defaultPath('main')} />
     <Route path='/ticket' component={Ticket} />
     <Route path='/ticket/personal' component={Personal} />
