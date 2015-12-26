@@ -35,6 +35,40 @@ class Gallery extends Component {
     }
     return (
       <div className='Gallery'>
+        <div className="galleryItems">
+          <div className="galleryItem galleryItemPrev">
+            <div className="galleryImage" style={{
+                backgroundImage: `url('/assets/img/technology/tech1.jpg')`
+              }}>
+            </div>
+            <div className="galleryInfo">
+              <div className="galleryInfoName">Зона виртуальной реальности</div>
+            </div>
+          </div>
+          <div className="galleryItem">
+            <div className="galleryImage" style={{
+                backgroundImage: `url('/assets/img/technology/tech2.jpg')`
+              }}>
+            </div>
+            <div className="galleryInfo">
+              <div className="galleryInfoName">Зона виртуальной реальности</div>
+            </div>
+          </div>
+          <div className="galleryItem galleryItemNext">
+            <div className="galleryImage" style={{
+                backgroundImage: `url('/assets/img/technology/tech3.jpg')`
+              }}>
+            </div>
+            <div className="galleryInfo">
+              <div className="galleryInfoName">Зона виртуальной реальности</div>
+            </div>
+          </div>
+          <div className="galleryCounter">
+            <span>3</span> из <span>8</span>
+          </div>
+          <div className="galleryPrev">←</div>
+          <div className="galleryNext">→</div>
+        </div>
         {
           images.map((image, key) => {
             if(key === this.state.index) {
