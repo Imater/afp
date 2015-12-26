@@ -1,84 +1,15 @@
 .News {
-  .newsMainItems {
-    padding: 7.39vw 0 3.89vw 0;
-    width: 70vw;
-    margin: 0 auto;
-    .newsItem {
-      display: block;
-      width: 100%;
-      position: relative;
-      .wrapper {
-        .image {
-          float: left;
-          width: 22vw;
-          height: 14vw;
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          position: relative;
-        }
-        .imageLink {
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-        }
-        .info {
-          margin-left: 24vw;
-        }
-        .group {
-          text-transform: uppercase;
-          font-size: 0.93vw;
-          font-family: 'sf_ui_displaymedium';
-          margin-bottom: 0.46vw;
-          line-height: 1.09vw;
-        }
-        .groupLink {
-          color: #0F58EA;
-        }
-        .preview {
-          font-family: 'sf_ui_displaylight';
-          font-size: 1.09vw;
-          color: #AAA;
-          margin-bottom: 0.78vw;
-          line-height: 1.32vw;
-        }
-        .title {
-          font-family: 'sf_ui_displaylight';
-          font-size: 2.33vw;
-          line-height: 2.8vw;
-          margin-bottom: 0.78vw;
-        }
-        .titleLink {
-          color: #fff;
-        }
-        .date {
-          font-size: 1.09vw;
-          color: #888;
-          font-family: 'sf_ui_displaylight';
-          color: #5e5e5e;
-        }
-      }
-    }
-  }
   .newsItems {
     padding: 0;
-    width: 70vw;
     margin: 0 auto;
-    .newsItemsHolder {
-      position: relative;
-      margin-right: -3vw;
-    }
     .newsItem {
-      float: left;
-      width: 22vw;
-      margin-right: 2.33vw;
-      margin-bottom: 3.89vw;
+      display: inline-block;
+      vertical-align: top;
       .wrapper {
+        width: 100%;
+        padding: 20px;
         .image {
-          width: 22vw;
+          width: 100%;
           height: 14vw;
           background-size: cover;
           background-position: center;
@@ -117,6 +48,22 @@
           color: #888;
           font-family: 'sf_ui_displaylight';
           color: #5e5e5e;
+        }
+      }
+    }
+    &.main {
+      padding-top: 70px;
+      .imageWrapper {
+        display: inline-block;
+        vertical-align: top;
+        padding-right: 20px;
+      }
+      .info {
+        display: inline-block;
+        vertical-align: top;
+        .title {
+          font-size: 2.56vw;
+          line-height: 2.87vw;
         }
       }
     }
