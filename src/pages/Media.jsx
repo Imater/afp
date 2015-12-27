@@ -25,14 +25,14 @@ class Media extends Component {
       {
         title: 'ALFA FUTURE PEOPLE<br>2015',
         year: '2015',
-        imageName: '36e336641636dcd1.jpg',
+        imageName: 'scene2015.jpg',
         items: new List(galleries.filter((item) => {
           return item.get('gallery_id') >= 31
         }))
       },
       {
         title: 'ALFA FUTURE PEOPLE<br>2014',
-        imageName: 'dd8d7b896f407797.jpg',
+        imageName: 'scene2014.jpg',
         year: '2014',
         items: new List(galleries.filter((item) => {
           return item.get('gallery_id') < 31
@@ -56,6 +56,18 @@ class Media extends Component {
     window.onresize = () => {};
   }
 
+  getTranslate(news, translate_id, language, defaultValue) {
+    if(language === 'eng') {
+      let text = news.get('cms_lang_translate_values').find((item) => {
+        return item.get('translate_id') === translate_id;
+      });
+      if(text && text.get('value') && text.get('value').length) {
+        return text.get('value');
+      }
+    }
+    return defaultValue;
+  }
+
   render() {
     const { language } = this.props;
     const types = typesSport;
@@ -72,7 +84,7 @@ class Media extends Component {
               return (
                 <div className='' key={keyParts}>
                   <div className='partHeaderWrapper' style={{
-                    backgroundImage: `url(/upload/images/gallery/${part.imageName})`
+                    backgroundImage: `url(/assets/img/${part.imageName})`
                   }}>
                   <h3 dangerouslySetInnerHTML={{__html: part.title}}></h3>
                 </div>
@@ -80,6 +92,7 @@ class Media extends Component {
                   {
                     part.items.map((album, keyAlbum) => {
                       let image_name = album.get('cms_gallery_items').first().get('name');
+                      let albumName = this.getTranslate(album, 16, language, album.get('name'));
                       return (
                         <Link to={`/media/${part.year}/${album.get('gallery_id')}`} key={keyAlbum}>
                           <div className='cover' style={{
@@ -87,7 +100,13 @@ class Media extends Component {
                             width: `${boxProcent}%`,
                             backgroundImage: `url(/upload/images/gallery/${image_name})`
                           }}>
-                          <h4>{album.get('name')}</h4>
+                            <h4>{albumName}</h4>
+                            {
+                              album.get('video') ? (
+                                <div className='videoOverlay'>
+                                </div>
+                              ) : ''
+                            }
                           </div>
                         </Link>
                       );

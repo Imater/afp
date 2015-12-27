@@ -1,6 +1,7 @@
 @import '../utils/common.less';
 
-@previewHeight: 70px;
+@previewHeight: 90px;
+@previewWidth: 140px;
 @topMenuHeight: 30px;
 
 .Album {
@@ -12,6 +13,7 @@
   color: #FFF;
   background: #000;
   .close-page {
+    top: 20px;
     cursor: pointer;
     z-index: 1;
   }
@@ -28,6 +30,14 @@
       background-repeat: no-repeat;
       background-position: center;
     }
+    .navigator {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      img {
+        margin-right: 25px;
+      }
+    }
   }
   .AlbumPreview {
     position: absolute;
@@ -41,22 +51,76 @@
     .scrollable {
       .preview {
         display: inline-block;
-        width: 105px;
+        width: @previewWidth;
         height: @previewHeight;
         content: '';
+        position: relative;
         .cover {
           cursor: pointer;
           width: 100%;
           height: 100%;
           background-size: cover;
           background-position: center;
-          opacity: 0.6;
+          opacity: 0.8;
           transition: 0.3s opacity;
           &:hover {
             opacity: 1;
           }
         }
+        .videoOverlay {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          /* Mask: */
+          opacity: 0.7;
+          background: #126BEE;
+          &:before {
+            background: url('/assets/img/play-button.png');
+            background-size: cover;
+            top: 50%;
+            margin-top: -25px;
+            left: 50%;
+            margin-left: -25px;
+            content: '';
+            width: 50px;
+            height: 50px;
+            position: absolute;
+          }
+        }
       }
+    }
+  }
+  .topMenu {
+    position: relative;
+    .rightInfo {
+      position: absolute;
+      right: 20px;
+      font-family: 'sf_ui_displaylight';
+      font-size: 14px;
+      padding: 3px 5px;
+      img {
+        margin-right: 10px;
+      }
+    }
+    .leftInfo {
+      position: absolute;
+      left: 20px;
+      font-family: 'sf_ui_displaylight';
+      font-size: 14px;
+      padding: 3px 5px;
+      img {
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+    }
+    .title {
+      font-family: 'sf_ui_displaylight';
+      font-size: 14px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 3px 5px;
     }
   }
 }

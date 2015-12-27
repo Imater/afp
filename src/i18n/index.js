@@ -41,6 +41,9 @@ const resources = {
         wonderTechnology: 'УДИВИТЕЛЬНЫЕ ИЗОБРЕТЕНИЯ  И САМЫЕ ИНТЕРЕСНЫЕ НОВЫЕ ТЕХНОЛОГИИ',
         media: 'Фото и видео',
         contacts: 'Контакты'
+      },
+      album: {
+        showAll: 'Показать все'
       }
     }
   },
@@ -62,7 +65,7 @@ const resources = {
         musicAndTechnology: 'of music and technology',
         howItWas: 'how it was',
         festivalDate: '22-24 July 2016',
-        lineup: 'Line-up of festivel',
+        lineup: 'Line-up of festival',
         novgorod: 'Nizhny Novgorod, on the Volga River airport',
         technology: 'Technology',
         sport: 'Sport',
@@ -85,6 +88,9 @@ const resources = {
         wonderTechnology: 'TECHNOLOGIES OF THE FUTURE',
         media: 'MEDIA',
         contacts: 'CONTACTS'
+      },
+      album: {
+        showAll: 'Show all'
       }
 
     }

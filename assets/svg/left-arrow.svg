@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="62px" height="62px" viewBox="0 0 62 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="left" sketch:type="MSLayerGroup" transform="translate(1.000000, 1.000000)">
+            <circle id="Oval-26" stroke="#FFFFFF" stroke-width="2" sketch:type="MSShapeGroup" cx="30" cy="30" r="30"></circle>
+            <path d="M26,37 L26,21.9933977 C26,21.4449463 25.5522847,21 25,21 C24.4438648,21 24,21.4447593 24,21.9933977 L24,38.0066023 C24,38.2797353 24.1110386,38.5271978 24.2907332,38.7068178 C24.4726913,38.8899086 24.720162,39 24.9933977,39 L41.0066023,39 C41.5550537,39 42,38.5522847 42,38 C42,37.4438648 41.5552407,37 41.0066023,37 L26,37 Z" id="Rectangle-53" fill="#FFFFFF" sketch:type="MSShapeGroup" transform="translate(33.000000, 30.000000) rotate(-315.000000) translate(-33.000000, -30.000000) "></path>
+        </g>
+    </g>
+</svg>

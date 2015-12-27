@@ -28,6 +28,7 @@ module.exports = function (sequelize, DataTypes) {
   var options = {
     associate: function (models) {
       models.cms_gallery_gallery.hasMany(models.cms_gallery_item, { foreignKey: 'gallery_id'});
+      models.cms_gallery_gallery.hasMany(models.cms_lang_translate_value, { foreignKey: 'target_id'});
     },
     timestamps: false,
     tableName: 'cms_gallery_gallery'

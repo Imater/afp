@@ -6,11 +6,11 @@
     .partHeaderWrapper {
       display: block;
       background: #BFBFFF;
-      height: 30vh;
-      max-height: 400px;
+      height: 45vh;
+      max-height: 800px;
       position: relative;
       background-size: cover;
-      background-position: center;
+      background-position: top;
       .bg-gradient();
       h3 {
         margin: 0;
@@ -45,6 +45,27 @@
           color: #FFFFFF;
           line-height: 18px;
           font-family: 'sf_ui_displaysemibold';
+        }
+        .videoOverlay {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          opacity: 0.7;
+          background: #126BEE;
+          &:before {
+            background: url('/assets/img/play-button.png');
+            background-size: cover;
+            top: 50%;
+            margin-top: -25px;
+            left: 50%;
+            margin-left: -25px;
+            content: '';
+            width: 50px;
+            height: 50px;
+            position: absolute;
+          }
         }
       }
     }

@@ -9,6 +9,7 @@ import TopPageMenu from '../components/TopPageMenu';
 import { mediaItems, typesSport, mainSport, partners } from '../components/settings';
 import Footer from '../components/Main/Footer';
 import $ from 'jquery';
+import YouTube from 'react-youtube';
 
 if (process.env.BROWSER) {
   require('./Album.less');
@@ -22,9 +23,10 @@ class Album extends Component {
   componentWillMount() {
     const galleries = this.props.listData.get('gallery');
     const gallery_id = this.props.params.album;
-    this.gallery = galleries.filter((item) => {
+    this.galleryMain = galleries.find((item) => {
       return item.get('gallery_id') === parseInt(gallery_id)
-    }).first().get('cms_gallery_items');
+    });
+    this.gallery = this.galleryMain.get('cms_gallery_items');
   }
 
   componentDidMount() {
@@ -42,6 +44,18 @@ class Album extends Component {
     window.onresize = () => {};
   }
 
+  getTranslate(news, translate_id, language, defaultValue) {
+    if(language === 'eng') {
+      let text = news.get('cms_lang_translate_values').find((item) => {
+        return item.get('translate_id') === translate_id;
+      });
+      if(text && text.get('value') && text.get('value').length) {
+        return text.get('value');
+      }
+    }
+    return defaultValue;
+  }
+
   render() {
     const { language } = this.props;
     const types = typesSport;
@@ -50,32 +64,79 @@ class Album extends Component {
     const box = parseInt((this.state.windowWidth-275)/count)/1.5;
     const boxProcent = 100/count;
     const mainImageIndex = this.props.params.photo ? parseInt(this.props.params.photo) : 0;
-    const mainImageName = this.gallery.filter((image, index) => index === mainImageIndex).first().get('name');
+    const imageInfo = this.gallery.find((image, index) => index === mainImageIndex)
+    const mainImageName = imageInfo.get('name');
+    const youTubeLink = imageInfo.get('link');
+    const youtubeOpts = {
+      height: '90%',
+      width: '100%',
+      id: 'fullscreenVideo',
+      playerVars: { // https://developers.google.com/youtube/player_parameters
+        autoplay: 1
+      }
+    }
+    const showImageOrYouTube = youTubeLink ? (
+        <YouTube opts={youtubeOpts} videoId={youTubeLink} />
+    ) : (
+      <div className='cover' style={{
+        backgroundImage: `url(/upload/images/gallery/${mainImageName})`
+      }}>
+      </div>
+    );
+    const albumName = this.getTranslate(this.galleryMain, 16, language, this.galleryMain.get('name'));
+    const prevImageIndex = mainImageIndex > 0 ? mainImageIndex - 1 : 0;
+    const nextImageIndex = mainImageIndex < this.gallery.size-1 ? mainImageIndex + 1 : this.gallery.size-1;
     return (
       <div className='Album'>
-        <div className='close-page' onClick={() => {
-          this.props.history.replaceState(null, `/media/${this.props.params.part}`);
-        }}>
-        </div>
         <div className='topMenu'>
+          <div className='leftInfo'>
+            <img src='/assets/svg/all-photo.svg' />
+            {i18n.t('album.showAll')}
+          </div>
+          <div className='rightInfo'>
+            <img src='/assets/svg/photo.svg' />
+            { mainImageIndex+1 } из {this.gallery.size}
+          </div>
+          <div className='title'>
+            {
+              albumName
+            }
+          </div>
         </div>
         <div className='main'>
-          <div className='cover' style={{
-            backgroundImage: `url(/upload/images/gallery/${mainImageName})`
+          <div className='navigator'>
+            <Link to={`/media/${this.props.params.part}/${this.props.params.album}/${prevImageIndex}`}>
+              <img src='/assets/svg/left-arrow.svg' />
+            </Link>
+            <Link to={`/media/${this.props.params.part}/${this.props.params.album}/${nextImageIndex}`}>
+              <img src='/assets/svg/right-arrow.svg' />
+            </Link>
+          </div>
+          <div className='close-page' onClick={() => {
+            this.props.history.replaceState(null, `/media/${this.props.params.part}`);
           }}>
-        </div>
+          </div>
+          <Link to={`/media/${this.props.params.part}/${this.props.params.album}/${nextImageIndex}`}>
+            {
+              showImageOrYouTube
+            }
+          </Link>
       </div>
       <div className='albumPreview'>
         <div className='scrollable'>
           {
             this.gallery.map((item, keyPreview) => {
               const imageName = item.get('name');
+              const imageLink = item.get('link') === null ? '' : item.get('link');
               return (
                 <div className='preview' key={keyPreview}>
                   <Link to={`/media/${this.props.params.part}/${this.props.params.album}/${keyPreview}`}>
                     <div className='cover' style={{
                       backgroundImage: `url(/upload/images/gallery/${imageName})`
                     }}>
+                      {
+                        imageLink ? <div className='videoOverlay'></div> : <div></div>
+                      }
                     </div>
                   </Link>
                 </div>

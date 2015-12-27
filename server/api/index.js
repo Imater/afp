@@ -95,6 +95,14 @@ api.getGallery = function(id){
             enabled: true
           },
           order: [['pos', 'ASC']]
+        },
+        {
+          model: db.models.cms_lang_translate_value,
+          attributes: [
+            'translate_id',
+            'lang_id',
+            'value',
+          ],
         }
       ],
       order: [['gallery_id', 'DESC']],
