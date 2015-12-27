@@ -12,6 +12,29 @@ if (process.env.BROWSER) {
   require('./Contacts.less');
 }
 
+const persons = [
+  {
+    name: 'Екатерина Осадчая',
+    job: 'Директор по работе со спонсорами и партнерами',
+    email: 'EOsadchaya@alfabank.ru'
+  },
+  {
+    name: 'Денис Кожаев',
+    job: 'Вопросы по фудкорту',
+    email: 'DKozhaev@alfabank.ru'
+  },
+  {
+    name: 'Анастасия Ярынич',
+    job: 'Вопросы по зоне технологий и PR',
+    email: 'AYarynich@alfabank.ru'
+  },
+  {
+    name: 'Анастасия Макарчукова',
+    job: 'Вопросы по зоне спорта',
+    email: 'AMakarchukova@alfabank.ru'
+  }
+]
+
 class Contacts extends Component {
   render() {
     const { language } = this.props;
@@ -20,44 +43,31 @@ class Contacts extends Component {
     return (
       <div className="page Contacts">
         <div className="page-block">
-          <h2>
-            {i18n.t('pages.contacts')}
-          </h2>
-          <div className="row">
-          </div>
         </div>
         <div className="row">
-          <ul className="partners-list">
-            {
-              //partners.map((partner, index) => {
-              //  return (
-              //    <li className="partner-item" key={index}>
-              //      <a href="#" className="icon-p1">
-              //        <img src={`/assets/svg/partner/${partner.file}`} />
-              //      </a>
-              //    </li>
-              //  );
-              //})
-            }
-          </ul>
         </div>
         <div className="page-text">
-          {main[language]}
-        </div>
-        <div className="items">
-          {
-            //types.map((type, key) => {
-            //  return (
-            //    <div className="item" key={key}>
-            //      <h3>{type[language === 'eng' ? 'title_eng': 'title']}</h3>
-            //      <div>{type[language === 'eng' ? 'text_eng': 'text']}</div>
-            //      <div>
-            //        <Gallery images={type.images} />
-            //      </div>
-            //    </div>
-            //  );
-            //})
-          }
+          <div className="row">
+            <div className="addressName">
+              {i18n.t('contacts.addressName')}:
+            </div>
+            <div className="address">
+              {i18n.t('contacts.address')}
+            </div>
+          </div>
+          <div className="row">
+            {
+              persons.map((person, keyPerson) => {
+                return (
+                  <div className='personWrapper' key={keyPerson}>
+                    <div className='name'>{person.name}</div>
+                    <div className='job'>{person.job}</div>
+                    <a href={`mailto:${person.email}`} target='blank' className='email'>{person.email}</a>
+                  </div>
+                );
+              })
+            }
+          </div>
         </div>
         <Footer />
       </div>

@@ -44,6 +44,10 @@ const resources = {
       },
       album: {
         showAll: 'Показать все'
+      },
+      contacts: {
+        addressName: 'адрес',
+        address: 'Москва, проспект Андропова 18 стр. 3'
       }
     }
   },
@@ -91,6 +95,10 @@ const resources = {
       },
       album: {
         showAll: 'Show all'
+      },
+      contacts: {
+        addressName: 'address',
+        address: 'Moscow, prospect Andropov 18 building 3'
       }
 
     }

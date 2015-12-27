@@ -27,8 +27,8 @@ import TopMenu from './TopMenu';
           <Link to="/" className="close-page"></Link>
           <div className="result-block">
             <span>Итого:</span>
-            <div className="summ">13 500 ₽</div>
-            <span>за 3 билета</span><br />
+            <div className="summ">0 ₽</div>
+            <span>за 0 билетов</span><br />
             <a href="#" className="buy-button">Купить</a>
           </div>
           <div className="tickets">
@@ -72,8 +72,8 @@ import TopMenu from './TopMenu';
                   </div>
                   <div className="right-col">
                     <div className="num-block">
-                      <a href="#" className="down">-</a>
-                      <input type="text" className="ticket-number" defaultValue="3" />
+                      <a href="#" className="down" disabled>-</a>
+                      <input type="text" className="ticket-number" defaultValue="0" />
                       <a href="#" className="up">+</a>
                     </div>
                   </div>
@@ -118,157 +118,7 @@ import TopMenu from './TopMenu';
                 <div className="ticket-helper"><div></div></div>
                 <div className="row price-row">
                   <div className="left-col">
-                    <div className="summ">6 500 ₽</div>
-                  </div>
-                  <div className="right-col">
-                    <div className="num-block">
-                      <a href="#" className="down" disabled>-</a>
-                      <input type="text" className="ticket-number" defaultValue="0" />
-                      <a href="#" className="up">+</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className="ticket-top">
-                  <div className="row">
-                    <div className="left-col">
-                      <div className="title">Парковка</div>
-                    </div>
-                    <div className="right-col">
-
-                      <ul className="props">
-                        <li>
-                          <img src="/assets/svg/ticket/icon1.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-ball.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-robot.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-wifi.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-camp.svg" />
-                        </li>
-                      </ul>
-
-                    </div>
-                  </div>
-                  <ul className="features">
-                    <li>все дни фестиваля</li>
-                    <li>все зоны фестиваля</li>
-                    <li>неограниченное количество входов и выходов</li>
-                    <li>отдельный VIP танцпол на возвышении около главной сцены</li>
-                    <li>VIP шатер с комфортабельной лаундж-зоной и разнообразным ассортиментом платных напитков в барах и специальным меню</li>
-                  </ul>
-                </div>
-                <div className="ticket-helper"><div></div></div>
-                <div className="row price-row">
-                  <div className="left-col">
-                    <div className="summ">6 500 ₽</div>
-                  </div>
-                  <div className="right-col">
-                    <div className="num-block">
-                      <a href="#" className="down" disabled>-</a>
-                      <input type="text" className="ticket-number" defaultValue="0" />
-                      <a href="#" className="up">+</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className="ticket-top">
-                  <div className="row">
-                    <div className="left-col">
-                      <div className="title">Кемпинг</div>
-                    </div>
-                    <div className="right-col">
-
-                      <ul className="props">
-                        <li>
-                          <img src="/assets/svg/ticket/icon1.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-ball.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-robot.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-wifi.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-camp.svg" />
-                        </li>
-                      </ul>
-
-                    </div>
-                  </div>
-                  <ul className="features">
-                    <li>все дни фестиваля</li>
-                    <li>все зоны фестиваля</li>
-                    <li>неограниченное количество входов и выходов</li>
-                    <li>отдельный VIP танцпол на возвышении около главной сцены</li>
-                    <li>VIP шатер с комфортабельной лаундж-зоной и разнообразным ассортиментом платных напитков в барах и специальным меню</li>
-                  </ul>
-                </div>
-                <div className="ticket-helper"><div></div></div>
-                <div className="row price-row">
-                  <div className="left-col">
-                    <div className="summ">6 500 ₽</div>
-                  </div>
-                  <div className="right-col">
-                    <div className="num-block">
-                      <a href="#" className="down" disabled>-</a>
-                      <input type="text" className="ticket-number" defaultValue="0" />
-                      <a href="#" className="up">+</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className="ticket-top">
-                  <div className="row">
-                    <div className="left-col">
-                      <div className="title">Family day</div>
-                    </div>
-                    <div className="right-col">
-
-                      <ul className="props">
-                        <li>
-                          <img src="/assets/svg/ticket/icon1.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-ball.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-robot.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-wifi.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-camp.svg" />
-                        </li>
-                      </ul>
-
-                    </div>
-                  </div>
-                  <ul className="features">
-                    <li>все дни фестиваля</li>
-                    <li>все зоны фестиваля</li>
-                    <li>неограниченное количество входов и выходов</li>
-                    <li>отдельный VIP танцпол на возвышении около главной сцены</li>
-                    <li>VIP шатер с комфортабельной лаундж-зоной и разнообразным ассортиментом платных напитков в барах и специальным меню</li>
-                  </ul>
-                </div>
-                <div className="ticket-helper"><div></div></div>
-                <div className="row price-row">
-                  <div className="left-col">
-                    <div className="summ">6 500 ₽</div>
+                    <div className="summ">7 500 ₽</div>
                   </div>
                   <div className="right-col">
                     <div className="num-block">
