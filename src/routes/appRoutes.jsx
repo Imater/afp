@@ -14,6 +14,7 @@ import Technology from '../containers/Technology';
 import Sport from '../containers/Sport';
 import About from '../containers/About';
 import News from '../containers/News';
+import NewsContent from '../containers/NewsContent';
 import Partners from '../containers/Partners';
 import Media from '../containers/Media';
 import Album from '../containers/Album';
@@ -51,6 +52,7 @@ export default (
     <Route path='/technology(/:part)' component={Technology} onEnter={defaultPath('virtuality')}/>
     <Route path='/sport(/:part)' component={Sport} onEnter={defaultPath('workout')} />
     <Route path='/news(/:part)' component={News} onEnter={defaultPath('main')} />
+    <Route path='/news(/:part)(/:newsId)' component={NewsContent} />
     <Route path='/partners(/:part)' component={Partners} onEnter={defaultPath('main')} />
     <Route path='/media(/:part)' component={Media} onEnter={defaultPath('2015')} />
     <Route path='/media(/:part)(/:album)(/:photo)' component={Album} />

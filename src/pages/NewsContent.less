@@ -1,0 +1,118 @@
+.NewsContent {
+  .close-page {
+    cursor: pointer;
+    opacity: 0.5;
+    top: 45px;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .newsItems {
+    padding: 0;
+    margin: 0 auto;
+    .newsItem {
+      display: inline-block;
+      vertical-align: top;
+      .wrapper {
+        width: 100%;
+        padding: 20px;
+        .image {
+          width: 100%;
+          height: 14vw;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          margin-bottom: 0.77vw;
+          position: relative;
+        }
+        .imageLink {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+        .group {
+          text-transform: uppercase;
+          font-size: 0.93vw;
+          font-family: 'sf_ui_displaymedium';
+          margin-bottom: 0.62vw;
+        }
+        .groupLink {
+          color: #0F58EA;
+        }
+        .title {
+          font-family: 'sf_ui_displaylight';
+          font-size: 1.56vw;
+          line-height: 1.87vw;
+          margin-bottom: 0.78vw;
+        }
+        .text {
+          font-family: 'sf_ui_displaylight';
+          font-size: 16px;
+          line-height: 20px;
+          margin-bottom: 0.78vw;
+          max-width: 900px;
+          a {
+            color: #9DBDEA;
+          }
+          img {
+            max-width: 100%;
+          }
+          p {
+            margin: 5px 0;
+          }
+        }
+        .titleLink {
+          color: #fff;
+        }
+        .date {
+          font-size: 1.09vw;
+          color: #888;
+          font-family: 'sf_ui_displaylight';
+          color: #5e5e5e;
+        }
+      }
+    }
+    &.main {
+      padding-top: 70px;
+      .imageWrapper {
+        display: inline-block;
+        vertical-align: top;
+        padding-right: 20px;
+      }
+      .info {
+        display: inline-block;
+        vertical-align: top;
+        .title {
+          font-size: 2.56vw;
+          line-height: 2.87vw;
+        }
+      }
+    }
+  }
+
+  .newsMore {
+    text-align: center;
+    margin-bottom: 5.37vw;
+    .newsMoreLink {
+      color: #126BEE;
+      font-size: 1.01vw;
+      letter-spacing: 0.08vw;
+      padding-left: 4.44vw;
+      position: relative;
+    }
+    .newsMoreIcon {
+      display: inline-block;
+      width: 3.27vw;
+      height: 3.27vw;
+      background: url(/assets/img/icons/refresh.svg);
+      background-size: 100%;
+      margin-right: 1.17vw;
+      position: absolute;
+      left: 0;
+      top: -1.3vw;
+    }
+  }
+}

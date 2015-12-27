@@ -74,6 +74,13 @@ export const lineUpItems = {
       title_eng: 'Circle',
       url: '/lineup/2015/circle'
     }
+  ],
+  '2014': [
+    {
+      title: 'Main stage',
+      title_eng: 'Main stage',
+      url: '/lineup/2014/main'
+    }
   ]
 };
 

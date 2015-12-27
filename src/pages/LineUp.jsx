@@ -94,6 +94,7 @@ class LineUp extends Component {
         <div className="years-selector">
           <Link to="/lineup/2016/main" activeClassName="active">2016</Link>
           <Link to="/lineup/2015/main" activeClassName="active">2015</Link>
+          <Link to="/lineup/2014/main" activeClassName="active">2014</Link>
         </div>
         {
           this.props.routeParams.year === '2016' ? djsBlock : (<div></div>)
