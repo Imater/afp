@@ -48,6 +48,17 @@ const resources = {
       contacts: {
         addressName: 'адрес',
         address: 'Москва, проспект Андропова 18 стр. 3'
+      },
+      footer:{
+        subscribe: 'Подписка',
+        email: 'Ваш e-mail',
+        enterEmail: 'Оставьте ваш e-mail, чтобы получать наши новости',
+        name: '© Фестиваль Alfa Future People.',
+        copyright: '2014 - 2016, Все права защищены',
+        social: 'Соцсети',
+        created: 'Сделано в ',
+        vk: 'Вконтакте',
+        ok: 'Одноклассники'
       }
     }
   },
@@ -99,6 +110,17 @@ const resources = {
       contacts: {
         addressName: 'address',
         address: 'Moscow, prospect Andropov 18 building 3'
+      },
+      footer:{
+        subscribe: 'Subscribe',
+        email: 'Your e-mail',
+        enterEmail: 'Please enter your e-mail to get our news',
+        name: '© Festival Alfa Future People.',
+        copyright: '2014 - 2016, All rights reserved',
+        social: 'Social media',
+        created: 'Created by ',
+        vk: 'Vkontakte',
+        ok: 'Odnoklassniki'
       }
 
     }
