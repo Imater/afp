@@ -6,7 +6,7 @@ import About from './Main/About';
 import History from './Main/History';
 import LineUp from './Main/LineUp';
 import Technology from './Main/Technology';
-import News from './Main/News';
+import NewsLine from '../containers/NewsLine';
 import Partner from './Main/Partner';
 import Counter from './Main/Counter';
 import Footer from './Main/Footer';
@@ -26,7 +26,7 @@ class Main extends Component {
         <History language={this.props.language} changeLanguage={this.props.changeLanguage} />
         <LineUp />
         <Technology />
-        <News />
+        <NewsLine />
         <Partner />
         <Counter />
         <Footer />
