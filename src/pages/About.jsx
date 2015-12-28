@@ -7,7 +7,7 @@ import TopPageMenu from '../components/TopPageMenu';
 import { aboutItems, howToGetThereList, whereToLiveList } from '../components/settings';
 import Map from '../components/Map';
 import cx from 'classnames'
-
+import Footer from '../components/Main/Footer';
 if (process.env.BROWSER) {
   require('./About.less');
 }
@@ -245,6 +245,7 @@ class About extends Component {
   </a>
 </div>
         </div>
+        <Footer />
       </div>
     );
   }
