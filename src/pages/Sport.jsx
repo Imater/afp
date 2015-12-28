@@ -38,12 +38,13 @@ class Sport extends Component {
         <div className="items">
           {
             types.map((type, key) => {
+              const title = type[language === 'eng' ? 'title_eng': 'title'];
               return (
                 <div className="item" key={key}>
-                  <h3>{type[language === 'eng' ? 'title_eng': 'title']}</h3>
+                  <h3>{title}</h3>
                   <div>{type[language === 'eng' ? 'text_eng': 'text']}</div>
                   <div>
-                    <Gallery images={type.images} />
+                    <Gallery images={type.images} title={title} />
                   </div>
                 </div>
               );

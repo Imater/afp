@@ -7,6 +7,7 @@ import Gallery from '../components/Gallery';
 import TopPageMenu from '../components/TopPageMenu';
 import { contactItems, typesSport, mainSport, partners } from '../components/settings';
 import Footer from '../components/Main/Footer';
+import Map from '../components/Map';
 
 if (process.env.BROWSER) {
   require('./Contacts.less');
@@ -42,8 +43,19 @@ class Contacts extends Component {
     const main = typesSport;
     return (
       <div className="page Contacts">
-        <div className="page-block">
-        </div>
+        <Map center={
+          {lat: 55.694488, lng: 37.662083}
+        } markers={[
+          {
+            position: {
+              lat: 55.694488, lng: 37.662083
+            },
+            defaultAnimation: 2,
+            title: 'Москва, проспект Андропова 18 стр. 3',
+            label: 'Afp',
+            clickable: true
+          }
+        ]}/>
         <div className="row">
         </div>
         <div className="page-text">

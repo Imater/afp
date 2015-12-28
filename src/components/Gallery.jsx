@@ -18,7 +18,7 @@ class Gallery extends Component {
     }
     var nextIndex = this.state.index + increment;
     if(nextIndex <= 0) {
-      nextIndex = this.props.images.length;
+      nextIndex = this.props.images.length-1;
     } else if (nextIndex >= this.props.images.length){
       nextIndex = 0;
     } else {
@@ -43,17 +43,13 @@ class Gallery extends Component {
         return image[0].url;
       }
     }
-    console.info(getPhoto(1));
     return (
-      <div className='Gallery'>
+      <div className='Gallery noselect'>
         <div className="galleryItems">
           <div className="galleryItem galleryItemPrev">
             <div className="galleryImage" style={{
                 backgroundImage: `url('${getPhoto(-1)}')`
               }}>
-            </div>
-            <div className="galleryInfo">
-              <div className="galleryInfoName">Зона виртуальной реальности</div>
             </div>
           </div>
           <div className="galleryItem">
@@ -62,7 +58,7 @@ class Gallery extends Component {
               }}>
             </div>
             <div className="galleryInfo">
-              <div className="galleryInfoName">Зона виртуальной реальности</div>
+              <div className="galleryInfoName">{this.props.title}</div>
             </div>
           </div>
           <div className="galleryItem galleryItemNext">
@@ -70,15 +66,16 @@ class Gallery extends Component {
                 backgroundImage: `url('${getPhoto(1)}')`
               }}>
             </div>
-            <div className="galleryInfo">
-              <div className="galleryInfoName">Зона виртуальной реальности</div>
-            </div>
           </div>
           <div className="galleryCounter">
-            <span>3</span> из <span>8</span>
+            <span>{this.state.index + 1}</span> из <span>{images.length}</span>
           </div>
-          <div className="galleryPrev" onClick={() => this.nextSlide(-1)}>←</div>
-          <div className="galleryNext" onClick={() => this.nextSlide(1)}>→</div>
+          <div className="galleryPrev" onClick={() => this.nextSlide(-1)}>
+            <img src='/assets/svg/left-arrow.svg' />
+          </div>
+          <div className="galleryNext" onClick={() => this.nextSlide(1)}>
+            <img src='/assets/svg/right-arrow.svg' />
+          </div>
         </div>
         {
           images.map((image, key) => {
