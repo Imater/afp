@@ -1,0 +1,136 @@
+@blue: #126BEE;
+@time: .2s;
+@green: #5ECC6B;
+
+@tablet: 1280px;
+@mobile: 900px;
+
+.footer {
+  padding: 0;
+  .inner {
+    font-size: 0;
+    padding: 70px 60px 50px;
+    @media (max-width: @tablet) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
+  .col {
+    display: inline-block;
+    vertical-align: top;
+    width: 33.33%;
+    font-size: 14px;
+    color: #fff;
+    @media (max-width: @mobile) {
+      display: block;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+  }
+
+  .text {
+    margin: 0;
+    opacity: .3;
+  }
+
+  .title {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 25px;
+  }
+}
+
+.apps {
+  margin: 23px 0 5px;
+  .link {
+    display: inline-block;
+    transition: @time;
+    margin: 0 10px 10px 0;
+    &:last-of-type {
+      margin-right: 0;
+    }
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
+
+.looi {
+  transition: @time;
+  &:hover {
+    opacity: .8;
+  }
+}
+
+.subscribe {
+  position: relative;
+  margin: 35px 0 0;
+  .input {
+    width: 100%;
+    color: #fff;
+    transition: @time;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 2px;
+    height: 42px;
+    font-family: 'sf_ui_displayregular';
+    font-size: 16px;
+    margin: 0;
+    line-height: 42px;
+    padding: 0 10px;
+
+    &:focus {
+      border-color: #fff;
+    }
+  }
+  .btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    transition: @time;
+    background: url("../../../assets/svg/arrow-blue.svg") no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+    text-indent: -999px;
+    width: 22px;
+    height: 16px;
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
+
+.socialFooter {
+  font-size: 0;
+  margin-top: -25px;
+  padding: 20px 10px 0;
+  .item {
+    font-size: 14px;
+    list-style: none;
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    margin-bottom: 13px;
+    @media (max-width: @tablet) {
+      display: block;
+    }
+    @media (max-width: @mobile) {
+      display: inline-block;
+    }
+  }
+  .link {
+    position: relative;
+    color: @blue;
+    padding-left: 20px;
+    &:hover {
+      opacity: .8;
+    }
+  }
+  img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
