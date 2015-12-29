@@ -244,12 +244,14 @@ export const mediaItems = [
   {
     title: '2015',
     title_eng: '2015',
-    url: '/media/2015'
+    url: '/media/2015',
+    anchor: 'media2015'
   },
   {
     title: '2014',
     title_eng: '2014',
-    url: '/media/2014'
+    url: '/media/2014',
+    anchor: 'media2014'
   }
 ];
 

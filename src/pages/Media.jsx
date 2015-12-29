@@ -26,6 +26,7 @@ class Media extends Component {
         title: 'ALFA FUTURE PEOPLE<br>2015',
         year: '2015',
         imageName: 'scene2015.jpg',
+        anchor: 'media2015',
         items: new List(galleries.filter((item) => {
           return item.get('gallery_id') >= 31
         }))
@@ -34,6 +35,7 @@ class Media extends Component {
         title: 'ALFA FUTURE PEOPLE<br>2014',
         imageName: 'scene2014.jpg',
         year: '2014',
+        anchor: 'media2014',
         items: new List(galleries.filter((item) => {
           return item.get('gallery_id') < 31
         }))
@@ -82,7 +84,7 @@ class Media extends Component {
           {
             this.galleryParts.map((part, keyParts) => {
               return (
-                <div className='' key={keyParts}>
+                <div className='' key={keyParts} id={part.anchor}>
                   <div className='partHeaderWrapper' style={{
                     backgroundImage: `url(/assets/img/${part.imageName})`
                   }}>

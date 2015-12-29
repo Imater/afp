@@ -45,7 +45,6 @@ class TopPageMenu extends Component {
                 <li data-num={key} key={key}>
                   <Link to={`${item.url}`} activeClassName="active" onClick={() => {
                     scrollTo(item.anchor)();
-                    console.info('scrollTo', item.anchor);
                   }}>{title}</Link>
                 </li>
               );
