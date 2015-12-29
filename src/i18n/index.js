@@ -46,7 +46,8 @@ const resources = {
         contacts: 'Контакты'
       },
       album: {
-        showAll: 'Показать все'
+        showAll: 'Показать все',
+        back: 'Назад'
       },
       contacts: {
         addressName: 'адрес',
@@ -114,7 +115,8 @@ const resources = {
         contacts: 'CONTACTS'
       },
       album: {
-        showAll: 'Show all'
+        showAll: 'Show all',
+        back: 'Back'
       },
       contacts: {
         addressName: 'address',

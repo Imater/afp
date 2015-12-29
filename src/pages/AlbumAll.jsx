@@ -12,10 +12,10 @@ import $ from 'jquery';
 import YouTube from 'react-youtube';
 
 if (process.env.BROWSER) {
-  require('./Album.less');
+  require('./AlbumAll.less');
 }
 
-class Album extends Component {
+class AlbumAll extends Component {
   state = {
     windowWidth: ((typeof window === 'object') ? window.innerWidth : 1024)
   }
@@ -56,22 +56,12 @@ class Album extends Component {
     return defaultValue;
   }
 
-  keyPress(prevImageIndex, nextImageIndex) {
-    return (key, event) => {
-      if(key.keyCode === 39){ //next
-        this.props.history.replaceState(null, `/media/${this.props.params.part}/${this.props.params.album}/${nextImageIndex}`)
-      } else if (key.keyCode === 37){ //prev
-        this.props.history.replaceState(null, `/media/${this.props.params.part}/${this.props.params.album}/${prevImageIndex}`)
-      }
-    }
-  }
-
   render() {
     const { language } = this.props;
     const types = typesSport;
     const main = typesSport;
     const count = parseInt(this.state.windowWidth / 400);
-    const box = parseInt((this.state.windowWidth-275)/count)/1.5;
+    const box = parseInt((this.state.windowWidth-275)/count)/1.2;
     const boxProcent = 100/count;
     const mainImageIndex = this.props.params.photo ? parseInt(this.props.params.photo) : 0;
     const imageInfo = this.gallery.find((image, index) => index === mainImageIndex)
@@ -97,17 +87,16 @@ class Album extends Component {
     const prevImageIndex = mainImageIndex > 0 ? mainImageIndex - 1 : 0;
     const nextImageIndex = mainImageIndex < this.gallery.size-1 ? mainImageIndex + 1 : this.gallery.size-1;
     return (
-      <div className='Album' onKeyDown={this.keyPress(prevImageIndex, nextImageIndex).bind(this)}>
+      <div className='AlbumAll'>
         <div className='topMenu'>
-          <div className='leftInfo'>
-            <Link to={`/media/${this.props.params.part}/${this.props.params.album}/all/images`}>
-              <img src='/assets/svg/all-photo.svg' />
-              {i18n.t('album.showAll')}
-            </Link>
+          <div className='leftInfo' onClick={() => {
+            this.props.history.goBack();
+          }}>
+            {i18n.t('album.back')}
           </div>
           <div className='rightInfo'>
             <img src='/assets/svg/photo.svg' />
-            { mainImageIndex+1 } из {this.gallery.size}
+            {this.gallery.size}
           </div>
           <div className='title'>
             {
@@ -115,29 +104,6 @@ class Album extends Component {
             }
           </div>
         </div>
-        <div className='main'>
-          <div className='navigator'>
-            <Link to={`/media/${this.props.params.part}/${this.props.params.album}/${prevImageIndex}`}>
-              <img src='/assets/svg/left-arrow.svg' />
-            </Link>
-            <Link to={`/media/${this.props.params.part}/${this.props.params.album}/${nextImageIndex}`}>
-              <img src='/assets/svg/right-arrow.svg' />
-            </Link>
-          </div>
-          <div className='close-page' onClick={() => {
-            if(this.props.location.pathname.indexOf('/one') !== -1){
-              this.props.history.goBack();
-            } else {
-              this.props.history.replaceState(null, `/media/${this.props.params.part}`);
-            }
-          }}>
-          </div>
-          <Link to={`/media/${this.props.params.part}/${this.props.params.album}/${nextImageIndex}`}>
-            {
-              showImageOrYouTube
-            }
-          </Link>
-      </div>
       <div className='albumPreview'>
         <div className='scrollable'>
           {
@@ -145,8 +111,11 @@ class Album extends Component {
               const imageName = item.get('name');
               const imageLink = item.get('link') === null ? '' : item.get('link');
               return (
-                <div className='preview' key={keyPreview}>
-                  <Link to={`/media/${this.props.params.part}/${this.props.params.album}/${keyPreview}`}>
+                <div className='preview' key={keyPreview} style={{
+                  width: `${boxProcent}%`,
+                  height: box
+                }}>
+                <Link to={`/media/${this.props.params.part}/${this.props.params.album}/${keyPreview}/all/images/one`}>
                     <div className='cover' style={{
                       backgroundImage: `url(/upload/images/gallery/${imageName})`
                     }}>
@@ -166,4 +135,4 @@ class Album extends Component {
   }
 }
 
-export default Album;
+export default AlbumAll;

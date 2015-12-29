@@ -7,6 +7,7 @@ import Gallery from '../components/Gallery';
 import TopPageMenu from '../components/TopPageMenu';
 import { technologyItems, typesTechnology, mainTechnology } from '../components/settings';
 import Footer from '../components/Main/Footer';
+import Share from '../components/Share';
 
 if (process.env.BROWSER) {
   require('./Technology.less');
@@ -20,6 +21,12 @@ class Technology extends Component {
     return (
       <div className="page Technology" id="lineup">
         <TopPageMenu items={technologyItems} language={language} />
+        <Share params={{
+          url: 'http://alfafuture.com', //(typeof window === 'undefined') ? '' : window.location.href,
+          title: i18n.t('pages.wonderTechnology'),
+          descr: i18n.t('pages.wonderTechnology'),
+          img_url: 'http://alfafuture.com/upload/content/totspot.jpg'
+        }} />
         <div className="page-block">
           <h2>
             {i18n.t('pages.wonderTechnology')}

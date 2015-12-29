@@ -300,7 +300,7 @@ class Map extends Component {
                   navigationControl: true,
                   mapTypeControl: true,
                   scaleControl: true,
-                  draggable: true,
+                  draggable: true
                 }}
                 defaultCenter={this.props.center}
                 onClick1={this.handleMapClick.bind(this)}>

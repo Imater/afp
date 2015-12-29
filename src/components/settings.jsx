@@ -227,12 +227,7 @@ export const partnerItems = [
     title: '2015',
     title_eng: '2015',
     url: '/partners/main'
-  },
-  {
-    title: '2014',
-    title_eng: '2014',
-    url: '/partners/main2014'
-  },
+  }
 ];
 
 export const mediaItems = [
@@ -853,3 +848,34 @@ export const whereToLiveList = [
     )
   },
 ];
+
+export const personList = [
+  {
+    name: 'Екатерина Осадчая',
+    name_eng: 'Ekaterina Osadchaya',
+    job: 'Директор по работе со спонсорами и партнерами',
+    job_eng: 'Partnership Director',
+    email: 'EOsadchaya@alfabank.ru'
+  },
+  {
+    name: 'Денис Кожаев',
+    name_eng: 'Denis Kozhaev',
+    job: 'Вопросы по фудкорту',
+    job_eng: 'Food court',
+    email: 'DKozhaev@alfabank.ru'
+  },
+  {
+    name: 'Анастасия Ярынич',
+    name_eng: 'Anastasia Yarinich',
+    job: 'Вопросы по зоне технологий и PR',
+    job_eng: 'Technologies & PR',
+    email: 'AYarynich@alfabank.ru'
+  },
+  {
+    name: 'Анастасия Макарчукова',
+    name_eng: 'Anastasia Makarchukova',
+    job: 'Вопросы по зоне спорта',
+    job_eng: 'Sport zone',
+    email: 'AMakarchukova@alfabank.ru'
+  }
+]

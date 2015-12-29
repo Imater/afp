@@ -18,6 +18,7 @@ import NewsContent from '../containers/NewsContent';
 import Partners from '../containers/Partners';
 import Media from '../containers/Media';
 import Album from '../containers/Album';
+import AlbumAll from '../containers/AlbumAll';
 import Contacts from '../containers/Contacts';
 import Rules from '../containers/Rules';
 
@@ -61,7 +62,9 @@ export default (
     <Route path='/news(/:part)(/:newsId)' component={NewsContent} />
     <Route path='/partners(/:part)' component={Partners} onEnter={defaultPath('main')} />
     <Route path='/media(/:part)' component={Media} onEnter={defaultPath('2015')} />
+    <Route path='/media/:part/:album/all/images' component={AlbumAll} />
     <Route path='/media(/:part)(/:album)(/:photo)' component={Album} />
+    <Route path='/media(/:part)(/:album)(/:photo)/all/images/one' component={Album} />
     <Route path='/contacts(/:part)' component={Contacts} onEnter={defaultPath('main')} />
     <Route path='/ticket' component={Ticket} />
     <Route path='/ticket/personal' component={Personal} />

@@ -4,9 +4,11 @@ import { Link } from 'react-router';
 import i18n from 'i18next-client';
 import Social from '../components/Social';
 import Gallery from '../components/Gallery';
+import Share from '../components/Share';
 import TopPageMenu from '../components/TopPageMenu';
 import { newsItems, typesNews } from '../components/settings';
 import Footer from '../components/Main/Footer';
+import NewsLine from '../containers/NewsLine';
 import moment from 'moment';
 
 if (process.env.BROWSER) {
@@ -20,11 +22,6 @@ class NewsContent extends Component {
   }
 
   componentWillMount() {
-    const newsList = this.props.listData.get('news');
-    const { params: {newsId} } = this.props;
-    this.news = newsList.find((item) => {
-      return item.get('item_id') === parseInt(newsId);
-    });
   }
 
   componentDidMount() {
@@ -58,7 +55,7 @@ class NewsContent extends Component {
         <div>Новость не найдена</div>
       );
     }
-    const image = news.get('cms_news_item_images').last().get('name');
+    const images = news.get('cms_news_item_images');
     const group = news.get('group_name');
     const title = this.getTranslate(news, 8, language, news.get('title'));
 
@@ -82,42 +79,42 @@ class NewsContent extends Component {
         width: `${isMain ? 100 : boxProcent}%`,
         minHeight: box
       }}>
-      <div className="wrapper">
-        <div className="newsBlock">
-          <div className='imageWrapper' style={{
-            width: isMain ? `${boxProcentCorrected}%` : 'auto',
-          }}>
-            <div className="image" title={0} style={{
-              backgroundImage: `url('/upload/images/news/${image}')`,
-              height: box
-            }}>
-              <span className="imageLink" href="#"></span>
-            </div>
-          </div>
-          <div className='info' style={{
-            width: isMain ? `${100-boxProcentCorrected}%` : 'auto',
-          }}>
-            <div className="group">
-              <span className="groupLink" href="#">{group}</span>
-            </div>
+        <Share params={{
+          url: 'http://alfafuture.com', //(typeof window === 'undefined') ? '' : window.location.href,
+          title: title,
+          descr: preview,
+          img_url: `http://alfafuture.com/images/news/${images.last().get('name')}`
+        }} />
+        <div className="wrapper">
+          <div className="newsBlock">
+            <div className="date">{date}</div>
             <div className="title">
               <span className="titleLink" href="#">{title}</span>
             </div>
-            <div className="preview">
-              <span className="titleLink" href="#" dangerouslySetInnerHTML={{__html: preview}}></span>
+            {
+              images.map((image, key) => {
+                return (
+                  <img key={key} src={`/upload/images/news/${image.get('name')}`} onError={() => {
+                    this.style.display = "none";
+                  }}/>
+                );
+              })
+            }
+            <div className="text">
+              <span className="textLink" href="#" dangerouslySetInnerHTML={{__html: text}}></span>
             </div>
-            <div className="date">{date}</div>
           </div>
         </div>
-        <div className="text">
-          <span className="textLink" href="#" dangerouslySetInnerHTML={{__html: text}}></span>
-        </div>
-      </div>
     </div>
     );
   }
 
   render() {
+    const newsList = this.props.listData.get('news');
+    const { params: {newsId} } = this.props;
+    this.news = newsList.find((item) => {
+      return item.get('item_id') === parseInt(newsId);
+    });
     const count = parseInt(this.state.windowWidth / 400);
     const box = parseInt((this.state.windowWidth-275)/count)/1.5;
     const boxProcent = 100/count;
@@ -125,7 +122,6 @@ class NewsContent extends Component {
     const types = typesNews;
     return (
       <div className="page NewsContent" id="lineup">
-        <TopPageMenu items={newsItems} language={language} />
         <div className='close-page' onClick={() => {
           this.props.history.goBack()
         }}></div>
@@ -134,6 +130,11 @@ class NewsContent extends Component {
             this.renderItem(this.news, 0, language, boxProcent, box, 'main')
           }
         </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <NewsLine />
         <Footer />
       </div>
     );

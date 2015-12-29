@@ -4,12 +4,7 @@
 @previewWidth: 140px;
 @topMenuHeight: 30px;
 
-.Album {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.AlbumAll {
   color: #FFF;
   background: #000;
   .close-page {
@@ -17,36 +12,8 @@
     cursor: pointer;
     z-index: 1;
   }
-  .main {
-    position: absolute;
-    top: @topMenuHeight;
-    bottom: @previewHeight;
-    left: 0;
-    right: 0;
-    .cover {
-      width: 100%;
-      height: 100%;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .navigator {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      img {
-        margin-right: 25px;
-      }
-    }
-  }
   .AlbumPreview {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow-x: scroll;
     width: 100%;
-    white-space: nowrap;
     background: #000;
     .scrollable {
       .preview {
@@ -61,7 +28,7 @@
           height: 100%;
           background-size: cover;
           background-position: center;
-          opacity: 0.8;
+          opacity: 0.95;
           transition: 0.3s opacity;
           &:hover {
             opacity: 1;
@@ -110,8 +77,10 @@
       font-family: 'sf_ui_displaylight';
       font-size: 14px;
       padding: 3px 5px;
+      cursor: pointer;
+      color: #FFF !important;
       a {
-        color: #FFF;
+        text-decoration: none;
       }
       img {
         margin-right: 10px;

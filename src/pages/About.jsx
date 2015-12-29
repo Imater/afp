@@ -8,6 +8,8 @@ import { aboutItems, howToGetThereList, whereToLiveList } from '../components/se
 import Map from '../components/Map';
 import cx from 'classnames'
 import Footer from '../components/Main/Footer';
+import Share from '../components/Share';
+
 if (process.env.BROWSER) {
   require('./About.less');
 }
@@ -46,12 +48,12 @@ class About extends Component {
         <article className="screen aboutTop" style={{
           backgroundImage: "url('/assets/img/about/aboutTop-cover.jpg')"
         }}>
-        <div className="socialBlock">
-          <span className="socialBlock-title">{i18n.t('about.share')}</span>
-          <a href="#" className="socialBlock-icon"><img src="/assets/img/about/social-fb.svg" width="50"/></a>
-          <a href="#" className="socialBlock-icon"><img src="/assets/img/about/social-vk.svg" width="50"/></a>
-          <a href="#" className="socialBlock-icon"><img src="/assets/img/about/social-ok.svg" width="50"/></a>
-        </div>
+        <Share params={{
+          url: 'http://alfafuture.com', //(typeof window === 'undefined') ? '' : window.location.href,
+          title: main[language].title,
+          descr: main[language].text,
+          img_url: 'http://alfafuture.com/upload/content/totspot.jpg'
+        }} />
         <div className="screen-inner aboutTop-inner">
           <h2 className="aboutTop-heading" dangerouslySetInnerHTML={{__html: i18n.t('about.title')}}></h2>
 
