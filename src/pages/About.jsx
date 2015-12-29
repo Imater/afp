@@ -39,7 +39,7 @@ class About extends Component {
     const { language } = this.props;
     return (
       <div className="About" id="lineup">
-        <TopPageMenu items={aboutItems} language={language} />
+        <TopPageMenu items={aboutItems} language={language} fixed={true}/>
         {this.props.children} {''}
         <div className="About">
           <div className="ticket-back-overlay" style={{
@@ -62,6 +62,7 @@ class About extends Component {
         </div>
       </article>
 
+      <div id='map'></div>
       <Map center={
         {lat: 56.413617, lng: 43.731237}
       } markers={[
@@ -99,6 +100,7 @@ class About extends Component {
         </div>
       </div>
     </article>
+    <div id='live'></div>
     <article className="screen aboutWay">
       <div className="screen-inner">
         <h3 className="screen-title">Где жить</h3>
@@ -164,6 +166,7 @@ class About extends Component {
       </div>
     </div>
   </article>
+  <div id='food'></div>
   <article className="screen screen--banner aboutFood" style={{
     backgroundImage: "url('/assets/img/about/foodcort.jpg')"
   }}>
@@ -199,6 +202,7 @@ class About extends Component {
     </div>
   </div>
 </article>
+<div id='advises'></div>
 <article className="screen aboutGood">
   <div className="screen-inner aboutGood-inner">
     <h2 className="screen-title">Полезные советы</h2>
@@ -235,6 +239,8 @@ class About extends Component {
     </div>
   </div>
 </article>
+<div id='faq'></div>
+<div id='rules'></div>
 <div className="aboutCategory">
   <a href="#" className="aboutCategory-item aboutCategory-item--1">
     <img src="/assets/img/about/icon-market.svg" className='aboutCategory-img' width="66"/>

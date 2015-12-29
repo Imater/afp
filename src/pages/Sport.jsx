@@ -14,13 +14,23 @@ if (process.env.BROWSER) {
 }
 
 class Sport extends Component {
+  componentWillMount() {
+    this.sportItems = typesSport.map((item) => {
+      return {
+        title: item.title,
+        title_eng: item.title_eng,
+        url: item.url,
+        anchor: item.anchor
+      };
+    });
+  }
   render() {
     const { language } = this.props;
     const types = typesSport;
     const main = typesSport;
     return (
       <div className="page Sport" id="lineup">
-        <TopPageMenu items={sportItems} language={language} />
+        <TopPageMenu items={this.sportItems} language={language} fixed={true} />
         <Share params={{
           url: 'http://alfafuture.com', //(typeof window === 'undefined') ? '' : window.location.href,
           title: i18n.t('pages.sportAndExtrime'),
@@ -47,7 +57,7 @@ class Sport extends Component {
             types.map((type, key) => {
               const title = type[language === 'eng' ? 'title_eng': 'title'];
               return (
-                <div className="item" key={key}>
+                <div className="item" key={key} id={type.anchor}>
                   <h3>{title}</h3>
                   <div>{type[language === 'eng' ? 'text_eng': 'text']}</div>
                   <div>
