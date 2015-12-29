@@ -19,9 +19,13 @@ class TopPageMenu extends Component {
         <ul>
           {
             this.props.items.map((item, key) => {
+              const title = item[language === 'eng' ? 'title_eng': 'title'];
+              if(!title) {
+                return;
+              }
               return (
                 <li data-num={key} key={key}>
-                  <Link to={`${item.url}`} activeClassName="active">{item[language === 'eng' ? 'title_eng': 'title']}</Link>
+                  <Link to={`${item.url}`} activeClassName="active">{title}</Link>
                 </li>
               );
             })

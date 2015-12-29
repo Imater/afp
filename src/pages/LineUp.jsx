@@ -57,6 +57,10 @@ const scenes = [
   {
     id: 6,
     title: 'Circle'
+  },
+  {
+    id: 7,
+    title: ''
   }
 ]
 
@@ -105,9 +109,12 @@ class LineUp extends Component {
               if(djsFiltered.size === 0) {
                 return (<div key={keyScene}></div>);
               }
+              const sceneTitle = scene.title;
               return (
                 <div className="scene-wrapper" key={keyScene}>
-                  <h3>{scene.title}</h3>
+                  {
+                    sceneTitle ? <h3>{scene.title}</h3> : <div></div>
+                  }
                   <div>
                     {
                       djsFiltered.map((dj, key) => {

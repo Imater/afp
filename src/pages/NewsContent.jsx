@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 import { Link } from 'react-router';
+import moment from 'moment';
 import i18n from 'i18next-client';
 import Social from '../components/Social';
 import Gallery from '../components/Gallery';
@@ -9,7 +10,7 @@ import TopPageMenu from '../components/TopPageMenu';
 import { newsItems, typesNews } from '../components/settings';
 import Footer from '../components/Main/Footer';
 import NewsLine from '../containers/NewsLine';
-import moment from 'moment';
+import smoothScroll from '../utils/smoothScroll';
 
 if (process.env.BROWSER) {
   require('./NewsContent.less');
@@ -19,9 +20,6 @@ if (process.env.BROWSER) {
 class NewsContent extends Component {
   state = {
     windowWidth: ((typeof window === 'object') ? window.innerWidth : 1024)
-  }
-
-  componentWillMount() {
   }
 
   componentDidMount() {
@@ -95,7 +93,6 @@ class NewsContent extends Component {
               images.map((image, key) => {
                 return (
                   <img key={key} src={`/upload/images/news/${image.get('name')}`} onError={() => {
-                    this.style.display = "none";
                   }}/>
                 );
               })

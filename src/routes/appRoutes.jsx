@@ -49,6 +49,14 @@ function defaultPath(defaultName) {
   }
 }
 
+function scrollTop() {
+  return function(nextState, replaceState) {
+    if (typeof document !== 'undefined') {
+      smoothScroll(0);
+    }
+  }
+}
+
 export default (
   <Route path='/' component={App} scrollStrategy='imitateBrowser'>
     <IndexRoute component={Main}/>
@@ -59,7 +67,7 @@ export default (
     <Route path='/technology(/:part)' component={Technology} onEnter={defaultPath('virtuality')}/>
     <Route path='/sport(/:part)' component={Sport} onEnter={defaultPath('workout')} />
     <Route path='/news(/:part)' component={News} onEnter={defaultPath('main')} />
-    <Route path='/news(/:part)(/:newsId)' component={NewsContent} />
+    <Route path='/news(/:part)(/:newsId)' component={NewsContent} onEnter={scrollTop()} />
     <Route path='/partners(/:part)' component={Partners} onEnter={defaultPath('main')} />
     <Route path='/media(/:part)' component={Media} onEnter={defaultPath('2015')} />
     <Route path='/media/:part/:album/all/images' component={AlbumAll} />
