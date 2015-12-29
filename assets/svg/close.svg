@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 53</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="05-Rules" sketch:type="MSArtboardGroup" transform="translate(-1192.000000, -49.000000)" fill="#FFFFFF">
+            <g id="X" sketch:type="MSLayerGroup" transform="translate(1173.000000, 30.000000)">
+                <path d="M31,29 L31,16.9965348 C31,16.4398131 30.5522847,16 30,16 C29.4438648,16 29,16.4461638 29,16.9965348 L29,29 L16.9965348,29 C16.4398131,29 16,29.4477153 16,30 C16,30.5561352 16.4461638,31 16.9965348,31 L29,31 L29,43.0034652 C29,43.5601869 29.4477153,44 30,44 C30.5561352,44 31,43.5538362 31,43.0034652 L31,31 L43.0034652,31 C43.5601869,31 44,30.5522847 44,30 C44,29.4438648 43.5538362,29 43.0034652,29 L31,29 Z" id="Rectangle-53" sketch:type="MSShapeGroup" transform="translate(30.000000, 30.000000) rotate(-315.000000) translate(-30.000000, -30.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

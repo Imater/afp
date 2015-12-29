@@ -38,6 +38,7 @@ class About extends Component {
     return (
       <div className="About" id="lineup">
         <TopPageMenu items={aboutItems} language={language} />
+        {this.props.children} {''}
         <div className="About">
           <div className="ticket-back-overlay" style={{
             opacity: 0
@@ -118,7 +119,9 @@ class About extends Component {
           }
         </div>
 
-        <a href="#" className="aboutWay-rules">Правила поведения <br/>на фестивале</a>
+          <Link to='/about/main/rules'>
+            <span className="aboutWay-rules">Правила поведения <br/>на фестивале</span>
+          </Link>
       </div>
     </article>
     <article className="screen screen--banner aboutVip" style={{
@@ -235,10 +238,12 @@ class About extends Component {
     <img src="/assets/img/about/icon-market.svg" className='aboutCategory-img' width="66"/>
     <span className="aboutCategory-label">Магазин</span>
   </a>
-  <a href="#" className="aboutCategory-item aboutCategory-item--2">
-    <img src="/assets/img/about/icon-book--white.svg" className='aboutCategory-img' width="76"/>
-    <span className="aboutCategory-label">Правила</span>
-  </a>
+  <Link to='/about/main/rules'>
+    <span className="aboutCategory-item aboutCategory-item--2">
+      <img src="/assets/img/about/icon-book--white.svg" className='aboutCategory-img' width="76"/>
+      <span className="aboutCategory-label">Правила</span>
+    </span>
+  </Link>
   <a href="#" className="aboutCategory-item aboutCategory-item--3">
     <img src="/assets/img/about/icon-messages.svg" className='aboutCategory-img' width="66"/>
     <span className="aboutCategory-label">FAQ</span>
