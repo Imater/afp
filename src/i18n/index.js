@@ -26,7 +26,10 @@ const resources = {
         allNews: 'Все новости',
         partners: 'Партнёры',
         allPartners: 'Партнёры',
-        beforeFestivalTitle: 'до Alfa Future People 2016 осталось'
+        beforeFestivalTitle: 'до Alfa Future People 2016 осталось',
+        share: 'Поделиться',
+        title: 'Вы вернетесь<br/>совершенно другим',
+        titleText: 'Свежий воздух и яркое солнце. Тайный аэродром на берегу Волги. Музыка, которая меняет настроение. Технологии, которые меняют мир. Что нужно, чтобы услышать и увидеть будущее? Все просто. Быть на фестивале Alfa Future People'
       },
       history: {
         howItWas: 'Как это было',
@@ -91,7 +94,10 @@ const resources = {
         allNews: 'All news',
         partners: 'Partners',
         allPartners: 'All partners',
-        beforeFestivalTitle: 'Time to Alfa Future People 2016'
+        beforeFestivalTitle: 'Time to Alfa Future People 2016',
+        share: 'Share',
+        title: 'You come back<br/>a completely different',
+        titleText: 'The fresh air and bright sunshine. Mystery airfield on the banks of the Volga. Music that changes the mood. The technologies that are changing the world. What do you need to hear and see the future? It\'s simple. Being at the festival Alfa Future People'
       },
       history: {
         howItWas: 'How it was',

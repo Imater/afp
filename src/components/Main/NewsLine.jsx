@@ -46,7 +46,6 @@ class NewsLine extends Component {
   }
 
   render() {
-    console.info(this.newsList);
     const { language } = this.props;
     return (
       <div className="page news-page" id="news">

@@ -261,6 +261,16 @@ export const contactItems = [
   }
 ];
 
+const generateByNum = (folderName, ext, max) => {
+  let images = [];
+  for(let i=1; i <= max; i++) {
+    images.push({
+      url: `${folderName}${i}.${ext}`
+    });
+  }
+  return images;
+
+}
 
 export const typesSport = [
   {
@@ -268,106 +278,75 @@ export const typesSport = [
     text: 'На территории фестиваля Alfa Future People была оборудована профессиональная площадка для street workout.',
     title_eng: 'Street workout',
     text_eng: 'On the Alfa Future People festival a professional platform for street workout will be equipped! The program includes performances of the best athletes of the Mutant Clan club (http://vk.com/mutantclan) and also street workout master classes.',
-    images: [
-      {
-        url: '/assets/img/sport/workout1.jpg',
-      },
-      {
-        url: '/assets/img/sport/workout2.jpg',
-      },
-    ]
+    images: generateByNum('/assets/img/sport-photo/Work-out/', 'jpg', 6)
   },
   {
     title: 'Батутный спорт',
     text: 'Батутный клуб "Up and Fly" - это команда профессиональных спортивных инструкторов, для каждого из которых спорт – это призвание и дело всей жизни. Главная задача - это поделится своими знаниями и опытом, помочь всем желающим освоить трюки на спортивном батуте, сформировать красивое и гармоничное тело.',
     title_eng: 'Trampoline',
     text_eng: 'The club «Up and Fly» will teach everybody, who wish to learn how to jump on the trampoline (http://upandfly.ru). The program includes: free jumping, performances and professional workshops. Trampoline club «Up and Fly» is a team of professional sports instructors. For each of them sport is a calling and lifework. Their main task is to share their knowledge and experience to help all people, who wish to learn the tricks on the trampoline sports, create a beautiful and harmonious body.',
-    images: [
-      {
-        url: '/assets/img/sport/trampline1.jpg',
-      },
-      {
-        url: '/assets/img/sport/trampline2.jpg',
-      },
-    ]
+    images: generateByNum('/assets/img/sport-photo/jump/', 'jpg', 3)
   },
   {
     title: 'Баскетбол',
     text: 'Баскетбольный клуб «Нижний Новгород» два года подряд организовывал турниры по стритболуВ программе 2015 года: турнир с участием 4-х профессиональных баскетбольных команд из Казани, Воронежа, Санкт-Петербурга и Нижнего Новгорода, любительские турниры между участниками фестиваля и мастер-классы.',
     title_eng: 'Basketball',
     text_eng: 'Basketball club «Nizhny Novgorod» for the second year in a row organizes a streetball playground at the festival. The program includes: tournament with 4 professional basketball teams from Kazan, Voronezh, St. Petersburg and Nizhny Novgorod, amateur tournaments between the guests of the festival and master classes.',
-    images: [
-      {
-        url: '/assets/img/sport/basketball1.jpg',
-      },
-      {
-        url: '/assets/img/sport/basketball2.jpg',
-      },
-    ]
+    images: generateByNum('/assets/img/sport-photo/basketball/', 'jpg', 6)
   },
   {
     title: 'Фрисби',
     text: 'Нижегородский диск-гольф клуб (http://www.discgolfnn.ru) - это команда профессионалов, которая популяризирует в России направление увлекательной игры в диск-гольф. Вместе с Российской ассоциацией диск-гольфа и Нижегородской федерацией спортивных игр с летающим диском мы провели более 50 турниров.',
     title_eng: 'Frisbee',
     text_eng: 'This year we organized at the festival a special Frisbee area. The program includes workshops, ultimate-frisbee, disc-golf, contests and more! Disc-golf club from Nizhny Novgorod (http://www.discgolfnn.ru) - it is a professional team that promotes this exciting disc-golf game in Russia. Together with the Russian Association of Disc Golf and Nizhniy Novgorod federation of sports games with a flying disc, we will hold more than 50 tournaments.',
-    images: [
-      {
-        url: '/assets/img/sport/frisbee1.jpg',
-      },
-      {
-        url: '/assets/img/sport/frisbee2.jpg',
-      },
-    ]
+    images: generateByNum('/assets/img/sport-photo/Frisbee/', 'jpg', 3)
   },
   {
     title: 'Танцевальная площадка',
     text: 'Федерация спортивных танцев DANCE COOL (http://dance-cool.ru) – самая крупная сеть танцевальных школ по уличным и современным направлениям, лидер проведения самых зрелищных и масштабных танцевальных мероприятий Нижнего Новгорода.В программе: танцевальные мастер-классы от лучших преподавателей Федерации, по направлениям house dance, hip-hop dance, jazz funk. А также специальное танцевальное шоу в исполнении команды DANCE-COOL CREW.Помимо основной тусовки, танцевальная студия Rise готова предложить Вам много чего интересного: мастер-классы по PoleDance (vk.com/risenn) от ведущих тренеров Нижнего Новгорода, яркие выступления на пилонах и огромное количество позитива и взрывных эмоций!',
     title_eng: 'Dance floor',
     text_eng: 'Federation of sports dances DANCE COOL (http://dance-cool.ru) is the largest network of schools on street dance and contemporary dance trends, the leader in arranging the most spectacular and large-scale dance events in Nizhny Novgorod. The program includes dance workshops from the best teachers of Federation on house dance, hip-hop dance, jazz funk. And also a special dance show performed by the DANCE-COOL CREW.',
-    images: [
-      {
-        url: '/assets/img/sport/dance1.jpg',
-      },
-      {
-        url: '/assets/img/sport/dance2.jpg',
-      },
-    ]
+    images: generateByNum('/assets/img/sport-photo/dance/', 'jpg', 2)
   },
   {
     title: 'Американский футбол',
     text: 'Бескомпромиссный и жесткий вид спорта, не оставляющий равнодушным даже самого требовательного зрителя.На фестивале Alfa Future People сразились две сильнейшие команды России – команда из Нижнего Новгорода Raiders 52 и Rebels из Ярославля.',
     title_eng: 'American football',
-    text_eng: 'Football is an uncompromising and tough sport, that do not leave indifferent even the most demanding audience. At the Alfa Future People festival you’ll see the battle of two strongest Russian teams: the Raiders from Nizhny Novgorod and the Rebels 52 from Yaroslavl. «Nizhny Novgorod team of American football» «Raiders 52 » (http://af52.ru) was founded in 2008 and now it is the top team in Nizhny Novgorod. Annually it takes part in various competitions: in 2010 Raiders 52 won first place in the Russian Championship, in group “B”, in 2011 became the owners of the international Cup «Vytautas Magnus» (Minsk) and the winners of the regional tournament «Volga-Bowl» in 2013 it entered the top - 8 teams, and in 2014 the top - 4 on the basis of the Russian Championship. The Soccer team REBELS (https://vk.com/rebels_yaroslavl) became the leading team in Yaroslavl. The team consists of amateur athletes from other sports. The 21st of September 2013 is the day, when the team was found. In 2014 the team took part in a number of tournaments and has chalked up several prizes.'
+    text_eng: 'Football is an uncompromising and tough sport, that do not leave indifferent even the most demanding audience. At the Alfa Future People festival you’ll see the battle of two strongest Russian teams: the Raiders from Nizhny Novgorod and the Rebels 52 from Yaroslavl. «Nizhny Novgorod team of American football» «Raiders 52 » (http://af52.ru) was founded in 2008 and now it is the top team in Nizhny Novgorod. Annually it takes part in various competitions: in 2010 Raiders 52 won first place in the Russian Championship, in group “B”, in 2011 became the owners of the international Cup «Vytautas Magnus» (Minsk) and the winners of the regional tournament «Volga-Bowl» in 2013 it entered the top - 8 teams, and in 2014 the top - 4 on the basis of the Russian Championship. The Soccer team REBELS (https://vk.com/rebels_yaroslavl) became the leading team in Yaroslavl. The team consists of amateur athletes from other sports. The 21st of September 2013 is the day, when the team was found. In 2014 the team took part in a number of tournaments and has chalked up several prizes.',
+    images: generateByNum('/assets/img/sport-photo/american-football/', 'jpg', 4)
   },
   {
     title: 'Волейбол',
     text: 'На 6 волейбольных площадках лучшие спортсмены волейбольный клуба «Губерния» провели мастер-классы, показательные матчи и мини-турниры для гостей фестиваля.Волейбольный клуб «Губерния» (https://vk.com/nnvolley) является одной из самых успешных спортивных команд Нижнего Новгорода и Нижегородской области.',
     title_eng: 'Volleyball',
-    text_eng: 'On the 6 best volleyball courts the volleyball club «Gubernia» will give master classes, exhibition matches and mini-tournaments for guests of the festival. Volleyball club «Gubernia» (https://vk.com/nnvolley) is one of the most successful sports teams in Nizhny Novgorod and the Nizhny Novgorod region. «Gubernia» won 13 games in a row in the regular stage and took fourth place in the season, which gave the team the right to take part in the prestigious European competition, the Cup of the European Volleyball Confederation. Last year «Gubernia» made its debut on the international stage in the CEV Cup and won silver medals, and it also made success at the championship of Russia, ranking fifth line among the strongest teams of the country.'
+    text_eng: 'On the 6 best volleyball courts the volleyball club «Gubernia» will give master classes, exhibition matches and mini-tournaments for guests of the festival. Volleyball club «Gubernia» (https://vk.com/nnvolley) is one of the most successful sports teams in Nizhny Novgorod and the Nizhny Novgorod region. «Gubernia» won 13 games in a row in the regular stage and took fourth place in the season, which gave the team the right to take part in the prestigious European competition, the Cup of the European Volleyball Confederation. Last year «Gubernia» made its debut on the international stage in the CEV Cup and won silver medals, and it also made success at the championship of Russia, ranking fifth line among the strongest teams of the country.',
+    images: generateByNum('/assets/img/sport-photo/volleyball/', 'jpg', 4)
   },
   {
     title: 'Футбол',
     text: 'На площадке фестиваля ФК "Волга" (http://www.fcvolgann.ru) организовала увлекательный чемпионат по футболу среди участников AFPФК "Волга" - главная футбольная команда Нижнего Новгорода и всей Нижегородской области. В копилке «Волги» победы над такими топ-клубами, как столичные «Спартак» (в Кубке), «Динамо» и «Локомотив», казанский «Рубин» и ФК «Краснодар» (в чемпионате страны).',
     title_eng: 'Football',
-    text_eng: 'On the festival site FC «Volga» (http://www.fcvolgann.ru) organizes exciting football championship among AFP visitors. Football workshops, relay races and various competitions will be hold for festival guests. FC «Volga» is the main soccer team of Nizhny Novgorod and the Nizhny Novgorod region. «Volga» thrashed such top clubs as the Moscow «Spartac» (the Cup), «Dynamo» and «Locomotive», Kazan «Rubin» and FC  «Krasnodar» (national championship).'
+    text_eng: 'On the festival site FC «Volga» (http://www.fcvolgann.ru) organizes exciting football championship among AFP visitors. Football workshops, relay races and various competitions will be hold for festival guests. FC «Volga» is the main soccer team of Nizhny Novgorod and the Nizhny Novgorod region. «Volga» thrashed such top clubs as the Moscow «Spartac» (the Cup), «Dynamo» and «Locomotive», Kazan «Rubin» and FC  «Krasnodar» (national championship).',
+    images: generateByNum('/assets/img/sport-photo/football/', 'jpg', 1)
   },
   {
     title: 'Экстримлэнд',
     text: 'Нижегородская база отдыха "Экстримленд" в этом году специально для гостей фестиваля привезла профессиональный скаладром и обустроила площадку для игры в лазертаг! ЭКСТРИМЛЕНД -это первая и единственная база активного отдыха в Нижегородской области, где собраны все возможные развлечения для самых требовательных экстремалов. http://vk.com/extremeland',
     title_eng: 'Extremeland',
-    text_eng: 'This year, Nizhny Novgorod recreation center «Exstremeland», special for the guests of the AFP festival, will bring a professional climbing wall and equipped playground for laser tag! EKSTRIMLAND is the first and only database of recreation in the Nizhny Novgorod region, where you can find all the possible entertainment for the most demanding adventurers. http://vk.com/extremeland'
+    text_eng: 'This year, Nizhny Novgorod recreation center «Exstremeland», special for the guests of the AFP festival, will bring a professional climbing wall and equipped playground for laser tag! EKSTRIMLAND is the first and only database of recreation in the Nizhny Novgorod region, where you can find all the possible entertainment for the most demanding adventurers. http://vk.com/extremeland',
   },
   {
     title: 'Йога',
     text: 'Первая студия горячей йоги на Покровке дала возможность жителям города приобщиться к популярному в Европе и США, современному направлению Бикрам йоги, которую можно по праву назвать фитнесом XXI века.В этом году все участники фестиваля смогут приняли участие в наших тренировках по йоге! Вы убедитесь, что йога - это мощный заряд энергии!',
     title_eng: 'Yoga',
-    text_eng: 'The first hot yoga studio on Pokrovka enabled the people of the city to join the popular in Europe and the United States the modern direction of Bikram yoga, which can rightly be called a fitness of the XXI. This year all the guests of the festival will be able to take part in our yoga trainings! You will find that yoga could give you a powerful boost of energy!'
+    text_eng: 'The first hot yoga studio on Pokrovka enabled the people of the city to join the popular in Europe and the United States the modern direction of Bikram yoga, which can rightly be called a fitness of the XXI. This year all the guests of the festival will be able to take part in our yoga trainings! You will find that yoga could give you a powerful boost of energy!',
+    images: generateByNum('/assets/img/sport-photo/yoga/', 'jpg', 3)
   },
   {
     title: 'X-Fit',
     text: 'Федеральная сеть фитнес-клубов X-Fit — это более 50 современных, продуманных и гостеприимных спортивных клубов премиум и бизнес формата по всей стране. На протяжении трех жарких июльских дней гости фестиваля занимались под чутким руководством лучших инструкторов из клуба «X-fit Нижний Новгород». http://xfitnn.ru',
     title_eng: 'X-Fit',
-    text_eng: 'Federal chain of fitness clubs X-Fit present more than 50 contemporary, thoughtful and hospitable sports clubs of premium and business class al over the country. For three hot July days, you can practice under the guidance of the best instructors from the club «X-fit Nizhny Novgorod». Thanks to professional coaches, who will help you easily learn, how to do the exercises and calculate the load on your body! Be ensure the effectiveness of sports and recharge your batteries for the unrestrained night dance!'
+    text_eng: 'Federal chain of fitness clubs X-Fit present more than 50 contemporary, thoughtful and hospitable sports clubs of premium and business class al over the country. For three hot July days, you can practice under the guidance of the best instructors from the club «X-fit Nizhny Novgorod». Thanks to professional coaches, who will help you easily learn, how to do the exercises and calculate the load on your body! Be ensure the effectiveness of sports and recharge your batteries for the unrestrained night dance!',
   },
 
 ];
@@ -639,4 +618,223 @@ export const partners = [
     desc: 'Уникальная  платформа 3D-моделирования, 3D-сканирования и 3D-печати любых объектов.При помощи современных технологий мы можем изготовить точную копию любого объекта. Процедура сканирования, благодаря которой проекция человека или вещи появляется в компьютере, занимает несколько минут, а создание 3D'
     desc_eng: 'Уникальная  платформа 3D-моделирования, 3D-сканирования и 3D-печати любых объектов.При помощи современных технологий мы можем изготовить точную копию любого объекта. Процедура сканирования, благодаря которой проекция человека или вещи появляется в компьютере, занимает несколько минут, а создание 3D'
   }
+];
+
+export const howToGetThereList = [
+  {
+    title: 'из Нижнего Новгорода',
+    text: (
+      <div>
+        <p className="screen-text">
+          Самый быстрый и удобный способ добраться до фестиваля - электричка с Московского вокзала Нижнего
+          Новгорода (или с любой остановки электрички в городе по Заволжскому направлению) до станции
+          Козино. Количество электричек на время проведение фестиваля увеличено в несколько раз, также
+          увеличено количество вагонов в поездах.
+        </p>
+
+        <div className="aboutWay-benefits">
+          <div className="benefit aboutWay-benefit aboutWay-benefit--1">
+            <img src="/assets/img/about/icon-clock.svg" width="38" className="benefit-icon"/>
+            <span className="benefit-title">30 м</span>
+
+            <p className="benefit-desc">Средний интервал движения&nbsp;поездов</p>
+          </div>
+          <div className="benefit aboutWay-benefit aboutWay-benefit--2">
+            <img src="/assets/img/about/icon-train.svg" width="41" className="benefit-icon"/>
+            <span className="benefit-title">35 м</span>
+
+            <p className="benefit-desc">время в пути от Московского вокзала до станции Козино</p>
+          </div>
+          <div className="benefit aboutWay-benefit aboutWay-benefit--3">
+            <img src="/assets/img/about/icon-car.svg" width="55" className="benefit-icon"/>
+            <span className="benefit-title">> 2.5 ч</span>
+
+            <p className="benefit-desc">время в пути на машине до фестиваля в час пик</p>
+          </div>
+        </div>
+
+        <p className="screen-text">
+          От станции «Козино» до входа на фестиваль можно также пройти по пешеходному маршруту, который будет
+          обозначен указателями. Добраться до фестиваля пешком от станции «Козино» можно примерно за 15-20
+          мин.
+        </p>
+      </div>
+    )
+  },
+  {
+    title: 'из Москвы',
+    text: (
+      <div>
+        <p className="screen-text">
+          Железнодорожный транспорт:
+          <ul>
+            <li>
+          - Высокоскоростным поездом «Стриж» или «Ласточка». Отправление с Курского вокзала Москвы, время в пути чуть меньше 4 часов.
+            </li>
+            <li>
+          - Любым скорым или пассажирским поездом сообщением Москва - Нижний Новгород, Санкт-Петербург – Нижний Новгород или поездами, следующими далее Нижнего Новгорода (Казань, Киров, Томск, Н.Уренгой и др.)
+          Подробное расписание поездов смотрите на сайте rzd.ru
+          Там же вы сможете сразу приобрести электронный билет на нужный вам поезд.
+            </li>
+            <li>
+          - Все высокоскоростные поезда «Стриж» и «Ласточка» обязательно останавливаются на станции «Дзержинск» (стоянка 2 мин), не доезжая немного до Нижнего Новгорода. Некоторые скорые и пассажирские поезда также останавливаются на станции «Дзержинск».
+          Добраться от Дзержинска до фестиваля будет удобно зрителям, которые не бронировали себе гостиницы в Нижнем Новгороде, а также тем, кто едет сначала на фестиваль, а потом уже в Нижний Новгород.
+            </li>
+          </ul>
+        </p>
+
+        <div className="aboutWay-benefits">
+          <div className="benefit aboutWay-benefit aboutWay-benefit--1">
+            <img src="/assets/img/about/icon-clock.svg" width="38" className="benefit-icon"/>
+            <span className="benefit-title">30 м</span>
+
+            <p className="benefit-desc">Средний интервал движения&nbsp;поездов</p>
+          </div>
+          <div className="benefit aboutWay-benefit aboutWay-benefit--2">
+            <img src="/assets/img/about/icon-train.svg" width="41" className="benefit-icon"/>
+            <span className="benefit-title">35 м</span>
+
+            <p className="benefit-desc">время в пути от Московского вокзала до станции Козино</p>
+          </div>
+          <div className="benefit aboutWay-benefit aboutWay-benefit--3">
+            <img src="/assets/img/about/icon-car.svg" width="55" className="benefit-icon"/>
+            <span className="benefit-title">> 2.5 ч</span>
+
+            <p className="benefit-desc">время в пути на машине до фестиваля в час пик</p>
+          </div>
+        </div>
+
+        <p className="screen-text">
+          Зрители которые прибывают на любом поезде на Московский вокзал Нижнего Новгорода, могут далее воспользоваться самым быстрым и удобным способом добраться до фестиваля - электричкой с Московского вокзала Нижнего Новгорода до станции «Козино» (Заволжское направление).
+           Интервал движения электричек в дни фестиваля составит в среднем около 30-40 мин, время в пути от Московского вокзала до станции Козино - около 35 минут.
+        </p>
+        <p className="screen-text">
+ От ж/д станции «Козино» до места проведения фестиваля и обратно до станции «Козино», а также от въезда в поселок Большое Козино с трассы Р-152 (Нижний Новгород-Балахна) и обратно до трассы, в дни проведения фестиваля будут в круглосуточном режиме курсировать бесплатные шаттлы фестиваля.
+ От станции «Козино» до входа фестиваль можно также пройти по пешеходному маршруту, который будет обозначен навигацией. Добраться до фестиваля пешком от станции «Козино» можно примерно за 15-20 мин.
+ Также до Нижнего Новгорода из Москвы можно добраться самолетом. Смотрите расписание на сайтах авиакомпаний.
+        </p>
+      </div>
+    )
+  },
+  {
+    title: 'из Санкт-Петербурга',
+    text: (
+      <div>
+        <p className="screen-text">
+Из Санкт-Петербурга в Нижний Новгород выполняют рейсы несколько авиакомпаний.
+Смотрите расписание на сайтах авиакомпаний.
+        </p>
+        <p className="screen-text">
+Железнодорожный транспорт:
+        </p>
+        <p className="screen-text">
+- Любым скорым или пассажирским поездом сообщением Санкт-Петербург – Нижний Новгород или поездами, следующими далее Нижнего Новгорода (Казань, Киров, Томск, Н.Уренгой и др.)
+        </p>
+        <p className="screen-text">
+Мы рекомендуем доехать на «Сапсане» или любом другом поезде до Москвы и далее воспользоваться высокоскоростными поездами «Стриж» или «Ласточка». Отправление с Курского вокзала Москвы, время в пути чуть меньше 4 часов.
+        </p>
+        <p className="screen-text">
+Подробное расписание поездов смотрите на сайте rzd.ru
+        </p>
+
+      </div>
+    )
+  },
+  {
+    title: 'другие города',
+    text: (
+      <div>
+        <p className="screen-text">
+ИНФОРМАЦИЯ ДЛЯ ЗРИТЕЛЕЙ, НАПРАВЛЯЮЩИХСЯ НА ФЕСТИВАЛЬ НА ЛИЧНОМ ТРАНСПОРТЕ
+        </p>
+        <p className="screen-text">
+Если вы выбрали для поездки на фестиваль личный автотранспорт, настоятельно рекомендуем внимательно ознакомиться с данной информацией:
+        </p>
+        <p className="screen-text">
+1. Зрители, купившие билеты на паркинг фестиваля – ознакомьтесь со схемами проезда на фестиваль в разделах «Из Москвы» или «Из Нижнего Новгорода», в зависимости от того с какой стороны вы будете ехать на фестиваль. На въезде в поселок Большое Козино вас попросят предъявить для сканирования билет на паркинг фестиваля. Большая просьба заранее подготовить билет на паркинг для сканирования, не перепутать его с билетами в кемпинги или на сам фестиваль. Само сканирование занимает пару секунд и вы не будете задерживать и создавать очередь из машин если заранее подготовите билет. Если у вас электронный билет на паркинг и вы его не распечатывали и хотите предъявить его на экране мобильного устройства, приготовьте мобильное устройство с уже открытым на экране файлом билета. Внимание – для въезда в поселок Большое Козино действует ТОЛЬКО билет на паркинг, никакие другие категории билетов фестиваля не дают право на въезд транспорта зрителей.
+        </p>
+        <p className="screen-text">
+Далее, после сканирования билета на въезде в поселок Большое Козино, двигайтесь все время по главной дороге, около 5 км и вы прибудете на КПП самого фестиваля. Там у вас еще раз просканируют билет на паркинг и вместо билета выдадут пропуск на парковку. С этим пропуском вы сможете, при необходимости, выехать с парковки фестиваля и из поселка и также вернутся обратно. Билет на паркинг вам будет уже не нужен для повторного въезда. Воспользоваться повторно билетом на паркинг для заезда на другой машине невозможно, после сканирования и выдачи пропуска на парковку, штрих-код билета на паркинг аннулируется.
+        </p>
+        <p className="screen-text">
+Рекомендуем без острой необходимости не выезжать с территории фестиваля, так как могут быть значительные пробки во время заезда автотранспорта зрителей на фестиваль.
+        </p>
+        <p className="screen-text">
+На пропуске который вам выдадут при въезде на территорию фестиваля, будет сразу вписан гос.номер вашей машины, а также вам будет необходимо самостоятельно вписать в соответствующую графу пропуска номер мобильного телефона водителя. Это обязательно требование. Номер телефона можно будет вписать когда припаркуетесь уже на парковке фестиваля.
+        </p>
+        <p className="screen-text">
+Пропуск на парковку должен всегда находится под лобовым стеклом вашего автомобиля!
+        </p>
+        <p className="screen-text">
+2. Зрители, не купившие заранее билеты на паркинг фестиваля, могут приобрести билет на паркинг на въезде в поселок Большое Козино у сотрудника контрольной службы фестиваля, в случае если к началу фестиваля билеты на паркинг еще будут в наличии.
+        </p>
+        <p className="screen-text">
+Если вы не хотите приобретать билет на паркинг или их уже нет в продаже, рекомендуем воспользоваться для стоянки вашей машины только охраняемыми стоянками расположенными относительно недалеко от поселка Большое Козино.
+        </p>
+        <p className="screen-text">
+В этом разделе мы будем вас информировать о возможных вариантах и местонахождении охраняемых платных парковках как можно ближе к месту проведения фестиваля. В данный момент эта информация еще обрабатывается. Следите за информацией здесь и в официальной группе ВК.
+        </p>
+        <p className="screen-text">
+В случае, если вы решили оставить свою машину где-то недалеко от въезда в поселок Большое Козино, рекомендуем внимательно отнестись к дорожным знакам установленным на дороге, потому что в случае наличия знака запрета остановки и стоянки ваша машина может быть эвакуирована.
+        </p>
+        <p className="screen-text">
+От КПП на въезде в поселок Большое Козино (дорога Р-152 Нижний Новгород-Балахна), будут круглосуточно курсировать бесплатные шаттлы до фестиваля и обратно до въезда в поселок. Это будет очень удобно для тех, кто оставит свою машину где-то относительно недалеко от въезда в поселок или на какой-то охраняемой парковке и доедет до въезда в поселок на такси или дойдет пешком.
+        </p>
+
+      </div>
+    )
+  }
+];
+
+export const whereToLiveList = [
+  {
+    title: 'Alfa-Кемпинг',
+    text: (
+      <div>
+        <p className="screen-text">
+          Информация будет доступна позже
+        </p>
+      </div>
+    )
+  },
+  {
+    title: 'Omega-Кемпинг',
+    text: (
+      <div>
+        <p className="screen-text">
+          Билет дает право на место в кемпинге на огороженной территории, расположенной недалеко от входа на
+          фестиваль.
+        </p>
+
+        <p className="screen-text">
+          Покупая билет в кемпинг, вы получаете право установки собственной палатки на огороженной территории,
+          обеспеченной платными душевыми, туалетами, торговыми точками по продаже еды, напитков и предметов
+          первой необходимости.
+          Один билет дает право установки одной палатки вместимостью не более 4 человек. Предъявитель билета
+          получает браслеты для входа в кемпинг в соответствии с количеством мест в его палатке.
+        </p>
+
+        <p className="screen-text">
+          В кемпинг можно приводить гостей (из числа зрителей фестиваля) при предъявлении браслета жителя
+          кемпинга и в его сопровождении, но ответственность за сохранность личных вещей жителей кемпинга
+          администрация не несет.
+        </p>
+
+        <p className="screen-text">
+          Вход на территорию кемпинга строго по билетам и браслетам.
+        </p>
+      </div>
+    )
+  },
+  {
+    title: 'Отели в Нижнем Новгороде',
+    text: (
+      <div>
+        <p className="screen-text">
+          Если же вы хотите жить в комфортабельных условиях, вы можете забронировать отель непосредственно в Нижнем Новгороде.
+        </p>
+
+      </div>
+    )
+  },
 ];
