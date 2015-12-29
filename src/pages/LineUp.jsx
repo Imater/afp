@@ -123,33 +123,35 @@ class LineUp extends Component {
                             width: `${boxProcent}%`,
                             height: box
                           }}>
-                            <div className="dj-item">
-                              <div className="dj-overlay">
-                              </div>
-                              <div className="dj-image" style={{
-                                backgroundImage: `url("/upload/content/${dj.get('image') ? dj.get('image') : 'bro.jpg'}")`
-                              }}>
-                              </div>
-                              <div className="dj-title">
+                            <Link to={`/lineup/${this.props.params.year}/${this.props.params.part}/${dj.get('id')}`}>
+                              <div className="dj-item">
+                                <div className="dj-overlay">
+                                </div>
+                                <div className="dj-image" style={{
+                                  backgroundImage: `url("/upload/content/${dj.get('image') ? dj.get('image') : 'bro.jpg'}")`
+                                }}>
+                                </div>
+                                <div className="dj-title">
+                                  {
+                                    dj.get(`title${lang}`)
+                                  }
+                                </div>
+                                <div className="dj-preview">
+                                  {
+                                    dj.get(`preview${lang}`)
+                                  }
+                                </div>
                                 {
-                                  dj.get(`title${lang}`)
+                                  dj.get(`top`) ? (
+                                    <div className="dj-top">
+                                      {
+                                        `#${dj.get('top')}`
+                                      }
+                                    </div>
+                                  ) : ''
                                 }
                               </div>
-                              <div className="dj-preview">
-                                {
-                                  dj.get(`preview${lang}`)
-                                }
-                              </div>
-                              {
-                                dj.get(`top`) ? (
-                                  <div className="dj-top">
-                                    {
-                                      `#${dj.get('top')}`
-                                    }
-                                  </div>
-                                ) : ''
-                              }
-                            </div>
+                            </Link>
                           </div>
                         );
                       })

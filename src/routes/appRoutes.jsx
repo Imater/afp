@@ -10,6 +10,7 @@ import Personal from '../components/Ticket/Personal';
 import Buy from '../components/Ticket/Buy';
 import Status from '../components/Ticket/Status';
 import LineUp from '../containers/LineUp';
+import LineUpContent from '../containers/LineUpContent';
 import Technology from '../containers/Technology';
 import Sport from '../containers/Sport';
 import About from '../containers/About';
@@ -42,9 +43,9 @@ function defaultPath(defaultName) {
   return function(nextState, replaceState) {
     if(!nextState.params.part) {
       replaceState(null, `${nextState.location.pathname}/${defaultName}`);
-      if (typeof document !== 'undefined') {
-        smoothScroll(0);
-      }
+    }
+    if (typeof document !== 'undefined') {
+      smoothScroll(0);
     }
   }
 }
@@ -61,6 +62,7 @@ export default (
   <Route path='/' component={App} scrollStrategy='imitateBrowser'>
     <IndexRoute component={Main}/>
     <Route name="lineup" path='/lineup(/:year)(/:part)' component={LineUp} onEnter={defaultPath('2016/main')}/>
+    <Route name="lineup" path='/lineup(/:year)(/:part)(/:id)' component={LineUpContent} onEnter={scrollTop()}/>
     <Route path='/about(/:part)' component={About} onEnter={defaultPath('map')}>
       <Route path='rules' component={Rules}></Route>
     </Route>

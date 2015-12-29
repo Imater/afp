@@ -1,0 +1,56 @@
+@import '../utils/common.less';
+
+.dj-page-content {
+  min-height: 100px;
+  .close-page {
+    z-index: 3;
+    cursor: pointer;
+  }
+  .dj-wrapper {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    a {
+      color: #FFF;
+    }
+    .dj-item {
+      max-width: 600px;
+      margin: 0 auto;
+      padding-top: 50px;
+      .dj-image {
+        content: '';
+        background-size: cover;
+        background-position: center;
+        max-width: 100%;
+        img {
+          max-width: 100%;
+        }
+      }
+      .dj-title {
+        display: block;
+        transition: 0.2s opacity;
+        margin: 10px 0;
+        font-size: 35px;
+      }
+      .dj-text {
+        display: block;
+        bottom: 10px;
+        font-size: 17px;
+        line-height: 22px;
+      }
+      .dj-top {
+        display: inline-block;
+        font-size: 12px;
+        background-color: #0C5AF2;
+        padding: 4px 10px;
+        border-radius: 10px;
+        margin-top: 50px;
+      }
+      .dj-overlay {
+        .gradient-overlay();
+        opacity: 0.5;
+        transition: 0.5s opacity;
+      }
+    }
+  }
+}

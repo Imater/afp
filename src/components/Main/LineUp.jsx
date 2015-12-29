@@ -13,8 +13,8 @@ class History extends Component {
             <div className="left-col padding-left-50">
               <div className="col-title">
                 <Link to="/lineup/2016/main" className="active">2016</Link>
-                <Link to="/lineup/2016/main">2015</Link>
-                <Link to="/lineup/2016/main">2014</Link>
+                <Link to="/lineup/2015/main">2015</Link>
+                <Link to="/lineup/2014/main">2014</Link>
               </div>
             </div>
             <div className="right-col padding-right-40 text-right">
