@@ -49,6 +49,9 @@ const resources = {
         addressName: 'адрес',
         address: 'Москва, проспект Андропова 18 стр. 3'
       },
+      partners:{
+        more: 'узнать больше'
+      },
       footer:{
         subscribe: 'Подписка',
         email: 'Ваш e-mail',
@@ -110,6 +113,9 @@ const resources = {
       contacts: {
         addressName: 'address',
         address: 'Moscow, prospect Andropov 18 building 3'
+      },
+      partners:{
+        more: 'more'
       },
       footer:{
         subscribe: 'Subscribe',

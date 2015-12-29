@@ -22,7 +22,8 @@ class Partners extends Component {
         <TopPageMenu items={partnerItems} language={language} />
         <div className="page-block">
           <h2>
-            {i18n.t('about.partners')}
+            {i18n.t('about.partners')} <br/>
+            Alfa future people 2015
           </h2>
           <div className="row">
           </div>
@@ -32,10 +33,15 @@ class Partners extends Component {
             {
               partners.map((partner, index) => {
                 return (
-                  <li className="partner-item" key={index}>
-                    <a href="#" className="icon-p1">
-                      <img src={`/assets/svg/partner/${partner.file}`} />
-                    </a>
+                  <li className="partnerItem" key={index}>
+                    <img src={`/assets/svg/partner-new/${partner.logo}`} width="100" className="partnerLogo"/>
+                    <h3 className="title">
+                      {partner[language === 'eng' ? 'title_eng': 'title']}
+                    </h3>
+                    <p className="desc">
+                      {partner[language === 'eng' ? 'desc_eng': 'desc']}
+                    </p>
+                    <a className="more">{i18n.t('partners.more')}</a>
                   </li>
                 );
               })

@@ -1,9 +1,16 @@
 @import '../utils/common.less';
 
+@mobile: 900px;
+
 .Partners {
   color: #FFF;
   .page-block {
     background-image: url('../../assets/img/beeline-partner.jpg');
+  }
+  h2 {
+    text-transform: uppercase;
+    font-family: 'sf_ui_displaymedium';
+    max-width: 80%;
   }
   .icons {
     text-align: center;
@@ -13,6 +20,57 @@
     }
   }
   .partners-list {
-    padding-left: 10%;
+    padding: 0 20px;
+  }
+
+  .partnerItem {
+    position: relative;
+    margin: 50px auto 90px;
+    padding-left: 140px;
+    min-height: 120px;
+    width: auto;
+    max-width: 80%;
+    &:last-of-type{
+      margin-bottom: 0;
+    }
+    @media (max-width: @mobile) {
+      padding-left: 0;
+    }
+    .partnerLogo {
+      position: absolute;
+      left: 0px;
+      top: 0;
+      border: none;
+      margin-bottom: 0px;
+      @media (max-width: @mobile) {
+        position: relative;
+      }
+    }
+    .title {
+      font-size: 30px;
+    }
+    .desc {
+      line-height: 155%;
+    }
+    .more {
+      color: #126BEE;
+      position: relative;
+      transition: all .2s;
+      cursor: pointer;
+      &:hover {
+        opacity: .8;
+      }
+      &:after {
+        content: '';
+        display: inline-block;
+        background: url('../../assets/svg/arrow-bottom-blue.svg');
+        background-size: 100% 100%;
+        width: 12px;
+        height: 6px;
+        vertical-align: middle;
+        margin-left: 10px;
+      }
+    }
+
   }
 }
