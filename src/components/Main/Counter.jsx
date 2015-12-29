@@ -49,9 +49,12 @@ class Counter extends Component {
               </div>
             </div>
             <div className="right-col padding-right-40 text-right">
-              <Link to="/ticket" className="buy-button">
-                {i18n.t('menu.buyTicket')}
-              </Link>
+              {
+                //<Link to="/ticket" className="buy-button">
+                //  {i18n.t('menu.buyTicket')}
+                //</Link>
+              }
+              <a href='http://alfafuture.com/tickets.html' target='blank' className="buy-button">{i18n.t('menu.buyTicket')}</a>
             </div>
           </div>
           <div className="row timer padding-left-50 padding-right-40">

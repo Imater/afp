@@ -295,7 +295,12 @@ class Map extends Component {
                 }}
                 defaultZoom={13}
                 defaultOptions={{
-                  styles: styleMap
+                  styles: styleMap,
+                  scrollwheel: false,
+                  navigationControl: true,
+                  mapTypeControl: true,
+                  scaleControl: true,
+                  draggable: true,
                 }}
                 defaultCenter={this.props.center}
                 onClick1={this.handleMapClick.bind(this)}>
