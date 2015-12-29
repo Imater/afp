@@ -61,14 +61,14 @@ class About extends Component {
       </article>
 
       <Map center={
-        {lat: 56.325831, lng: 43.980278}
+        {lat: 56.413617, lng: 43.731237}
       } markers={[
         {
           position: {
-            lat: 56.325831, lng: 43.980278
+            lat: 56.413617, lng: 43.731237
           },
           defaultAnimation: 2,
-          title: 'Аэродром на берегу Волги',
+          title: 'Нижегородская обл.,Балахнинский район, пос.Большое Козино,улица Луговая',
           label: 'Afp',
           clickable: true
         }

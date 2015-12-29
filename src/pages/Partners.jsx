@@ -41,7 +41,7 @@ class Partners extends Component {
                     <p className="desc">
                       {partner[language === 'eng' ? 'desc_eng': 'desc']}
                     </p>
-                    <a className="more">{i18n.t('partners.more')}</a>
+                    <a className="more" target='blank' href={partner.url}>{i18n.t('partners.more')}</a>
                   </li>
                 );
               })

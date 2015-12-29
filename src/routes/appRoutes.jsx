@@ -41,13 +41,16 @@ function defaultPath(defaultName) {
   return function(nextState, replaceState) {
     if(!nextState.params.part) {
       replaceState(null, `${nextState.location.pathname}/${defaultName}`);
+      if (typeof document !== 'undefined') {
+        smoothScroll(0);
+      }
     }
   }
 }
 
 export default (
   <Route path='/' component={App} scrollStrategy='imitateBrowser'>
-    <IndexRoute component={Main} />
+    <IndexRoute component={Main}/>
     <Route name="lineup" path='/lineup(/:year)(/:part)' component={LineUp} onEnter={defaultPath('2016/main')}/>
     <Route path='/about(/:part)' component={About} onEnter={defaultPath('map')}>
       <Route path='rules' component={Rules}></Route>
