@@ -43,7 +43,11 @@ if (process.env.BROWSER) {
       return (
         <div className="app-wrapper">
           <div className="sidebar">
-            <Link to="/" className="sidebar-logo"></Link>
+            <Link to="/" className="sidebar-logo" onClick={() => {
+              if (typeof document !== 'undefined') {
+                smoothScroll(0);
+              }
+            }}></Link>
             <ul className="menu">
               {
                 menuItems.map((item, key) => {
