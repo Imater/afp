@@ -5,7 +5,7 @@ import i18n from 'i18next-client';
 import Social from '../components/Social';
 import Gallery from '../components/Gallery';
 import TopPageMenu from '../components/TopPageMenu';
-import { technologyItems, typesTechnology, mainTechnology } from '../components/settings';
+import { typesTechnology, mainTechnology } from '../components/settings';
 import Footer from '../components/Main/Footer';
 import Share from '../components/Share';
 
@@ -14,13 +14,23 @@ if (process.env.BROWSER) {
 }
 
 class Technology extends Component {
+  componentWillMount() {
+    this.technologyItems = typesTechnology.map((item) => {
+      return {
+        title: item.title,
+        title_eng: item.title_eng,
+        url: item.url,
+        anchor: item.anchor
+      };
+    });
+  }
   render() {
     const { language } = this.props;
     const types = typesTechnology;
     const main = mainTechnology;
     return (
       <div className="page Technology" id="lineup">
-        <TopPageMenu items={technologyItems} language={language} />
+        <TopPageMenu items={this.technologyItems} language={language} fixed={true} />
         <Share params={{
           url: 'http://alfafuture.com', //(typeof window === 'undefined') ? '' : window.location.href,
           title: i18n.t('pages.wonderTechnology'),
@@ -41,9 +51,9 @@ class Technology extends Component {
           {
             types.map((type, key) => {
               return (
-                <div className="item" key={key}>
+                <div className="item" key={key} id={type.anchor}>
                   <h3>{type[language === 'eng' ? 'title_eng': 'title']}</h3>
-                  <div>{type[language === 'eng' ? 'text_eng': 'text']}</div>
+                  <div dangerouslySetInnerHTML={{__html: type[language === 'eng' ? 'text_eng': 'text']}}></div>
                   <div>
                     <Gallery images={type.images} />
                   </div>

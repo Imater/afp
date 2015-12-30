@@ -206,7 +206,7 @@ class About extends Component {
 <article className="screen aboutGood">
   <div className="screen-inner aboutGood-inner">
     <h2 className="screen-title">Полезные советы</h2>
-    <ul className="aboutGood-arrows">
+    <ul className="aboutGood-arrows hide">
       <li className="aboutGood-arrow disable"><img src="/assets/img/about/icon-arrow-back.svg" width=""/></li>
       <li className="aboutGood-arrow"><img src="/assets/img/about/icon-arrow-back.svg" width=""/></li>
     </ul>

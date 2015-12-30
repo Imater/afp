@@ -30,7 +30,7 @@ class Gallery extends Component {
 
   render() {
     const { images } = this.props;
-    if(!images) {
+    if(!images || (images && !images.length)) {
       return (<div></div>);
     }
     const getPhoto = (add) => {
