@@ -1,14 +1,34 @@
+@import '../utils/common.less';
+
 .bg-video {
-  position: absolute;
-  min-width: 100%;
-  min-height: 100%;
-  top: 50%;
+  position: fixed;
   left: 50%;
+  right: 0;
+  top: 50%;
+  height: 100%;
   transform: translate(-50%, -50%);
   z-index: -1;
+  display: none;
 }
 .main-page{
   &.hide-bg {
     background-image: none !important;
+    .bg-video {
+      display: block;
+    }
+    .fixed-background {
+      display: none;
+    }
   }
+}
+.fixed-background {
+  position: fixed;
+  left: @menuWidth;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-image: url('/assets/img/01-back-video.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -2;
 }

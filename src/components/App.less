@@ -177,6 +177,9 @@
     .wrapper {
       .container {
         margin-left: 0;
+        .fixed-background {
+          left: 0;
+        }
         .festival-location {
           display: none;
         }
@@ -215,7 +218,7 @@
           }
           .was-block {
             font-size: 32px;
-            line-height: 32px;
+            line-height: 46px;
             margin-right: 80px;
             margin-bottom: 20px;
             &:before {
@@ -223,7 +226,9 @@
             }
             &:after {
               background-size: cover;
-              top: 0;
+              top: 10px;
+              right: 10px;
+              zoom: 0.6;
             }
           }
         }

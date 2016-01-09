@@ -48,7 +48,7 @@ class NewsLine extends Component {
   render() {
     const { language } = this.props;
     return (
-      <div className="page news-page" id="news">
+      <div className="news-page" id="news">
         <div className="row">
           <div className="left-col padding-left-50">
             <a name="news"></a>

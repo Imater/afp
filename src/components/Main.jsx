@@ -20,15 +20,19 @@ if (process.env.BROWSER) {
 }
 
 class Main extends Component {
-  rect = {
+  state = {
+    rect: {
+      top: 0
+    }
   }
+
   componentDidMount () {
     const { cancel } = raf;
     let rafId;
 
     const update = () => {
       this.setState({
-        rect: document.documentElement.getBoundingClientRect()
+        rect: document.documentElement.getBoundingClientRect(),
       });
     };
 
@@ -49,14 +53,16 @@ class Main extends Component {
   }
 
   render() {
-    console.info(this.state);
+    const { rect: {top} } = this.state;
     return (
       <div>
-        <About language={this.props.language} changeLanguage={this.props.changeLanguage} />
+        <About ref='about' language={this.props.language} changeLanguage={this.props.changeLanguage} scrollY={-top}/>
         <History language={this.props.language} changeLanguage={this.props.changeLanguage} />
         <LineUp />
-        <Technology />
-        <NewsLine />
+        <div className='page black'>
+          <Technology />
+          <NewsLine />
+        </div>
         <Partner />
         <Counter />
         <Footer />

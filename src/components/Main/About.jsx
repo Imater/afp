@@ -5,6 +5,7 @@ import i18n from 'i18next-client';
 import Social from '../Social';
 import $ from 'jquery';
 import classNames from 'classnames';
+import { tween } from 'react-imation';
 
 class About extends Component {
   componentDidMount () {
@@ -34,8 +35,32 @@ class About extends Component {
   }
 
   render() {
+    const { scrollY } = this.props;
+    const blur = tween(scrollY, [[0, 0], [100, 0], [500, 10]]);
+    console.info(scrollY, blur);
     return (
       <div className="page main-page" id="about">
+        <div className={classNames('fixed-background', {
+          'blur': scrollY > 100
+        })} style={{
+          WebkitFilter: `blur(${blur}px)`,
+          MozFilter: `blur(${blur}px)`,
+          OFilter: `blur(${blur}px)`,
+          MsFilter: `blur(${blur}px)`,
+          filter: `blur(${blur}px)`
+        }}>
+          <div className="row bottom-row social-row">
+            <div className="left-col padding-left-50 text-left">
+              <div className="festival-location">
+                <Link to='/about/map'>{i18n.t('about.novgorod')} {this.props.scrollY}</Link>
+              </div>
+              <div className="plus18">18+</div>
+            </div>
+            <div className="right-col padding-right-40 text-right">
+              <Social />
+            </div>
+          </div>
+        </div>
         <div className="row logoBlock">
           <div className="fullscreen-bg">
             <video ref="video" className="bg-video">
@@ -66,17 +91,6 @@ class About extends Component {
           <div className="right-col padding-right-40 text-right hide-on-video">
             <a href="http://www.eubeafestival.com/" target="_blank" className="eubea"></a>
             <a href="http://kudago.com/" target="_blank" className="kudago"></a>
-          </div>
-        </div>
-        <div className="row bottom-row social-row">
-          <div className="left-col padding-left-50 text-left">
-            <div className="festival-location">
-              <Link to='/about/map'>{i18n.t('about.novgorod')}</Link>
-            </div>
-            <div className="plus18">18+</div>
-          </div>
-          <div className="right-col padding-right-40 text-right">
-            <Social />
           </div>
         </div>
       </div>

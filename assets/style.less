@@ -166,7 +166,7 @@ body{
 
 .sidebar{
 	background-color: #242424;
-	width: 250px;
+	width: @menuWidth;
 	display: inline-block;
 	vertical-align: top;
 	position: fixed;
@@ -244,23 +244,20 @@ body{
     }
 	}
 	.container{
-		margin-left: 250px;
+		margin-left: @menuWidth;
 		position: relative;
     overflow: hidden;
 	}
 	.main-page{
-		background-image: url('img/01-back-video.jpg');
-		background-repeat: no-repeat;
-		background-size: cover;
 		padding-top: 40px;
-		height: 900px;
+		//height: 900px;
 	}
+
 	.second-page{
-		background-image: url('img/second.png');
-		background-repeat: no-repeat;
-		background-size: cover;
+		//background-image: url('img/second.png');
+		//background-repeat: no-repeat;
+		//background-size: cover;
 		padding-top: 52px;
-		height: 900px;
 	}
 	.djs-page{
 		overflow: hidden;
@@ -269,8 +266,12 @@ body{
 		background-color: #000;
 		overflow: hidden;
 	}
+  .black {
+    background: #000;
+  }
 	.page{
 		position: relative;
+    min-height: 100%;
 
 		.bottom-row{
 			position: absolute;
@@ -546,7 +547,7 @@ h1{
 			font-family: 'sf_ui_displayregular';
 		}
 		&:after{
-			background-image: url('img/scene.svg');
+			background-image: url('img/icon-face.svg');
 			background-repeat: no-repeat;
 			width: 67px;
 			height: 73px;
@@ -570,7 +571,7 @@ h1{
 			font-family: 'sf_ui_displayregular';
 		}
 		&:after{
-			background-image: url('img/dj.svg');
+			background-image: url('img/icon-dj.svg');
 			background-repeat: no-repeat;
 			width: 83px;
 			height: 67px;
@@ -594,7 +595,7 @@ h1{
 			font-family: 'sf_ui_displayregular';
 		}
 		&:after{
-				background-image: url('img/sound.svg');
+				background-image: url('img/icon-sound.svg');
 				background-repeat: no-repeat;
 				width: 68px;
 				height: 71px;
@@ -618,7 +619,7 @@ h1{
 			font-family: 'sf_ui_displayregular';
 		}
 		&:after{
-			background-image: url('img/viewer.svg');
+			background-image: url('img/icon-users.svg');
 			background-repeat: no-repeat;
 			width: 95px;
 			height: 52px;
@@ -642,7 +643,7 @@ h1{
 			font-family: 'sf_ui_displayregular';
 		}
 		&:after{
-			background-image: url('img/hectare.svg');
+			background-image: url('img/icon-hectares.svg');
 			background-repeat: no-repeat;
 			width: 68px;
 			height: 68px;
@@ -860,9 +861,10 @@ h1{
 			padding-right: 30px;
 			padding-top: 30px;
 			line-height: 22px;
-      p, div, blockquote {
+      p, div, blockquote, a {
         margin: 0;
         padding: 0;
+        color: #FFF;
       }
 		}
 
@@ -889,7 +891,7 @@ h1{
 	}
 }
 .before-festival{
-	margin-top: 26px;
+	//margin-top: 26px;
 	padding-top: 50px;
 	height: 400px;
 	background-image: url('img/about-festival.jpg');
