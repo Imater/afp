@@ -11,7 +11,7 @@ import Partner from './Main/Partner';
 import Counter from './Main/Counter';
 import Footer from './Main/Footer';
 import ScrollLink from 'react-scroll';
-import raf from 'raf';
+import raf from 'raf'; //request next animation frame
 
 const ScrollElement = ScrollLink.Element;
 
