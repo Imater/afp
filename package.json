@@ -1,6 +1,7 @@
 {
   "name": "afp",
   "version": "1.0.0",
+  "repository": "https://imater@bitbucket.org/looiru/afp.git",
   "description": "alfa future people",
   "main": "server/index.js",
   "scripts": {
@@ -9,6 +10,7 @@
     "prod": "NODE_ENV=production babel-node ./index.js",
     "test": "NODE_ENV=test babel-node ./index.js",
     "dev": "npm run start",
+    "debug": "babel-node-debug ./index.js",
     "build": "NODE_ENV=production webpack --progress --color -p --config webpack.prod.config.js",
     "watch": "nodemon --exec npm run start",
     "watch2": "node ./index.js --watch"
@@ -33,12 +35,15 @@
     "mysql": "^2.10.0",
     "nodemailer": "^1.10.0",
     "nodemailer-smtp-transport": "^1.0.4",
+    "raf": "^3.1.0",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-google-maps": "^4.7.0",
+    "react-imation": "^0.5.3",
     "react-redux": "^4.0.1",
     "react-router": "^1.0.2",
     "react-scroll": "^0.35.0",
+    "react-track": "^0.3.1",
     "react-youtube": "^5.0.0",
     "redux": "^3.0.5",
     "redux-devtools": "^3.0.0",

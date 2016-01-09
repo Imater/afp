@@ -88,6 +88,9 @@ class LineUp extends Component {
     const djs = this.props.listData.get('djs');
     let count = parseInt(this.state.windowWidth / 300);
     let box = parseInt((this.state.windowWidth-275)/count);
+    if(box < 200) {
+      box = 200;
+    }
     let boxProcent = 100/count;
     return (
       <div className="page djs-page" id="lineup">

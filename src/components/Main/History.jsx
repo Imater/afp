@@ -83,11 +83,6 @@ class History extends Component {
               }
             </div>
           </div>
-          <div className="right-col text-right padding-right-40">
-            <a href='javascript:void(0)' className="language" onClick={this.props.changeLanguage.bind(this, this.props.language==='eng' ? 'ru' : 'eng')}>
-              {this.props.language==='eng' ? 'en' : 'ru'}
-            </a>
-          </div>
         </div>
         <div className="row vertical-center-row padding-left-50">
           {

@@ -36,7 +36,7 @@ class About extends Component {
   render() {
     return (
       <div className="page main-page" id="about">
-        <div className="row">
+        <div className="row logoBlock">
           <div className="fullscreen-bg">
             <video ref="video" className="bg-video">
               <source src="assets/video/afp.mp4" type="video/mp4" />

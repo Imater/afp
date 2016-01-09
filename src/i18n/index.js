@@ -11,7 +11,9 @@ const resources = {
         partners: 'партнёры',
         media: 'фото и видео',
         contacts: 'контакты',
-        buyTicket: 'Купить билет'
+        buyTicket: 'Купить билет',
+        close: 'ЗАКРЫТЬ',
+        menu: 'МЕНЮ'
       },
       about: {
         mainFestival: 'Главный фестиваль',
@@ -80,7 +82,9 @@ const resources = {
         partners: 'partners',
         media: 'media',
         contacts: 'contacts',
-        buyTicket: 'Buy ticket'
+        buyTicket: 'Buy ticket',
+        close: 'CLOSE',
+        menu: 'MENU'
       },
       about: {
         mainFestival: 'The main festival',

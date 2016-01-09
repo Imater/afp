@@ -9,7 +9,6 @@ import Map from '../components/Map';
 import cx from 'classnames'
 import Footer from '../components/Main/Footer';
 import Share from '../components/Share';
-
 if (process.env.BROWSER) {
   require('./About.less');
 }

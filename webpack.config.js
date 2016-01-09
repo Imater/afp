@@ -61,7 +61,6 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx', '.css', '.scss'],
     alias: {
-      'react-track': path.resolve(__dirname + '../../src/')
     }
   },
 

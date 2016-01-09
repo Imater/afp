@@ -23,7 +23,7 @@ class Counter extends Component {
   }
 
   tick () {
-    var target = new Date('Jul 22 2016 15:00:00');
+    var target = new Date('Jul 22 2016 15:00:00 +0300');
     var time = new Date(Date.now());
     var t = target - (new Date());
     var seconds = Math.floor( (t/1000) % 60 );

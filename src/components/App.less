@@ -120,3 +120,209 @@
 .hide {
   display: none;
 }
+.topMobileMenu {
+  display: none;
+}
+.closeButton {
+  display: none;
+}
+//for Mobile
+@media (max-width: @phone){
+  .topMobileMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: block;
+    color: #FFF;
+    .menuButton {
+      border: 1px solid rgba(255,255,255,0.3);
+      display: inline-block;
+      margin-left: 30px;
+      margin-top: 10px;
+      padding: 5px 10px;
+      border-radius: 2px;
+      font-size: 12px;
+      opacity: 0.6;
+    }
+  }
+  .top-page-menu {
+    display: none;
+  }
+  .app-wrapper {
+    .sidebar {
+      display: none;
+      .sidebar-logo {
+        display: none;
+      }
+      .menu {
+        margin-top: 20px;
+
+        li {
+          margin-bottom: 10px;
+        }
+      }
+      .closeButton {
+        color: #FFF;
+        border: 1px solid rgba(255,255,255,0.3);
+        display: inline-block;
+        margin-left: 30px;
+        margin-top: 10px;
+        padding: 5px 10px;
+        border-radius: 2px;
+        font-size: 12px;
+      }
+    }
+    .wrapper {
+      .container {
+        margin-left: 0;
+        .festival-location {
+          display: none;
+        }
+        .social-row {
+          display: none;
+        }
+        .transparent-button {
+          padding: 5px 10px;
+          line-height: 15px;
+          font-size: 14px;
+        }
+        .main-page {
+          height: 100%;
+          .how-was-row {
+            bottom: 40px;
+            .left-col {
+              width: 100%;
+            }
+            .right-col {
+              display: none;
+            }
+          }
+        }
+        .second-page {
+          height: 100%;
+          .left-col {
+            width: 100%;
+            .col-title {
+              span {
+                font-size: 20px;
+              }
+            }
+          }
+          .vertical-center-row {
+            top: 58%;
+          }
+          .was-block {
+            font-size: 32px;
+            line-height: 32px;
+            margin-right: 80px;
+            margin-bottom: 20px;
+            &:before {
+              font-size: 12px;
+            }
+            &:after {
+              background-size: cover;
+              top: 0;
+            }
+          }
+        }
+        .djs-block {
+          .transparent-button {
+            display: none;
+          }
+          .left-col, .right-col {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 0;
+          }
+          .dj1, .dj2, .dj3, .dj4, .dj5 {
+            height: 280px;
+            &:before {
+              font-size: 20px;
+            }
+          }
+        }
+        #technology {
+          .left-col, .right-col {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 0;
+            height: 50%;
+          }
+          .technology-item, .sport-item {
+            height: 100%;
+            span {
+              font-size: 25px;
+            }
+          }
+        }
+        .news-page {
+          .news-list {
+            width: 100%;
+            li {
+              display: block;
+              float: none;
+              img {
+                width: 100%;
+                height: auto;
+              }
+              .news-overlay {
+                opacity: 1;
+                background-color: rgba(0,0,0,0.55);
+                font-size: 6vw;
+                line-height: 7vw;
+                padding: 20px;
+              }
+            }
+          }
+        }
+        .partner-item {
+          width: 33%;
+          margin: 0;
+          position: relative;
+          margin-bottom: 20px;
+          img {
+            width: 85%;
+          }
+        }
+      }
+      .before-festival {
+        padding-top: 10px;
+        .left-col, .right-col {
+          display: block;
+          width: 100%;
+          text-align: center;
+          padding: 0;
+        }
+        .before-festival-title {
+          font-size: 20px;
+        }
+        .buy-button {
+          line-height: 30px;
+          font-size: 13px;
+        }
+        .timer {
+          width: 100%;
+          text-align: center;
+          span {
+            font-size: 40px;
+            line-height: 53px;
+            margin-right: 30px;
+            &:before {
+              bottom: -30px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .showMenu {
+    .sidebar {
+      display: inline-block;
+      z-index: 200;
+    }
+  }
+}

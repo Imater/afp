@@ -11,6 +11,7 @@ import Partner from './Main/Partner';
 import Counter from './Main/Counter';
 import Footer from './Main/Footer';
 import ScrollLink from 'react-scroll';
+import raf from 'raf';
 
 const ScrollElement = ScrollLink.Element;
 
@@ -19,7 +20,36 @@ if (process.env.BROWSER) {
 }
 
 class Main extends Component {
+  rect = {
+  }
+  componentDidMount () {
+    const { cancel } = raf;
+    let rafId;
+
+    const update = () => {
+      this.setState({
+        rect: document.documentElement.getBoundingClientRect()
+      });
+    };
+
+    const handleScroll = event => {
+      cancel(rafId);
+      rafId = raf(update);
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    this.removeScrollHandler = () => {
+      cancel(rafId);
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }
+
+  componentWillUnmount() {
+    this.removeScrollHandler();
+  }
+
   render() {
+    console.info(this.state);
     return (
       <div>
         <About language={this.props.language} changeLanguage={this.props.changeLanguage} />

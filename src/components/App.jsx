@@ -48,6 +48,16 @@ if (process.env.BROWSER) {
                 smoothScroll(0);
               }
             }}></Link>
+          <div className="closeButton" onClick={() => {
+            $('body').removeClass('showMenu');
+          }}>
+            <span>{i18n.t('menu.close')}</span>
+            <Link to="/" className="sidebar-logo mini" onClick={() => {
+              if (typeof document !== 'undefined') {
+                smoothScroll(0);
+              }
+            }}></Link>
+          </div>
             <ul className="menu">
               {
                 menuItems.map((item, key) => {
@@ -68,6 +78,9 @@ if (process.env.BROWSER) {
           </div>
           <div className="wrapper">
             <div className="container">
+              <div className="topMobileMenu" onClick={() => {
+                $('body').addClass('showMenu');
+              }}><span className="menuButton">{i18n.t('menu.menu')}</span></div>
               {this.props.children}
             </div>
           </div>

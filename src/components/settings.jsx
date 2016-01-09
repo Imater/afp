@@ -981,5 +981,12 @@ export const personList = [
     job: 'Вопросы по зоне спорта',
     job_eng: 'Sport zone',
     email: 'AMakarchukova@alfabank.ru'
+  },
+  {
+    name: 'Кристина Вдовина',
+    name_eng: 'Kristina Vdovina',
+    job: 'Директор по рекламе',
+    job_eng: 'Advertising director',
+    email: 'Kvdovina@alfabank.ru'
   }
 ]

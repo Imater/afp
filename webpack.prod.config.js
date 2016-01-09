@@ -46,13 +46,13 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
         loaders: [
-          'file?hash=sha512&digest=hex&name=[hash].[ext]',
-          'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
+          'url?limit=1000',
+          'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant_off:{quality: "65-90", speed: 4}}'
         ]
       },
       {
         test : /\.(woff|woff2|ttf|eot)$/,
-        loader: 'url?limit=98192'
+        loader: 'url?limit=1000'
       }
     ],
   },
@@ -61,7 +61,6 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx', '.css', '.scss'],
     alias: {
-      'react-track': path.resolve(__dirname + '../../src/')
     }
   },
 

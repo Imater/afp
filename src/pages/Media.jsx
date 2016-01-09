@@ -75,7 +75,13 @@ class Media extends Component {
     const types = typesSport;
     const main = typesSport;
     let count = parseInt(this.state.windowWidth / 400);
+    if(count <= 0) {
+      count = 1;
+    }
     let box = parseInt((this.state.windowWidth-275)/count)/1.5;
+    if(box < 200) {
+      box = 200;
+    }
     let boxProcent = 100/count;
     return (
       <div className="Media">

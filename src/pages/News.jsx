@@ -102,8 +102,14 @@ class News extends Component {
   }
 
   render() {
-    const count = parseInt(this.state.windowWidth / 400);
-    const box = parseInt((this.state.windowWidth-275)/count)/1.5;
+    let count = parseInt(this.state.windowWidth / 400);
+    if(count <= 0) {
+      count = 1;
+    }
+    let box = parseInt((this.state.windowWidth-275)/count)/1.5;
+    if(box < 200) {
+      box = 200;
+    }
     const boxProcent = 100/count;
     const { language } = this.props;
     const types = typesNews;

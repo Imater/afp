@@ -1,3 +1,5 @@
+@import '../src/utils/common.less';
+
 @font-face {
     font-family: 'sf_ui_displayblack';
     src: url('font/sf-ui-display-black-webfont.eot');
@@ -161,6 +163,7 @@ a{
 body{
 	background-color: #000;
 }
+
 .sidebar{
 	background-color: #242424;
 	width: 250px;
@@ -197,6 +200,11 @@ body{
 		}
 	}
 }
+
+.topMobileMenu {
+  display: none;
+}
+
 .years-selector {
   position: absolute;
   top: 70px;
@@ -301,6 +309,11 @@ body{
 		display: table;
 		clear: both;
 	}
+  &.logoBlock {
+    @media (max-width: @phone){
+      margin-top: 30%;
+    }
+  }
 }
 h1{
 	font-family: 'sf_ui_displaybold';
@@ -310,6 +323,10 @@ h1{
 	text-transform: uppercase;
 	margin: 0px;
   transition: @time all;
+  @media (max-width: @phone){
+    font-size: 7vw;
+    line-height: 8vw;
+  }
 }
 .festival-date{
 	font-family: 'sf_ui_displayregular';
@@ -317,6 +334,9 @@ h1{
 	line-height: 50px;
 	color: #fff;
 	margin-top: 16px;
+  @media (max-width: @phone){
+    font-size: 20px;
+  }
 }
 .language{
 	font-family: 'sf_ui_displayregular';
@@ -494,7 +514,7 @@ h1{
 		opacity: .5;
 		font-size: 22px;
 		line-height: 26px;
-		margin-right: 26px;
+		margin: 0 13px;
 		transition: @time opacity;
 	}
 	a.active,
@@ -668,7 +688,7 @@ h1{
             font-family: 'sf_ui_displayregular';
             color: #FFF;
             font-size: 30px;
-            margin-top: -100px;
+            margin-top: -50px;
             margin-left: 20px;
             display: block;
             text-transform: uppercase;
@@ -689,7 +709,7 @@ h1{
             font-family: 'sf_ui_displayregular';
             color: #FFF;
             font-size: 30px;
-            margin-top: -100px;
+            margin-top: -50px;
             margin-left: 70px;
             display: block;
             text-transform: uppercase;
@@ -1506,9 +1526,15 @@ footer{
 
 .padding-left-50{
 	padding-left: 50px;
+  @media (max-width: @phone){
+    padding-left: 20px;
+  }
 }
 .padding-right-40{
 	padding-right: 40px;
+  @media (max-width: @phone){
+    padding-right: 20px;
+  }
 }
 .text-left{
 	text-align: left;
