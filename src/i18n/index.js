@@ -58,6 +58,17 @@ const resources = {
       partners:{
         more: 'узнать больше'
       },
+      faq:{
+
+        form:{
+          title:'Задать вопрос',
+          subject: 'Тема вопроса',
+          email: 'Адрес электронной почты',
+          question:'Ваш вопрос',
+          subscribe:'Подписаться на новости',
+          submit:'Отправить'
+        }
+      },
       footer:{
         subscribe: 'Подписка',
         email: 'Ваш e-mail',
@@ -128,6 +139,17 @@ const resources = {
       },
       partners:{
         more: 'more'
+      },
+      faq:{
+
+        form:{
+          title:'Ask a qustion',
+          subject: 'Subject',
+          email: 'Your email',
+          question:'Your question',
+          subscribe:'Subscribe',
+          submit:'Send'
+        }
       },
       footer:{
         subscribe: 'Subscribe',

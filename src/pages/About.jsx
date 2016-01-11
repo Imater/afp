@@ -245,16 +245,15 @@ class About extends Component {
     <img src="/assets/img/about/icon-market.svg" className='aboutCategory-img' width="66"/>
     <span className="aboutCategory-label">Магазин</span>
   </a>
-  <Link to='/about/main/rules'>
-    <span className="aboutCategory-item aboutCategory-item--2">
+  <Link to='/about/main/rules' className="aboutCategory-item aboutCategory-item--2">
       <img src="/assets/img/about/icon-book--white.svg" className='aboutCategory-img' width="76"/>
       <span className="aboutCategory-label">Правила</span>
-    </span>
   </Link>
-  <a href="#" className="aboutCategory-item aboutCategory-item--3">
-    <img src="/assets/img/about/icon-messages.svg" className='aboutCategory-img' width="66"/>
-    <span className="aboutCategory-label">FAQ</span>
-  </a>
+  <Link to='/faq' className="aboutCategory-item aboutCategory-item--3">
+      <img src="/assets/img/about/icon-messages.svg" className='aboutCategory-img' width="66"/>
+      <span className="aboutCategory-label">FAQ</span>
+  </Link>
+
 </div>
         </div>
         <Footer />
