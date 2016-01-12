@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import i18n from 'i18next-client';
 import Social from '../components/Social';
 import TopPageMenu from '../components/TopPageMenu';
-import { aboutItems, aboutMain, whereToLiveList, aboutInfo } from '../components/settings';
+import { aboutItems, aboutMain } from '../components/settings';
 import Map from '../components/Map';
 import cx from 'classnames'
 import Footer from '../components/Main/Footer';
@@ -129,7 +129,7 @@ class About extends Component {
   <article className="screen aboutInfo">
     <div className="screen-inner">
         {
-          aboutInfo.map((info, index) => {
+          aboutMain.info.map((info, index) => {
             return (
               <div className="aboutInfo-block" key={index}>
                 <h2 className="screen-title">
@@ -200,10 +200,10 @@ class About extends Component {
 <div id='faq'></div>
 <div id='rules'></div>
 <div className="aboutCategory">
-  <a href="#" className="aboutCategory-item aboutCategory-item--1">
+  <Link to='/store' className="aboutCategory-item aboutCategory-item--1">
     <img src="/assets/img/about/icon-market.svg" className='aboutCategory-img' width="66"/>
     <span className="aboutCategory-label">{i18n.t('about.store')}</span>
-  </a>
+  </Link>
   <Link to='/about/main/rules' className="aboutCategory-item aboutCategory-item--2">
       <img src="/assets/img/about/icon-book--white.svg" className='aboutCategory-img' width="76"/>
       <span className="aboutCategory-label">{i18n.t('about.rules')}</span>

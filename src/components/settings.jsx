@@ -735,28 +735,6 @@ export const partners = [
 ];
 
 
-export const aboutInfo = [
-  {
-    icon: 'icon-parking.svg',
-    title: 'Парковка',
-    title_eng: 'Parking',
-    text: 'В 10 минутах ходьбы от кемпинга организована удобная охраняемая парковка. Где вы можете спокойно оставить свою машину, не опасаясь, что с ней что-то случится. Билет на паркинг дает право въезда и регистрации для одного транспортного средства только категорий А и В.',
-    text_eng: 'A 10-minute walk from the camping area we have arranged a convenient secure parking area. There you can leave your car safely and not to worry about any unpleasant surprises when you return. More information about parking will be available shortly. Follow the updates!'
-  },
-
-  {
-    icon: 'icon-save.svg',
-    title: 'Камеры хранения',
-    title_eng: 'Luggage',
-    text: 'На территории фестиваля установлены камеры хранения, здесь вы можете взять в аренду ячейку для личных вещей. Зная, что ваши ценности в безопасности, вы сможете по-настоящему расслабиться и получить удовольствие от мероприятия.',
-    text_eng: 'At the festival we have set check-rooms, where you can rent a locker to keep your personal things. Now you can truly relax and enjoy the music, being confident that you luggage is safe.',
-  }
-
-];
-
-
-
-
 export const personList = [
   {
     name: 'Екатерина Осадчая',
@@ -1388,5 +1366,23 @@ export const aboutMain = {
         </div>
       )
     }
+  ],
+  info: [
+    {
+      icon: 'icon-parking.svg',
+      title: 'Парковка',
+      title_eng: 'Parking',
+      text: 'В 10 минутах ходьбы от кемпинга организована удобная охраняемая парковка. Где вы можете спокойно оставить свою машину, не опасаясь, что с ней что-то случится. Билет на паркинг дает право въезда и регистрации для одного транспортного средства только категорий А и В.',
+      text_eng: 'A 10-minute walk from the camping area we have arranged a convenient secure parking area. There you can leave your car safely and not to worry about any unpleasant surprises when you return. More information about parking will be available shortly. Follow the updates!'
+    },
+
+    {
+      icon: 'icon-save.svg',
+      title: 'Камеры хранения',
+      title_eng: 'Luggage',
+      text: 'На территории фестиваля установлены камеры хранения, здесь вы можете взять в аренду ячейку для личных вещей. Зная, что ваши ценности в безопасности, вы сможете по-настоящему расслабиться и получить удовольствие от мероприятия.',
+      text_eng: 'At the festival we have set check-rooms, where you can rent a locker to keep your personal things. Now you can truly relax and enjoy the music, being confident that you luggage is safe.',
+    }
+
   ]
 }
