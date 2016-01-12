@@ -23,6 +23,7 @@ import AlbumAll from '../containers/AlbumAll';
 import Contacts from '../containers/Contacts';
 import Rules from '../containers/Rules';
 import Faq from '../containers/Faq';
+import Store from '../containers/Store';
 
 function scrollTo(name) {
   return () => {
@@ -68,6 +69,7 @@ export default (
       <Route path='rules' component={Rules}></Route>
     </Route>
     <Route path='/faq' component={Faq}></Route>
+    <Route path='/store' component={Store}></Route>
     <Route path='/technology(/:part)' component={Technology} onEnter={defaultPath('virtuality')}/>
     <Route path='/sport(/:part)' component={Sport} onEnter={defaultPath('workout')} />
     <Route path='/news(/:part)' component={News} onEnter={defaultPath('main')} />
