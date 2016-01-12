@@ -776,52 +776,52 @@ export const personList = [
 
 export const faqItems = [
   {
-    heading:'Как добраться?',
-    heading_eng:'',
+    heading: 'Как добраться?',
+    heading_eng: 'How to get?',
     title: 'Почему мы так мало путешествуем по своей стране? Как давно мы были на Волге?',
-    title_eng: '',
+    title_eng: 'Почему мы так мало путешествуем по своей стране? Как давно мы были на Волге?',
     text: 'Свежий воздух и яркое солнце. Тайный аэродром на берегу Волги. Музыка, которая меняет настроение. Технологии, которые меняют мир. Что нужно, чтобы услышать и увидеть будущее? Все просто. Быть на фестивале ALFA FUTURE PEOPLE. Поверьте, отсюда вы вернетесь совершенно другим.',
-    text_eng: ''
+    text_eng: 'Свежий воздух и яркое солнце. Тайный аэродром на берегу Волги. Музыка, которая меняет настроение. Технологии, которые меняют мир. Что нужно, чтобы услышать и увидеть будущее? Все просто. Быть на фестивале ALFA FUTURE PEOPLE. Поверьте, отсюда вы вернетесь совершенно другим.',
   },
   {
-    heading:'',
-    heading_eng:'',
+    heading: '',
+    heading_eng: '',
     title: 'Как давно мы встречали рассвет в поле? ',
-    title_eng: '',
+    title_eng: 'Как давно мы встречали рассвет в поле? ',
     text: 'Музыка, которая меняет настроение. Технологии, которые меняют мир. Что нужно, чтобы услышать и увидеть будущее? Все просто. Поверьте, отсюда вы вернетесь совершенно другим.',
-    text_eng: ''
+    text_eng: 'Музыка, которая меняет настроение. Технологии, которые меняют мир. Что нужно, чтобы услышать и увидеть будущее? Все просто. Поверьте, отсюда вы вернетесь совершенно другим.',
   },
   {
-    heading:'',
-    heading_eng:'',
+    heading: '',
+    heading_eng: '',
     title: 'Почему мы так мало путешествуем по своей стране? Как давно мы были на Волге?',
-    title_eng: '',
+    title_eng: 'Почему мы так мало путешествуем по своей стране? Как давно мы были на Волге?',
     text: 'Свежий воздух и яркое солнце. Тайный аэродром на берегу Волги. Музыка, которая меняет настроение. Технологии, которые меняют мир. Что нужно, чтобы услышать и увидеть будущее? Все просто. Быть на фестивале ALFA FUTURE PEOPLE. Поверьте, отсюда вы вернетесь совершенно другим.',
-    text_eng: ''
+    text_eng: 'Свежий воздух и яркое солнце. Тайный аэродром на берегу Волги. Музыка, которая меняет настроение. Технологии, которые меняют мир. Что нужно, чтобы услышать и увидеть будущее? Все просто. Быть на фестивале ALFA FUTURE PEOPLE. Поверьте, отсюда вы вернетесь совершенно другим.',
   },
   {
-    heading:'',
-    heading_eng:'',
+    heading: '',
+    heading_eng: '',
     title: 'Как давно мы встречали рассвет в поле? ',
-    title_eng: '',
+    title_eng: 'Как давно мы встречали рассвет в поле? ',
     text: 'Музыка, которая меняет настроение. Технологии, которые меняют мир. Что нужно, чтобы услышать и увидеть будущее? Все просто. Поверьте, отсюда вы вернетесь совершенно другим.',
-    text_eng: ''
+    text_eng: 'Музыка, которая меняет настроение. Технологии, которые меняют мир. Что нужно, чтобы услышать и увидеть будущее? Все просто. Поверьте, отсюда вы вернетесь совершенно другим.',
   },
   {
-    heading:'',
-    heading_eng:'',
+    heading: '',
+    heading_eng: '',
     title: 'Почему мы так мало путешествуем по своей стране? Как давно мы были на Волге?',
-    title_eng: '',
+    title_eng: 'Почему мы так мало путешествуем по своей стране? Как давно мы были на Волге?',
     text: 'Свежий воздух и яркое солнце. Тайный аэродром на берегу Волги. Музыка, которая меняет настроение. Технологии, которые меняют мир. Что нужно, чтобы услышать и увидеть будущее? Все просто. Быть на фестивале ALFA FUTURE PEOPLE. Поверьте, отсюда вы вернетесь совершенно другим.',
-    text_eng: ''
+    text_eng: 'Свежий воздух и яркое солнце. Тайный аэродром на берегу Волги. Музыка, которая меняет настроение. Технологии, которые меняют мир. Что нужно, чтобы услышать и увидеть будущее? Все просто. Быть на фестивале ALFA FUTURE PEOPLE. Поверьте, отсюда вы вернетесь совершенно другим.',
   },
   {
-    heading:'Где жить?',
-    heading_eng:'',
+    heading: 'Где жить?',
+    heading_eng: 'Where to live?',
     title: 'Как давно мы встречали рассвет в поле? ',
-    title_eng: '',
+    title_eng: 'Как давно мы встречали рассвет в поле? ',
     text: 'Музыка, которая меняет настроение. Технологии, которые меняют мир. Что нужно, чтобы услышать и увидеть будущее? Все просто. Поверьте, отсюда вы вернетесь совершенно другим.',
-    text_eng: ''
+    text_eng: 'Музыка, которая меняет настроение. Технологии, которые меняют мир. Что нужно, чтобы услышать и увидеть будущее? Все просто. Поверьте, отсюда вы вернетесь совершенно другим.',
   }
 
 ];
@@ -951,7 +951,7 @@ export const aboutMain = {
           <p className="screen-text">
             By train <br/>
             You can reach the railway station Kozino by train from Nizhny Novgorod. Find the train-schedule on Russian
-            Railways website, where you can also buy tickets: RZD.RU.
+            Railways website, where you can also buy tickets: <a target="_blank" href="http://rzd.ru">RZD.RU</a>.
           </p>
 
           <p className="screen-text">
@@ -977,7 +977,7 @@ export const aboutMain = {
               <li>
                 - Любым скорым или пассажирским поездом сообщением Москва - Нижний Новгород, Санкт-Петербург – Нижний
                 Новгород или поездами, следующими далее Нижнего Новгорода (Казань, Киров, Томск, Н.Уренгой и др.)
-                Подробное расписание поездов смотрите на сайте rzd.ru
+                Подробное расписание поездов смотрите на сайте <a target="_blank" href="http://rzd.ru">rzd.ru</a>
                 Там же вы сможете сразу приобрести электронный билет на нужный вам поезд.
               </li>
               <li>
@@ -1036,13 +1036,13 @@ export const aboutMain = {
           <p className="screen-text">
             By plane <br/>
             "Aeroflot", "UTair", "Ural Airlines" and some other airlines arrange flights from Moscow to Nizhny Novgorod.
-            Timetable is available here: AVIASALES.RU.
+            Timetable is available here: <a target="_blank" href="http://aviasales.ru">AVIASALES.RU</a>.
           </p>
 
           <p className="screen-text">
             By train <br/>
             Nizhny Novgorod is reachable from Moscow by train. Look through the train-schedule on Russian Railways
-            website, where you can also buy tickets: RZD.RU.
+            website, where you can also buy tickets: <a target="_blank" href="http://rzd.ru">RZD.RU</a>.
           </p>
 
           <p className="screen-text">During the festival there will be specialized buses, which will shuttle from Moscow
@@ -1096,7 +1096,7 @@ export const aboutMain = {
           </p>
 
           <p className="screen-text">
-            Подробное расписание поездов смотрите на сайте rzd.ru
+            Подробное расписание поездов смотрите на сайте <a target="_blank" href="http://rzd.ru">rzd.ru</a>
           </p>
 
         </div>
@@ -1107,13 +1107,13 @@ export const aboutMain = {
           <p className="screen-text">
             By plane <br/>
             "Aeroflot", "Russia airlines" and some other airlines arrange flights from Moscow to Nizhny Novgorod.
-            Timetable is available here: AVIASALES.RU
+            Timetable is available here: <a target="_blank" href="http://aviasales.ru">AVIASALES.RU</a>
           </p>
 
           <p className="screen-text">
             By train <br/>
             Nizhny Novgorod is reachable from St. Petersburg by train. Look through the train-schedule on Russian
-            Railways website, where you can also buy tickets: RZD.RU
+            Railways website, where you can also buy tickets: <a target="_blank" href="http://rzd.ru">RZD.RU</a>
           </p>
 
           <p className="screen-text">If you are coming to festival from Moscow (or you go through Moscow), you can go by
