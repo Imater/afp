@@ -734,224 +734,28 @@ export const partners = [
   }
 ];
 
-export const howToGetThereList = [
+
+export const aboutInfo = [
   {
-    title: 'из Нижнего Новгорода',
-    text: (
-      <div>
-        <p className="screen-text">
-          Самый быстрый и удобный способ добраться до фестиваля - электричка с Московского вокзала Нижнего
-          Новгорода (или с любой остановки электрички в городе по Заволжскому направлению) до станции
-          Козино. Количество электричек на время проведение фестиваля увеличено в несколько раз, также
-          увеличено количество вагонов в поездах.
-        </p>
-
-        <div className="aboutWay-benefits">
-          <div className="benefit aboutWay-benefit aboutWay-benefit--1">
-            <img src="/assets/img/about/icon-clock.svg" width="38" className="benefit-icon"/>
-            <span className="benefit-title">30 м</span>
-
-            <p className="benefit-desc">Средний интервал движения&nbsp;поездов</p>
-          </div>
-          <div className="benefit aboutWay-benefit aboutWay-benefit--2">
-            <img src="/assets/img/about/icon-train.svg" width="41" className="benefit-icon"/>
-            <span className="benefit-title">35 м</span>
-
-            <p className="benefit-desc">время в пути от Московского вокзала до станции Козино</p>
-          </div>
-          <div className="benefit aboutWay-benefit aboutWay-benefit--3">
-            <img src="/assets/img/about/icon-car.svg" width="55" className="benefit-icon"/>
-            <span className="benefit-title">> 2.5 ч</span>
-
-            <p className="benefit-desc">время в пути на машине до фестиваля в час пик</p>
-          </div>
-        </div>
-
-        <p className="screen-text">
-          От станции «Козино» до входа на фестиваль можно также пройти по пешеходному маршруту, который будет
-          обозначен указателями. Добраться до фестиваля пешком от станции «Козино» можно примерно за 15-20
-          мин.
-        </p>
-      </div>
-    )
+    icon: 'icon-parking.svg',
+    title: 'Парковка',
+    title_eng: 'Parking',
+    text: 'В 10 минутах ходьбы от кемпинга организована удобная охраняемая парковка. Где вы можете спокойно оставить свою машину, не опасаясь, что с ней что-то случится. Билет на паркинг дает право въезда и регистрации для одного транспортного средства только категорий А и В.',
+    text_eng: 'A 10-minute walk from the camping area we have arranged a convenient secure parking area. There you can leave your car safely and not to worry about any unpleasant surprises when you return. More information about parking will be available shortly. Follow the updates!'
   },
+
   {
-    title: 'из Москвы',
-    text: (
-      <div>
-        <p className="screen-text">
-          Железнодорожный транспорт:
-          <ul>
-            <li>
-          - Высокоскоростным поездом «Стриж» или «Ласточка». Отправление с Курского вокзала Москвы, время в пути чуть меньше 4 часов.
-            </li>
-            <li>
-          - Любым скорым или пассажирским поездом сообщением Москва - Нижний Новгород, Санкт-Петербург – Нижний Новгород или поездами, следующими далее Нижнего Новгорода (Казань, Киров, Томск, Н.Уренгой и др.)
-          Подробное расписание поездов смотрите на сайте rzd.ru
-          Там же вы сможете сразу приобрести электронный билет на нужный вам поезд.
-            </li>
-            <li>
-          - Все высокоскоростные поезда «Стриж» и «Ласточка» обязательно останавливаются на станции «Дзержинск» (стоянка 2 мин), не доезжая немного до Нижнего Новгорода. Некоторые скорые и пассажирские поезда также останавливаются на станции «Дзержинск».
-          Добраться от Дзержинска до фестиваля будет удобно зрителям, которые не бронировали себе гостиницы в Нижнем Новгороде, а также тем, кто едет сначала на фестиваль, а потом уже в Нижний Новгород.
-            </li>
-          </ul>
-        </p>
-
-        <div className="aboutWay-benefits">
-          <div className="benefit aboutWay-benefit aboutWay-benefit--1">
-            <img src="/assets/img/about/icon-clock.svg" width="38" className="benefit-icon"/>
-            <span className="benefit-title">30 м</span>
-
-            <p className="benefit-desc">Средний интервал движения&nbsp;поездов</p>
-          </div>
-          <div className="benefit aboutWay-benefit aboutWay-benefit--2">
-            <img src="/assets/img/about/icon-train.svg" width="41" className="benefit-icon"/>
-            <span className="benefit-title">35 м</span>
-
-            <p className="benefit-desc">время в пути от Московского вокзала до станции Козино</p>
-          </div>
-          <div className="benefit aboutWay-benefit aboutWay-benefit--3">
-            <img src="/assets/img/about/icon-car.svg" width="55" className="benefit-icon"/>
-            <span className="benefit-title">> 2.5 ч</span>
-
-            <p className="benefit-desc">время в пути на машине до фестиваля в час пик</p>
-          </div>
-        </div>
-
-        <p className="screen-text">
-          Зрители которые прибывают на любом поезде на Московский вокзал Нижнего Новгорода, могут далее воспользоваться самым быстрым и удобным способом добраться до фестиваля - электричкой с Московского вокзала Нижнего Новгорода до станции «Козино» (Заволжское направление).
-           Интервал движения электричек в дни фестиваля составит в среднем около 30-40 мин, время в пути от Московского вокзала до станции Козино - около 35 минут.
-        </p>
-        <p className="screen-text">
- От ж/д станции «Козино» до места проведения фестиваля и обратно до станции «Козино», а также от въезда в поселок Большое Козино с трассы Р-152 (Нижний Новгород-Балахна) и обратно до трассы, в дни проведения фестиваля будут в круглосуточном режиме курсировать бесплатные шаттлы фестиваля.
- От станции «Козино» до входа фестиваль можно также пройти по пешеходному маршруту, который будет обозначен навигацией. Добраться до фестиваля пешком от станции «Козино» можно примерно за 15-20 мин.
- Также до Нижнего Новгорода из Москвы можно добраться самолетом. Смотрите расписание на сайтах авиакомпаний.
-        </p>
-      </div>
-    )
-  },
-  {
-    title: 'из Санкт-Петербурга',
-    text: (
-      <div>
-        <p className="screen-text">
-Из Санкт-Петербурга в Нижний Новгород выполняют рейсы несколько авиакомпаний.
-Смотрите расписание на сайтах авиакомпаний.
-        </p>
-        <p className="screen-text">
-Железнодорожный транспорт:
-        </p>
-        <p className="screen-text">
-- Любым скорым или пассажирским поездом сообщением Санкт-Петербург – Нижний Новгород или поездами, следующими далее Нижнего Новгорода (Казань, Киров, Томск, Н.Уренгой и др.)
-        </p>
-        <p className="screen-text">
-Мы рекомендуем доехать на «Сапсане» или любом другом поезде до Москвы и далее воспользоваться высокоскоростными поездами «Стриж» или «Ласточка». Отправление с Курского вокзала Москвы, время в пути чуть меньше 4 часов.
-        </p>
-        <p className="screen-text">
-Подробное расписание поездов смотрите на сайте rzd.ru
-        </p>
-
-      </div>
-    )
-  },
-  {
-    title: 'другие города',
-    text: (
-      <div>
-        <p className="screen-text">
-ИНФОРМАЦИЯ ДЛЯ ЗРИТЕЛЕЙ, НАПРАВЛЯЮЩИХСЯ НА ФЕСТИВАЛЬ НА ЛИЧНОМ ТРАНСПОРТЕ
-        </p>
-        <p className="screen-text">
-Если вы выбрали для поездки на фестиваль личный автотранспорт, настоятельно рекомендуем внимательно ознакомиться с данной информацией:
-        </p>
-        <p className="screen-text">
-1. Зрители, купившие билеты на паркинг фестиваля – ознакомьтесь со схемами проезда на фестиваль в разделах «Из Москвы» или «Из Нижнего Новгорода», в зависимости от того с какой стороны вы будете ехать на фестиваль. На въезде в поселок Большое Козино вас попросят предъявить для сканирования билет на паркинг фестиваля. Большая просьба заранее подготовить билет на паркинг для сканирования, не перепутать его с билетами в кемпинги или на сам фестиваль. Само сканирование занимает пару секунд и вы не будете задерживать и создавать очередь из машин если заранее подготовите билет. Если у вас электронный билет на паркинг и вы его не распечатывали и хотите предъявить его на экране мобильного устройства, приготовьте мобильное устройство с уже открытым на экране файлом билета. Внимание – для въезда в поселок Большое Козино действует ТОЛЬКО билет на паркинг, никакие другие категории билетов фестиваля не дают право на въезд транспорта зрителей.
-        </p>
-        <p className="screen-text">
-Далее, после сканирования билета на въезде в поселок Большое Козино, двигайтесь все время по главной дороге, около 5 км и вы прибудете на КПП самого фестиваля. Там у вас еще раз просканируют билет на паркинг и вместо билета выдадут пропуск на парковку. С этим пропуском вы сможете, при необходимости, выехать с парковки фестиваля и из поселка и также вернутся обратно. Билет на паркинг вам будет уже не нужен для повторного въезда. Воспользоваться повторно билетом на паркинг для заезда на другой машине невозможно, после сканирования и выдачи пропуска на парковку, штрих-код билета на паркинг аннулируется.
-        </p>
-        <p className="screen-text">
-Рекомендуем без острой необходимости не выезжать с территории фестиваля, так как могут быть значительные пробки во время заезда автотранспорта зрителей на фестиваль.
-        </p>
-        <p className="screen-text">
-На пропуске который вам выдадут при въезде на территорию фестиваля, будет сразу вписан гос.номер вашей машины, а также вам будет необходимо самостоятельно вписать в соответствующую графу пропуска номер мобильного телефона водителя. Это обязательно требование. Номер телефона можно будет вписать когда припаркуетесь уже на парковке фестиваля.
-        </p>
-        <p className="screen-text">
-Пропуск на парковку должен всегда находится под лобовым стеклом вашего автомобиля!
-        </p>
-        <p className="screen-text">
-2. Зрители, не купившие заранее билеты на паркинг фестиваля, могут приобрести билет на паркинг на въезде в поселок Большое Козино у сотрудника контрольной службы фестиваля, в случае если к началу фестиваля билеты на паркинг еще будут в наличии.
-        </p>
-        <p className="screen-text">
-Если вы не хотите приобретать билет на паркинг или их уже нет в продаже, рекомендуем воспользоваться для стоянки вашей машины только охраняемыми стоянками расположенными относительно недалеко от поселка Большое Козино.
-        </p>
-        <p className="screen-text">
-В этом разделе мы будем вас информировать о возможных вариантах и местонахождении охраняемых платных парковках как можно ближе к месту проведения фестиваля. В данный момент эта информация еще обрабатывается. Следите за информацией здесь и в официальной группе ВК.
-        </p>
-        <p className="screen-text">
-В случае, если вы решили оставить свою машину где-то недалеко от въезда в поселок Большое Козино, рекомендуем внимательно отнестись к дорожным знакам установленным на дороге, потому что в случае наличия знака запрета остановки и стоянки ваша машина может быть эвакуирована.
-        </p>
-        <p className="screen-text">
-От КПП на въезде в поселок Большое Козино (дорога Р-152 Нижний Новгород-Балахна), будут круглосуточно курсировать бесплатные шаттлы до фестиваля и обратно до въезда в поселок. Это будет очень удобно для тех, кто оставит свою машину где-то относительно недалеко от въезда в поселок или на какой-то охраняемой парковке и доедет до въезда в поселок на такси или дойдет пешком.
-        </p>
-
-      </div>
-    )
+    icon: 'icon-save.svg',
+    title: 'Камеры хранения',
+    title_eng: 'Luggage',
+    text: 'На территории фестиваля установлены камеры хранения, здесь вы можете взять в аренду ячейку для личных вещей. Зная, что ваши ценности в безопасности, вы сможете по-настоящему расслабиться и получить удовольствие от мероприятия.',
+    text_eng: 'At the festival we have set check-rooms, where you can rent a locker to keep your personal things. Now you can truly relax and enjoy the music, being confident that you luggage is safe.',
   }
+
 ];
 
-export const whereToLiveList = [
-  {
-    title: 'Alfa-Кемпинг',
-    text: (
-      <div>
-        <p className="screen-text">
-          Информация будет доступна позже
-        </p>
-      </div>
-    )
-  },
-  {
-    title: 'Omega-Кемпинг',
-    text: (
-      <div>
-        <p className="screen-text">
-          Билет дает право на место в кемпинге на огороженной территории, расположенной недалеко от входа на
-          фестиваль.
-        </p>
 
-        <p className="screen-text">
-          Покупая билет в кемпинг, вы получаете право установки собственной палатки на огороженной территории,
-          обеспеченной платными душевыми, туалетами, торговыми точками по продаже еды, напитков и предметов
-          первой необходимости.
-          Один билет дает право установки одной палатки вместимостью не более 4 человек. Предъявитель билета
-          получает браслеты для входа в кемпинг в соответствии с количеством мест в его палатке.
-        </p>
 
-        <p className="screen-text">
-          В кемпинг можно приводить гостей (из числа зрителей фестиваля) при предъявлении браслета жителя
-          кемпинга и в его сопровождении, но ответственность за сохранность личных вещей жителей кемпинга
-          администрация не несет.
-        </p>
-
-        <p className="screen-text">
-          Вход на территорию кемпинга строго по билетам и браслетам.
-        </p>
-      </div>
-    )
-  },
-  {
-    title: 'Отели в Нижнем Новгороде',
-    text: (
-      <div>
-        <p className="screen-text">
-          Если же вы хотите жить в комфортабельных условиях, вы можете забронировать отель непосредственно в Нижнем Новгороде.
-        </p>
-
-      </div>
-    )
-  },
-];
 
 export const personList = [
   {
@@ -1043,3 +847,546 @@ export const faqItems = [
   }
 
 ];
+
+
+export const aboutMain = {
+  ru: {
+    title: 'О ФЕСТИВАЛЕ',
+    text: 'Свежий воздух и яркое солнце. Тайный аэродром на берегу Волги. Музыка, которая меняет настроение. Технологии, которые меняют мир. Что нужно, чтобы услышать и увидеть будущее? Все просто. Быть на фестивале Alfa Future People',
+    path: 'Самый быстрый и удобный способ добраться до фестиваля - электричка с Московского вокзала Нижнего Новгорода (или с любой остановки электрички в городе по Заволжскому направлению) до станции Козино. Количество электричек на время проведение фестиваля увеличено в несколько раз, также увеличено количество вагонов в поездах.',
+    pathTitle: 'Как добраться?'
+  },
+  eng: {
+    title: 'About festival',
+    text: 'Fresh air and dazzling sunshine. Secret airfield on the Volga bank. Music that changes spirits. Technologies that will change the world. What else do you need to hear and to see the future? It’s so simple. Come and join us from 11th to 13th of July. And believe, you will return a completely different person, an Alfa Future Person.',
+    path: 'The quickest and most convenient way to get to the festival - the train to Moscow railway station in Nizhny Novgorod (or any stoppage of the train in the city of Zavolzhsky direction) to the station Kozin. The number of trains on time, the festival has increased several times, also increased the number of cars per train.',
+    pathTitle: 'How to get there?'
+  },
+  foodCourt: {
+    title: 'Фудкорт',
+    title_eng: 'Food Court',
+    text: 'На таком масштабном мероприятии как Alfa Future People даже фудкорт, выстроенный посреди поля, поражает своими размерами и по размаху сравним с олимпийскими объектами.',
+    text_eng: 'At such a huge event as ALFA FUTURE PEOPLE even food-court, situated in the field-center, boggles the mind by its grand scale, comparable to Olympic venues. Just for three days during the festival last year there were eaten more than 10 tones of food and drunk about 30 thousands of beer.',
+    text_bottom: 'На таком масштабном мероприятии как Alfa Future People даже фудкорт, выстроенный посреди поля, поражает своими размерами и по размаху сравним с олимпийскими объектами.',
+    text_bottom_eng: '',
+    items: [
+      {
+        icon: 'icon-beer.svg',
+        title: 'выпито более',
+        title_eng: 'drunk more than',
+        num: '30 000',
+        desc: 'литров <br/>пива',
+        desc_eng: 'litres <br/>of beer'
+      },
+      {
+        icon: 'icon-burger.svg',
+        title: 'съедено',
+        title_eng: 'eaten',
+        num: '10',
+        desc: 'тонн <br/>продуктов',
+        desc_eng: 'tonn <br/>of products'
+      }
+    ]
+  },
+  vipZone: {
+    title: 'VIP зона',
+    title_eng: 'VIP zone',
+    text: 'На возвышении около главной сцены расположена VIP-зона фестиваля - отдельно стоящий на подиуме шатер с прекрасным видом на сцену и на общий танцпол. Для прохода в зону VIP необходимо наличие билета соответствующей категории.',
+    text_eng: 'Raised up near the main stage there is a VIP-zone – a detached tent on a podium with a fine view of the general dance-floor. <br/><br/> Advantages of VIP-zone: <br/> - individual bars with a diverse range of drinks and a special menu;<br/>- separate dance-floor;<br/> - an opportunity to see artists and to be photographed with them.<br/><br/>To get to the VIP-zone area you must have a ticket of corresponding category. The price of a VIP-ticket includes one parking place in the parking-area, located at the festival grounds. ',
+    button: 'Смотреть фото',
+    button_eng: 'See photos'
+
+  },
+  goods: {
+    title: 'Полезные советы',
+    title_eng: 'Useful tips'
+  },
+  goodsList: [
+    {
+      icon: 'icon-mosquito.svg',
+      text: 'Поскольку наше мероприятие проходит на свежем воздухе, советуем взять с собой средства от комаров.',
+      text_eng: 'As the event is in the open air, we advise to bring insect repellent'
+    },
+    {
+      icon: 'icon-umbrella.svg',
+      text: 'Продумайте защиту от непредвиденного дождя – резиновые сапоги, зонты, дождевики и пр. Но будем надеяться, что все это не потребуется. ',
+      text_eng: 'We recommend bringing along gumboots and raincoats in case of unpredictable rain.'
+    },
+    {
+      icon: 'icon-sun.svg',
+      text: 'Совет «наоборот»: если не планируете в течение дня отсиживаться в палатке или номере отеля, возьмите солнцезащитный крем с SPF',
+      text_eng: 'We also recommend not bringing expensive jewelry, just in case it is lost in the grass.'
+    },
+    {
+      icon: 'icon-bag.svg',
+      text: 'Наш фестиваль – скорее, поход, чем клубная вечеринка, так что выбирайте соответствующий look. Дизайнерские вещи или дорогие ювелирные украшения лучше оставить дома',
+      text_eng: 'Our festival is more of a camping trip than a club party, so choose an appropiate outfit.  Better leave your disigner clothes and expensive jewellery at home.'
+    }
+  ],
+  howToGetThere: {
+    title: 'Как добраться?',
+    title_eng: 'How to get there?'
+  },
+  howToGetThereList: [
+    {
+      title: 'из Нижнего Новгорода',
+      title_eng: 'from Nizhniy Novgorod',
+      text: (
+        <div>
+          <p className="screen-text">
+            Самый быстрый и удобный способ добраться до фестиваля - электричка с Московского вокзала Нижнего
+            Новгорода (или с любой остановки электрички в городе по Заволжскому направлению) до станции
+            Козино. Количество электричек на время проведение фестиваля увеличено в несколько раз, также
+            увеличено количество вагонов в поездах.
+          </p>
+
+          <div className="aboutWay-benefits">
+            <div className="benefit aboutWay-benefit aboutWay-benefit--1">
+              <img src="/assets/img/about/icon-clock.svg" width="38" className="benefit-icon"/>
+              <span className="benefit-title">30 м</span>
+
+              <p className="benefit-desc">Средний интервал движения&nbsp;поездов</p>
+            </div>
+            <div className="benefit aboutWay-benefit aboutWay-benefit--2">
+              <img src="/assets/img/about/icon-train.svg" width="41" className="benefit-icon"/>
+              <span className="benefit-title">35 м</span>
+
+              <p className="benefit-desc">время в пути от Московского вокзала до станции Козино</p>
+            </div>
+            <div className="benefit aboutWay-benefit aboutWay-benefit--3">
+              <img src="/assets/img/about/icon-car.svg" width="55" className="benefit-icon"/>
+              <span className="benefit-title">> 2.5 ч</span>
+
+              <p className="benefit-desc">время в пути на машине до фестиваля в час пик</p>
+            </div>
+          </div>
+
+          <p className="screen-text">
+            От станции «Козино» до входа на фестиваль можно также пройти по пешеходному маршруту, который будет
+            обозначен указателями. Добраться до фестиваля пешком от станции «Козино» можно примерно за 15-20
+            мин.
+          </p>
+        </div>
+      ),
+      text_eng: (
+        <div>
+          <p className="screen-text">
+            By train <br/>
+            You can reach the railway station Kozino by train from Nizhny Novgorod. Find the train-schedule on Russian
+            Railways website, where you can also buy tickets: RZD.RU.
+          </p>
+
+          <p className="screen-text">
+            Have 15 minutes walk from Kozino train station following the signs which will lead you straight to the main
+            entrance of the festival.
+          </p>
+        </div>
+      )
+    },
+
+    {
+      title: 'из Москвы',
+      title_eng: 'from Moscow',
+      text: (
+        <div>
+          <p className="screen-text">
+            Железнодорожный транспорт:
+            <ul>
+              <li>
+                - Высокоскоростным поездом «Стриж» или «Ласточка». Отправление с Курского вокзала Москвы, время в пути
+                чуть меньше 4 часов.
+              </li>
+              <li>
+                - Любым скорым или пассажирским поездом сообщением Москва - Нижний Новгород, Санкт-Петербург – Нижний
+                Новгород или поездами, следующими далее Нижнего Новгорода (Казань, Киров, Томск, Н.Уренгой и др.)
+                Подробное расписание поездов смотрите на сайте rzd.ru
+                Там же вы сможете сразу приобрести электронный билет на нужный вам поезд.
+              </li>
+              <li>
+                - Все высокоскоростные поезда «Стриж» и «Ласточка» обязательно останавливаются на станции «Дзержинск»
+                (стоянка 2 мин), не доезжая немного до Нижнего Новгорода. Некоторые скорые и пассажирские поезда также
+                останавливаются на станции «Дзержинск».
+                Добраться от Дзержинска до фестиваля будет удобно зрителям, которые не бронировали себе гостиницы в
+                Нижнем Новгороде, а также тем, кто едет сначала на фестиваль, а потом уже в Нижний Новгород.
+              </li>
+            </ul>
+          </p>
+
+          <div className="aboutWay-benefits">
+            <div className="benefit aboutWay-benefit aboutWay-benefit--1">
+              <img src="/assets/img/about/icon-clock.svg" width="38" className="benefit-icon"/>
+              <span className="benefit-title">30 м</span>
+
+              <p className="benefit-desc">Средний интервал движения&nbsp;поездов</p>
+            </div>
+            <div className="benefit aboutWay-benefit aboutWay-benefit--2">
+              <img src="/assets/img/about/icon-train.svg" width="41" className="benefit-icon"/>
+              <span className="benefit-title">35 м</span>
+
+              <p className="benefit-desc">время в пути от Московского вокзала до станции Козино</p>
+            </div>
+            <div className="benefit aboutWay-benefit aboutWay-benefit--3">
+              <img src="/assets/img/about/icon-car.svg" width="55" className="benefit-icon"/>
+              <span className="benefit-title">> 2.5 ч</span>
+
+              <p className="benefit-desc">время в пути на машине до фестиваля в час пик</p>
+            </div>
+          </div>
+
+          <p className="screen-text">
+            Зрители которые прибывают на любом поезде на Московский вокзал Нижнего Новгорода, могут далее
+            воспользоваться самым быстрым и удобным способом добраться до фестиваля - электричкой с Московского вокзала
+            Нижнего Новгорода до станции «Козино» (Заволжское направление).
+            Интервал движения электричек в дни фестиваля составит в среднем около 30-40 мин, время в пути от Московского
+            вокзала до станции Козино - около 35 минут.
+          </p>
+
+          <p className="screen-text">
+            От ж/д станции «Козино» до места проведения фестиваля и обратно до станции «Козино», а также от въезда в
+            поселок Большое Козино с трассы Р-152 (Нижний Новгород-Балахна) и обратно до трассы, в дни проведения
+            фестиваля будут в круглосуточном режиме курсировать бесплатные шаттлы фестиваля.
+            От станции «Козино» до входа фестиваль можно также пройти по пешеходному маршруту, который будет обозначен
+            навигацией. Добраться до фестиваля пешком от станции «Козино» можно примерно за 15-20 мин.
+            Также до Нижнего Новгорода из Москвы можно добраться самолетом. Смотрите расписание на сайтах авиакомпаний.
+          </p>
+        </div>
+      ),
+      text_eng: (
+        <div>
+          <p className="screen-text"></p>
+
+          <p className="screen-text">
+            By plane <br/>
+            "Aeroflot", "UTair", "Ural Airlines" and some other airlines arrange flights from Moscow to Nizhny Novgorod.
+            Timetable is available here: AVIASALES.RU.
+          </p>
+
+          <p className="screen-text">
+            By train <br/>
+            Nizhny Novgorod is reachable from Moscow by train. Look through the train-schedule on Russian Railways
+            website, where you can also buy tickets: RZD.RU.
+          </p>
+
+          <p className="screen-text">During the festival there will be specialized buses, which will shuttle from Moscow
+            railway station in Nizhny Novgorod (Sq. Revolution, 2a) up to the concert stage.</p>
+
+          <p className="screen-text">If you are a resident from Moscow (or you go through Moscow), you can go by
+            high-speed train “Sapsan”, “Lastochka” or “Burevestnik”. All of them leave from Kursky railway station. You
+            need to buy a ticket for “Dzerzhinsk” (direct to ATP) or Nizhny Novgorod (if you’re going to stay in a hotel
+            in the city). The train journey is around 4 hours.</p>
+
+          <p className="screen-text">
+            By car <br/>
+            To get to the festival, you need to drive along the M7 highway, pass the turning to Dzerzhinsk (to the
+            right) and turn from the highway at the direction sign for Zavolzhie. Than go straight ahead to the
+            T-junction, where you should turn right and keep on going straight ahead until the turn to Bolshoe Kozino.
+          </p>
+
+          <p className="screen-text">If you have a parking ticket or VIP- ticket, take the signs to the security parking
+            area.</p>
+
+          <p className="screen-text">If, for some reason, you haven’t bought tickets to the site-parking of the
+            festival, but you have a ticket of “Standart” category, than you can leave your car at guarded paid parking
+            “Autograd ", located on highway M7. Parking fee per day is 100 rubles.</p>
+
+        </div>
+      )
+    },
+    {
+      title: 'из Санкт-Петербурга',
+      title_eng: 'from Saint-Petersburg',
+      text: (
+        <div>
+          <p className="screen-text">
+            Из Санкт-Петербурга в Нижний Новгород выполняют рейсы несколько авиакомпаний.
+            Смотрите расписание на сайтах авиакомпаний.
+          </p>
+
+          <p className="screen-text">
+            Железнодорожный транспорт:
+          </p>
+
+          <p className="screen-text">
+            - Любым скорым или пассажирским поездом сообщением Санкт-Петербург – Нижний Новгород или поездами,
+            следующими далее Нижнего Новгорода (Казань, Киров, Томск, Н.Уренгой и др.)
+          </p>
+
+          <p className="screen-text">
+            Мы рекомендуем доехать на «Сапсане» или любом другом поезде до Москвы и далее воспользоваться
+            высокоскоростными поездами «Стриж» или «Ласточка». Отправление с Курского вокзала Москвы, время в пути чуть
+            меньше 4 часов.
+          </p>
+
+          <p className="screen-text">
+            Подробное расписание поездов смотрите на сайте rzd.ru
+          </p>
+
+        </div>
+      ),
+      text_eng: (
+        <div>
+
+          <p className="screen-text">
+            By plane <br/>
+            "Aeroflot", "Russia airlines" and some other airlines arrange flights from Moscow to Nizhny Novgorod.
+            Timetable is available here: AVIASALES.RU
+          </p>
+
+          <p className="screen-text">
+            By train <br/>
+            Nizhny Novgorod is reachable from St. Petersburg by train. Look through the train-schedule on Russian
+            Railways website, where you can also buy tickets: RZD.RU
+          </p>
+
+          <p className="screen-text">If you are coming to festival from Moscow (or you go through Moscow), you can go by
+            high-speed train “Sapsan”, “Lastochka” or :Burevestnik”. All of them leave from Kursky railway station. You
+            need to buy a ticket for “Dzerzhinsk” (direct to ATP) or Nizhny Novgorod (if you’re going to stay in a hotel
+            in the city). The train journey is around 4 hours.</p>
+
+          <p className="screen-text">
+            By car <br/>
+            You need to take the M10 highway to Moscow, then head for the Ring Road-North towards Dmitrovskoe highway.
+            After 19 km drive down to the highway and keep driving along the M7(Nizhny Novgorod).
+          </p>
+
+          <p className="screen-text">After you pass by the turn to Dzerzhinsk (to the right), turn off the highway at
+            the direction sign for Zavolzhie (to the left). Then go straight ahead to the T-junction, where you should
+            turn right and keep going straight ahead until the turning for Bolshoe Kozino.</p>
+
+          <p className="screen-text">If you have a parking ticket or VIP- ticket, take the signs to the security parking
+            area.</p>
+
+          <p className="screen-text">If, for some reason, you haven’t bought tickets to the site-parking of the
+            festival, but you have a ticket of “Standart” category, than you can leave your car at guarded paid parking
+            “Autograd ", located on highway M7. Parking fee per day is 100 rubles.</p>
+
+
+        </div>
+      )
+    },
+    {
+      title: 'другие города',
+      title_eng: 'other',
+      text: (
+        <div>
+          <p className="screen-text">
+            ИНФОРМАЦИЯ ДЛЯ ЗРИТЕЛЕЙ, НАПРАВЛЯЮЩИХСЯ НА ФЕСТИВАЛЬ НА ЛИЧНОМ ТРАНСПОРТЕ
+          </p>
+
+          <p className="screen-text">
+            Если вы выбрали для поездки на фестиваль личный автотранспорт, настоятельно рекомендуем внимательно
+            ознакомиться с данной информацией:
+          </p>
+
+          <p className="screen-text">
+            1. Зрители, купившие билеты на паркинг фестиваля – ознакомьтесь со схемами проезда на фестиваль в разделах
+            «Из Москвы» или «Из Нижнего Новгорода», в зависимости от того с какой стороны вы будете ехать на фестиваль.
+            На въезде в поселок Большое Козино вас попросят предъявить для сканирования билет на паркинг фестиваля.
+            Большая просьба заранее подготовить билет на паркинг для сканирования, не перепутать его с билетами в
+            кемпинги или на сам фестиваль. Само сканирование занимает пару секунд и вы не будете задерживать и создавать
+            очередь из машин если заранее подготовите билет. Если у вас электронный билет на паркинг и вы его не
+            распечатывали и хотите предъявить его на экране мобильного устройства, приготовьте мобильное устройство с
+            уже открытым на экране файлом билета. Внимание – для въезда в поселок Большое Козино действует ТОЛЬКО билет
+            на паркинг, никакие другие категории билетов фестиваля не дают право на въезд транспорта зрителей.
+          </p>
+
+          <p className="screen-text">
+            Далее, после сканирования билета на въезде в поселок Большое Козино, двигайтесь все время по главной дороге,
+            около 5 км и вы прибудете на КПП самого фестиваля. Там у вас еще раз просканируют билет на паркинг и вместо
+            билета выдадут пропуск на парковку. С этим пропуском вы сможете, при необходимости, выехать с парковки
+            фестиваля и из поселка и также вернутся обратно. Билет на паркинг вам будет уже не нужен для повторного
+            въезда. Воспользоваться повторно билетом на паркинг для заезда на другой машине невозможно, после
+            сканирования и выдачи пропуска на парковку, штрих-код билета на паркинг аннулируется.
+          </p>
+
+          <p className="screen-text">
+            Рекомендуем без острой необходимости не выезжать с территории фестиваля, так как могут быть значительные
+            пробки во время заезда автотранспорта зрителей на фестиваль.
+          </p>
+
+          <p className="screen-text">
+            На пропуске который вам выдадут при въезде на территорию фестиваля, будет сразу вписан гос.номер вашей
+            машины, а также вам будет необходимо самостоятельно вписать в соответствующую графу пропуска номер
+            мобильного телефона водителя. Это обязательно требование. Номер телефона можно будет вписать когда
+            припаркуетесь уже на парковке фестиваля.
+          </p>
+
+          <p className="screen-text">
+            Пропуск на парковку должен всегда находится под лобовым стеклом вашего автомобиля!
+          </p>
+
+          <p className="screen-text">
+            2. Зрители, не купившие заранее билеты на паркинг фестиваля, могут приобрести билет на паркинг на въезде в
+            поселок Большое Козино у сотрудника контрольной службы фестиваля, в случае если к началу фестиваля билеты на
+            паркинг еще будут в наличии.
+          </p>
+
+          <p className="screen-text">
+            Если вы не хотите приобретать билет на паркинг или их уже нет в продаже, рекомендуем воспользоваться для
+            стоянки вашей машины только охраняемыми стоянками расположенными относительно недалеко от поселка Большое
+            Козино.
+          </p>
+
+          <p className="screen-text">
+            В этом разделе мы будем вас информировать о возможных вариантах и местонахождении охраняемых платных
+            парковках как можно ближе к месту проведения фестиваля. В данный момент эта информация еще обрабатывается.
+            Следите за информацией здесь и в официальной группе ВК.
+          </p>
+
+          <p className="screen-text">
+            В случае, если вы решили оставить свою машину где-то недалеко от въезда в поселок Большое Козино,
+            рекомендуем внимательно отнестись к дорожным знакам установленным на дороге, потому что в случае наличия
+            знака запрета остановки и стоянки ваша машина может быть эвакуирована.
+          </p>
+
+          <p className="screen-text">
+            От КПП на въезде в поселок Большое Козино (дорога Р-152 Нижний Новгород-Балахна), будут круглосуточно
+            курсировать бесплатные шаттлы до фестиваля и обратно до въезда в поселок. Это будет очень удобно для тех,
+            кто оставит свою машину где-то относительно недалеко от въезда в поселок или на какой-то охраняемой парковке
+            и доедет до въезда в поселок на такси или дойдет пешком.
+          </p>
+
+        </div>
+      ),
+      text_eng: (
+        <div>
+          <p className="screen-text">
+            <p className="screen-text">
+              How to get there by car <br/>
+              Visitors who had bought parking tickets please read following instruction in "How to get there from Moscow
+              or Nizhniy Novgorod" section. When entering Bolshoe Kozino village you might be need to show your parking
+              tickets for scanning process. Please prepare your parking tickets.
+            </p>
+
+            <p>
+              If you have electronic parking ticket please be ready to show it on your mobile device when entering.
+              Attention! You can enter Bolshoe Kozino village using parking ticket only, no other kind of festival
+              tickets let you enter Bolshoe Kozino by car.<br/>
+              After the scanning process follow the main road. In aprox. 5km you will get the destination. At the gates
+              your ticket will be scanned once again and you will get parking pass. This pass allowes you to go out of
+              parking and let in whenever you want. From this moment you don't need your parking ticket anymore. You can
+              not use same parking ticket for another car.<br/>
+              We recommend not to leave parking without exigency to prevent traffic. <br/>
+              Please write down your mobile number in a special section located on your parking pass. It is required.<br/>
+              Parking pass should be located on windshield of your car.
+            </p>
+
+            <p>Visitors which haven't bought parking tickets in advance can buy them at the place. Anyways we recommend
+              to buy tickets in advance because the number of them is limited.</p>
+
+            <p>In case you don't want to buy parking ticket we recommend you to leave your car in any other car parks
+              around Bolshoe Kozino village.</p>
+
+            <p>
+              In this section we are going to keep you updated with any information about possible park places around
+              the festival area. Check it out as well as our official public in vk.com<br/>
+              In case you decide to park your car by the entering of Bolshoe Kozino village, please pay attention to a
+              traffic signs and tow away zones.
+            </p>
+
+            <p>Free night and day shuttle buses are provided between Bolshoe Kozino check point and festival area. It
+              can be apropriate to a people who walk from the train station or park the car at the village car
+              parks.</p>
+
+          </p>
+
+        </div>
+      )
+    }
+
+  ],
+  whereToLive: {
+    title: 'Как добраться?',
+    title_eng: 'How to get there?'
+  },
+  whereToLiveList: [
+    {
+      title: 'Alfa-Кемпинг',
+      title_eng: 'Alfa Campsite',
+      text: (
+        <div>
+          <p className="screen-text">
+            Информация будет доступна позже
+          </p>
+        </div>
+      ),
+      text_eng: (
+        <div>
+          <p className="screen-text">
+            Detailed information will be provided later
+          </p>
+        </div>
+      )
+    },
+    {
+      title: 'Omega-Кемпинг',
+      title_eng: 'Omega Campsite',
+      text: (
+        <div>
+          <p className="screen-text">
+            Билет дает право на место в кемпинге на огороженной территории, расположенной недалеко от входа на
+            фестиваль.
+          </p>
+
+          <p className="screen-text">
+            Покупая билет в кемпинг, вы получаете право установки собственной палатки на огороженной территории,
+            обеспеченной платными душевыми, туалетами, торговыми точками по продаже еды, напитков и предметов
+            первой необходимости.
+            Один билет дает право установки одной палатки вместимостью не более 4 человек. Предъявитель билета
+            получает браслеты для входа в кемпинг в соответствии с количеством мест в его палатке.
+          </p>
+
+          <p className="screen-text">
+            В кемпинг можно приводить гостей (из числа зрителей фестиваля) при предъявлении браслета жителя
+            кемпинга и в его сопровождении, но ответственность за сохранность личных вещей жителей кемпинга
+            администрация не несет.
+          </p>
+
+          <p className="screen-text">
+            Вход на территорию кемпинга строго по билетам и браслетам.
+          </p>
+        </div>
+      ),
+      text_eng: (
+        <div>
+          <p className="screen-text">The Alfa Future ticket permits you to occupy one spot in free camping – Omega
+            Camping - enclosed zone, which is not far from entry to the festival area. There you can find food-courts,
+            pay shower-cabins, toilets and buy all required necessities.</p>
+
+          <p className="screen-text">
+            One ticket permits you to pitch no more than 4 berth tent. A ticket holder could get wristbands equal in
+            number to the quantity of tent berths<br/>
+            Guests in camping are allowed ( festival visitors only ), but only and accompanied by the camp resident. The
+            camp administration does not assume responsibility for any loss or damage of guests personal bears.
+
+          </p>
+
+          <p className="screen-text">The entrance to the campsite is strictly by tickets and wristbands. Please, notice
+            that organizers shall take no responsibility for tickets that has not been purchased through official point
+            of sales.</p>
+
+        </div>
+      )
+    },
+    {
+      title: 'Отели в Нижнем Новгороде',
+      title_eng: 'Hotels in Nizhniy Novgorod',
+      text: (
+        <div>
+          <p className="screen-text">
+            Если же вы хотите жить в комфортабельных условиях, вы можете забронировать отель непосредственно в Нижнем
+            Новгороде.
+          </p>
+
+        </div>
+      ),
+      text_eng: (
+        <div>
+          <p className="screen-text">
+            You can find plenty of cozy hotels in Nizhniy Novgorod.
+          </p>
+        </div>
+      )
+    }
+  ]
+}
