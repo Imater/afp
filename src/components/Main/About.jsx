@@ -37,7 +37,7 @@ class About extends Component {
   render() {
     const { scrollY } = this.props;
     const blur = tween(scrollY, [[0, 0], [100, 0], [500, 10]]);
-    console.info(scrollY, blur);
+    //console.info(scrollY, blur);
     return (
       <div className="page main-page" id="about">
         <div className={classNames('fixed-background', {
@@ -52,7 +52,7 @@ class About extends Component {
           <div className="row bottom-row social-row">
             <div className="left-col padding-left-50 text-left">
               <div className="festival-location">
-                <Link to='/about/map'>{i18n.t('about.novgorod')} {this.props.scrollY}</Link>
+                <Link to='/about/map'>{i18n.t('about.novgorod')}</Link>
               </div>
               <div className="plus18">18+</div>
             </div>
