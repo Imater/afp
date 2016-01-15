@@ -230,19 +230,19 @@
             top: 58%;
           }
           .was-block {
-            font-size: 32px;
-            line-height: 46px;
-            margin-right: 80px;
-            margin-bottom: 20px;
-            &:before {
-              font-size: 12px;
-            }
-            &:after {
-              background-size: cover;
-              top: 10px;
-              right: 10px;
-              zoom: 0.6;
-            }
+            //font-size: 32px;
+            //line-height: 46px;
+            //margin-right: 80px;
+            //margin-bottom: 20px;
+            //&:before {
+            //  font-size: 12px;
+            //}
+            //&:after {
+            //  background-size: cover;
+            //  top: 10px;
+            //  right: 10px;
+            //  zoom: 0.6;
+            //}
           }
         }
         .djs-block {
@@ -342,6 +342,48 @@
     .sidebar {
       display: inline-block;
       z-index: 200;
+    }
+  }
+}
+
+
+
+//for Mobile
+@media (max-width: 960px) {
+
+
+  .app-wrapper {
+
+    .wrapper {
+
+      .before-festival {
+        padding-top: 10px;
+        .left-col, .right-col {
+          display: block;
+          width: 100%;
+          text-align: center;
+          padding: 0;
+        }
+        .before-festival-title {
+          font-size: 20px;
+        }
+        .buy-button {
+          line-height: 40px;
+          font-size: 16px;
+        }
+        .timer {
+          width: 100%;
+          text-align: center;
+          span {
+            font-size: 80px;
+            line-height: 53px;
+            margin-right: 30px;
+            &:before {
+              bottom: -30px;
+            }
+          }
+        }
+      }
     }
   }
 }
