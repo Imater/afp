@@ -49,25 +49,27 @@ class Footer extends Component {
 
             <ul className="socialFooter">
               <li className="item">
-                <a href="https://vk.com/alfafuture" target="blank" className="link"><img src="/assets/svg/vk-blue.svg" width="18"/>{i18n.t('footer.vk')}</a>
+                <a href="https://vk.com/alfafuture" target="blank" className="link">
+                  <img src="/assets/svg/vk-blue.svg" height="18" width="18"/>{i18n.t('footer.vk')}
+                </a>
               </li>
              <li className="item">
-                <a href="http://twitter.com/Alfa_Future" target="blank" className="link"><img src="/assets/svg/twitter-blue.svg" width="17"/>Twitter</a>
+                <a href="http://twitter.com/Alfa_Future" target="blank" className="link"><img src="/assets/svg/twitter-blue.svg"  height="18" width="17"/>Twitter</a>
              </li>
              <li className="item">
-                <a href="http://www.facebook.com/alfafuture" target="blank" className="link"><img src="/assets/svg/facebook-blue.svg" width="11"/>Facebook</a>
+                <a href="http://www.facebook.com/alfafuture" target="blank" className="link"><img src="/assets/svg/facebook-blue.svg"  height="18" width="11"/>Facebook</a>
              </li>
              <li className="item">
-                <a href="https://plus.google.com/u/0/104083107251110907167/posts" target="blank" className="link"><img src="/assets/svg/google-blue.svg" width="17"/>Google+</a>
+                <a href="https://plus.google.com/u/0/104083107251110907167/posts" target="blank" className="link"><img src="/assets/svg/google-blue.svg" width="17" height="18" />Google+</a>
              </li>
              <li className="item">
-                <a href="http://www.youtube.com/user/alfafuturepeople" target="blank" className="link"><img src="/assets/svg/youtube-blue.svg" width="14"/>Youtube</a>
+                <a href="http://www.youtube.com/user/alfafuturepeople" target="blank" className="link"><img src="/assets/svg/youtube-blue.svg" width="14" height="18" />Youtube</a>
              </li>
              <li className="item">
-                <a href="http://www.odnoklassniki.ru/alfafuture" target="blank" className="link"><img src="/assets/svg/ok-blue.svg" width="14"/>{i18n.t('footer.ok')}</a>
+                <a href="http://www.odnoklassniki.ru/alfafuture" target="blank" className="link"><img src="/assets/svg/ok-blue.svg" width="14" height="18" />{i18n.t('footer.ok')}</a>
              </li>
              <li className="item">
-                <a href="http://instagram.com/alfafuturepeople" target="blank" className="link"><img src="/assets/svg/instagram-blue.svg" width="14"/>Instagram</a>
+                <a href="http://instagram.com/alfafuturepeople" target="blank" className="link"><img src="/assets/svg/instagram-blue.svg" width="14" height="18" />Instagram</a>
              </li>
             </ul>
 

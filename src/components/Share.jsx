@@ -15,11 +15,11 @@ const DESCR = encode('Альфа игра - Рискнешь? 20 iPhone и 50 ч
 const IMG_URL = encode('http://game.alfabank.ru/_assets/20-1.png');
 
 const shares = (params) => {
-  const { url, title, descr, img_url } = params;
+  const { url, title, descr, imgUrl } = params;
   const TITLE = encode(title);
   const URL = encode(url);
   const DESCR = encode(descr);
-  const IMG_URL = encode(img_url);
+  const IMG_URL = encode(imgUrl);
   return [
     {
       href: `https://www.facebook.com/sharer/sharer.php?s=100&p[title]=${TITLE}&p[summary]=${DESCR}&p[url]=${URL}&p[images][0]=${IMG_URL}`,

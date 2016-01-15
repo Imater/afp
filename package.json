@@ -17,6 +17,11 @@
   },
   "author": "imater",
   "license": "ISC",
+  "eslintConfig": {
+    "env": {
+      "es6": true
+    }
+  },
   "dependencies": {
     "async": "^1.5.0",
     "body-parser": "^1.14.2",
@@ -63,6 +68,7 @@
     "babel-preset-stage-2": "^6.3.13",
     "babel-preset-stage-3": "^6.3.13",
     "css-loader": "^0.23.0",
+    "eslint-config-google": "^0.3.0",
     "file-loader": "^0.8.5",
     "image-webpack-loader": "^1.6.2",
     "less": "^2.5.3",

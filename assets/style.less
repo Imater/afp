@@ -175,11 +175,13 @@ body{
 	.sidebar-logo{
 		background-image: url('img/afp-logo.png');
 		background-image: url('svg/alfa-logo.svg');
+    background-size: contain;
 		width: 182px;
 		height: 51px;
 		display: inline-block;
 		margin-top: 40px;
 		margin-left: 40px;
+		margin-bottom: 40px;
 		margin-bottom: 10vh;
 	}
 	.menu{
@@ -271,8 +273,13 @@ body{
   }
 	.page{
 		position: relative;
-    min-height: 100%;
-    min-height: 100vh;
+    &.set-height {
+      min-height: 700px;
+      height: 100%;
+    }
+    &.news-page {
+      height: auto;
+    }
 
 		.bottom-row{
 			position: absolute;
@@ -844,6 +851,7 @@ h1{
 		position: relative;
     img {
       min-height: 200px;
+      height: 25px;
       height: 15vw;
     }
 		.news-overlay{

@@ -46,7 +46,7 @@ class Faq extends Component {
             <h3 className="heading">{i18n.t('faq.form.title')}</h3>
 
             <div className="field">
-              <input type="text" className="input" value={i18n.t('faq.form.subject')}/>
+              <input type="text" className="input" defaultValue={i18n.t('faq.form.subject')}/>
             </div>
             <div className="field">
               <label for="email" className="label">{i18n.t('faq.form.email')}</label>
@@ -61,7 +61,7 @@ class Faq extends Component {
                 {i18n.t('faq.form.subscribe')}
               </label>
             </div>
-            <input type="submit" className='submit' value={i18n.t('faq.form.submit')}/>
+            <input type="submit" className='submit' defaultValue={i18n.t('faq.form.submit')}/>
           </form>
         </div>
         <Footer />

@@ -39,7 +39,7 @@ class About extends Component {
     const blur = tween(scrollY, [[0, 0], [100, 0], [500, 10]]);
     //console.info(scrollY, blur);
     return (
-      <div className="page main-page" id="about">
+      <div className="page main-page set-height" id="about">
         <div className={classNames('fixed-background', {
           'blur': scrollY > 100
         })} style={{

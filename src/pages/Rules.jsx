@@ -32,7 +32,7 @@ class Partners extends Component {
             this.props.history.goBack()
           }}></div>
         <div className="block">
-          <a className="close" onClick={() => {
+          <a href="javascript:void();" className="close" onClick={() => {
             this.props.history.goBack()
           }}></a>
           <h3 className="title">Правила поведения <br/>на фестивале</h3>

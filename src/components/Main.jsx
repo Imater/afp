@@ -55,11 +55,11 @@ class Main extends Component {
   render() {
     const { rect: {top} } = this.state;
     return (
-      <div>
+      <div className="MainPage">
         <About ref='about' language={this.props.language} changeLanguage={this.props.changeLanguage} scrollY={-top}/>
         <History language={this.props.language} changeLanguage={this.props.changeLanguage} />
         <LineUp />
-        <div className='page black'>
+        <div className='page black news-page'>
           <Technology />
           <NewsLine />
         </div>

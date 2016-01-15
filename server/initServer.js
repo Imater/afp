@@ -6,23 +6,23 @@ const PORT = process.env.PORT || config.server.port || 3000;
 var server = {};
 
 export default {
-  startServer: function(done){
+  startServer: function(done) {
     server = app.listen(PORT, function() {
       console.log('Server listening on', PORT);
       done();
     });
   },
-  closeServer: function(done){
+  closeServer: function(done) {
     server.close();
     return done();
   }
 };
 
-process.on('exit', ()=> {
+process.on('exit', () => {
   console.info('exit');
   server.close();
 });
-process.on('SIGTERM', ()=> {
+process.on('SIGTERM', () => {
   console.info('sigterm');
   server.close();
 });
