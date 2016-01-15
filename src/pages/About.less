@@ -23,9 +23,13 @@
     }
     &-title {
       font-size: 30px;
+      font-size: 2.32vw;
       line-height: 120%;
       font-family: @semibold;
       margin: 0 0 25px;
+      @media (max-width: @phone) {
+        font-size: 5.24vw;
+      }
       img {
         vertical-align: middle;
         margin-left: 6px;
@@ -34,9 +38,14 @@
     }
     &-text {
       font-size: 18px;
+      font-size: 1.39vw;
       font-family: @regular;
       line-height: 155%;
-      a{
+      @media (max-width: @phone) {
+        font-size: 3.1vw;
+      }
+
+      a {
         color: #fff;
         &:hover{
           text-decoration: underline;
@@ -92,13 +101,17 @@
     &-heading {
       font-family: @semibold;
       font-size: 40px;
+      font-size: 3.1vw;
       color: #FFFFFF;
-      line-height: 48px;
+      line-height: 120%;
       text-transform: uppercase;
       @media (max-width: @mobile) {
         br {
           display: none;
         }
+      }
+      @media (max-width: @phone) {
+        font-size: 7vw;
       }
 
     }
