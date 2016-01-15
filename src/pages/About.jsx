@@ -140,7 +140,9 @@ class About extends Component {
                 }
               </div>
 
-              <Link to="/about/main/rules">
+              <Link to="/about/main/rules" style={{
+                display: 'none'
+              }}>
                 <span className="aboutWay-rules" dangerouslySetInnerHTML={{__html: i18n.t('about.rulesLink')}}></span>
               </Link>
             </div>
@@ -162,7 +164,7 @@ class About extends Component {
                 className="aboutVip-btn"
                 href="#"
               >
-                <img src="/assets/img/about/icon-photo.svg" width="16"/>
+                <img src="/assets/img/about/icon-photo.svg" width="16" height="13"/>
                 <span>{aboutMain.vipZone[language === 'eng' ? 'button_eng' : 'button']}</span>
               </a>
             </div>
@@ -175,7 +177,7 @@ class About extends Component {
                       <div className="aboutInfo-block" key={index}>
                         <h2 className="screen-title">
                           {info[language === 'eng' ? 'title_eng' : 'title']}
-                          <img className="aboutInfo-titleIcon" src={`/assets/img/about/${info.icon}`} />
+                          <img className="aboutInfo-titleIcon" src={`/assets/img/about/${info.icon}`} height="30" width="30" />
                         </h2>
                         <div className="screen-text">
                           {info[language === 'eng' ? 'text_eng' : 'text']}
@@ -201,7 +203,7 @@ class About extends Component {
               </div>
               <div className="screen-text aboutFood-benefits">
                 <div className="benefitFood aboutFood-benefit aboutFood-benefit--1">
-                  <img className="benefitFood-icon" src="/assets/img/about/icon-beer.svg" width="53" />
+                  <img className="benefitFood-icon" src="/assets/img/about/icon-beer.svg" width="55" height="76" />
 
                   <div className="benefitFood-desc">
                     {aboutMain.foodCourt.items[0][language === 'eng' ? 'title_eng' : 'title']}
@@ -216,7 +218,7 @@ class About extends Component {
                   ></div>
                 </div>
                 <div className="benefitFood aboutFood-benefit aboutFood-benefit--2">
-                  <img className="benefitFood-icon" src="/assets/img/about/icon-burger.svg" width="70"/>
+                  <img className="benefitFood-icon" src="/assets/img/about/icon-burger.svg" width="70" height="76"/>
 
                   <div className="benefitFood-desc">
                     {aboutMain.foodCourt.items[1][language === 'eng' ? 'title_eng' : 'title']}
@@ -261,7 +263,12 @@ class About extends Component {
           </article>
           <div id="faq"></div>
           <div id="rules"></div>
-          <div className="aboutCategory">
+          <div
+            className="aboutCategory"
+            style={{
+              display: 'none'
+            }}
+          >
             <Link className="aboutCategory-item aboutCategory-item--1" to="/store">
               <img className="aboutCategory-img" src="/assets/img/about/icon-market.svg" width="66"/>
               <span className="aboutCategory-label">{i18n.t('about.store')}</span>

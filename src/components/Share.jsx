@@ -52,7 +52,7 @@ class Map extends Component {
           shares(this.props.params).map((share, key) => {
             return (
               <a key={key} href={share.href} target='blank' className="socialBlock-icon">
-                <img src={`/assets/img/about/${share.icon}`} width="50"/>
+                <img src={`/assets/img/about/${share.icon}`} width="50" height="50" />
               </a>
             );
           })

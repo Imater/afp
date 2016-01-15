@@ -909,19 +909,19 @@ export const aboutMain = {
 
           <div className="aboutWay-benefits">
             <div className="benefit aboutWay-benefit aboutWay-benefit--1">
-              <img src="/assets/img/about/icon-clock.svg" width="38" className="benefit-icon"/>
+              <img src="/assets/img/about/icon-clock.svg" width="40" height="40" className="benefit-icon"/>
               <span className="benefit-title">30 м</span>
 
               <p className="benefit-desc">Средний интервал движения&nbsp;поездов</p>
             </div>
             <div className="benefit aboutWay-benefit aboutWay-benefit--2">
-              <img src="/assets/img/about/icon-train.svg" width="41" className="benefit-icon"/>
+              <img src="/assets/img/about/icon-train.svg" width="43" height="36" className="benefit-icon"/>
               <span className="benefit-title">35 м</span>
 
               <p className="benefit-desc">время в пути от Московского вокзала до станции Козино</p>
             </div>
             <div className="benefit aboutWay-benefit aboutWay-benefit--3">
-              <img src="/assets/img/about/icon-car.svg" width="55" className="benefit-icon"/>
+              <img src="/assets/img/about/icon-car.svg" width="57"  height="42" className="benefit-icon"/>
               <span className="benefit-title">> 2.5 ч</span>
 
               <p className="benefit-desc">время в пути на машине до фестиваля в час пик</p>
@@ -981,19 +981,19 @@ export const aboutMain = {
 
           <div className="aboutWay-benefits">
             <div className="benefit aboutWay-benefit aboutWay-benefit--1">
-              <img src="/assets/img/about/icon-clock.svg" width="38" className="benefit-icon"/>
+              <img src="/assets/img/about/icon-clock.svg" width="40" height="40" className="benefit-icon"/>
               <span className="benefit-title">30 м</span>
 
               <p className="benefit-desc">Средний интервал движения&nbsp;поездов</p>
             </div>
             <div className="benefit aboutWay-benefit aboutWay-benefit--2">
-              <img src="/assets/img/about/icon-train.svg" width="41" className="benefit-icon"/>
+              <img src="/assets/img/about/icon-train.svg" width="43" height="36" className="benefit-icon"/>
               <span className="benefit-title">35 м</span>
 
               <p className="benefit-desc">время в пути от Московского вокзала до станции Козино</p>
             </div>
             <div className="benefit aboutWay-benefit aboutWay-benefit--3">
-              <img src="/assets/img/about/icon-car.svg" width="55" className="benefit-icon"/>
+              <img src="/assets/img/about/icon-car.svg" width="57" height="42" className="benefit-icon"/>
               <span className="benefit-title">> 2.5 ч</span>
 
               <p className="benefit-desc">время в пути на машине до фестиваля в час пик</p>

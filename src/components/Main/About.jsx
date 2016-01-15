@@ -40,26 +40,16 @@ class About extends Component {
     //console.info(scrollY, blur);
     return (
       <div className="page main-page set-height" id="about">
-        <div className={classNames('fixed-background', {
-          'blur': scrollY > 100
-        })} style={{
-          WebkitFilter: `blur(${blur}px)`,
-          MozFilter: `blur(${blur}px)`,
-          OFilter: `blur(${blur}px)`,
-          MsFilter: `blur(${blur}px)`,
-          filter: `blur(${blur}px)`
-        }}>
-          <div className="row bottom-row social-row">
-            <div className="left-col padding-left-50 text-left">
-              <div className="festival-location">
-                <Link to='/about/map'>{i18n.t('about.novgorod')}</Link>
-              </div>
-              <div className="plus18">18+</div>
-            </div>
-            <div className="right-col padding-right-40 text-right">
-              <Social />
-            </div>
-          </div>
+        <div className="fixed-background">
+          <div className={classNames('fixed-background-img', {
+            'blur': scrollY > 100
+          })} style={{
+            WebkitFilter: `blur(${blur}px)`,
+            MozFilter: `blur(${blur}px)`,
+            OFilter: `blur(${blur}px)`,
+            MsFilter: `blur(${blur}px)`,
+            filter: `blur(${blur}px)`
+          }}></div>
         </div>
         <div className="row logoBlock">
           <div className="fullscreen-bg">
@@ -82,7 +72,7 @@ class About extends Component {
           <h1>{i18n.t('about.mainFestival')} <br />{i18n.t('about.musicAndTechnology')}</h1>
           <div className="festival-date">{i18n.t('about.festivalDate')}</div>
         </div>
-        <div className="row bottom-row how-was-row">
+        <div className="row how-was-row">
           <div className="left-col padding-left-50">
             <div className="how-it-was" onClick={this.play.bind(this)}>
               Alfa Future People 2015<br />{i18n.t('about.howItWas')}
@@ -91,6 +81,17 @@ class About extends Component {
           <div className="right-col padding-right-40 text-right hide-on-video">
             <a href="http://www.eubeafestival.com/" target="_blank" className="eubea"></a>
             <a href="http://kudago.com/" target="_blank" className="kudago"></a>
+          </div>
+        </div>
+        <div className="row social-row">
+          <div className="left-col padding-left-50 text-left">
+            <div className="festival-location">
+              <Link to='/about/map'>{i18n.t('about.novgorod')}</Link>
+            </div>
+            <div className="plus18">18+</div>
+          </div>
+          <div className="right-col padding-right-40 text-right">
+            <Social />
           </div>
         </div>
       </div>

@@ -161,7 +161,7 @@ a{
 	text-decoration: none;
 }
 body{
-	background-color: #000;
+	background-color: #1A1A1A;
 }
 
 .sidebar{
@@ -180,7 +180,7 @@ body{
 		height: 51px;
 		display: inline-block;
 		margin-top: 40px;
-		margin-left: 40px;
+		margin-left: 32px;
 		margin-bottom: 40px;
 		margin-bottom: 10vh;
 	}
@@ -260,16 +260,17 @@ body{
 		//background-repeat: no-repeat;
 		//background-size: cover;
 		padding-top: 52px;
+    z-index: -2;
 	}
 	.djs-page{
 		overflow: hidden;
 	}
 	.news-page{
-		background-color: #000;
+		background-color: #1A1A1A;
 		overflow: hidden;
 	}
   .black {
-    background: #000;
+    background: #1A1A1A;
   }
 	.page{
 		position: relative;
@@ -286,10 +287,18 @@ body{
 			width: 100%;
 		}
 		.how-was-row{
-			bottom: 130px;
+      position: fixed;
+			bottom: 80px;
+      left: @menuWidth;
+      right: 0;
+      z-index: 0;
 		}
 		.social-row{
+      position: fixed;
 			bottom: 30px;
+      left: @menuWidth;
+      right: 0;
+      z-index: 0;
 		}
 	}
 }
@@ -327,7 +336,9 @@ body{
 h1{
 	font-family: 'sf_ui_displaybold';
 	font-size: 50px;
+  font-size: 3.1vw;
 	line-height: 56px;
+  line-height: 3.6vw;
 	color: #fff;
 	text-transform: uppercase;
 	margin: 0px;
@@ -340,7 +351,9 @@ h1{
 .festival-date{
 	font-family: 'sf_ui_displayregular';
 	font-size: 30px;
+  font-size: 2.1vw;
 	line-height: 50px;
+  line-height: 2.6vw;
 	color: #fff;
 	margin-top: 16px;
   @media (max-width: @phone){
@@ -431,7 +444,7 @@ h1{
     font-family: 'sf_ui_displayregular';
     color: rgba(255, 255, 255, 0.5);
     font-size: 16px;
-    line-height: 21px;
+    line-height: 35px;
     padding-left: 17px;
     position: relative;
     &:before{
@@ -793,7 +806,7 @@ h1{
   background-size: cover;
 }
 .festival-block{
-	background-color: #000;
+	background-color: #1A1A1A;
 	/*padding-top: 89px;*/
 	/*padding-bottom: 152px;*/
 	padding-bottom: 30px;
@@ -938,7 +951,7 @@ h1{
 	}
 }
 footer{
-	background-color: #000;
+	background-color: #1A1A1A;
 	padding-top: 49px;
 	padding-bottom: 44px;
 
@@ -1033,7 +1046,7 @@ footer{
 	}
 }
 .ticket-menu{
-	background-color: #000;
+	background-color: #1A1A1A;
 	padding-left: 16px;
 
 	ul{
@@ -1492,7 +1505,7 @@ footer{
 			div{
 				width: 100%;
 				height: 50px;
-				background-color: #000;
+				background-color: #1A1A1A;
 			}
 			input[type="text"]{
 				text-transform: uppercase;
