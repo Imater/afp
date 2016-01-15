@@ -120,14 +120,17 @@
 .hide {
   display: none;
 }
+
 .topMobileMenu {
   display: none;
 }
+
 .closeButton {
   display: none;
 }
+
 //for Mobile
-@media (max-width: @phone){
+@media (max-width: @phone) {
   .topMobileMenu {
     position: fixed;
     top: 0;
@@ -137,7 +140,7 @@
     display: block;
     color: #FFF;
     .menuButton {
-      border: 1px solid rgba(255,255,255,0.3);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       display: inline-block;
       margin-left: 30px;
       margin-top: 10px;
@@ -147,14 +150,24 @@
       opacity: 0.6;
     }
   }
+
   .top-page-menu {
     display: none;
   }
+
   .app-wrapper {
     .sidebar {
       display: none;
       .sidebar-logo {
         display: none;
+        &.mini {
+          display: block;
+          position: fixed;
+          right: -20px;
+          top: 5px;
+          margin: 0;
+          transform: scale(.6);
+        }
       }
       .menu {
         margin-top: 20px;
@@ -165,7 +178,7 @@
       }
       .closeButton {
         color: #FFF;
-        border: 1px solid rgba(255,255,255,0.3);
+        border: 1px solid rgba(255, 255, 255, 0.3);
         display: inline-block;
         margin-left: 30px;
         margin-top: 10px;
@@ -276,7 +289,7 @@
               }
               .news-overlay {
                 opacity: 1;
-                background-color: rgba(0,0,0,0.55);
+                background-color: rgba(0, 0, 0, 0.55);
                 font-size: 6vw;
                 line-height: 7vw;
                 padding: 20px;
@@ -324,6 +337,7 @@
       }
     }
   }
+
   .showMenu {
     .sidebar {
       display: inline-block;
