@@ -28,8 +28,8 @@ class Footer extends Component {
             </p>
 
             <div className="apps">
-              <a href="#" className="link"><img src="/assets/svg/appstore.svg" width="142"/></a>
-              <a href="#" className="link"><img src="/assets/svg/googleplay.svg" width="142"/></a>
+              <a href="#" className="link"><img src="/assets/svg/appstore.svg" width="142" height='50'/></a>
+              <a href="#" className="link"><img src="/assets/svg/googleplay.svg" width="142" height='50'/></a>
             </div>
 
             <p className="text">
