@@ -171,6 +171,7 @@ body{
 	vertical-align: top;
 	position: fixed;
 	height: 100%;
+  z-index: 1;
 
 	.sidebar-logo{
 		background-image: url('img/afp-logo.png');
@@ -250,30 +251,43 @@ body{
 		position: relative;
     overflow: hidden;
 	}
-	.main-page{
-		padding-top: 40px;
-		//height: 900px;
-	}
-
-	.second-page{
-		//background-image: url('img/second.png');
-		//background-repeat: no-repeat;
-		//background-size: cover;
-		padding-top: 52px;
-    z-index: -2;
-	}
-	.djs-page{
-		overflow: hidden;
-	}
-	.news-page{
-		background-color: #1A1A1A;
-		overflow: hidden;
-	}
   .black {
     background: #1A1A1A;
   }
-	.page{
+  .double-top-margin {
+    height: 200%;
+  }
+	.page {
 		position: relative;
+    &.main-page{
+      padding-top: 40px;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: @menuWidth;
+      right: 0;
+      z-index: 0;
+
+      //height: 900px;
+    }
+
+    &.second-page{
+      //background-image: url('img/second.png');
+      //background-repeat: no-repeat;
+      //background-size: cover;
+      padding-top: 52px;
+      z-index: 1;
+    }
+    &.djs-page{
+      overflow: hidden;
+      .viewport {
+        height: 100%;
+      }
+    }
+    &.news-page{
+      background-color: #1A1A1A;
+      overflow: hidden;
+    }
     &.set-height {
       min-height: 700px;
       height: 100%;
@@ -822,16 +836,17 @@ h1{
 	margin-bottom: 50px;
 }
 .news-list{
-	width: 1000%;
-	overflow: hidden;
+  white-space: nowrap;
 	margin-bottom: 60px;
 
 	li{
 		display: inline-block;
-		float: left;
 		position: relative;
+    white-space: normal;
+    overflow: hidden;
     img {
       min-height: 200px;
+      min-width: 200px;
       height: 25px;
       height: 15vw;
     }
@@ -845,12 +860,12 @@ h1{
 			opacity: 0;
 			transition: @time opacity;
 			font-family: 'sf_ui_displayregular';
-			font-size: 20px;
+			font-size: 16px;
 			color: #fff;
 			padding-left: 30px;
 			padding-right: 30px;
 			padding-top: 30px;
-			line-height: 22px;
+			line-height: 19px;
       p, div, blockquote, a {
         margin: 0;
         padding: 0;
@@ -1547,6 +1562,12 @@ footer{
 	-ms-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
 	transform: translateY(-50%);
+}
+.History {
+  position: absolute;
+  width: 100%;
+  top: 60px;
+  bottom: 60px;
 }
 .transparent-button{
 	font-family: 'sf_ui_displayregular';

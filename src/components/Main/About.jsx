@@ -6,6 +6,7 @@ import Social from '../Social';
 import $ from 'jquery';
 import classNames from 'classnames';
 import { tween } from 'react-imation';
+import History from './History.jsx';
 
 class About extends Component {
   componentDidMount () {
@@ -35,14 +36,17 @@ class About extends Component {
   }
 
   render() {
-    const { scrollY } = this.props;
-    const blur = tween(scrollY, [[0, 0], [100, 0], [500, 10]]);
-    //console.info(scrollY, blur);
+    const { scrollY, screenHeight, screenWidth } = this.props;
+    const blur = tween(scrollY, [[0, 0], [screenHeight*0.5, 0], [screenHeight*0.8, 5]]);
+    const marginLeftLogo = tween(scrollY, [[0, 0], [screenHeight*0.8, -screenWidth]]);
+    const marginLeftTitle = tween(scrollY, [[0, 0], [screenHeight/5, 0], [screenHeight*0.8, -screenWidth]]);
+    const marginLeftDate = tween(scrollY, [[0, 0], [screenHeight/2, 0], [screenHeight*0.8, -screenWidth/2]]);
+    const historyMargin = tween(scrollY, [[0, screenWidth], [screenHeight*0.8, 0]]);
     return (
       <div className="page main-page set-height" id="about">
         <div className="fixed-background">
           <div className={classNames('fixed-background-img', {
-            'blur': scrollY > 100
+            'blur': scrollY > screenHeight / 10
           })} style={{
             WebkitFilter: `blur(${blur}px)`,
             MozFilter: `blur(${blur}px)`,
@@ -57,7 +61,9 @@ class About extends Component {
               <source src="assets/video/afp.mp4" type="video/mp4" />
             </video>
           </div>
-          <div className="left-col padding-left-50 hide-on-video">
+          <div className="left-col padding-left-50 hide-on-video" style={{
+            marginLeft: marginLeftLogo
+          }}>
             <a href="http://alfabank.ru"
               target="_blank"
               className={classNames('logo', this.props.language)}></a>
@@ -69,9 +75,17 @@ class About extends Component {
           </div>
         </div>
         <div className="row padding-left-50 hide-on-video">
-          <h1>{i18n.t('about.mainFestival')} <br />{i18n.t('about.musicAndTechnology')}</h1>
-          <div className="festival-date">{i18n.t('about.festivalDate')}</div>
+          <h1 style={{
+            marginLeft: marginLeftTitle
+          }}>{i18n.t('about.mainFestival')} <br />{i18n.t('about.musicAndTechnology')}</h1>
+          <div className="festival-date" style={{
+            marginLeft: marginLeftDate
+          }}>{i18n.t('about.festivalDate')}</div>
         </div>
+
+        <History language={this.props.language} changeLanguage={this.props.changeLanguage} margin={historyMargin}/>
+
+
         <div className="row how-was-row">
           <div className="left-col padding-left-50">
             <div className="how-it-was" onClick={this.play.bind(this)}>

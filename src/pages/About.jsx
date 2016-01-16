@@ -7,6 +7,8 @@ import Map from '../components/Map';
 import cx from 'classnames';
 import Footer from '../components/Main/Footer';
 import Share from '../components/Share';
+import Scrollable from '../components/Scrollable';
+
 if (process.env.BROWSER) {
   require('./About.less');
 }
@@ -247,18 +249,20 @@ class About extends Component {
                 <li className="aboutGood-arrow disable"><img src="/assets/img/about/icon-arrow-back.svg" width=""/></li>
                 <li className="aboutGood-arrow"><img src="/assets/img/about/icon-arrow-back.svg" width=""/></li>
               </ul>
-              <div className="aboutGood-track" style={{left: -200}}>
-                {
-                  aboutMain.goodsList.map((good, index) => {
-                    return (
-                      <div className="advice aboutGood-advice" key={index}>
-                        <img className="advice-img" src={`/assets/img/about/${good.icon}`}/>
-                        <p className="advice-text screen-text">{good[language === 'eng' ? 'text_eng' : 'text']}</p>
-                      </div>
-                    );
-                  })
-                }
-              </div>
+              <Scrollable x={true} y={false}>
+                <div className="aboutGood-track">
+                  {
+                    aboutMain.goodsList.map((good, index) => {
+                      return (
+                        <div className="advice aboutGood-advice" key={index}>
+                          <img className="advice-img" src={`/assets/img/about/${good.icon}`}/>
+                          <p className="advice-text screen-text">{good[language === 'eng' ? 'text_eng' : 'text']}</p>
+                        </div>
+                      );
+                    })
+                  }
+                </div>
+              </Scrollable>
             </div>
           </article>
           <div id="faq"></div>

@@ -3,6 +3,7 @@ import { findDOMNode } from 'react-dom';
 import { Link } from 'react-router';
 import i18n from 'i18next-client';
 import moment from 'moment';
+import Scrollable from '../Scrollable';
 
 class NewsLine extends Component {
   componentWillMount() {
@@ -63,13 +64,15 @@ class NewsLine extends Component {
           </div>
         </div>
         <div className="row">
-          <ul className="news-list">
-            {
-              this.newsList.map((news, key) => {
-                return this.renderItem(news, key, language)
-              })
-            }
-          </ul>
+          <Scrollable>
+            <ul className="news-list">
+              {
+                this.newsList.map((news, key) => {
+                  return this.renderItem(news, key, language)
+                })
+              }
+            </ul>
+          </Scrollable>
         </div>
       </div>
     );

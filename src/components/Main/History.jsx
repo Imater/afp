@@ -63,7 +63,9 @@ class History extends Component {
   render() {
     const stat = stats[this.state.tab];
     return (
-      <div className="page second-page set-height">
+      <div className="History hide-on-video" style={{
+        marginLeft: this.props.margin
+      }}>
         <div className="row">
           <div className="left-col padding-left-50">
             <div className="col-title">

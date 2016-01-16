@@ -22,9 +22,11 @@ if (process.env.BROWSER) {
 class Main extends Component {
   state = {
     rect: {
-      top: 0
-    }
-  }
+      top: 0,
+    },
+    screenHeight: 0,
+    screenWidth: 0
+  };
 
   componentDidMount () {
     const { cancel } = raf;
@@ -33,6 +35,8 @@ class Main extends Component {
     const update = () => {
       this.setState({
         rect: document.documentElement.getBoundingClientRect(),
+        screenHeight: process.env.BROWSER ? window.innerHeight : 0,
+        screenWidth: process.env.BROWSER ? window.innerWidth : 0
       });
     };
 
@@ -42,10 +46,13 @@ class Main extends Component {
     }
 
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
     this.removeScrollHandler = () => {
       cancel(rafId);
       window.removeEventListener('scroll', handleScroll);
-    }
+      window.removeEventListener('resize', handleScroll);
+    };
+    update();
   }
 
   componentWillUnmount() {
@@ -53,11 +60,25 @@ class Main extends Component {
   }
 
   render() {
-    const { rect: {top} } = this.state;
+    const { rect: {top}, screenHeight, screenWidth } = this.state;
     return (
       <div className="MainPage">
-        <About ref='about' language={this.props.language} changeLanguage={this.props.changeLanguage} scrollY={-top}/>
-        <History language={this.props.language} changeLanguage={this.props.changeLanguage} />
+        <About
+          ref='about'
+          language={this.props.language}
+          changeLanguage={this.props.changeLanguage}
+          scrollY={-top}
+          screenHeight={screenHeight}
+          screenWidth={screenWidth}
+        />
+        {
+          /*
+          <History language={this.props.language} changeLanguage={this.props.changeLanguage} />
+          */
+        }
+        <div className="double-top-margin" style={{
+          height: screenHeight*2
+        }}> </div>
         <LineUp />
         <div className='page black news-page'>
           <Technology />

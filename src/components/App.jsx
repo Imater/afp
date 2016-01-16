@@ -25,6 +25,7 @@ if (process.env.BROWSER) {
     };
 
     scrollTo(name) {
+      $('body').removeClass('showMenu');
       if(name === '/') {
         setTimeout(() => {
           smoothScroll(0);
