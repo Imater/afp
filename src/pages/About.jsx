@@ -247,7 +247,7 @@ class About extends Component {
                 <li className="aboutGood-arrow disable"><img src="/assets/img/about/icon-arrow-back.svg" width=""/></li>
                 <li className="aboutGood-arrow"><img src="/assets/img/about/icon-arrow-back.svg" width=""/></li>
               </ul>
-              <div className="aboutGood-track" style={{left: 0}}>
+              <div className="aboutGood-track" style={{left: -200}}>
                 {
                   aboutMain.goodsList.map((good, index) => {
                     return (

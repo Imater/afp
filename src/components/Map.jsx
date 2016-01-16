@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import {GoogleMapLoader, GoogleMap, Marker} from "react-google-maps";
+import isMobile from './is-mobile.js';
 
 const styleMap = [
   {
@@ -265,8 +266,9 @@ const styleMap = [
 class Map extends Component {
   state = {
     markers: [
-    ]
-  }
+    ],
+    isMobile: isMobile()
+  };
   handleMapClick() {
   }
   handleMarkerRightclick() {
@@ -300,7 +302,7 @@ class Map extends Component {
                   navigationControl: true,
                   mapTypeControl: true,
                   scaleControl: true,
-                  draggable: true
+                  draggable: !this.state.isMobile
                 }}
                 defaultCenter={this.props.center}
                 onClick1={this.handleMapClick.bind(this)}>

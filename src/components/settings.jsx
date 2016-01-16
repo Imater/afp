@@ -1263,8 +1263,8 @@ export const aboutMain = {
 
   ],
   whereToLive: {
-    title: 'Как добраться?',
-    title_eng: 'How to get there?'
+    title: 'Где жить?',
+    title_eng: 'Where to live?'
   },
   whereToLiveList: [
     {
