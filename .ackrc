@@ -1,5 +1,5 @@
 --ignore-dir=build
-#--ignore-dir=assets
+--ignore-dir=assets
 --ignore-dir=node_modules
 --ignore-dir=dist
 --ignore-dir=upload
