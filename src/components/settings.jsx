@@ -224,12 +224,7 @@ export const newsItems = [
     title: 'Новости',
     title_eng: 'News',
     url: '/news/main'
-  },
-  {
-    title: 'СМИ о Alfa Future People',
-    title_eng: 'News about Alfa Future People',
-    url: '/news/afp'
-  },
+  }
 ];
 
 export const partnerItems = [

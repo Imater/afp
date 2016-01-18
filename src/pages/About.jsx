@@ -26,7 +26,7 @@ class About extends Component {
   render() {
     const {language} = this.props;
     return (
-      <div className="About" id="lineup">
+      <div className="About">
         <TopPageMenu
           fixed
           items={aboutItems}
@@ -67,55 +67,55 @@ class About extends Component {
             </div>
           </article>
 
-          <div id="map"></div>
-          <Map
-            center={
-              {lat: 56.413617, lng: 43.731237}
-            }
-            markers={[
-              {
-                position: {
-                  lat: 56.413617, lng: 43.731237
-                },
-                defaultAnimation: 2,
-                title: 'Нижегородская обл.,Балахнинский район, пос.Большое Козино,улица Луговая',
-                label: 'Afp',
-                clickable: true
+          <div id="map">
+            <Map
+              center={
+                {lat: 56.413617, lng: 43.731237}
               }
-            ]}
-          />
+              markers={[
+                {
+                  position: {
+                    lat: 56.413617, lng: 43.731237
+                  },
+                  defaultAnimation: 2,
+                  title: 'Нижегородская обл.,Балахнинский район, пос.Большое Козино,улица Луговая',
+                  label: 'Afp',
+                  clickable: true
+                }
+              ]}
+            />
+            <article className="screen aboutWay">
 
-          <article className="screen aboutWay">
-            <div className="screen-inner">
-              <h3 className="screen-title">{aboutMain.howToGetThere[language === 'eng' ? 'title_eng' : 'title']}</h3>
-              <ul className="tabs">
-                {
-                  aboutMain.howToGetThereList.map((item, key) => {
-                    return (
-                      <li
-                        className={cx('tabs-item', {active: key === this.state.tabGetIndex})}
-                        key={key}
-                        onClick={() => {
-                          this.setState({
-                            tabGetIndex: key
-                          });
-                        }}
-                      >{item[language === 'eng' ? 'title_eng' : 'title']}</li>
-                    );
-                  })
-                }
-              </ul>
-              <div>
-                {
-                  aboutMain.howToGetThereList.find(
-                    (item, key) => key === this.state.tabGetIndex
-                  )[language === 'eng' ? 'text_eng' : 'text']
-                }
+              <div className="screen-inner">
+                <h3 className="screen-title">{aboutMain.howToGetThere[language === 'eng' ? 'title_eng' : 'title']}</h3>
+                <ul className="tabs">
+                  {
+                    aboutMain.howToGetThereList.map((item, key) => {
+                      return (
+                        <li
+                          className={cx('tabs-item', {active: key === this.state.tabGetIndex})}
+                          key={key}
+                          onClick={() => {
+                            this.setState({
+                              tabGetIndex: key
+                            });
+                          }}
+                        >{item[language === 'eng' ? 'title_eng' : 'title']}</li>
+                      );
+                    })
+                  }
+                </ul>
+                <div>
+                  {
+                    aboutMain.howToGetThereList.find(
+                      (item, key) => key === this.state.tabGetIndex
+                    )[language === 'eng' ? 'text_eng' : 'text']
+                  }
+                </div>
               </div>
-            </div>
-          </article>
-          <div id="live"></div>
-          <article className="screen aboutWay">
+            </article>
+          </div>
+          <article className="screen aboutWay" id="live">
             <div className="screen-inner">
               <h3 className="screen-title">{aboutMain.whereToLive[language === 'eng' ? 'title_eng' : 'title']}</h3>
               <ul className="tabs">
@@ -190,9 +190,9 @@ class About extends Component {
                 }
             </div>
           </article>
-          <div id="food"></div>
           <article
             className="screen screen--banner aboutFood"
+            id="food"
             style={{
               backgroundImage: 'url(\'/assets/img/about/foodcort.jpg\')'
             }}
@@ -241,8 +241,7 @@ class About extends Component {
               </div>
             </div>
           </article>
-          <div id="advises"></div>
-          <article className="screen aboutGood">
+          <article className="screen aboutGood" id="advises">
             <div className="screen-inner aboutGood-inner">
               <h2 className="screen-title">{aboutMain.goods[language === 'eng' ? 'title_eng' : 'title']}</h2>
               <ul className="aboutGood-arrows hide">

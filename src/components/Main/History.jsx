@@ -46,7 +46,7 @@ const params = [
   },
   {
     name: 'hectare'
-  }
+  },
 ];
 
 class History extends Component {

@@ -85,7 +85,7 @@ class Media extends Component {
     let boxProcent = 100/count;
     return (
       <div className="Media">
-        <TopPageMenu items={mediaItems} language={language} />
+        <TopPageMenu items={mediaItems} language={language} fixed/>
         <div className='Galleries'>
           {
             this.galleryParts.map((part, keyParts) => {
