@@ -326,6 +326,10 @@ body{
 			width: 40%;
 		}
 	}
+  .float-left {
+    float: 'left';
+    clear: 'both';
+  }
 	.right-col{
 		display: inline-block;
 		width: 50%;
@@ -523,6 +527,7 @@ h1{
 	li{
 		display: inline-block;
     padding: 2px;
+    height: 36px;
 	}
 	a{
 		display: inline-block;
@@ -641,6 +646,21 @@ h1{
 
 
   @media (max-width: 1200px) {
+    font-size: 32px;
+    line-height: 46px;
+    margin-right: 80px;
+    margin-bottom: 20px;
+    &:before {
+      font-size: 12px;
+    }
+    &:after {
+      background-size: cover;
+      top: 10px;
+      right: 10px;
+      zoom: 0.6;
+    }
+  }
+  @media (max-height: 700px) {
     font-size: 32px;
     line-height: 46px;
     margin-right: 80px;

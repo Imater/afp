@@ -38,10 +38,12 @@ class About extends Component {
   render() {
     const { scrollY, screenHeight, screenWidth } = this.props;
     const blur = tween(scrollY, [[0, 0], [screenHeight*0.5, 0], [screenHeight*0.8, 5]]);
-    const marginLeftLogo = tween(scrollY, [[0, 0], [screenHeight*0.8, -screenWidth]]);
-    const marginLeftTitle = tween(scrollY, [[0, 0], [screenHeight/5, 0], [screenHeight*0.8, -screenWidth]]);
-    const marginLeftDate = tween(scrollY, [[0, 0], [screenHeight/2, 0], [screenHeight*0.8, -screenWidth/2]]);
-    const historyMargin = tween(scrollY, [[0, screenWidth], [screenHeight*0.8, 0]]);
+    const marginLogo = tween(scrollY, [[0, 0], [screenHeight/6, -screenHeight]]);
+    const marginTitle = tween(scrollY, [[0, 0], [screenHeight/4, 0], [screenHeight*0.8, -screenHeight]]);
+    const marginDate = tween(scrollY, [[0, 0], [screenHeight/2, 0], [screenHeight*0.8, -screenHeight/2]]);
+    const historyMargin = tween(scrollY, [[0, screenWidth], [screenHeight*0.5, 0]]);
+    const historyOpacity = tween(scrollY, [[0, 0], [screenHeight*0.8, 1]]);
+    const footerOpacity = tween(scrollY, [[0, 1], [screenHeight*2, 1], [screenHeight*2.1, 0]]);
     return (
       <div className="page main-page set-height" id="about">
         <div className="fixed-background">
@@ -55,38 +57,43 @@ class About extends Component {
             filter: `blur(${blur}px)`
           }}></div>
         </div>
+        <div className="right-col text-right padding-right-40" hide-on-video style={{
+          position: 'absolute',
+          right: 0
+        }}>
+          <a href='javascript:void(0)' className="language" onClick={this.props.changeLanguage.bind(this, this.props.language==='eng' ? 'ru' : 'eng')}>
+            {this.props.language==='eng' ? 'en' : 'ru'}
+          </a>
+        </div>
         <div className="row logoBlock">
           <div className="fullscreen-bg">
             <video ref="video" className="bg-video">
               <source src="assets/video/afp.mp4" type="video/mp4" />
             </video>
           </div>
-          <div className="left-col padding-left-50 hide-on-video" style={{
-            marginLeft: marginLeftLogo
+          <div className="left-col padding-left-50 hide-on-video float-left" style={{
+            marginTop: marginLogo,
           }}>
             <a href="http://alfabank.ru"
               target="_blank"
               className={classNames('logo', this.props.language)}></a>
           </div>
-          <div className="right-col text-right padding-right-40" hide-on-video>
-            <a href='javascript:void(0)' className="language" onClick={this.props.changeLanguage.bind(this, this.props.language==='eng' ? 'ru' : 'eng')}>
-              {this.props.language==='eng' ? 'en' : 'ru'}
-            </a>
-          </div>
         </div>
-        <div className="row padding-left-50 hide-on-video">
-          <h1 style={{
-            marginLeft: marginLeftTitle
-          }}>{i18n.t('about.mainFestival')} <br />{i18n.t('about.musicAndTechnology')}</h1>
+        <div className="row padding-left-50 hide-on-video" style={{
+            marginTop: marginTitle
+          }}>
+          <h1>{i18n.t('about.mainFestival')}<br />{i18n.t('about.musicAndTechnology')}</h1>
           <div className="festival-date" style={{
-            marginLeft: marginLeftDate
+            marginTop: marginDate
           }}>{i18n.t('about.festivalDate')}</div>
         </div>
 
-        <History language={this.props.language} changeLanguage={this.props.changeLanguage} margin={historyMargin}/>
+        <History language={this.props.language} changeLanguage={this.props.changeLanguage} margin={historyMargin} opacity={historyOpacity}/>
 
 
-        <div className="row how-was-row">
+        <div className="row how-was-row" style={{
+          opacity: footerOpacity
+        }}>
           <div className="left-col padding-left-50">
             <div className="how-it-was" onClick={this.play.bind(this)}>
               Alfa Future People 2015<br />{i18n.t('about.howItWas')}
@@ -97,7 +104,9 @@ class About extends Component {
             <a href="http://kudago.com/" target="_blank" className="kudago"></a>
           </div>
         </div>
-        <div className="row social-row">
+        <div className="row social-row" style={{
+          opacity: footerOpacity
+        }}>
           <div className="left-col padding-left-50 text-left">
             <div className="festival-location">
               <Link to='/about/map'>{i18n.t('about.novgorod')}</Link>

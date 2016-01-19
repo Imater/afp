@@ -35,7 +35,7 @@ class Sport extends Component {
           url: 'http://alfafuture.com', //(typeof window === 'undefined') ? '' : window.location.href,
           title: i18n.t('pages.sportAndExtrime'),
           descr: i18n.t('pages.sportAndExtrime'),
-          img_url: 'http://alfafuture.com/upload/content/totspot.jpg'
+          img_url: 'http://afp.ru/assets/img/share.jpg'
         }} />
         <div className="page-block">
           <h2>

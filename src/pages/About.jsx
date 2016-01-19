@@ -51,7 +51,7 @@ class About extends Component {
                 url: 'http://alfafuture.com',
                 title: aboutMain[language].title,
                 descr: aboutMain[language].text,
-                imgUrl: 'http://alfafuture.com/upload/content/totspot.jpg'
+                imgUrl: 'http://afp.ru/assets/img/share.jpg'
               }}
             />
             <div className="screen-inner aboutTop-inner">

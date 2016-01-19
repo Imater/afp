@@ -5,7 +5,7 @@ import i18n from 'i18next-client';
 import Social from '../Social';
 import Scrollable from '../Scrollable';
 
-class History extends Component {
+class Lineup extends Component {
   render() {
     return (
       <div className="page djs-page" id="lineup">
@@ -29,8 +29,12 @@ class History extends Component {
             <Scrollable x={true} y={false}>
               <div className="row line-up">
                 <ul>
-                  <li className="dj1"></li>
-                  <li className="dj2"></li>
+                  <Link to="/lineup/2016/main/136">
+                    <li className="dj1"></li>
+                  </Link>
+                  <Link to="/lineup/2016/main/134">
+                    <li className="dj2"></li>
+                  </Link>
                   <li className="dj3"></li>
                   <li className="dj4"></li>
                   <li className="dj5"></li>
@@ -44,4 +48,4 @@ class History extends Component {
   }
 }
 
-export default History;
+export default Lineup;

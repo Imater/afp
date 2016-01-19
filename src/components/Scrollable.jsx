@@ -34,26 +34,31 @@ class Scrollable extends Component {
 
   onDown(e) {
     if (!this.pushed) {
-      document.addEventListener('mousemove', this.onMove.bind(this));
-      document.addEventListener('touchmove', this.onMove.bind(this));
+      const move = this.onMove.bind(this);
+      const up = this.onUp.bind(this);
+      document.addEventListener('mousemove', move);
+      document.addEventListener('touchmove', move);
 
-      document.addEventListener('mouseup', this.onUp.bind(this));
-      document.addEventListener('touchend', this.onUp.bind(this));
-      document.addEventListener('touchcancel', this.onUp.bind(this));
+      document.addEventListener('mouseup', up);
+      document.addEventListener('touchend', up);
+      document.addEventListener('touchcancel', up);
       this.lastClientX = this.getX(e);
       this.lastClientY = this.getY(e);
+      this.removeListener = () => {
+        document.removeEventListener('mousemove', move);
+        document.removeEventListener('touchmove', move);
+
+        document.removeEventListener('mouseup', up);
+        document.removeEventListener('touchend', up);
+        document.removeEventListener('touchcancel', up);
+      };
       this.pushed = true;
     }
   }
 
   onUp(e) {
     if (this.pushed) {
-      document.removeEventListener('mousemove');
-      document.removeEventListener('touchmove');
-
-      document.removeEventListener('mouseup');
-      document.removeEventListener('touchend');
-      document.removeEventListener('touchcancel');
+      this.removeListener();
       this.pushed = false;
     }
   }
@@ -97,5 +102,7 @@ Scrollable.defaultProps = {
 
 Scrollable.scrollable = false;
 Scrollable.pushed = false;
+Scrollable.removeListener = () => {
+};
 
 export default Scrollable;

@@ -64,7 +64,8 @@ class History extends Component {
     const stat = stats[this.state.tab];
     return (
       <div className="History hide-on-video" style={{
-        marginLeft: this.props.margin
+        marginTop: this.props.margin,
+        opacity: this.props.opacity
       }}>
         <div className="row">
           <div className="left-col padding-left-50">
