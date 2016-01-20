@@ -128,4 +128,8 @@ class TopPageMenu extends Component {
   }
 }
 
+
+TopPageMenu.removeScrollHandler = () => {
+};
+
 export default TopPageMenu;
