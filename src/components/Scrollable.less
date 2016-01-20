@@ -1,6 +1,34 @@
-.ScrollWrapper {
-  overflow: hidden;
-  .viewport {
-    position: relative;
+.ScrollMain {
+  .navigator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    .left {
+      content: '';
+      display: inline-block;
+      margin: 0 5px;
+      cursor: pointer;
+      background-image: url('/assets/svg/left-arrow.svg');
+      background-size: 32px 32px;
+      width: 32px;
+      height: 32px;
+    }
+    .right {
+      content: '';
+      display: inline-block;
+      margin: 0 5px;
+      cursor: pointer;
+      background-image: url('/assets/svg/right-arrow.svg');
+      background-size: 32px 32px;
+      width: 32px;
+      height: 32px;
+    }
+  }
+  .ScrollWrapper {
+    overflow: hidden;
+    cursor: col-resize;
+    .viewport {
+      position: relative;
+    }
   }
 }

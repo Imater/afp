@@ -242,13 +242,13 @@ class About extends Component {
             </div>
           </article>
           <article className="screen aboutGood" id="advises">
-            <div className="screen-inner aboutGood-inner">
+            <div className="aboutGood-inner">
               <h2 className="screen-title">{aboutMain.goods[language === 'eng' ? 'title_eng' : 'title']}</h2>
               <ul className="aboutGood-arrows hide">
                 <li className="aboutGood-arrow disable"><img src="/assets/img/about/icon-arrow-back.svg" width=""/></li>
                 <li className="aboutGood-arrow"><img src="/assets/img/about/icon-arrow-back.svg" width=""/></li>
               </ul>
-              <Scrollable x={true} y={false}>
+              <Scrollable x={true} y={false} navigator={true}>
                 <div className="aboutGood-track">
                   {
                     aboutMain.goodsList.map((good, index) => {

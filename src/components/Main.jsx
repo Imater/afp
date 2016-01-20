@@ -11,6 +11,7 @@ import Partner from './Main/Partner';
 import Counter from './Main/Counter';
 import Footer from './Main/Footer';
 import ScrollLink from 'react-scroll';
+import { tween } from 'react-imation';
 import raf from 'raf'; //request next animation frame
 
 const ScrollElement = ScrollLink.Element;
@@ -61,6 +62,8 @@ class Main extends Component {
 
   render() {
     const { rect: {top}, screenHeight, screenWidth } = this.state;
+    const scrollY = -top;
+    const historyOpacity = 1; //tween(scrollY, [[screenHeight*0.3, 0], [screenHeight*0.8, 1]]);
     return (
       <div className="MainPage">
         <About
@@ -71,14 +74,6 @@ class Main extends Component {
           screenHeight={screenHeight}
           screenWidth={screenWidth}
         />
-        {
-          /*
-          <History language={this.props.language} changeLanguage={this.props.changeLanguage} />
-          */
-        }
-        <div className="double-top-margin" style={{
-          height: screenHeight*2
-        }}> </div>
         <LineUp />
         <div className='page black news-page'>
           <Technology />

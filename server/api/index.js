@@ -69,6 +69,7 @@ api.getNews = function(id){
         }
       ],
       order: [['date', 'DESC']],
+      limit: 60
     }).then(function(newsFromDb){
       request(JSONify(newsFromDb));
     }).catch(function(err){

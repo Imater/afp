@@ -33,19 +33,24 @@ const tabs = [
 
 const params = [
   {
-    name: 'scene'
+    name: 'scene',
+    img: 'icon-face.svg'
   },
   {
-    name: 'dj'
+    name: 'dj',
+    img: 'icon-dj.svg'
   },
   {
-    name: 'sound'
+    name: 'sound',
+    img: 'icon-sound.svg'
   },
   {
-    name: 'viewer'
+    name: 'viewer',
+    img: 'icon-users.svg'
   },
   {
-    name: 'hectare'
+    name: 'hectare',
+    img: 'icon-hectares.svg'
   },
 ];
 
@@ -63,7 +68,7 @@ class History extends Component {
   render() {
     const stat = stats[this.state.tab];
     return (
-      <div className="History hide-on-video" style={{
+      <div className="page set-height second-page hide-on-video" style={{
         marginTop: this.props.margin,
         opacity: this.props.opacity
       }}>
@@ -93,7 +98,8 @@ class History extends Component {
                 <div className={classNames('was-block', `${param.name}-block`)}
                   key={key}
                   data-name={i18n.t(`history.${param.name}`)}>
-                  {stat[param.name]}
+                  <span>{stat[param.name]}</span>
+                  <img src={`/assets/img/${param.img}`} />
                </div>
               );
             })

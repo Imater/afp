@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="58px" height="70px" viewBox="0 0 58 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Sleep" sketch:type="MSLayerGroup" transform="translate(1.000000, 1.000000)" stroke="#126BEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M29.5749768,16.5379687 C34.7173638,11.1726242 42.8922013,7.17043295 55,7.17043276 C49.2245572,2.67694026 41.960443,0 34.0698121,0 C15.2535745,0 0,15.2223185 0,34 C0,52.7776815 15.2535745,68 34.0698121,68 L34.0698121,68 C41.1853039,68 47.7913252,65.8231672 53.2556611,62.1004211 C34.6393169,61.5005409 25.3680494,50.1079298 22.9796064,39.5379572" id="Oval-26" sketch:type="MSShapeGroup"></path>
+            <path d="M12.2080188,21 L25.34677,21 L12,34 L27,34" id="Path-316" sketch:type="MSShapeGroup"></path>
+            <path d="M31,31 L41.1793164,31 L31.4079948,41 L42,41" id="Path-317" sketch:type="MSShapeGroup"></path>
+            <path d="M46,38 L55,38 L46.9217498,46 L54.7156451,46" id="Path-318" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

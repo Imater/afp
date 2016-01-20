@@ -33,6 +33,9 @@ function postToFeed(title, desc, url, image) {
 //});
 
 const shares = (params) => {
+  if(typeof window === 'undefined') {
+    return [];
+  }
   let { url, title, descr, img_url } = params;
   title = $(`<div>${title}</div>`).text();
   descr = $(`<div>${descr}</div>`).text();

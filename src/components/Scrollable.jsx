@@ -79,16 +79,39 @@ class Scrollable extends Component {
     }
   }
 
+  move(size) {
+    return (e)=> {
+      var domNode = this.wrapper;
+      if (this.props.x) {
+        domNode.scrollLeft -= size;
+      }
+      if (this.props.y) {
+        domNode.scrollTop -= size;
+      }
+    }
+  }
+
   render() {
+    const navigator = this.props.navigator ? (
+      <div className="navigator noselect">
+        <div className="left" onClick={this.move(30).bind(this)}></div>
+        <div className="right" onClick={this.move(-30).bind(this)}></div>
+      </div>
+    ) : (<div></div>);
     return (
-      <div
-        className="ScrollWrapper noselect"
-        onMouseDown={this.onDown.bind(this)}
-        onTouchStart={this.onDown.bind(this)}
-        ref={c => this.wrapper = c}
-      >
-        <div className="viewport" ref={c => this.viewport = c}>
-          {this.props.children}
+      <div className="ScrollMain">
+        {
+          navigator
+        }
+        <div
+          className="ScrollWrapper noselect"
+          onMouseDown={this.onDown.bind(this)}
+          onTouchStart={this.onDown.bind(this)}
+          ref={c => this.wrapper = c}
+        >
+          <div className="viewport" ref={c => this.viewport = c}>
+            {this.props.children}
+          </div>
         </div>
       </div>
     );
