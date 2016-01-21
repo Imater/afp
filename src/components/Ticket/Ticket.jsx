@@ -3,8 +3,17 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import i18n from 'i18next-client';
+import { tickets } from '../settings.jsx';
 
 import TopMenu from './TopMenu';
+
+const icons = {
+
+};
+
+if (process.env.BROWSER) {
+  require('./Ticket.less');
+}
 
 @connect(
   state => ({ i18: state.i18 }),
@@ -23,6 +32,89 @@ import TopMenu from './TopMenu';
       }, 0)
     }
 
+    renderIcons(ticket) {
+      return (
+        <ul className="props">
+          {
+            ticket.icons.map((icon, key) => {
+              return (
+                <li>
+                  <img src={`/assets/svg/ticket/${icon}`} />
+                </li>
+              );
+            })
+          }
+        </ul>
+      );
+    }
+
+    renderFeatures(ticket) {
+      return (
+        <ul className="features">
+          {
+            ticket.features.map((feature, key) => {
+              return (
+                <li key={key}>{feature.title}</li>
+              );
+            })
+          }
+        </ul>
+      );
+    }
+
+    renderTicket(ticket, key) {
+      return (
+        <li key={key}>
+          <div className="ticket-top">
+            <div className="row">
+              <div className="left-col">
+                <div className="title">{ticket.title}</div>
+              </div>
+              <div className="right-col">
+                {
+                  this.renderIcons(ticket)
+                }
+              </div>
+            </div>
+            <div className="ticket-text">
+              {ticket.text}
+            </div>
+            {
+              this.renderFeatures(ticket)
+            }
+            <div className="ticket-comment">
+              {ticket.comment}
+            </div>
+          </div>
+          <div className="ticket-helper"><div></div></div>
+          <div className="row price-row">
+            <div className="left-col">
+              <div className="summ">{ticket.cost} ₽</div>
+            </div>
+            {
+              ticket.enabled ? (
+                <div className="right-col">
+                  <div className="num-block t4b-container">
+                    <div
+                      className="t4b-counter"
+                      data-t4b-counter=""
+                      data-t4b-cart-counter-event={ticket.t4bCart.event}
+                      data-t4b-cart-counter-sector={ticket.t4bCart.sector}
+                      data-t4b-cart-counter-tariff={ticket.t4bCart.tariff}
+                    >
+                      <a href="#" className="down_off t4b-icon-down"></a>
+                      <input type="text" className="ticket-number t4b-cart-counter-input" defaultValue="0" />
+                      <a href="#" className="up_off t4b-icon-up"></a>
+                    </div>
+                  </div>
+                </div>
+              ) : ''
+            }
+          </div>
+        </li>
+      );
+    }
+
     render() {
       return (
         <div>
@@ -39,118 +131,9 @@ import TopMenu from './TopMenu';
           </div>
           <div className="tickets">
             <ul>
-              <li>
-                <div className="ticket-top">
-                  <div className="row">
-                    <div className="left-col">
-                      <div className="title">Стандарт</div>
-                    </div>
-                    <div className="right-col">
-                      <ul className="props">
-                        <li>
-                          <img src="/assets/svg/ticket/icon1.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-ball.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-robot.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-wifi.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-camp.svg" />
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <ul className="features">
-                    <li>все дни фестиваля</li>
-                    <li>все зоны фестиваля (кроме VIP)</li>
-                    <li>неограниченное количество входов и выходов</li>
-                  </ul>
-                </div>
-                <div className="ticket-helper"><div></div></div>
-                <div className="row price-row">
-                  <div className="left-col">
-                    <div className="summ">4 000 ₽</div>
-                  </div>
-                  <div className="right-col">
-                    <div className="num-block t4b-container">
-                      <div
-                        className="t4b-counter"
-                        data-t4b-counter=""
-                        data-t4b-cart-counter-event="25"
-                        data-t4b-cart-counter-sector="45"
-                        data-t4b-cart-counter-tariff="57"
-                      >
-                        <a href="#" className="down_off t4b-icon-down"></a>
-                        <input type="text" className="ticket-number t4b-cart-counter-input" defaultValue="0" />
-                        <a href="#" className="up_off t4b-icon-up"></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className="ticket-top">
-                  <div className="row">
-                    <div className="left-col">
-                      <div className="title">VIP</div>
-                    </div>
-                    <div className="right-col">
-
-                      <ul className="props">
-                        <li>
-                          <img src="/assets/svg/ticket/icon1.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-ball.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-robot.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-wifi.svg" />
-                        </li>
-                        <li>
-                          <img src="/assets/svg/ticket/icon-camp.svg" />
-                        </li>
-                      </ul>
-
-                    </div>
-                  </div>
-                  <ul className="features">
-                    <li>все дни фестиваля</li>
-                    <li>все зоны фестиваля</li>
-                    <li>неограниченное количество входов и выходов</li>
-                    <li>отдельный VIP танцпол на возвышении около главной сцены</li>
-                    <li>VIP шатер с комфортабельной лаундж-зоной и разнообразным ассортиментом платных напитков в барах и специальным меню</li>
-                  </ul>
-                </div>
-                <div className="ticket-helper"><div></div></div>
-                <div className="row price-row">
-                  <div className="left-col">
-                    <div className="summ">7 500 ₽</div>
-                  </div>
-                  <div className="right-col">
-                    <div className="num-block t4b-container">
-                      <div
-                        className="t4b-counter"
-                        data-t4b-counter=""
-                        data-t4b-cart-counter-event="26"
-                        data-t4b-cart-counter-sector="43"
-                        data-t4b-cart-counter-tariff="60"
-                      >
-                        <a href="#" className="down_off t4b-icon-down"></a>
-                        <input type="text" className="ticket-number t4b-cart-counter-input" defaultValue="0" />
-                        <a href="#" className="up_off t4b-icon-up"></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
+              {
+                tickets.map(this.renderTicket.bind(this))
+              }
             </ul>
           </div>
         </div>

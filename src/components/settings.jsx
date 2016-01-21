@@ -1,5 +1,193 @@
 import React from 'react';
 
+export const tickets = [
+  {
+    title: 'Стандарт',
+    title_eng: 'Standard',
+    comment: 'для проживания на территории фестиваля рекомендуем купить билет в один из кемпингов',
+    comment_eng: 'its highly recommended to buy ticket in Alfa or Omega camp habitation on the festival',
+    cost: 4000,
+    enabled: true,
+    t4bCart: {
+      event: 25,
+      sector: 45,
+      tariff: 57
+    },
+    icons: [
+      'icon1.svg',
+      'icon-ball.svg',
+      'icon-robot.svg',
+      'icon-wifi.svg',
+    ],
+    features: [
+      {
+        title: 'все дни фестиваля',
+        title_eng: 'all festival days'
+      },
+      {
+        title: 'все зоны фестиваля (кроме VIP)',
+        title_eng: 'all zones (exp. VIP)'
+      },
+      {
+        title: 'неограниченное количество входов и выходов',
+        title_eng: 'multiple entries'
+      },
+    ],
+  },
+  {
+    title: 'VIP',
+    title_eng: 'VIP',
+    comment: 'для проживания на территории фестиваля рекомендуем купить билет в один из кемпингов',
+    comment_eng: 'its highly recommended to buy ticket in Alfa or Omega camp habitation on the festival',
+    cost: 7500,
+    enabled: true,
+    t4bCart: {
+      event: 26,
+      sector: 43,
+      tariff: 60
+    },
+    icons: [
+      'icon-palatka.svg',
+      'icon1.svg',
+      'icon-ball.svg',
+      'icon-robot.svg',
+      'icon-wifi.svg',
+    ],
+    features: [
+      {
+        title: 'все дни фестиваля',
+        title_eng: 'all festival days'
+      },
+      {
+        title: 'неограниченное количество входов и выходов',
+        title_eng: 'multiple entries'
+      },
+      {
+        title: 'отдельный танцпол на возвышении рядом с главной сценой',
+        title_eng: 'multiple entries'
+      },
+      {
+        title: 'отдельный шатер с комфортабельной лаунж-зоной',
+        title_eng: 'multiple entries'
+      },
+      {
+        title: 'разнообразный ассортимент платных напитков и специальное меню',
+        title_eng: 'multiple entries'
+      },
+    ],
+  },
+  {
+    title: 'Парковка',
+    title_eng: 'Parking',
+    text: 'В 10 минутах ходьбы от кемпинга организована удобная охраняемая парковка.',
+    text_eng: '10 min walk from the fest area is situated guarded parking place. Here you can leave your car and be confident in its safe.',
+    comment: 'на территорию парковки допускаются только транспортные средства категории А и B.',
+    comment_eng: 'Parking is only for A and B vehicle categories',
+    cost: 3500,
+    enabled: false,
+    t4bCart: {
+      event: 26,
+      sector: 43,
+      tariff: 60
+    },
+    icons: [
+      'icon-parking.svg',
+    ],
+    features: [
+      {
+        title: 'въезд с 10.00 21 июля',
+        title_eng: 'entry from 10 AM 21th of July'
+      },
+      {
+        title: 'неограниченное количество въездов и выездов',
+        title_eng: 'multiple entries'
+      },
+    ],
+  },
+  {
+    title: 'Альфа кемпинг',
+    title_eng: 'Alfa camp',
+    text: 'Альфа-кемпинг – это огороженная охраняемая территория с инфраструктурой, которая расположена максимально близко ко входу на фестиваль',
+    text_eng: 'Alfa camp is a place at the camp in a fenced and guarded territory with infrastructure, which is located as close as possible to the festival entrance',
+    comment: 'для доступа на танцпол, в зоны технологии и спорт нужно приобрести билет категории стандарт или VIP',
+    comment_eng: 'for entrance to the festival you need to buy Standard or VIP ticket ',
+    cost: 3000,
+    enabled: false,
+    t4bCart: {
+      event: 26,
+      sector: 43,
+      tariff: 60
+    },
+    icons: [
+      'icon-palatka.svg',
+      'icon-shower.svg',
+      'icon-wifi.svg',
+      'icon-battery.svg',
+      'icon-key.svg',
+      'icon-oneman.svg',
+    ],
+    features: [
+      {
+        title: 'установка собственной палатки размером не более 4,5 х 3м и вместимостью до 4-х человек',
+        title_eng: 'the right to install a tent not larger than 4.5 x 3m max. for  4 persons'
+      },
+      {
+        title: 'бесплатные душевые (только для жителей кемпинга)',
+        title_eng: 'free showers (only for camp residents)'
+      },
+      {
+        title: 'бесплатный доступ к сети WI-FI',
+        title_eng: 'free WI-FI'
+      },
+      {
+        title: 'бесплатные локеры для подзарядки мобильных устройств',
+        title_eng: 'free lockers for charging mobile devices'
+      },
+      {
+        title: 'бесплатные локеры для ценных вещей и документов на ресепшн кемпинга',
+        title_eng: 'free lockers for documents '
+      },
+      {
+        title: 'возможность гостевого визита',
+        title_eng: 'guest visits'
+      },
+    ],
+  },
+  {
+    title: 'Омега кемпинг',
+    title_eng: 'Omega camp',
+    text: 'Омега-кемпинг – это огороженная территория с инфраструктурой, которая располагается в непосредственной близости от входа на фестиваль.',
+    text_eng: 'Omega-camp is a place in a fenced area with infrastructure, located in the nearest place to the festival entrance.',
+    comment: 'для доступа на танцпол, в зоны технологии и спорт нужно приобрести билет категории стандарт или VIP',
+    comment_eng: 'for entrance to the festival you need to buy Standard or VIP ticket ',
+    cost: 1500,
+    enabled: false,
+    t4bCart: {
+      event: 26,
+      sector: 43,
+      tariff: 60
+    },
+    icons: [
+      'icon-palatka.svg',
+      'icon-shower-pay.svg',
+    ],
+    features: [
+      {
+        title: 'установка собственной палатки размером не более 4,5 х 3м и вместимостью до 4-х человек',
+        title_eng: 'the right to install a tent not larger than 4.5 x 3m max. for  4 persons'
+      },
+      {
+        title: 'свободное размещение',
+        title_eng: 'free placement'
+      },
+      {
+        title: 'платные душевые',
+        title_eng: 'free showers (only for camp residents)'
+      },
+    ],
+  },
+];
+
 export const menuItems = [
   {
     title: 'menu.about',

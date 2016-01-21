@@ -75,7 +75,6 @@ if (process.env.BROWSER) {
               }
             </ul>
             <Link to='/ticket' className="buy-ticket">{i18n.t('menu.buyTicket')}</Link>
-            <a href='http://alfafuture.com/tickets.html' target='blank' className="buy-ticket">{i18n.t('menu.buyTicket')}</a>
           </div>
           <div className="wrapper">
             <div className="container">
