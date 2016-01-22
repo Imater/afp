@@ -60,47 +60,19 @@ export const tickets = [
       },
       {
         title: 'неограниченное количество входов и выходов',
-        title_eng: 'multiple entries'
+        title_eng: 'all zones (exp. VIP)'
       },
       {
         title: 'отдельный танцпол на возвышении рядом с главной сценой',
-        title_eng: 'multiple entries'
+        title_eng: 'separate dance floor'
       },
       {
         title: 'отдельный шатер с комфортабельной лаунж-зоной',
-        title_eng: 'multiple entries'
+        title_eng: 'separate VIP tent near the main stage'
       },
       {
         title: 'разнообразный ассортимент платных напитков и специальное меню',
-        title_eng: 'multiple entries'
-      },
-    ],
-  },
-  {
-    title: 'Парковка',
-    title_eng: 'Parking',
-    text: 'В 10 минутах ходьбы от кемпинга организована удобная охраняемая парковка.',
-    text_eng: '10 min walk from the fest area is situated guarded parking place. Here you can leave your car and be confident in its safe.',
-    comment: 'на территорию парковки допускаются только транспортные средства категории А и B.',
-    comment_eng: 'Parking is only for A and B vehicle categories',
-    cost: 3500,
-    enabled: false,
-    t4bCart: {
-      event: 26,
-      sector: 43,
-      tariff: 60
-    },
-    icons: [
-      'icon-parking.svg',
-    ],
-    features: [
-      {
-        title: 'въезд с 10.00 21 июля',
-        title_eng: 'entry from 10 AM 21th of July'
-      },
-      {
-        title: 'неограниченное количество въездов и выездов',
-        title_eng: 'multiple entries'
+        title_eng: 'VIP lounge with special menu'
       },
     ],
   },
@@ -109,14 +81,14 @@ export const tickets = [
     title_eng: 'Alfa camp',
     text: 'Альфа-кемпинг – это огороженная охраняемая территория с инфраструктурой, которая расположена максимально близко ко входу на фестиваль',
     text_eng: 'Alfa camp is a place at the camp in a fenced and guarded territory with infrastructure, which is located as close as possible to the festival entrance',
-    comment: 'для доступа на танцпол, в зоны технологии и спорт нужно приобрести билет категории стандарт или VIP',
-    comment_eng: 'for entrance to the festival you need to buy Standard or VIP ticket ',
+    comment: 'для прохода на фестиваль нужно приобрести билеты категории Стандарт или VIP. 22-24 июля',
+    comment_eng: 'for entrance to the festival you need to buy Standard or VIP ticket. 22-24 July ',
     cost: 3000,
-    enabled: false,
+    enabled: true,
     t4bCart: {
-      event: 26,
-      sector: 43,
-      tariff: 60
+      event: 40,
+      sector: 100,
+      tariff: 117
     },
     icons: [
       'icon-palatka.svg',
@@ -157,15 +129,15 @@ export const tickets = [
     title: 'Омега кемпинг',
     title_eng: 'Omega camp',
     text: 'Омега-кемпинг – это огороженная территория с инфраструктурой, которая располагается в непосредственной близости от входа на фестиваль.',
-    text_eng: 'Omega-camp is a place in a fenced area with infrastructure, located in the nearest place to the festival entrance.',
-    comment: 'для доступа на танцпол, в зоны технологии и спорт нужно приобрести билет категории стандарт или VIP',
-    comment_eng: 'for entrance to the festival you need to buy Standard or VIP ticket ',
+    text_eng: 'Omega-camp is a place in a fenced area with infrastructure, located in the nearest place to the festival entrance. 21-24 июля',
+    comment: 'для прохода на фестиваль нужно приобрести билеты категории Стандарт или VIP. 21-24 июля',
+    comment_eng: 'for entrance to the festival you need to buy Standard or VIP ticket. 21-24 July ',
     cost: 1500,
-    enabled: false,
+    enabled: true,
     t4bCart: {
-      event: 26,
-      sector: 43,
-      tariff: 60
+      event: 41,
+      sector: 101,
+      tariff: 118
     },
     icons: [
       'icon-palatka.svg',
@@ -183,6 +155,34 @@ export const tickets = [
       {
         title: 'платные душевые',
         title_eng: 'free showers (only for camp residents)'
+      },
+    ],
+  },
+  {
+    title: 'Парковка',
+    title_eng: 'Parking',
+    text: 'В 10 минутах ходьбы от кемпинга организована удобная парковка.',
+    text_eng: '10 min walk from the fest area is situated guarded parking place. Here you can leave your car and be confident in its safe.',
+    comment: 'на территорию парковки допускаются только транспортные средства категории А и B. С 21-24 июля',
+    comment_eng: 'Parking is only for A and B vehicle categories. 21-24 July',
+    cost: 3500,
+    enabled: true,
+    t4bCart: {
+      event: 27,
+      sector: 99,
+      tariff: 116
+    },
+    icons: [
+      'icon-parking.svg',
+    ],
+    features: [
+      {
+        title: 'въезд с 10.00 21 июля',
+        title_eng: 'entry from 10 AM 21th of July'
+      },
+      {
+        title: 'неограниченное количество въездов и выездов',
+        title_eng: 'multiple entries'
       },
     ],
   },
@@ -1274,7 +1274,7 @@ export const aboutMain = {
             T-junction, where you should turn right and keep on going straight ahead until the turn to Bolshoe Kozino.
           </p>
 
-          <p className="screen-text">If you have a parking ticket or VIP- ticket, take the signs to the security parking
+          <p className="screen-text">If you have a parking ticket or VIP- ticket, take the signs to the parking
             area.</p>
 
           <p className="screen-text">If, for some reason, you haven’t bought tickets to the site-parking of the
@@ -1345,7 +1345,7 @@ export const aboutMain = {
             the direction sign for Zavolzhie (to the left). Then go straight ahead to the T-junction, where you should
             turn right and keep going straight ahead until the turning for Bolshoe Kozino.</p>
 
-          <p className="screen-text">If you have a parking ticket or VIP- ticket, take the signs to the security parking
+          <p className="screen-text">If you have a parking ticket or VIP- ticket, take the signs to the parking
             area.</p>
 
           <p className="screen-text">If, for some reason, you haven’t bought tickets to the site-parking of the
@@ -1415,12 +1415,12 @@ export const aboutMain = {
 
           <p className="screen-text">
             Если вы не хотите приобретать билет на паркинг или их уже нет в продаже, рекомендуем воспользоваться для
-            стоянки вашей машины только охраняемыми стоянками расположенными относительно недалеко от поселка Большое
+            стоянки вашей машины только стоянками расположенными относительно недалеко от поселка Большое
             Козино.
           </p>
 
           <p className="screen-text">
-            В этом разделе мы будем вас информировать о возможных вариантах и местонахождении охраняемых платных
+            В этом разделе мы будем вас информировать о возможных вариантах и местонахождении платных
             парковках как можно ближе к месту проведения фестиваля. В данный момент эта информация еще обрабатывается.
             Следите за информацией здесь и в официальной группе ВК.
           </p>
@@ -1434,7 +1434,7 @@ export const aboutMain = {
           <p className="screen-text">
             От КПП на въезде в поселок Большое Козино (дорога Р-152 Нижний Новгород-Балахна), будут круглосуточно
             курсировать бесплатные шаттлы до фестиваля и обратно до въезда в поселок. Это будет очень удобно для тех,
-            кто оставит свою машину где-то относительно недалеко от въезда в поселок или на какой-то охраняемой парковке
+            кто оставит свою машину где-то относительно недалеко от въезда в поселок или на какой-то парковке
             и доедет до въезда в поселок на такси или дойдет пешком.
           </p>
 
@@ -1586,8 +1586,8 @@ export const aboutMain = {
       icon: 'icon-parking.svg',
       title: 'Парковка',
       title_eng: 'Parking',
-      text: 'В 10 минутах ходьбы от кемпинга организована удобная охраняемая парковка. Где вы можете спокойно оставить свою машину, не опасаясь, что с ней что-то случится. Билет на паркинг дает право въезда и регистрации для одного транспортного средства только категорий А и В.',
-      text_eng: 'A 10-minute walk from the camping area we have arranged a convenient secure parking area. There you can leave your car safely and not to worry about any unpleasant surprises when you return. More information about parking will be available shortly. Follow the updates!'
+      text: 'В 10 минутах ходьбы от кемпинга организована удобная парковка. Где вы можете спокойно оставить свою машину, не опасаясь, что с ней что-то случится. Билет на паркинг дает право въезда и регистрации для одного транспортного средства только категорий А и В.',
+      text_eng: 'A 10-minute walk from the camping area we have arranged a convenient parking area. There you can leave your car safely and not to worry about any unpleasant surprises when you return. More information about parking will be available shortly. Follow the updates!'
     },
 
     {

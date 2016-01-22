@@ -5,7 +5,7 @@ import $ from 'jquery';
 import smoothScroll from '../utils/smoothScroll';
 import App from '../components/App';
 import Main from '../containers/Main';
-import Ticket from '../components/Ticket/Ticket';
+import Ticket from '../containers/Ticket';
 import Personal from '../components/Ticket/Personal';
 import Buy from '../components/Ticket/Buy';
 import Status from '../components/Ticket/Status';

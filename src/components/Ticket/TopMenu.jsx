@@ -11,7 +11,7 @@ class TopMenu extends Component {
       <div className="ticket-menu">
         <ul>
           <li className="" data-num="1">
-            <Link to="/ticket" activeClassName="active"><b>1</b>Выбор билетов</Link>
+            <Link to="/ticket" activeClassName="active"><b>1</b>{i18n.t('ticket.selectTicket')}</Link>
           </li>
           {
             /*

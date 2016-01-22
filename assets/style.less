@@ -863,13 +863,18 @@ h1{
 		position: relative;
     white-space: normal;
     overflow: hidden;
+    min-width: 250px;
+    text-align: center;
+    background: #000;
     img {
       min-height: 200px;
-      min-width: 200px;
       height: 25px;
       height: 15vw;
+      margin: 0 auto;
+      display: inline-block;
     }
 		.news-overlay{
+      text-align: left;
 			position: absolute;
 			left: 0px;
 			top: 0px;
@@ -1084,33 +1089,6 @@ footer{
 		-ms-transform: rotate(-45deg);
 		-o-transform: rotate(-45deg);
 		transform: rotate(-45deg);
-	}
-}
-.result-block{
-	position: absolute;
-	right: 10%;
-	top: 112px;
-
-	span{
-		font-family: 'Helvetica';
-		color: #fff;
-		font-size: 16px;
-	}
-	.buy-button{
-		background-color: @green;
-		text-transform: none;
-		font-family: 'sf_ui_displayregular';
-		font-size: 16px;
-		color: rgba(255, 255, 255, 1);
-		transition: @time all;
-		line-height: 50px;
-		padding-left: 49px;
-		padding-right: 50px;
-		margin-top: 50px;
-
-		&:hover{
-			color: rgba(255, 255, 255, .7);
-		}
 	}
 }
 

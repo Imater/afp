@@ -5,6 +5,9 @@
 	padding-left: 16px;
 
 	ul{
+    @media (max-width: @phone) {
+      text-align: center;
+    }
 		li{
 			display: inline-block;
 			margin-right: 39px;
@@ -49,12 +52,29 @@
 
 .tickets{
 	margin-left: 10%;
+	margin-right: 5%;
 	margin-top: 64px;
   h2 {
     color: #FFF;
   }
 
 	li{
+    .left-col {
+      @media (max-width: 800px) {
+        float: none;
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+    }
+    .right-col {
+      @media (max-width: 800px) {
+        float: none;
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+    }
 		.title{
 			font-family: 'sf_ui_displaymedium';
 			font-size: 50px;
@@ -94,7 +114,7 @@
     .ticket-text {
       display: inline-block;
       color: #FFF;
-      line-height: 16px;
+      line-height: 21px;
       margin: 10px 40px 15px 40px;
     }
     .ticket-comment {
@@ -112,16 +132,22 @@
       color: #5ECC6B;
       line-height: 16px;
       margin: 5px 40px;
+      margin-bottom: 10px;
     }
 		.props{
 			float: right;
 			padding-right: 35px;
-			padding-top: 43px;
-      white-space: nowrap;
+			padding-top: 33px;
+      @media (max-width: 800px) {
+        float: none;
+        display: block;
+        padding: 0;
+      }
 
 			li{
 				display: inline-block;
 				margin-left: 20px;
+        margin-top: 10px;
 
 				&:first-child{
 					margin-left: 0px;
@@ -148,11 +174,12 @@
 					color: #fff;
 					font-family: 'sf_ui_displaythin';
 					font-size: 40px;
-					width: 50px;
+					width: 70px;
 					text-align: center;
 				}
 				.down,
 				.up{
+          content: '+';
 					width: 30px;
 					height: 30px;
 					color: #fff;
@@ -162,6 +189,9 @@
 					text-align: center;
 					line-height: 26px;
 					vertical-align: text-bottom;
+          background-image: none;
+          margin-top: 12px;
+          cursor: pointer;
 				}
 				.down[disabled],
 				.up[disabled]{
@@ -234,9 +264,11 @@
 	margin-bottom: 40px;
 }
 .summ{
-	font-family: 'sf_ui_displaythin';
-	font-size: 40px;
-	color: @green;
+  span {
+    font-family: 'sf_ui_displaythin' !important;
+    font-size: 40px !important;
+    color: @green !important;
+  }
 }
 .ticket-back-overlay{
 	background-image: url('/assets/img/ticket-overlay.jpg');
@@ -461,6 +493,40 @@
 			&.card-cvv{
 				font-size: 16px;
 			}
+		}
+	}
+}
+
+.result-block{
+	position: fixed;
+	right: 8%;
+	top: 112px;
+  @media (max-width: 1140px) {
+    display: block;
+    position: static;
+    padding-left: 10%;
+    padding-top: 50px;
+  }
+
+	span{
+		font-family: 'Helvetica';
+		color: #fff;
+		font-size: 16px;
+	}
+	.buy-button{
+		background-color: @green;
+		text-transform: none;
+		font-family: 'sf_ui_displayregular';
+		font-size: 16px;
+		color: rgba(255, 255, 255, 1);
+		transition: @time all;
+		line-height: 50px;
+		padding-left: 49px;
+		padding-right: 50px;
+		margin-top: 50px;
+
+		&:hover{
+			color: rgba(255, 255, 255, .7);
 		}
 	}
 }

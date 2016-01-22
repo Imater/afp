@@ -29,7 +29,7 @@ if (process.env.BROWSER) {
           mode: 'cart',
           domain: 'http://tickets.alfafuture.com/'
         });
-      }, 0)
+      }, 100)
     }
 
     renderIcons(ticket) {
@@ -38,7 +38,7 @@ if (process.env.BROWSER) {
           {
             ticket.icons.map((icon, key) => {
               return (
-                <li>
+                <li key={key}>
                   <img src={`/assets/svg/ticket/${icon}`} />
                 </li>
               );
@@ -49,12 +49,13 @@ if (process.env.BROWSER) {
     }
 
     renderFeatures(ticket) {
+      const lang = this.props.language === 'eng' ? '_eng' : '';
       return (
         <ul className="features">
           {
             ticket.features.map((feature, key) => {
               return (
-                <li key={key}>{feature.title}</li>
+                <li key={key}>{feature['title' + lang]}</li>
               );
             })
           }
@@ -63,12 +64,13 @@ if (process.env.BROWSER) {
     }
 
     renderTicket(ticket, key) {
+      const lang = this.props.language === 'eng' ? '_eng' : '';
       return (
         <li key={key}>
           <div className="ticket-top">
             <div className="row">
               <div className="left-col">
-                <div className="title">{ticket.title}</div>
+                <div className="title">{ticket['title' + lang]}</div>
               </div>
               <div className="right-col">
                 {
@@ -77,18 +79,18 @@ if (process.env.BROWSER) {
               </div>
             </div>
             <div className="ticket-text">
-              {ticket.text}
+              {ticket['text' + lang]}
             </div>
             {
               this.renderFeatures(ticket)
             }
             <div className="ticket-comment">
-              {ticket.comment}
+              {ticket['comment' + lang]}
             </div>
           </div>
           <div className="ticket-helper"><div></div></div>
           <div className="row price-row">
-            <div className="left-col">
+            <div className="left-col t4b-price">
               <div className="summ">{ticket.cost} ₽</div>
             </div>
             {
@@ -102,9 +104,9 @@ if (process.env.BROWSER) {
                       data-t4b-cart-counter-sector={ticket.t4bCart.sector}
                       data-t4b-cart-counter-tariff={ticket.t4bCart.tariff}
                     >
-                      <a href="#" className="down_off t4b-icon-down"></a>
-                      <input type="text" className="ticket-number t4b-cart-counter-input" defaultValue="0" />
-                      <a href="#" className="up_off t4b-icon-up"></a>
+                      <a href="#" className="down t4b-icon-down">-</a>
+                      <input type="text" className="ticket-number t4b-cart-counter-input" readOnly defaultValue="0" />
+                      <a href="#" className="up t4b-icon-up">+</a>
                     </div>
                   </div>
                 </div>
@@ -123,11 +125,11 @@ if (process.env.BROWSER) {
             <TopMenu />
           </div>
           <Link to="/" className="close-page"></Link>
-          <div className="result-block">
-            <span>Итого:</span>
+          <div className="result-block t4b-cart-summary">
+            <span>{i18n.t('ticket.itog')}</span>
             <div className="summ"><span className="t4b-cart-summary-price"></span> ₽</div>
-            <span>Билетов: <span className="t4b-cart-summary-count"></span> шт</span><br />
-            <a href="#" className="buy-button" data-t4b-cart-buy="true">Купить</a>
+            <span>{i18n.t('ticket.tickets')} <span className="t4b-cart-summary-count"></span> {i18n.t('ticket.sht')}</span><br />
+            <a href="#" className="buy-button" data-t4b-cart-buy="true">{i18n.t('ticket.buy')}</a>
           </div>
           <div className="tickets">
             <ul>

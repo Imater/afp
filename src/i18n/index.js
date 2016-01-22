@@ -2,6 +2,13 @@ import i18n from 'i18next-client';
 const resources = {
   ru: {
     translation: {
+      ticket: {
+        itog: 'Итого:',
+        tickets: 'Билетов',
+        sht: 'шт',
+        buy: 'Купить',
+        selectTicket: 'Выбор билетов'
+      },
       menu: {
         about: 'о фестивале',
         lineUp: 'лайн-ап',
@@ -87,6 +94,13 @@ const resources = {
   },
   eng: {
     translation: {
+      ticket: {
+        itog: 'Sum:',
+        tickets: 'Tickets',
+        sht: 'pc.',
+        buy: 'Buy',
+        selectTicket: 'Select tickets'
+      },
       menu: {
         about: 'about',
         lineUp: 'line-up',

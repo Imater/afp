@@ -18,11 +18,9 @@ export default function(state = defaultState, action) {
 }
 
 export function changeLanguage(language = 'eng') {
+  i18n.setLng(language);
   return {
     type: CHANGE_LANGUAGE,
-    payload: new Promise((resolve, reject) => {
-      i18n.setLng(language);
-      resolve({language: language});
-    })
-  };
+    payload: {language: language}
+  }
 }
