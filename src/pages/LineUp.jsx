@@ -20,7 +20,7 @@ let djsBlock = (
           </div>
         </div>
       </div>
-      <Scrollable x={true} y={false}>
+      <Scrollable x={true} y={false} navigator={true}>
         <div className="row line-up">
           <ul>
             <Link to="/lineup/2016/main/136">
@@ -113,9 +113,6 @@ class LineUp extends Component {
         <div className="djs-list">
           {
             scenes.map((scene, keyScene) => {
-              if (this.props.routeParams.year === '2016') {
-                return;
-              }
               let djsFiltered = djs.filter((dj) => {
                 return (dj.get('year') === this.props.routeParams.year && dj.get('stage') === scene.id);
               });
@@ -156,7 +153,7 @@ class LineUp extends Component {
                                 </div>
                                 {
                                   dj.get(`top`) ? (
-                                    <div className="dj-top">
+                                    <div className="dj-top" title="DJ MAG TOP 100">
                                       {
                                         `#${dj.get('top')}`
                                       }

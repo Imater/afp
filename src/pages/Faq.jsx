@@ -33,15 +33,16 @@ class Faq extends Component {
                       {faqItem[language === 'eng' ? 'title_eng' : 'title']}
                     </h4>
 
-                    <p className="text">
-                      {faqItem[language === 'eng' ? 'text_eng' : 'text']}
-                    </p>
+                    <div className="text" dangerouslySetInnerHTML={{
+                      __html: faqItem[language === 'eng' ? 'text_eng' : 'text']
+                    }}></div>
                   </li>
                 );
               })
             }
           </div>
 
+          { /*
           <form className="form">
             <h3 className="heading">{i18n.t('faq.form.title')}</h3>
 
@@ -63,6 +64,8 @@ class Faq extends Component {
             </div>
             <input type="submit" className='submit' defaultValue={i18n.t('faq.form.submit')}/>
           </form>
+          */
+          }
         </div>
         <Footer />
       </div>

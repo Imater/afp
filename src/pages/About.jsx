@@ -70,12 +70,12 @@ class About extends Component {
           <div id="map">
             <Map
               center={
-                {lat: 56.413617, lng: 43.731237}
+                {lat: 56.405924, lng: 43.750291}
               }
               markers={[
                 {
                   position: {
-                    lat: 56.413617, lng: 43.731237
+                    lat: 56.405924, lng: 43.750291
                   },
                   defaultAnimation: 2,
                   title: 'Нижегородская обл.,Балахнинский район, пос.Большое Козино,улица Луговая',
@@ -204,21 +204,6 @@ class About extends Component {
                 {aboutMain.foodCourt[language === 'eng' ? 'text_eng' : 'text']}
               </div>
               <div className="screen-text aboutFood-benefits">
-                <div className="benefitFood aboutFood-benefit aboutFood-benefit--1">
-                  <img className="benefitFood-icon" src="/assets/img/about/icon-beer.svg" width="55" height="76" />
-
-                  <div className="benefitFood-desc">
-                    {aboutMain.foodCourt.items[0][language === 'eng' ? 'title_eng' : 'title']}
-                  </div>
-                  <span className="benefitFood-count">{aboutMain.foodCourt.items[0].num}</span>
-
-                  <div
-                    className="benefitFood-countDesc"
-                    dangerouslySetInnerHTML={
-                      {__html: aboutMain.foodCourt.items[0][language === 'eng' ? 'desc_eng' : 'desc']}
-                    }
-                  ></div>
-                </div>
                 <div className="benefitFood aboutFood-benefit aboutFood-benefit--2">
                   <img className="benefitFood-icon" src="/assets/img/about/icon-burger.svg" width="70" height="76"/>
 
@@ -269,21 +254,32 @@ class About extends Component {
           <div
             className="aboutCategory"
             style={{
-              display: 'none'
             }}
           >
-            <Link className="aboutCategory-item aboutCategory-item--1" to="/store">
-              <img className="aboutCategory-img" src="/assets/img/about/icon-market.svg" width="66"/>
-              <span className="aboutCategory-label">{i18n.t('about.store')}</span>
-            </Link>
-            <Link className="aboutCategory-item aboutCategory-item--2" to="/about/main/rules">
-              <img className="aboutCategory-img" src="/assets/img/about/icon-book--white.svg" width="76"/>
-              <span className="aboutCategory-label">{i18n.t('about.rules')}</span>
-            </Link>
-            <Link className="aboutCategory-item aboutCategory-item--3" to="/faq">
-              <img className="aboutCategory-img" src="/assets/img/about/icon-messages.svg" width="66"/>
-              <span className="aboutCategory-label">{'FAQ'}</span>
-            </Link>
+            {
+              /*
+              <Link className="aboutCategory-item aboutCategory-item--1" to="/store">
+                <img className="aboutCategory-img" src="/assets/img/about/icon-market.svg" width="66"/>
+                <span className="aboutCategory-label">{i18n.t('about.store')}</span>
+              </Link>
+              */
+            }
+            {
+              /*
+              <Link className="aboutCategory-item aboutCategory-item--2" to="/about/main/rules">
+                <img className="aboutCategory-img" src="/assets/img/about/icon-book--white.svg" width="76"/>
+                <span className="aboutCategory-label">{i18n.t('about.rules')}</span>
+              </Link>
+              */
+            }
+            {
+              language === 'ru' ? (
+                <Link className="aboutCategory-item aboutCategory-item--3" to="/faq">
+                  <img className="aboutCategory-img" src="/assets/img/about/icon-messages.svg" width="73"/>
+                  <span className="aboutCategory-label">{'FAQ'}</span>
+                </Link>
+              ) : <div></div>
+            }
           </div>
         </div>
         <Footer />
