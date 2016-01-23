@@ -94,8 +94,8 @@ class Scrollable extends Component {
   render() {
     const navigator = this.props.navigator ? (
       <div className="navigator noselect">
-        <div className="left" onClick={this.move(30).bind(this)}></div>
-        <div className="right" onClick={this.move(-30).bind(this)}></div>
+        <div className="left" onClick={this.move(60).bind(this)}></div>
+        <div className="right" onClick={this.move(-60).bind(this)}></div>
       </div>
     ) : (<div></div>);
     return (

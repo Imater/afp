@@ -9,7 +9,7 @@ class Lineup extends Component {
   render() {
     return (
       <div className="page djs-page" id="lineup">
-          <div className="djs-block">
+          <div className="djs-block djs-block-main">
             <div className="row">
               <div className="left-col padding-left-50">
                 <div className="col-title">
@@ -26,7 +26,7 @@ class Lineup extends Component {
                 </Link>
               </div>
             </div>
-            <Scrollable x={true} y={false}>
+            <Scrollable x={true} y={false} navigator="true">
               <div className="row line-up">
                 <ul>
                   <Link to="/lineup/2016/main/136">

@@ -81,8 +81,8 @@ export const tickets = [
     title_eng: 'Alfa camp',
     text: 'Альфа-кемпинг – это огороженная охраняемая территория с инфраструктурой, которая расположена максимально близко ко входу на фестиваль',
     text_eng: 'Alfa camp is a place at the camp in a fenced and guarded territory with infrastructure, which is located as close as possible to the festival entrance',
-    comment: 'для прохода на фестиваль нужно приобрести билеты категории Стандарт или VIP. 22-24 июля',
-    comment_eng: 'for entrance to the festival you need to buy Standard or VIP ticket. 22-24 July ',
+    comment: 'для прохода на фестиваль нужно приобрести билеты категории Стандарт или VIP.',
+    comment_eng: 'for entrance to the festival you need to buy Standard or VIP ticket.',
     cost: 3000,
     enabled: true,
     t4bCart: {
@@ -123,6 +123,10 @@ export const tickets = [
         title: 'возможность гостевого визита',
         title_eng: 'guest visits'
       },
+      {
+        title: 'билет действителен с 22 по 24 июля',
+        title_eng: 'valid from 22 to 24 July'
+      },
     ],
   },
   {
@@ -130,8 +134,8 @@ export const tickets = [
     title_eng: 'Omega camp',
     text: 'Омега-кемпинг – это огороженная территория с инфраструктурой, которая располагается в непосредственной близости от входа на фестиваль.',
     text_eng: 'Omega-camp is a place in a fenced area with infrastructure, located in the nearest place to the festival entrance. 21-24 июля',
-    comment: 'для прохода на фестиваль нужно приобрести билеты категории Стандарт или VIP. 21-24 июля',
-    comment_eng: 'for entrance to the festival you need to buy Standard or VIP ticket. 21-24 July ',
+    comment: 'для прохода на фестиваль нужно приобрести билеты категории Стандарт или VIP.',
+    comment_eng: 'for entrance to the festival you need to buy Standard or VIP ticket.',
     cost: 1500,
     enabled: true,
     t4bCart: {
@@ -156,6 +160,10 @@ export const tickets = [
         title: 'платные душевые',
         title_eng: 'free showers (only for camp residents)'
       },
+      {
+        title: 'билет действителен с 21 по 24 июля',
+        title_eng: 'valid from 21 to 24 July'
+      },
     ],
   },
   {
@@ -163,8 +171,8 @@ export const tickets = [
     title_eng: 'Parking',
     text: 'В 10 минутах ходьбы от кемпинга организована удобная парковка.',
     text_eng: '10 min walk from the fest area is situated guarded parking place. Here you can leave your car and be confident in its safe.',
-    comment: 'на территорию парковки допускаются только транспортные средства категории А и B. С 21-24 июля',
-    comment_eng: 'Parking is only for A and B vehicle categories. 21-24 July',
+    comment: 'на территорию парковки допускаются только транспортные средства категорий А (мотоциклы) и B (легковые машины)',
+    comment_eng: 'Parking is only for A and B vehicle categories.',
     cost: 3500,
     enabled: true,
     t4bCart: {
@@ -1056,7 +1064,7 @@ export const aboutMain = {
     title_eng: 'Food Court',
     text: 'На таком масштабном мероприятии как Alfa Future People даже фудкорт, выстроенный посреди поля, поражает своими размерами и по размаху сравним с олимпийскими объектами.',
     text_eng: 'At such a huge event as ALFA FUTURE PEOPLE even food-court, situated in the field-center, boggles the mind by its grand scale, comparable to Olympic venues. Just for three days during the festival last year there were eaten more than 10 tones of food and drunk about 30 thousands of beer.',
-    text_bottom: 'На таком масштабном мероприятии как Alfa Future People даже фудкорт, выстроенный посреди поля, поражает своими размерами и по размаху сравним с олимпийскими объектами.',
+    text_bottom: 'В 2016 году мы учли все пожелания гостей и запланировали более 25 точек питания с русской, итальянской, американской и даже китайской кухнями, Даже самый искушенный гурман обязательно найдет себе блюдо по вкусу',
     text_bottom_eng: '',
     items: [
       {
@@ -1217,8 +1225,7 @@ export const aboutMain = {
             Железнодорожный транспорт:
             <ul>
               <li>
-                - Высокоскоростным поездом «Стриж» или «Ласточка». Отправление с Курского вокзала Москвы, время в пути
-                чуть меньше 4 часов.
+                - Высокоскоростным поездом «Стриж» или «Ласточка». Отправление с Курского вокзала Москвы.
               </li>
               <li>
                 - Любым скорым или пассажирским поездом сообщением Москва - Нижний Новгород, Санкт-Петербург – Нижний
@@ -1235,27 +1242,6 @@ export const aboutMain = {
               </li>
             </ul>
           </p>
-
-          <div className="aboutWay-benefits">
-            <div className="benefit aboutWay-benefit aboutWay-benefit--1">
-              <img src="/assets/img/about/icon-clock.svg" width="40" height="40" className="benefit-icon"/>
-              <span className="benefit-title">30 м</span>
-
-              <p className="benefit-desc">Средний интервал движения&nbsp;поездов</p>
-            </div>
-            <div className="benefit aboutWay-benefit aboutWay-benefit--2">
-              <img src="/assets/img/about/icon-train.svg" width="43" height="36" className="benefit-icon"/>
-              <span className="benefit-title">35 м</span>
-
-              <p className="benefit-desc">время в пути от Московского вокзала до станции Козино</p>
-            </div>
-            <div className="benefit aboutWay-benefit aboutWay-benefit--3">
-              <img src="/assets/img/about/icon-car.svg" width="57" height="42" className="benefit-icon"/>
-              <span className="benefit-title">> 2.5 ч</span>
-
-              <p className="benefit-desc">время в пути на машине до фестиваля в час пик</p>
-            </div>
-          </div>
 
           <p className="screen-text">
             Зрители которые прибывают на любом поезде на Московский вокзал Нижнего Новгорода, могут далее
@@ -1389,7 +1375,7 @@ export const aboutMain = {
       )
     },
     {
-      title: 'другие города',
+      title: 'на личном транспорте',
       title_eng: 'other',
       text: (
         <div>
@@ -1530,7 +1516,17 @@ export const aboutMain = {
       text: (
         <div>
           <p className="screen-text">
-            Информация будет доступна позже
+            Билет в альфа-кемпинг дает право на место в кемпинге на огороженной и охраняемой территории с инфраструктурой, который располагается максимально близко ко входу на фестиваль.
+          </p>
+          <p className="screen-text">
+            Покупая билет в альфа-кемпинг, вы получаете право установки собственной палатки на огороженной территории, обеспеченной бесплатными душевыми (только для жителей кемпинга), туалетами, торговыми точками по продаже еды и напитков, бесплатному доступу к сети WI-FI, бесплатным локерам для подзарядки мобильных устройств и локерам для ценных вещей и документов на ресепшн кемпинга.
+          </p>
+          <p className="screen-text">
+            Один билет дает право установки одной палатки размером не более 4,5 х 3м и вместимостью не более 4 человек. Предъявитель билета получает браслеты для входа в кемпинг в соответствии с количеством
+мест в его палатке.
+          </p>
+          <p className="screen-text">
+            Вход на территорию кемпинга строго по билетам и браслетам.
           </p>
         </div>
       ),
@@ -1548,16 +1544,11 @@ export const aboutMain = {
       text: (
         <div>
           <p className="screen-text">
-            Билет дает право на место в кемпинге на огороженной территории, расположенной недалеко от входа на
-            фестиваль.
+            Билет в омега-кемпинг дает право на место в кемпинге на огороженной территории с инфраструктурой, расположенной в непосредственной близости от входа на фестиваль.
           </p>
 
           <p className="screen-text">
-            Покупая билет в кемпинг, вы получаете право установки собственной палатки на огороженной территории,
-            обеспеченной платными душевыми, туалетами, торговыми точками по продаже еды, напитков и предметов
-            первой необходимости.
-            Один билет дает право установки одной палатки вместимостью не более 4 человек. Предъявитель билета
-            получает браслеты для входа в кемпинг в соответствии с количеством мест в его палатке.
+            Покупая билет в омега-кемпинг, вы получаете право установки собственной палатки на огороженной территории, обеспеченной платными душевыми, туалетами, торговыми точками по продаже еды и напитков. Один билет дает право установки одной палатки размером не более 4,5 х 3м и вместимостью не более 4 человек. Предъявитель билета получает браслеты для входа в кемпинг в соответствии с количеством мест в его палатке.
           </p>
 
           <p className="screen-text">
@@ -1592,26 +1583,6 @@ export const aboutMain = {
         </div>
       )
     },
-    {
-      title: 'Отели в Нижнем Новгороде',
-      title_eng: 'Hotels in Nizhniy Novgorod',
-      text: (
-        <div>
-          <p className="screen-text">
-            Если же вы хотите жить в комфортабельных условиях, вы можете забронировать отель непосредственно в Нижнем
-            Новгороде.
-          </p>
-
-        </div>
-      ),
-      text_eng: (
-        <div>
-          <p className="screen-text">
-            You can find plenty of cozy hotels in Nizhniy Novgorod.
-          </p>
-        </div>
-      )
-    }
   ],
   info: [
     {

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import i18n from 'i18next-client';
 import { tickets } from '../settings.jsx';
+import $ from 'jquery';
 
 import TopMenu from './TopMenu';
 
@@ -24,12 +25,29 @@ if (process.env.BROWSER) {
     };
 
     componentDidMount() {
-      setTimeout(() => {
+      let done = false;
+      let tm;
+      let count = 0;
+
+      const init = () => {
+        if(!$('.t4b-icon-up').length || typeof t4b === 'undefined') {
+          count++;
+          tm = setTimeout(() => {
+            init();
+          }, 20);
+          return;
+        }
         t4b({
           mode: 'cart',
           domain: 'http://tickets.alfafuture.com/'
         });
-      }, 100)
+        done = true;
+        clearInterval(tm);
+      };
+
+      tm = setTimeout(() => {
+        init();
+      }, 10);
     }
 
     renderIcons(ticket) {

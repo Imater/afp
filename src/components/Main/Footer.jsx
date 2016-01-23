@@ -89,8 +89,8 @@ class Footer extends Component {
             </p>
 
             <form className="subscribe">
-              <input type="text" placeholder={i18n.t('footer.email')} className='input'/>
-              <input type="submit" className='btn'/>
+              <input disabled type="text" placeholder={i18n.t('footer.email')} className='input'/>
+              <input disabled type="submit" className='btn'/>
             </form>
           </div>
         </div>

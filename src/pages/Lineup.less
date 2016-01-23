@@ -5,9 +5,19 @@
   .djs-block {
     padding-top: 70px;
     height: 700px;
+    @media (max-width: @phone){
+      height: 400px;
+      min-height: 400px;
+    }
     .navigator {
       top: 70px;
       z-index: 3;
+    }
+    &.djs-block-main {
+      .navigator {
+        top: 10px;
+        z-index: 3;
+      }
     }
   }
   .djs-list {
@@ -30,7 +40,7 @@
           .dj-image {
             content: '';
             background-size: cover;
-            background-position: center;
+            background-position: top;
             height: 100%;
           }
           .dj-title {
