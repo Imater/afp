@@ -785,9 +785,11 @@ h1{
 	height: 440px;
 	position: relative;
 	box-shadow: inset 0px -54px 210px -46px rgba(0, 0, 0, 0.75);
-	transition: .5s box-shadow;
+	transition: all .5s ease;
 	cursor: pointer;
-
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
 	span{
 		font-family: 'sf_ui_displaysemibold';
 		font-size: 40px;
@@ -797,19 +799,15 @@ h1{
 		left: 50px;
 	}
 	&:hover{
-		box-shadow: none;
+    background-size: 110% 110%;
+    box-shadow: none;
 	}
 }
 .technology-item{
-  content: '';
 	background-image: url('img/tech.png');
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .sport-item{
 	background-image: url('img/sport.png');
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .festival-block{
 	background-color: #1A1A1A;
