@@ -69,11 +69,11 @@ class History extends Component {
   render() {
     const stat = stats[this.state.tab];
     return (
-      <div className="page set-height second-page hide-on-video mainIcons-wrap" style={{
+      <div className="page set-height second-page hide-on-video" style={{
         marginTop: this.props.margin,
         opacity: this.props.opacity
       }}>
-        <div className="row">
+        <div className="row mainIcons-header">
           <div className="left-col padding-left-50">
             <div className="col-title">
               <span>{i18n.t('history.howItWas')}</span><br />
@@ -92,7 +92,7 @@ class History extends Component {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="mainIcons-wrap">
           <div className="mainIcons padding-left-50">
             {
               params.map((param, key) => {
