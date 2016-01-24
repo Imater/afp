@@ -785,7 +785,6 @@ h1{
 .sport-item{
 	height: 440px;
 	position: relative;
-	box-shadow: inset 0px -54px 210px -46px rgba(0, 0, 0, 0.75);
 	transition: all .5s ease;
 	cursor: pointer;
   background-repeat: no-repeat;
@@ -811,10 +810,11 @@ h1{
     background-size: cover;
     transform-origin: 50% 50%;
     transition: all .5s ease;
+    box-shadow: inset 0px -54px 210px -46px rgba(0, 0, 0, 0.75);
   }
   &:hover{
-    box-shadow: none;
     .bg{
+      box-shadow: none;
       transform: translate(-50%,-50%) scale(1.1);
     }
   }
