@@ -101,7 +101,7 @@ a, img, p {
   .block {
     position: relative;
     z-index: 1;
-    padding: 50px;
+    padding: 0 50px 50px;
     margin: 0 auto;
     width: 100%;
     max-width: 900px;
@@ -111,17 +111,49 @@ a, img, p {
       max-width: calc(~'100% - 60px');
     }
   }
-  .title {
+  h3 {
     text-transform: uppercase;
     font-size: 30px;
     margin: 0;
-    padding: 0 0 50px;
+    padding: 50px 0 50px;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
+
   }
-  .text {
+  h4{
+    font-size: 24px;
+    margin: 0;
+    padding: 40px 0 30px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  p {
     margin: 40px 0 0;
     line-height: 155%;
     font-size: 18px;
+    &.center{
+      text-align: center;
+    }
+  }
+  li{
+    line-height: 155%;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  ol li{
+    list-style: inherit;
+    margin-left: 20px;
+  }
+  ul li{
+    position: relative;
+    padding-left: 15px;
+    &:before {
+      content: '- ';
+      position: absolute;
+      left: 0;
+    }
+  }
+  strong {
+
   }
 }
 
