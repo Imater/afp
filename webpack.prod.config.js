@@ -2,6 +2,9 @@ var fs = require('fs');
 var path = require('path');
 var webpack = require('webpack');
 
+var autoprefixer = require('autoprefixer');
+var precss       = require('precss');
+
 function isDirectory(dir) {
   return fs.lstatSync(dir).isDirectory();
 }
@@ -37,11 +40,11 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        loaders: ['style', 'css', 'sass']
+        loaders: ['style', 'css', 'postcss', 'sass']
       },
       {
         test: /\.(less)$/,
-        loaders: ['style', 'css', 'less']
+        loaders: ['style', 'css', 'postcss', 'less']
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
@@ -62,6 +65,10 @@ module.exports = {
     extensions: ['', '.js', '.jsx', '.css', '.scss'],
     alias: {
     }
+  },
+
+  postcss: function() {
+    return [autoprefixer, precss]
   },
 
   plugins: [

@@ -39,7 +39,7 @@ if (process.env.BROWSER) {
         }
         t4b({
           mode: 'cart',
-          domain: 'http://tickets.alfafuture.com/'
+          domain: 'http://tickets.afp.ru/'
         });
         done = true;
         clearInterval(tm);
