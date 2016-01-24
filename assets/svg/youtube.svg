@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Oval-81-+-Fill-12" sketch:type="MSLayerGroup">
-            <circle id="Oval-81" fill="#C4400F" sketch:type="MSShapeGroup" cx="18" cy="18" r="18"></circle>
-            <path d="M19.781,18.671 C19.781,18.671 18.315,19.968 17.715,20.267 C17.114,20.566 16.669,20.518 16.669,19.845 L16.669,16.176 C16.669,15.802 16.739,15.256 17.715,15.829 C18.815,16.501 19.581,17.528 19.781,17.629 C19.981,17.729 20.177,17.909 20.177,18.133 C20.177,18.357 19.781,18.671 19.781,18.671 M23.748,13.796 C23.112,13.238 22.215,13 20.187,13 L15.178,13 C13.191,13 12.26,13.123 11.718,13.794 C11.176,14.463 11,15.482 11,17.024 L11,18.833 C11,20.411 11.171,21.763 11.713,22.285 C12.255,22.807 13.186,23.084 15.197,23.084 L20.187,23.084 C22.225,23.084 23.091,22.888 23.688,22.349 C24.287,21.808 24.464,20.392 24.464,18.87 L24.464,17.042 C24.464,15.476 24.384,14.356 23.748,13.796" id="Fill-12" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
-        </g>
+        <circle id="Oval-81" fill="#C4400F" sketch:type="MSShapeGroup" cx="18" cy="18" r="18"></circle>
+        <path d="M19.781,18.671 C19.781,18.671 18.315,19.968 17.715,20.267 C17.114,20.566 16.669,20.518 16.669,19.845 L16.669,16.176 C16.669,15.802 16.739,15.256 17.715,15.829 C18.815,16.501 19.581,17.528 19.781,17.629 C19.981,17.729 20.177,17.909 20.177,18.133 C20.177,18.357 19.781,18.671 19.781,18.671 M23.748,13.796 C23.112,13.238 22.215,13 20.187,13 L15.178,13 C13.191,13 12.26,13.123 11.718,13.794 C11.176,14.463 11,15.482 11,17.024 L11,18.833 C11,20.411 11.171,21.763 11.713,22.285 C12.255,22.807 13.186,23.084 15.197,23.084 L20.187,23.084 C22.225,23.084 23.091,22.888 23.688,22.349 C24.287,21.808 24.464,20.392 24.464,18.87 L24.464,17.042 C24.464,15.476 24.384,14.356 23.748,13.796" id="Fill-12" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
     </g>
 </svg>
