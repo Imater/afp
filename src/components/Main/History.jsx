@@ -91,7 +91,7 @@ class History extends Component {
             </div>
           </div>
         </div>
-        <div className="row vertical-center-row padding-left-50">
+        <div className="row vertical-center-row padding-left-50" hidden>
           {
             params.map((param, key) => {
               return (
@@ -105,6 +105,20 @@ class History extends Component {
             })
           }
         </div>
+        <div className="mainIcons padding-left-50">
+          {
+            params.map((param, key) => {
+              return (
+                <div className='mainIcon' key={key}>
+                  <span className="mainIcon-num">{stat[param.name]}</span>
+                  <img className="mainIcon-img" src={`/assets/img/${param.img}`}/>
+                  <p className="mainIcon-desc">{i18n.t(`history.${param.name}`)}</p>
+               </div>
+              );
+            })
+          }
+        </div>
+
       </div>
     );
   }

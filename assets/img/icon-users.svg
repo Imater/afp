@@ -1,18 +1,27 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-
-    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
-    <title>Slice 1</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="icon-4" sketch:type="MSLayerGroup" stroke="#126BEE">
-            <path d="M0.5,42.8467 C0.5,33.4607 7.857,25.8537 16.932,25.8537 L25.696,25.8537 C30.937,25.8537 35.605,28.3907 38.614,32.3427" id="Stroke-1" sketch:type="MSShapeGroup"></path>
-            <path d="M20.0127,0.9927 C25.0397,0.9927 29.1157,5.0927 29.1157,10.1497 C29.1157,15.2077 25.0397,19.3077 20.0127,19.3077 C14.9867,19.3077 10.9097,15.2077 10.9097,10.1497 C10.9097,5.0927 14.9867,0.9927 20.0127,0.9927 L20.0127,0.9927 Z" id="Stroke-3" sketch:type="MSShapeGroup"></path>
-            <path d="M94.1826,42.8467 C94.1826,33.4607 86.8266,25.8537 77.7506,25.8537 L68.9876,25.8537 C63.7456,25.8537 59.0786,28.3907 56.0696,32.3427" id="Stroke-5" sketch:type="MSShapeGroup"></path>
-            <path d="M74.6699,0.9927 C69.6439,0.9927 65.5679,5.0927 65.5679,10.1497 C65.5679,15.2077 69.6439,19.3077 74.6699,19.3077 C79.6969,19.3077 83.7729,15.2077 83.7729,10.1497 C83.7729,5.0927 79.6969,0.9927 74.6699,0.9927 L74.6699,0.9927 Z" id="Stroke-7" sketch:type="MSShapeGroup"></path>
-            <path d="M22.6152,52 C22.6152,41.167 31.3552,32.385 42.1362,32.385 L52.5472,32.385 C63.3282,32.385 72.0672,41.167 72.0672,52" id="Stroke-9" stroke-width="2" sketch:type="MSShapeGroup"></path>
-            <path d="M47.3418,3.6157 C53.8108,3.6157 59.0538,8.8847 59.0538,15.3847 C59.0538,21.8847 53.8108,27.1547 47.3418,27.1547 C40.8728,27.1547 35.6288,21.8847 35.6288,15.3847 C35.6288,8.8847 40.8728,3.6157 47.3418,3.6157 L47.3418,3.6157 Z" id="Stroke-11" stroke-width="2" sketch:type="MSShapeGroup"></path>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg width="95px" height="100px" version="1.1" id="Слой_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-250 371.4 95 100"
+	 style="enable-background:new -250 371.4 95 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#126BEE;}
+	.st1{fill:none;stroke:#126BEE;stroke-width:2;}
+</style>
+<title>Slice 1</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1" sketch:type="MSPage">
+	<g id="icon-4" sketch:type="MSLayerGroup">
+		<path id="Stroke-1" sketch:type="MSShapeGroup" class="st0" d="M-249.5,437.7c0-9.4,7.4-17,16.4-17h8.8c5.2,0,9.9,2.5,12.9,6.5"/>
+		<path id="Stroke-3" sketch:type="MSShapeGroup" class="st0" d="M-230,395.9c5,0,9.1,4.1,9.1,9.2c0,5.1-4.1,9.2-9.1,9.2
+			c-5,0-9.1-4.1-9.1-9.2C-239.1,400-235,395.9-230,395.9L-230,395.9z"/>
+		<path id="Stroke-5" sketch:type="MSShapeGroup" class="st0" d="M-155.8,437.7c0-9.4-7.4-17-16.4-17h-8.8c-5.2,0-9.9,2.5-12.9,6.5"
+			/>
+		<path id="Stroke-7" sketch:type="MSShapeGroup" class="st0" d="M-175.3,395.9c-5,0-9.1,4.1-9.1,9.2c0,5.1,4.1,9.2,9.1,9.2
+			c5,0,9.1-4.1,9.1-9.2C-166.2,400-170.3,395.9-175.3,395.9L-175.3,395.9z"/>
+		<path id="Stroke-9" sketch:type="MSShapeGroup" class="st1" d="M-227.4,446.9c0-10.8,8.7-19.6,19.5-19.6h10.4
+			c10.8,0,19.5,8.8,19.5,19.6"/>
+		<path id="Stroke-11" sketch:type="MSShapeGroup" class="st1" d="M-202.7,398.5c6.5,0,11.7,5.3,11.7,11.8s-5.2,11.8-11.7,11.8
+			s-11.7-5.3-11.7-11.8S-209.1,398.5-202.7,398.5L-202.7,398.5z"/>
+	</g>
+</g>
 </svg>
