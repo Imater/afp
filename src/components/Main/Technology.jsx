@@ -11,6 +11,7 @@ class Technology extends Component {
           <div className="left-col">
             <Link to="/technology">
               <div className="technology-item">
+                <div className="bg"></div>
                 <span>{i18n.t('about.technology')}</span>
               </div>
             </Link>
@@ -18,6 +19,7 @@ class Technology extends Component {
           <div className="right-col" id="sport">
             <Link to="/sport">
               <div className="sport-item">
+                <div className="bg"></div>
                 <span>{i18n.t('about.sport')}</span>
               </div>
             </Link>
