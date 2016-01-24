@@ -48,8 +48,8 @@ const resources = {
         scene: 'сцен',
         dj: 'диджеев',
         sound: 'звука',
-        viewer: 'зрителей',
-        hectare: 'гектаров'
+        hectare: 'гектаров',
+        viewer: 'зрителей'
       },
       pages: {
         sportAndExtrime: 'СПОРТ ПЛОЩАДКИ И ЭКСТРЕМАЛЬНЫЕ ШОУ',
@@ -140,8 +140,8 @@ const resources = {
         scene: 'scenes',
         dj: 'djs',
         sound: 'sound',
-        viewer: 'viewers',
-        hectare: 'hectares'
+        hectare: 'hectares',
+        viewer: 'viewers'
       },
       pages: {
         sportAndExtrime: 'SPORT PLAYGROUNDS AND EXTREME SHOWS',

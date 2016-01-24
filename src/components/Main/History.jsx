@@ -10,15 +10,15 @@ const stats = {
     scene: 3,
     dj: 30,
     sound: '1МВТ',
-    viewer: '30 000',
-    hectare: '50'
+    hectare: '50',
+    viewer: '30 000'
   },
   '2015': {
     scene: 6,
     dj: 100,
     sound: '1МВТ',
-    viewer: '50 000',
-    hectare: '75'
+    hectare: '75',
+    viewer: '50 000'
   }
 };
 
@@ -45,13 +45,14 @@ const params = [
     img: 'icon-sound.svg'
   },
   {
-    name: 'viewer',
-    img: 'icon-users.svg'
-  },
-  {
     name: 'hectare',
     img: 'icon-hectares.svg'
   },
+  {
+    name: 'viewer',
+    img: 'icon-users.svg'
+  }
+
 ];
 
 class History extends Component {
@@ -68,7 +69,7 @@ class History extends Component {
   render() {
     const stat = stats[this.state.tab];
     return (
-      <div className="page set-height second-page hide-on-video" style={{
+      <div className="page set-height second-page hide-on-video mainIcons-wrap" style={{
         marginTop: this.props.margin,
         opacity: this.props.opacity
       }}>
@@ -91,34 +92,21 @@ class History extends Component {
             </div>
           </div>
         </div>
-        <div className="row vertical-center-row padding-left-50" hidden>
-          {
-            params.map((param, key) => {
-              return (
-                <div className={classNames('was-block', `${param.name}-block`)}
-                  key={key}
-                  data-name={i18n.t(`history.${param.name}`)}>
-                  <span>{stat[param.name]}</span>
-                  <img src={`/assets/img/${param.img}`} />
-               </div>
-              );
-            })
-          }
+        <div className="">
+          <div className="mainIcons padding-left-50">
+            {
+              params.map((param, key) => {
+                return (
+                  <div className='mainIcon' key={key}>
+                    <span className="mainIcon-num">{stat[param.name]}</span>
+                    <img className="mainIcon-img" src={`/assets/img/${param.img}`}/>
+                    <p className="mainIcon-desc">{i18n.t(`history.${param.name}`)}</p>
+                 </div>
+                );
+              })
+            }
+          </div>
         </div>
-        <div className="mainIcons padding-left-50">
-          {
-            params.map((param, key) => {
-              return (
-                <div className='mainIcon' key={key}>
-                  <span className="mainIcon-num">{stat[param.name]}</span>
-                  <img className="mainIcon-img" src={`/assets/img/${param.img}`}/>
-                  <p className="mainIcon-desc">{i18n.t(`history.${param.name}`)}</p>
-               </div>
-              );
-            })
-          }
-        </div>
-
       </div>
     );
   }
