@@ -266,10 +266,12 @@ class About extends Component {
             }
             {
 
-              <Link className="aboutCategory-item aboutCategory-item--2" to="/about/main/rules">
-                <img className="aboutCategory-img" src="/assets/img/about/icon-book--white.svg" width="76"/>
-                <span className="aboutCategory-label">{i18n.t('about.rules')}</span>
-              </Link>
+              language === 'ru' ? (
+                <Link className="aboutCategory-item aboutCategory-item--2" to="/about/main/rules">
+                  <img className="aboutCategory-img" src="/assets/img/about/icon-book--white.svg" width="76"/>
+                  <span className="aboutCategory-label">{i18n.t('about.rules')}</span>
+                </Link>
+              ) : <div></div>
 
             }
             {
