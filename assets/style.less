@@ -458,6 +458,7 @@ h1{
 	border-radius: 20px;
 }
 .festival-location{
+  overflow: hidden;
   a {
     display: inline-block;
     font-family: 'sf_ui_displayregular';
@@ -466,6 +467,7 @@ h1{
     line-height: 35px;
     padding-left: 17px;
     position: relative;
+    white-space: nowrap;
     &:before{
       background-image: url('img/festival-location.png');
       content: '';
@@ -525,10 +527,12 @@ h1{
 	vertical-align: middle;
 }
 .social{
+  white-space: nowrap;
+  overflow: hidden;
 	li{
 		display: inline-block;
     padding: 2px;
-    height: 36px;
+    height: 38px;
 	}
 	a{
 		display: inline-block;

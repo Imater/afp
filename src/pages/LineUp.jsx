@@ -11,34 +11,6 @@ import Scrollable from '../components/Scrollable';
 if (process.env.BROWSER) {
   require('./Lineup.less');
 }
-let djsBlock = (
-  <div>
-    <div className="djs-block">
-      <div className="row">
-        <div className="left-col padding-left-50">
-          <div className="col-title">
-          </div>
-        </div>
-      </div>
-      <Scrollable x={true} y={false} navigator={true}>
-        <div className="row line-up">
-          <ul>
-            <Link to="/lineup/2016/main/136">
-              <li className="dj1"></li>
-            </Link>
-            <Link to="/lineup/2016/main/134">
-              <li className="dj2"></li>
-            </Link>
-            <li className="dj3"></li>
-            <li className="dj4"></li>
-            <li className="dj5"></li>
-            <li className="dj6"></li>
-          </ul>
-        </div>
-      </Scrollable>
-    </div>
-  </div>
-);
 
 const scenes = [
   {
@@ -73,8 +45,27 @@ const scenes = [
 
 class LineUp extends Component {
   state = {
-    windowWidth: ((typeof window === "object") ? window.innerWidth : 1024)
+    windowWidth: ((typeof window === "object") ? window.innerWidth : 1024),
+    disableClick: false
   }
+
+  disableClick() {
+    this.setState({
+      disableClick: true
+    });
+    setTimeout(()=>{
+      this.setState({
+        disableClick: false
+      });
+    }, 500)
+  }
+
+  _disableIfScroll(e) {
+    if(this.state.disableClick) {
+      e.preventDefault();
+    }
+  }
+
   componentDidMount() {
     let self = this;
     window.onresize = function() {
@@ -108,7 +99,34 @@ class LineUp extends Component {
           <Link to="/lineup/2014/main" activeClassName="active">2014</Link>
         </div>
         {
-          this.props.routeParams.year === '2016' ? djsBlock : (<div></div>)
+          this.props.routeParams.year === '2016' ? (
+            <div>
+              <div className="djs-block">
+                <div className="row">
+                  <div className="left-col padding-left-50">
+                    <div className="col-title">
+                    </div>
+                  </div>
+                </div>
+                <Scrollable x={true} y={false} navigator="true" disableClick={this.disableClick.bind(this)}>
+                  <div className="row line-up">
+                    <ul>
+                      <Link to="/lineup/2016/main/136" onClick={this._disableIfScroll.bind(this)}>
+                        <li className="dj1"></li>
+                      </Link>
+                      <Link to="/lineup/2016/main/134" onClick={this._disableIfScroll.bind(this)}>
+                        <li className="dj2"></li>
+                      </Link>
+                      <li className="dj3"></li>
+                      <li className="dj4"></li>
+                      <li className="dj5"></li>
+                      <li className="dj6"></li>
+                    </ul>
+                  </div>
+                </Scrollable>
+              </div>
+            </div>
+          ) : (<div></div>)
         }
         <div className="djs-list">
           {

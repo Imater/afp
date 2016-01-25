@@ -6,6 +6,28 @@ import moment from 'moment';
 import Scrollable from '../Scrollable';
 
 class NewsLine extends Component {
+
+  state = {
+    disableClick: false
+  }
+
+  disableClick() {
+    this.setState({
+      disableClick: true
+    });
+    setTimeout(()=>{
+      this.setState({
+        disableClick: false
+      });
+    }, 500)
+  }
+
+  _disableIfScroll(e) {
+    if(this.state.disableClick) {
+      e.preventDefault();
+    }
+  }
+
   componentWillMount() {
     this.newsList = this.props.listData.get('news').setSize(10);
   }
@@ -38,7 +60,7 @@ class NewsLine extends Component {
     const date = dateFormat(news.get('date'));
     return (
       <li key={key}>
-        <Link to={`/news/main/${news.get('item_id')}`}>
+        <Link to={`/news/main/${news.get('item_id')}`} onClick={this._disableIfScroll.bind(this)}>
           <img src={`/upload/images/news/${image}`} alt="news-01" />
           <div className="news-overlay" dangerouslySetInnerHTML={{__html: preview}}></div>
         </Link>
@@ -64,7 +86,7 @@ class NewsLine extends Component {
           </div>
         </div>
         <div className="row">
-          <Scrollable>
+          <Scrollable x={true} y={false} disableClick={this.disableClick.bind(this)}>
             <ul className="news-list">
               {
                 this.newsList.map((news, key) => {

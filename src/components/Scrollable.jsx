@@ -44,6 +44,11 @@ class Scrollable extends Component {
       document.addEventListener('touchcancel', up);
       this.lastClientX = this.getX(e);
       this.lastClientY = this.getY(e);
+
+      var domNode = this.wrapper;
+      this.startX = domNode.scrollLeft;
+      this.startY = domNode.scrollTop;
+
       this.removeListener = () => {
         document.removeEventListener('mousemove', move);
         document.removeEventListener('touchmove', move);
@@ -60,6 +65,13 @@ class Scrollable extends Component {
     if (this.pushed) {
       this.removeListener();
       this.pushed = false;
+    }
+    if(typeof this.props.disableClick === 'function') {
+      var domNode = this.wrapper;
+      const distance = (this.startX - domNode.scrollLeft) + (this.startY - domNode.scrollTop);
+      if(Math.abs(distance)>30) {
+        this.props.disableClick();
+      }
     }
   }
 

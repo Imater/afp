@@ -6,6 +6,27 @@ import Social from '../Social';
 import Scrollable from '../Scrollable';
 
 class Lineup extends Component {
+  state = {
+    disableClick: false
+  }
+
+  disableClick() {
+    this.setState({
+      disableClick: true
+    });
+    setTimeout(()=>{
+      this.setState({
+        disableClick: false
+      });
+    }, 500)
+  }
+
+  _disableIfScroll(e) {
+    if(this.state.disableClick) {
+      e.preventDefault();
+    }
+  }
+
   render() {
     return (
       <div className="page djs-page" id="lineup">
@@ -26,13 +47,13 @@ class Lineup extends Component {
                 </Link>
               </div>
             </div>
-            <Scrollable x={true} y={false} navigator="true">
+            <Scrollable x={true} y={false} navigator="true" disableClick={this.disableClick.bind(this)}>
               <div className="row line-up">
                 <ul>
-                  <Link to="/lineup/2016/main/136">
+                  <Link to="/lineup/2016/main/136" onClick={this._disableIfScroll.bind(this)}>
                     <li className="dj1"></li>
                   </Link>
-                  <Link to="/lineup/2016/main/134">
+                  <Link to="/lineup/2016/main/134" onClick={this._disableIfScroll.bind(this)}>
                     <li className="dj2"></li>
                   </Link>
                   <li className="dj3"></li>
