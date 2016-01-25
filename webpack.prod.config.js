@@ -36,7 +36,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loaders: ['babel']
+        loaders: ['babel?compact=false'],
       },
       {
         test: /\.(css|scss)$/,

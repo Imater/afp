@@ -15,6 +15,12 @@ class Scrollable extends Component {
   };
 
   componentDidMount() {
+    if(typeof window !== 'undefined') {
+      window.ondragstart = (e) => {
+        e.preventDefault();
+        return false;
+      };
+    }
     this.intervalId = setInterval(() => {
       this.scrollable = true;
     }, 100);
@@ -22,6 +28,10 @@ class Scrollable extends Component {
 
   componentWillUnmount() {
     this.scrollable = false;
+    if(typeof window !== 'undefined') {
+      window.ondragstart = () => {
+      };
+    }
   }
 
   getX(e) {
