@@ -33,8 +33,7 @@ class Partners extends Component {
             {
               partners.map((partner, index) => {
                 return (
-                  <li className="partnerItem" key={index}>
-                    <h3 id={partner.logo}></h3>
+                  <li className="partnerItem" key={index} id={partner.name}>
                     <img src={`/assets/svg/partner-new/${partner.logo}`} width="100" className="partnerLogo"/>
                     <h3 className="title">
                       {partner[language === 'eng' ? 'title_eng': 'title']}

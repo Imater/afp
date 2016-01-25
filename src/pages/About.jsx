@@ -21,7 +21,7 @@ class About extends Component {
   };
   state = {
     tabGetIndex: 0,
-    tabLiveIndex: 1
+    tabLiveIndex: 0
   };
   render() {
     const {language} = this.props;
@@ -162,13 +162,10 @@ class About extends Component {
                 className="screen-text aboutVip-text"
                 dangerouslySetInnerHTML={{__html: aboutMain.vipZone[language === 'eng' ? 'text_eng' : 'text']}}
               ></div>
-              <a
-                className="aboutVip-btn"
-                href="#"
-              >
+              <Link to="/media" className="aboutVip-btn">
                 <img src="/assets/img/about/icon-photo.svg" width="16" height="13"/>
-                <span>{aboutMain.vipZone[language === 'eng' ? 'button_eng' : 'button']}</span>
-              </a>
+                <span className="white">{aboutMain.vipZone[language === 'eng' ? 'button_eng' : 'button']}</span>
+              </Link>
             </div>
           </article>
           <article className="screen aboutInfo">

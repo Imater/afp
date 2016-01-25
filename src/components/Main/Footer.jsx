@@ -19,7 +19,6 @@ class Footer extends Component {
 
   onSubmit (e) {
     e.preventDefault();
-    console.info('send: ', this.state.email);
     var xhr = this._sendEmail();
     xhr.done(this._onSuccess.bind(this))
     .fail(this._onError.bind(this))

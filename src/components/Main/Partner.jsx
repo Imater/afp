@@ -31,7 +31,7 @@ class News extends Component {
               partners.map((partner, index) => {
                 return (
                   <li className="partner-item" key={index}>
-                    <Link to={`/partners/main#${partner.logo}`}>
+                    <Link to={`/partners/main#${partner.name}`}>
                       <img src={`/assets/svg/partner-new/${partner.logo}`} />
                     </Link>
                   </li>

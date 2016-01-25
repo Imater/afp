@@ -794,6 +794,7 @@ export const typesNews = [
 export const partners = [
   {
     logo: 'logo-mastercard.svg',
+    name: 'mastercard',
     title: 'MasterCard',
     title_eng: 'MasterCard',
     url: 'http://www.mastercard.com/ru/consumer/index.html',
@@ -802,6 +803,7 @@ export const partners = [
   },
   {
     logo: 'logo-ucs.svg',
+    name: 'ucs',
     title: 'United Card Service – UCS',
     title_eng: 'United Card Service – UCS',
     url: 'https://www.ucs.ru/',
@@ -810,6 +812,7 @@ export const partners = [
   },
   {
     logo: 'logo-beeline.svg',
+    name: 'beeline',
     title: 'Билайн',
     title_eng: 'Beeline',
     url: 'http://moskva.beeline.ru/',
@@ -818,6 +821,7 @@ export const partners = [
   },
   {
     logo: 'logo-mtv.svg',
+    name: 'mtv',
     title: 'MTV Россия',
     title_eng: 'MTV Russia',
     url: 'http://mtv.ru/',
@@ -826,6 +830,7 @@ export const partners = [
   },
   {
     logo: 'logo-europeplus.svg',
+    name: 'europeplus',
     title: 'Европа Плюс',
     title_eng: 'Europe plus',
     url: 'http://www.europaplus.ru/',
@@ -834,6 +839,7 @@ export const partners = [
   },
   {
     logo: 'logo-mini.svg',
+    name: 'mini',
     title: 'Mini',
     title_eng: 'Mini',
     url: 'http://mini.ru/',
@@ -842,6 +848,7 @@ export const partners = [
   },
   {
     logo: 'logo-pepsi.svg',
+    name: 'pepsi',
     title: 'Pepsi®',
     title_eng: 'Pepsi®',
     url: 'http://www.pepsi.com/ru-ru/d',
@@ -850,6 +857,7 @@ export const partners = [
   },
   {
     logo: 'logo-mf.svg',
+    name: 'mf',
     title: 'Холдинг MF Group',
     title_eng: 'Holding MF Group',
     url: 'http://mf-group.com/',
@@ -858,6 +866,7 @@ export const partners = [
   },
   {
     logo: 'logo-alfastrah.svg',
+    name: 'alfastrah',
     title: 'Группа «АльфаСтрахование»',
     title_eng: '«Alfastrahovanie» group',
     url: 'http://www.alfastrah.ru/',
@@ -866,6 +875,7 @@ export const partners = [
   },
   {
     logo: 'logo-kplayer.svg',
+    name: 'kplayer',
     title: 'K_player',
     title_eng: 'K_player',
     url: 'https://vk.com/k_player',
@@ -874,6 +884,7 @@ export const partners = [
   },
   {
     logo: 'logo-mentos.svg',
+    name: 'mentos',
     title: 'Mentos',
     title_eng: 'Mentos',
     url: 'http://www.mentos.ru/',
@@ -882,6 +893,7 @@ export const partners = [
   },
   {
     logo: 'logo-gopro.svg',
+    name: 'gopro',
     title: 'GoPro, Inc.',
     title_eng: 'GoPro, Inc.',
     url: 'http://www.gopro.com/',
@@ -890,6 +902,7 @@ export const partners = [
   },
   {
     logo: 'logo-privet.svg',
+    name: 'privet',
     title: 'Privet',
     title_eng: 'Privet',
     url: 'http://privet.ru/',
@@ -898,6 +911,7 @@ export const partners = [
   },
   {
     logo: 'logo-axe.svg',
+    name: 'axe',
     title: 'AXE',
     title_eng: 'AXE',
     url: 'https://www.axeeffect.ru/',
@@ -906,6 +920,7 @@ export const partners = [
   },
   {
     logo: 'logo-tweeze.svg',
+    name: 'tweeze',
     title: 'Twize',
     title_eng: 'Twize',
     url: 'https://www.twize.ru/',
@@ -1955,7 +1970,7 @@ export const aboutMain = {
       text: (
         <div>
           <p className="screen-text">
-            ИНФОРМАЦИЯ ДЛЯ ЗРИТЕЛЕЙ, НАПРАВЛЯЮЩИХСЯ НА ФЕСТИВАЛЬ НА ЛИЧНОМ ТРАНСПОРТЕ
+            Информация для зрителей, направляющихся на фестиваль на личном транспорте
           </p>
 
           <p className="screen-text">
@@ -2124,12 +2139,6 @@ export const aboutMain = {
 
           <p className="screen-text">
             Покупая билет в омега-кемпинг, вы получаете право установки собственной палатки на огороженной территории, обеспеченной платными душевыми, туалетами, торговыми точками по продаже еды и напитков. Один билет дает право установки одной палатки размером не более 4,5 х 3м и вместимостью не более 4 человек. Предъявитель билета получает браслеты для входа в кемпинг в соответствии с количеством мест в его палатке.
-          </p>
-
-          <p className="screen-text">
-            В кемпинг можно приводить гостей (из числа зрителей фестиваля) при предъявлении браслета жителя
-            кемпинга и в его сопровождении, но ответственность за сохранность личных вещей жителей кемпинга
-            администрация не несет.
           </p>
 
           <p className="screen-text">

@@ -31,7 +31,6 @@ function scrollTo(name) {
       setTimeout(() => {
         let scrollToElement = $(`#${name}`);
         if(scrollToElement.length) {
-          console.log('ScrollTo', name, scrollToElement);
           smoothScroll(scrollToElement.offset().top);
         } else {
           console.error(`${name} element not found for scroll`);
@@ -47,7 +46,15 @@ function defaultPath(defaultName) {
       replaceState(null, `${nextState.location.pathname}/${defaultName}`);
     }
     if (typeof document !== 'undefined') {
-      smoothScroll(0);
+      const hash = window.location.hash;
+      const self = this;
+      if(hash) {
+        setTimeout(()=>{
+          scrollTo(hash.replace('#', ''))();
+        }, 300);
+      } else {
+        smoothScroll(0);
+      }
     }
   }
 }
