@@ -221,6 +221,17 @@ api.createUser = function(body, withoutEmail){
   });
 };
 
+api.createSubscribe = function(body, withoutEmail){
+  return new Promise((request, reject) => {
+    db.models.subscribe.create(body).then(function(user){
+      request(user.toJSON());
+    }).catch(function(err){
+      console.error(err);
+      reject(err);
+    });
+  });
+};
+
 api.restorePassword = function(body){
   return new Promise((request, reject) => {
     db.models.user.findOne({

@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 import { Link } from 'react-router';
 import i18n from 'i18next-client';
+import $ from 'jquery';
 import Social from '../Social';
 
 if (process.env.BROWSER) {
@@ -10,6 +11,75 @@ if (process.env.BROWSER) {
 
 
 class Footer extends Component {
+  state = {
+    email: '',
+    errors: {},
+    loading: false
+  }
+
+  onSubmit (e) {
+    e.preventDefault();
+    console.info('send: ', this.state.email);
+    var xhr = this._sendEmail();
+    xhr.done(this._onSuccess.bind(this))
+    .fail(this._onError.bind(this))
+    .always(this.hideLoading.bind(this))
+  }
+
+  hideLoading () {
+    this.setState({loading: false});
+  }
+
+  _onSuccess (data) {
+    this.refs.user_form.reset();
+    this.setState({
+      email: ''
+    });
+    // show success message
+    if(this.props.language === 'eng') {
+      alert('Thanks, you have subscribed');
+    } else {
+      alert('Спасибо, подписка оформлена');
+    }
+  }
+
+  _onError (data) {
+    var message = "Failed to create the user";
+    var res = data.responseJSON;
+    if(res.message) {
+      message = data.responseJSON.message;
+    }
+    if(res.errors) {
+      this.setState({
+        errors: res.errors
+      });
+      if(this.props.language === 'eng') {
+        alert('You are subscribed already');
+      } else {
+        alert('Вы уже подписаны');
+      }
+    }
+  }
+
+  _sendEmail () {
+    return $.ajax({
+      url: '/api/subscribe',
+      type: 'POST',
+      data: {
+        email: this.state.email
+      },
+      beforeSend: function () {
+        this.setState({loading: true});
+      }.bind(this)
+    })
+  }
+
+  _onChange (e) {
+    var state = {};
+    state[e.target.name] = $.trim(e.target.value);
+    this.setState(state);
+  }
+
   render() {
     return (
       <footer className="footer">
@@ -88,9 +158,9 @@ class Footer extends Component {
               }
             </p>
 
-            <form className="subscribe">
-              <input disabled type="text" placeholder={i18n.t('footer.email')} className='input'/>
-              <input disabled type="submit" className='btn'/>
+            <form className="subscribe" ref="user_form" onSubmit={this.onSubmit.bind(this)}>
+              <input type="text" disabled={this.state.loading} name="email" onChange={this._onChange.bind(this)} placeholder={i18n.t('footer.email')} className='input'/>
+              <input type="submit" disabled={this.state.loading} className='btn'/>
             </form>
           </div>
         </div>
