@@ -9,7 +9,7 @@
   }
   h2 {
     text-transform: uppercase;
-    font-family: 'sf_ui_displaymedium';
+    font-family: @medium;
     max-width: 80%;
   }
   .icons {
@@ -30,7 +30,11 @@
     min-height: 120px;
     width: auto;
     max-width: 80%;
-    &:last-of-type{
+    font-family: @regular;
+    font-size: 18px;
+    line-height: 155%;
+
+    &:last-of-type {
       margin-bottom: 0;
     }
     @media (max-width: @phone) {
@@ -48,9 +52,10 @@
     }
     .title {
       font-size: 30px;
+      font-family: @semibold;
+      line-height: 120%;
     }
     .desc {
-      line-height: 155%;
     }
     .more {
       color: #126BEE;

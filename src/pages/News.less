@@ -1,3 +1,5 @@
+@import '../utils/common.less';
+
 .News {
   .newsItems {
     padding: 0;
@@ -29,14 +31,14 @@
         .group {
           text-transform: uppercase;
           font-size: 12px;
-          font-family: 'sf_ui_displaymedium';
+          font-family: @semibold;
           margin-bottom: 0.62vw;
         }
         .groupLink {
           color: #0F58EA;
         }
         .title {
-          font-family: 'sf_ui_displaylight';
+          font-family: @regular;
           font-size: 15px;
           line-height: 17px;
           margin-bottom: 0.78vw;
@@ -47,8 +49,7 @@
         .date {
           font-size: 12px;
           line-height: 15px;
-          color: #888;
-          font-family: 'sf_ui_displaylight';
+          font-family: @regular;
           color: #5e5e5e;
         }
       }
