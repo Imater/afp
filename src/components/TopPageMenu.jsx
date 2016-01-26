@@ -69,7 +69,6 @@ class TopPageMenu extends Component {
         }
         const top = element.offset().top;
         const height = element.height();
-        //console.info(scrollY, top, height);
         const scrollYmiddle = scrollY + screenHeight/3;
         if(scrollYmiddle >= top) {
           let progress = scrollYmiddle > top + height ? 100 : parseInt(100 * (scrollYmiddle-top)/(height), 10);

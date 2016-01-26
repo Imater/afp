@@ -62,7 +62,7 @@ export function addBid(body) {
       .send(body)
       .end(function(err, res) {
         if(err){
-          console.info('addBidError', err);
+          console.error('addBidError', err);
           if(err.response.body.error == 'price_too_low'){
             alert('Ваша ставка должна быть выше, чем '+err.response.body.oldPrice+' руб + 10%');
           };
