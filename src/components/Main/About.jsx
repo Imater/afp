@@ -39,7 +39,7 @@ class About extends Component {
   render() {
     const { scrollY, screenHeight, screenWidth } = this.props;
     const screenHeightCorrected = screenHeight < 480 ? 480 : screenHeight;
-    const blur = tween(scrollY, [[0, 0], [screenHeight*0.5, 0], [screenHeightCorrected*0.8, 8]]);
+    const blur = parseInt(tween(scrollY, [[0, 0], [screenHeight*0.1, 0], [screenHeightCorrected*0.8, 8]])*10, 10)/10;
     const marginLogo = 0; // tween(scrollY, [[0, 0], [screenHeight/6, -screenHeight]]);
     const marginTitle = 0; //  tween(scrollY, [[0, 0], [screenHeight/4, 0], [screenHeight*0.8, -screenHeight]]);
     const marginDate = 0; //  tween(scrollY, [[0, 0], [screenHeight/2, 0], [screenHeight*0.8, -screenHeight/2]]);
