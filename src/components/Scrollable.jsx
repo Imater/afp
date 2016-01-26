@@ -14,6 +14,8 @@ class Scrollable extends Component {
     y: PropTypes.bool
   };
 
+  dist = 0;
+
   componentDidMount() {
     if(typeof window !== 'undefined') {
       window.ondragstart = (e) => {
@@ -78,11 +80,11 @@ class Scrollable extends Component {
     }
     if(typeof this.props.disableClick === 'function') {
       var domNode = this.wrapper;
-      const distance = (this.startX - domNode.scrollLeft) + (this.startY - domNode.scrollTop);
-      if(Math.abs(distance)>30) {
+      if(Math.abs(this.dist)>30) {
         this.props.disableClick();
       }
     }
+    this.dist = 0;
   }
 
   onMove(e) {
@@ -92,9 +94,11 @@ class Scrollable extends Component {
       const y = this.getY(e);
       if (this.props.x) {
         domNode.scrollLeft -= (x - this.lastClientX);
+        this.dist += (x - this.lastClientX);
       }
       if (this.props.y) {
         domNode.scrollTop -= (y - this.lastClientY);
+        this.dist += (y - this.lastClientY);
       }
       this.lastClientX = x;
       this.lastClientY = y;
@@ -147,6 +151,7 @@ Scrollable.defaultProps = {
 
 Scrollable.scrollable = false;
 Scrollable.pushed = false;
+Scrollable.dist = 0;
 Scrollable.removeListener = () => {
 };
 

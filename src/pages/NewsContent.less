@@ -1,3 +1,5 @@
+@import '../utils/common.less';
+
 .NewsContent {
   .close-page {
     cursor: pointer;
@@ -53,15 +55,17 @@
           color: #0F58EA;
         }
         .title {
-          font-family: 'sf_ui_displaylight';
-          font-size: 14px;
-          line-height: 16px;
-          margin-bottom: 3vw 0;
+          margin-bottom: 4vw;
+          font-family: @semibold;
+          font-size: 40px;
+          color: #FFFFFF;
+          line-height: 48px;
         }
         .text {
-          font-family: 'sf_ui_displaylight';
-          font-size: 16px;
-          line-height: 20px;
+          font-family: @regular;
+          font-size: 18px;
+          color: #FFFFFF;
+          line-height: 28px;
           margin: 3vw 0;
           a {
             color: #9DBDEA;

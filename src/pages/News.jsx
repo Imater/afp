@@ -74,11 +74,7 @@ class News extends Component {
             <div className='imageWrapper' style={{
               width: isMain ? `${boxProcentCorrected}%` : 'auto',
             }}>
-              <div className="image" title={0} style={{
-                backgroundImage: `url('/upload/images/news/${image}')`,
-                height: box
-              }}>
-              </div>
+              <img className="image" title={0} src={`/upload/images/news/${image}`} />
             </div>
             <div className='info' style={{
               width: isMain ? `${100-boxProcentCorrected}%` : 'auto',

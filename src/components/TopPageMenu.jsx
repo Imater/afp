@@ -7,6 +7,7 @@ import smoothScroll from '../utils/smoothScroll';
 import $ from 'jquery';
 import cx from 'classnames';
 import raf from 'raf'; // request next animation frame
+import Scrollable from './Scrollable';
 
 if (process.env.BROWSER) {
   require('./TopPageMenu.less');
@@ -32,8 +33,26 @@ class TopPageMenu extends Component {
     scrollY: 0,
     screenHeight: 0,
     screenWidth: 0,
-    activeItems: []
+    activeItems: [],
+    disableClick: false
   };
+
+  disableClick() {
+    this.setState({
+      disableClick: true
+    });
+    setTimeout(()=>{
+      this.setState({
+        disableClick: false
+      });
+    }, 500)
+  }
+
+  _disableIfScroll(e) {
+    if(this.state.disableClick) {
+      e.preventDefault();
+    }
+  }
 
   componentDidMount () {
     const { cancel } = raf;
@@ -92,37 +111,41 @@ class TopPageMenu extends Component {
     const { language } = this.props;
     return (
       <div className={cx('top-page-menu', {fixed: this.props.fixed})}>
-        <ul>
-          {
-            this.props.items.map((item, key) => {
-              const foundActiveItem = this.state.activeItems.find((itemActive) => itemActive.anchor === item.anchor);
-              const activeItem = foundActiveItem ? foundActiveItem : { progress: 0 };
-              const title = item[language === 'eng' ? 'title_eng': 'title'];
-              if(!title) {
-                return;
-              }
-              return (
-                <li data-num={key} key={key}>
-                  <Link
-                    to={`${item.url}`}
-                    activeClassName="active"
-                    onClick={() => {
-                      scrollTo(item.anchor)();
-                    }}
-                  >
-                    {title}
-                  </Link>
-                  <div
-                    className="progress"
-                    style={{
-                      width: `${activeItem.progress}%`
-                    }}
-                  ></div>
-                </li>
-              );
-            })
-          }
-        </ul>
+        <Scrollable x={true} y={false} disableClick={this.disableClick.bind(this)}>
+          <ul>
+            {
+              this.props.items.map((item, key) => {
+                const foundActiveItem = this.state.activeItems.find((itemActive) => itemActive.anchor === item.anchor);
+                const activeItem = foundActiveItem ? foundActiveItem : { progress: 0 };
+                const title = item[language === 'eng' ? 'title_eng': 'title'];
+                if(!title) {
+                  return;
+                }
+                return (
+                  <li data-num={key} key={key}>
+                    <Link
+                      to={`${item.url}`}
+                      activeClassName="active"
+                      onClick={() => {
+                        if(!this.state.disableClick) {
+                          scrollTo(item.anchor)();
+                        }
+                      }}
+                    >
+                      {title}
+                    </Link>
+                    <div
+                      className="progress"
+                      style={{
+                        width: `${activeItem.progress}%`
+                      }}
+                    ></div>
+                  </li>
+                );
+              })
+            }
+          </ul>
+        </Scrollable>
       </div>
     );
   }

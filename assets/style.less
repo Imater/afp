@@ -460,6 +460,7 @@ h1{
 }
 .festival-location{
   overflow: hidden;
+  padding-right: 50px;
   a {
     display: inline-block;
     font-family: 'sf_ui_displayregular';
@@ -469,6 +470,9 @@ h1{
     padding-left: 17px;
     position: relative;
     white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
     &:before{
       background-image: url('img/festival-location.png');
       content: '';
@@ -893,12 +897,13 @@ h1{
     min-width: 250px;
     text-align: center;
     background: #000;
-    img {
-      min-height: 200px;
-      height: 25px;
-      height: 15vw;
+    .img {
+      min-height: 210px;
+      width: 298px;
       margin: 0 auto;
       display: inline-block;
+      background-position: top;
+      background-size: cover;
     }
 		.news-overlay{
       text-align: left;
@@ -910,13 +915,15 @@ h1{
 			background-color: @blue;
 			opacity: 0;
 			transition: @time opacity;
-			font-family: 'sf_ui_displayregular';
-			font-size: 16px;
 			color: #fff;
 			padding-left: 30px;
 			padding-right: 30px;
 			padding-top: 30px;
-			line-height: 19px;
+      font-family: @regular;
+      font-size: 20px;
+      color: #FFFFFF;
+      letter-spacing: 1.42px;
+      line-height: 24px;
       p, div, blockquote, a {
         margin: 0;
         padding: 0;

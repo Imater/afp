@@ -61,8 +61,10 @@ class NewsLine extends Component {
     return (
       <li key={key}>
         <Link to={`/news/main/${news.get('item_id')}`} onClick={this._disableIfScroll.bind(this)}>
-          <img src={`/upload/images/news/${image}`} alt="news-01" />
-          <div className="news-overlay" dangerouslySetInnerHTML={{__html: preview}}></div>
+          <div className="img" style={{
+            backgroundImage: `url('/upload/images/news/${image}')`
+          }} ></div>
+          <div className="news-overlay" dangerouslySetInnerHTML={{__html: title}}></div>
         </Link>
       </li>
     );

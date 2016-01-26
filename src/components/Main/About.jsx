@@ -88,8 +88,11 @@ class About extends Component {
 
         </div>
         <History language={this.props.language} changeLanguage={this.props.changeLanguage} margin={0} opacity={historyOpacity}/>
-        <div>
+        <div className={classNames({
+          hide: scrollY > 1.5*screenHeight
+        })}>
           <div className="row how-was-row" style={{
+
           }}>
             <div className="left-col padding-left-50">
               <div className="how-it-was" onClick={this.play.bind(this)}>
