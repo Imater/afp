@@ -63,7 +63,7 @@ class Main extends Component {
   render() {
     const { rect: {top}, screenHeight, screenWidth } = this.state;
     const scrollY = -top;
-    const historyOpacity = 1; //tween(scrollY, [[screenHeight*0.3, 0], [screenHeight*0.8, 1]]);
+    const historyOpacity = tween(scrollY, [[screenHeight*0.3, 0], [screenHeight*0.8, 1]]);
     return (
       <div className="MainPage">
         <About

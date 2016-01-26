@@ -112,6 +112,7 @@ class NewsContent extends Component {
     this.news = newsList.find((item) => {
       return item.get('item_id') === parseInt(newsId);
     });
+    const title = this.getTranslate(this.news, 8, language, this.news.get('title'));
     const count = parseInt(this.state.windowWidth / 400);
     const box = parseInt((this.state.windowWidth-275)/count)/1.5;
     const boxProcent = 100/count;
@@ -119,6 +120,15 @@ class NewsContent extends Component {
     const types = typesNews;
     return (
       <div className="page NewsContent" id="lineup">
+        <div className="top-page-menu">
+          <ul>
+            <li>
+              <Link to='/news'>
+                {`${i18n.t('about.news')} → ${title}`}
+              </Link>
+            </li>
+          </ul>
+        </div>
         <div className='close-page' onClick={() => {
           this.props.history.goBack()
         }}></div>

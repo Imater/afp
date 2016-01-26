@@ -17,6 +17,12 @@
       .navigator {
         top: 10px;
         z-index: 3;
+        .left, .right {
+          opacity: 0.3;
+          &:hover {
+            opacity: 1;
+          }
+        }
       }
     }
   }
@@ -56,13 +62,17 @@
           .dj-preview {
             opacity: 0;
             display: block;
+            display: -webkit-box;
             position: absolute;
-            bottom: 10px;
+            bottom: 0px;
             left: 10px;
             right: 10px;
             font-size: 13px;
             transition: 0.5s opacity;
             font-family: @regular;
+            -webkit-line-clamp: 7;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
           }
           .dj-top {
             opacity: 1;

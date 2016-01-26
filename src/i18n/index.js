@@ -4,7 +4,7 @@ const resources = {
     translation: {
       ticket: {
         itog: 'Итого:',
-        tickets: 'Билетов',
+        tickets: 'Билетов:',
         sht: 'шт',
         buy: 'Купить',
         selectTicket: 'Выбор билетов'
@@ -22,12 +22,23 @@ const resources = {
         close: 'ЗАКРЫТЬ',
         menu: 'МЕНЮ'
       },
+      counter: {
+        day_1: 'день',
+        day_2: 'дня',
+        day_5: 'дней',
+        hour_1: 'час',
+        hour_2: 'часа',
+        hour_5: 'часов',
+        minute_1: 'минута',
+        minute_2: 'минуты',
+        minute_5: 'минут',
+      },
       about: {
         mainFestival: 'Главный фестиваль',
         musicAndTechnology: 'музыки и технологий',
         howItWas: 'Как это было',
         festivalDate: '22-24 июля 2016 года',
-        lineup: 'Line-up фестиваля',
+        lineup: 'Line-up',
         novgorod: 'Нижний Новгород, аэродром на берегу Волги',
         technology: 'Технологии',
         sport: 'Спорт',
@@ -45,11 +56,21 @@ const resources = {
       },
       history: {
         howItWas: 'Как это было',
-        scene: 'сцен',
-        dj: 'диджеев',
-        sound: 'звука',
-        hectare: 'гектаров',
-        viewer: 'зрителей'
+        scene_1: 'сцена',
+        scene_2: 'сцены',
+        scene_5: 'сцен',
+        dj_1: 'диджей',
+        dj_2: 'диджея',
+        dj_5: 'диджеев',
+        sound_1: 'звука',
+        sound_2: 'звука',
+        sound_5: 'звука',
+        hectare_1: 'гектар',
+        hectare_2: 'гектара',
+        hectare_5: 'гектаров',
+        viewer_1: 'зритель',
+        viewer_2: 'зрителя',
+        viewer_5: 'зрителей'
       },
       pages: {
         sportAndExtrime: 'СПОРТ ПЛОЩАДКИ И ЭКСТРЕМАЛЬНЫЕ ШОУ',
@@ -62,7 +83,7 @@ const resources = {
         back: 'Назад'
       },
       contacts: {
-        addressName: 'адрес',
+        addressName: 'Адрес',
         address: 'Москва, проспект Андропова 18 стр. 3'
       },
       partners:{
@@ -96,7 +117,7 @@ const resources = {
     translation: {
       ticket: {
         itog: 'Sum:',
-        tickets: 'Tickets',
+        tickets: 'Tickets:',
         sht: 'pc.',
         buy: 'Buy',
         selectTicket: 'Select tickets'
@@ -119,7 +140,7 @@ const resources = {
         musicAndTechnology: 'of music and technology',
         howItWas: 'how it was',
         festivalDate: '22-24 July 2016',
-        lineup: 'Line-up of festival',
+        lineup: 'Line-up',
         novgorod: 'Nizhny Novgorod, on the Volga River airport',
         technology: 'Technology',
         sport: 'Sport',
@@ -135,13 +156,34 @@ const resources = {
         store: 'Store',
         rulesLink: 'Behavior rules<br/> on festival'
       },
+      counter: {
+        day_1: 'day',
+        day_2: 'days',
+        day_5: 'days',
+        hour_1: 'hour',
+        hour_2: 'hours',
+        hour_5: 'hours',
+        minute_1: 'minute',
+        minute_2: 'minutes',
+        minute_5: 'minutes',
+      },
       history: {
         howItWas: 'How it was',
-        scene: 'scenes',
-        dj: 'djs',
-        sound: 'sound',
-        hectare: 'hectares',
-        viewer: 'viewers'
+        scene_1: 'scene',
+        scene_2: 'scenes',
+        scene_5: 'scenes',
+        dj_1: 'dj',
+        dj_2: 'djs',
+        dj_1: 'djs',
+        sound_1: 'sound',
+        sound_2: 'sound',
+        sound_5: 'sound',
+        hectare_1: 'hectare',
+        hectare_2: 'hectares',
+        hectare_5: 'hectares',
+        viewer_1: 'viewer',
+        viewer_2: 'viewers',
+        viewer_5: 'viewers'
       },
       pages: {
         sportAndExtrime: 'SPORT PLAYGROUNDS AND EXTREME SHOWS',
@@ -154,7 +196,7 @@ const resources = {
         back: 'Back'
       },
       contacts: {
-        addressName: 'address',
+        addressName: 'Address',
         address: 'Moscow, prospect Andropov 18 building 3'
       },
       partners:{

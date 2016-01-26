@@ -102,7 +102,6 @@ class Album extends Component {
           <div className='leftInfo'>
             <Link to={`/media/${this.props.params.part}/${this.props.params.album}/all/images`}>
               <img src='/assets/svg/all-photo.svg' />
-              {i18n.t('album.showAll')}
             </Link>
           </div>
           <div className='rightInfo'>

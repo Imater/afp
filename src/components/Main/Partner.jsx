@@ -25,7 +25,7 @@ class News extends Component {
             </Link>
           </div>
         </div>
-        <div className="row padding-left-50 padding-right-40">
+        <div className="">
           <ul className="partners-list">
             {
               partners.map((partner, index) => {

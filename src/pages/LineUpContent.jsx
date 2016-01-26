@@ -6,6 +6,7 @@ import Social from '../components/Social';
 import TopPageMenu from '../components/TopPageMenu';
 import { lineUpItems } from '../components/settings';
 import $ from 'jquery';
+import Footer from '../components/Main/Footer';
 
 if (process.env.BROWSER) {
   require('./LineupContent.less');
@@ -127,6 +128,7 @@ class LineUpContent extends Component {
             }
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

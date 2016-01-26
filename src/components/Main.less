@@ -1,17 +1,25 @@
 @import '../utils/common.less';
 
-.bg-video {
+.fullscreen-bg {
   position: fixed;
-  left: 50%;
+  left: @menuWidth;
   right: 0;
-  top: 50%;
-  height: 100%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  bottom: 0;
   z-index: -2;
-  display: none;
+  .bg-video {
+    position: absolute;
+    left: 50%;
+    right: 0;
+    top: 50%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
 }
-.main-page{
-  &.hide-bg {
+.hide-bg {
+  overflow: hidden;
+  .main-page {
     background-image: none !important;
     .bg-video {
       display: block;

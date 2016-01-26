@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 import { Link } from 'react-router';
 import i18n from 'i18next-client';
+import { noun } from '../../utils/noun.js';
 
 import classNames from 'classnames';
 
@@ -100,7 +101,7 @@ class History extends Component {
                   <div className='mainIcon' key={key}>
                     <span className="mainIcon-num">{stat[param.name]}</span>
                     <img className="mainIcon-img" src={`/assets/img/${param.img}`}/>
-                    <p className="mainIcon-desc">{i18n.t(`history.${param.name}`)}</p>
+                    <p className="mainIcon-desc">{noun(stat[param.name], i18n.t(`history.${param.name}_1`), i18n.t(`history.${param.name}_2`), i18n.t(`history.${param.name}_5`))}</p>
                  </div>
                 );
               })

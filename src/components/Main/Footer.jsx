@@ -17,8 +17,21 @@ class Footer extends Component {
     loading: false
   }
 
+  validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
   onSubmit (e) {
     e.preventDefault();
+    if(!this.validateEmail(this.state.email)) {
+      if(this.props.language === 'eng') {
+        alert('Check email');
+      } else {
+        alert('Проверьте адрес email');
+      }
+      return false;
+    }
     var xhr = this._sendEmail();
     xhr.done(this._onSuccess.bind(this))
     .fail(this._onError.bind(this))

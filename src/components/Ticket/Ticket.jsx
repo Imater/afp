@@ -137,11 +137,8 @@ if (process.env.BROWSER) {
 
     render() {
       return (
-        <div>
+        <div className="Ticket">
           <div className="ticket-back-overlay"></div>
-          <div className="ticket-menu">
-            <TopMenu />
-          </div>
           <Link to="/" className="close-page"></Link>
           <div className="result-block t4b-cart-summary">
             <span>{i18n.t('ticket.itog')}</span>

@@ -7,6 +7,7 @@ import $ from 'jquery';
 import classNames from 'classnames';
 import { tween } from 'react-imation';
 import History from './History.jsx';
+import isMobile from '../is-mobile.js';
 
 class About extends Component {
   componentDidMount () {
@@ -17,7 +18,7 @@ class About extends Component {
   }
 
   stopPlay() {
-    $('.main-page').removeClass('hide-bg');
+    $('html').removeClass('hide-bg');
     this.refs.video.currentTime = 0;;
     this.refs.video.load();
   }
@@ -25,7 +26,7 @@ class About extends Component {
   play () {
     if(this.refs.video.paused) {
       this.refs.video.play();
-      $('.main-page').addClass('hide-bg');
+      $('html').addClass('hide-bg');
     } else {
       this.refs.video.pause();
       this.stopPlay();
@@ -37,19 +38,20 @@ class About extends Component {
 
   render() {
     const { scrollY, screenHeight, screenWidth } = this.props;
-    const blur = tween(scrollY, [[0, 0], [screenHeight*0.5, 0], [screenHeight*0.8, 5]]);
+    const screenHeightCorrected = screenHeight < 480 ? 480 : screenHeight;
+    const blur = tween(scrollY, [[0, 0], [screenHeight*0.5, 0], [screenHeightCorrected*0.8, 8]]);
     const marginLogo = 0; // tween(scrollY, [[0, 0], [screenHeight/6, -screenHeight]]);
     const marginTitle = 0; //  tween(scrollY, [[0, 0], [screenHeight/4, 0], [screenHeight*0.8, -screenHeight]]);
     const marginDate = 0; //  tween(scrollY, [[0, 0], [screenHeight/2, 0], [screenHeight*0.8, -screenHeight/2]]);
     const historyMargin = 0; //  tween(scrollY, [[0, screenWidth], [screenHeight*0.5, 0]]);
-    const historyOpacity = 1; //  tween(scrollY, [[0, 0], [screenHeight*0.8, 1]]);
-    const footerOpacity = tween(scrollY, [[0, 1], [screenHeight*2, 1], [screenHeight*2.1, 0]]);
+    const historyOpacity = isMobile() ? 1 : tween(scrollY, [[0, 0], [screenHeightCorrected*0.1, 0], [screenHeightCorrected*1, 1]]);
+    const footerOpacity = isMobile() ? 1 :tween(scrollY, [[0, 1], [screenHeightCorrected*2, 1], [screenHeightCorrected*2.1, 0]]);
     return (
       <div>
         <div className="page main-page set-height" id="about">
           <div className="fixed-background">
             <div className={classNames('fixed-background-img', {
-              'blur': scrollY > screenHeight / 10
+              'blur': scrollY > screenHeightCorrected / 10
             })} style={{
               WebkitFilter: `blur(${blur}px)`,
               MozFilter: `blur(${blur}px)`,
@@ -89,7 +91,7 @@ class About extends Component {
         </div>
         <History language={this.props.language} changeLanguage={this.props.changeLanguage} margin={0} opacity={historyOpacity}/>
         <div className={classNames({
-          hide: scrollY > 1.5*screenHeight
+          hide: scrollY > 2*(screenHeightCorrected)
         })}>
           <div className="row how-was-row" style={{
 

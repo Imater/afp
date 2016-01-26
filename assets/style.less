@@ -242,6 +242,9 @@ body{
     &.eng {
       background-image: url('img/logo-bank-eng.png');
     }
+    @media (max-height: @phoneHeight){
+      margin-bottom: 17px;
+    }
 	}
 	.container{
 		margin-left: @menuWidth;
@@ -340,7 +343,7 @@ body{
 	}
   &.logoBlock {
     @media (max-width: @phone){
-      margin-top: 10%;
+      margin-top: 5%;
     }
   }
 }
@@ -358,6 +361,10 @@ h1{
     font-size: 7vw;
     line-height: 8vw;
   }
+  @media (max-height: @phoneHeight){
+    font-size: 4vw;
+    line-height: 4.5vw;
+  }
 }
 .festival-date{
 	font-family: 'sf_ui_displayregular';
@@ -372,6 +379,11 @@ h1{
     font-size: 4.1vw;
     line-height: 4.9vw;
     margin-top: 20px;
+  }
+  @media (max-height: @phoneHeight){
+    font-size: 3vw;
+    line-height: 4vw;
+    margin-top: 10px;
   }
 }
 .language{
@@ -428,11 +440,11 @@ h1{
 .hide-bg {
   .how-it-was {
     &:before {
-      background-image: url("svg/stop-button.svg");
+      background-image: url("svg/stop-button.svg") !important;
     }
   }
   .hide-on-video {
-    opacity: 0;
+    opacity: 0 !important;
   }
 
 }
@@ -457,6 +469,9 @@ h1{
 	-o-transform: translateX(-50%);
 	transform: translateX(-50%);
 	border-radius: 20px;
+  @media (max-width: 970px) {
+    display: none;
+  }
 }
 .festival-location{
   overflow: hidden;
@@ -940,17 +955,41 @@ h1{
 }
 .partners-list{
 	margin-top: 50px;
+	margin-bottom: 40px;
 
 	.partner-item{
+    text-align: center;
 		display: inline-block;
-		margin-right: 56px;
 		vertical-align: middle;
-		margin-bottom: 50px;
     opacity: 0.7;
     transition: @time opacity;
+    width: 20%;
+    padding: 40px 50px;
+    img {
+      width: 100%;
+    }
 		&:hover{
       opacity: 1;
 		}
+    @media (max-width: 4600px){
+      width: 12.5%;
+      padding: 20px 50px;
+      min-height: 10%;
+    }
+    @media (max-width: 1600px){
+      width: 25%;
+      padding: 20px 50px;
+      min-height: 10%;
+    }
+    @media (max-width: 1100px){
+      width: 33.33%;
+      padding: 30px 40px;
+      min-height: 10%;
+    }
+    @media (max-width: @phone){
+      width: 25%;
+      padding: 20px 50px;
+    }
 	}
 }
 .before-festival{

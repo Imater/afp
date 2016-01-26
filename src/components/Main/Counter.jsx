@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 import { Link } from 'react-router';
 import i18n from 'i18next-client';
+import { noun } from '../../utils/noun.js';
 
 
 class Counter extends Component {
@@ -55,9 +56,24 @@ class Counter extends Component {
             </div>
           </div>
           <div className="row timer padding-left-50 padding-right-40">
-            <span className="days-before" data-name="дней">{this.state.time.days}</span>
-            <span className="hour-before" data-name="час">{this.state.time.hours}</span>
-            <span className="minute-before" data-name="минут">{this.state.time.minutes}</span>
+            <span
+              className="days-before"
+              data-name={noun(this.state.time.days, i18n.t('counter.day_1'), i18n.t('counter.day_2'), i18n.t('counter.day_5'))}
+            >
+              {this.state.time.days}
+            </span>
+            <span
+              className="hour-before"
+              data-name={noun(this.state.time.hour, i18n.t('counter.hour_1'), i18n.t('counter.hour_2'), i18n.t('counter.hour_5'))}
+            >
+              {this.state.time.hours}
+            </span>
+            <span
+              className="minute-before"
+              data-name={noun(this.state.time.minutes, i18n.t('counter.minute_1'), i18n.t('counter.minute_2'), i18n.t('counter.minute_5'))}
+            >
+              {this.state.time.minutes}
+            </span>
           </div>
         </div>
       </div>

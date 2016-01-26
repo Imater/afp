@@ -60,8 +60,12 @@ class AlbumAll extends Component {
     const { language } = this.props;
     const types = typesSport;
     const main = typesSport;
-    const count = parseInt(this.state.windowWidth / 400);
-    const box = parseInt((this.state.windowWidth-275)/count)/1.2;
+    let count = parseInt(this.state.windowWidth / 400);
+    if(count <= 0) {
+      count = 1;
+    }
+
+    const box = parseInt((this.state.windowWidth)/count)/1.2;
     const boxProcent = 100/count;
     const mainImageIndex = this.props.params.photo ? parseInt(this.props.params.photo) : 0;
     const imageInfo = this.gallery.find((image, index) => index === mainImageIndex)
