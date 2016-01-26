@@ -44,7 +44,7 @@ class About extends Component {
     const marginTitle = 0; //  tween(scrollY, [[0, 0], [screenHeight/4, 0], [screenHeight*0.8, -screenHeight]]);
     const marginDate = 0; //  tween(scrollY, [[0, 0], [screenHeight/2, 0], [screenHeight*0.8, -screenHeight/2]]);
     const historyMargin = 0; //  tween(scrollY, [[0, screenWidth], [screenHeight*0.5, 0]]);
-    const historyOpacity = isMobile() ? 1 : tween(scrollY, [[0, 0], [screenHeightCorrected*0.1, 0], [screenHeightCorrected*1, 1]]);
+    const historyOpacity = isMobile() ? 1 : tween(scrollY, [[0, 0], [screenHeightCorrected*0.8, 0.2], [screenHeightCorrected*1, 1]]);
     const footerOpacity = isMobile() ? 1 :tween(scrollY, [[0, 1], [screenHeightCorrected*2, 1], [screenHeightCorrected*2.1, 0]]);
     return (
       <div>
