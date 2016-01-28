@@ -3,6 +3,7 @@ import { findDOMNode } from 'react-dom';
 import { Link } from 'react-router';
 import i18n from 'i18next-client';
 import $ from 'jquery';
+import classNames from 'classnames';
 import Social from '../Social';
 
 if (process.env.BROWSER) {
@@ -94,7 +95,9 @@ class Footer extends Component {
 
   render() {
     return (
-      <footer className="footer">
+      <footer className={classNames("footer", {
+        'noborder': this.props.noborder
+      })}>
         <div className="inner">
           <div className="col">
 

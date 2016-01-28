@@ -3,11 +3,14 @@
 .socialBlock {
   text-align: center;
   width: 80px;
-  position: absolute;
+  position: fixed;
   right: 40px;
   top: 90px;
   z-index: 3;
   font-family: @regular;
+  @media (max-width: @phone) {
+    position: absolute;
+  }
 
   &-title {
     font-size: 14px;

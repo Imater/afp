@@ -438,6 +438,8 @@ h1{
 	transition: @time all;
 }
 .hide-bg {
+}
+.play {
   .how-it-was {
     &:before {
       background-image: url("svg/stop-button.svg") !important;
@@ -1031,6 +1033,10 @@ h1{
 	}
 }
 footer{
+  border-top: 1px solid #444;
+  &.noborder {
+    border-top: none;
+  }
 	background-color: #1A1A1A;
 	padding-top: 49px;
 	padding-bottom: 44px;
@@ -1131,9 +1137,12 @@ footer{
 	border-radius: 30px;
 	border: 2px solid #fff;
 	display: inline-block;
-	position: absolute;
+	position: fixed;
 	right: 40px;
 	top: 80px;
+  @media (max-width: @phone){
+    position: absolute;
+  }
 
 	&:before{
 		width: 28px;

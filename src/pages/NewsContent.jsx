@@ -120,7 +120,7 @@ class NewsContent extends Component {
     const types = typesNews;
     return (
       <div className="page NewsContent" id="lineup">
-        <div className="top-page-menu">
+        <div className="top-page-menu fixed">
           <ul>
             <li>
               <Link to='/news'>

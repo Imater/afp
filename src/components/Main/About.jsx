@@ -11,27 +11,54 @@ import isMobile from '../is-mobile.js';
 
 class About extends Component {
   state = {
-    isMobile: isMobile()
-  }
+    isMobile: isMobile(),
+    silence: true
+  };
 
   componentDidMount () {
     var video = this.refs.video;
     this.isMobile = isMobile();
+    if(!this.isMobile) {
+      this.playSilence()
+    }
     video.addEventListener('ended', () => {
-      this.stopPlay();
+      if(!this.state.silence) {
+        this.stopPlay();
+      } else {
+        this.stopPlay();
+      }
     });
   }
 
   stopPlay() {
-    $('html').removeClass('hide-bg');
+    $('html').removeClass('hide-bg').removeClass('play');
     this.refs.video.currentTime = 0;;
     this.refs.video.load();
   }
 
-  play () {
+  playSilence () {
     if(this.refs.video.paused) {
       this.refs.video.play();
+      this.refs.video.muted = true;
+      this.setState({
+        silence: true
+      });
       $('html').addClass('hide-bg');
+    } else {
+      this.refs.video.pause();
+      this.stopPlay();
+    }
+  }
+
+  play () {
+    if(this.refs.video.paused || this.state.silence) {
+      this.refs.video.play();
+      this.refs.video.muted = false;
+      this.setState({
+        silence: false
+      });
+      $('html').addClass('hide-bg');
+      $('html').addClass('play');
     } else {
       this.refs.video.pause();
       this.stopPlay();

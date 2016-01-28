@@ -34,15 +34,9 @@ class About extends Component {
         />
         {this.props.children} {''}
         <div className="About">
-          <div
-            className="ticket-back-overlay"
-            style={{
-              opacity: 0
-            }}
-          ></div>
           <article
             className="screen aboutTop" style={{
-              backgroundImage: 'url(\'/assets/img/about/aboutTop-cover.jpg\')'
+              backgroundImage: 'url(\'/assets/img/AFP-170.jpg\')'
             }}
           >
             <Share
@@ -142,9 +136,7 @@ class About extends Component {
                 }
               </div>
 
-              <Link to="/about/main/rules" style={{
-                display: 'none'
-              }}>
+              <Link to="/about/main/rules">
                 <span className="aboutWay-rules" dangerouslySetInnerHTML={{__html: i18n.t('about.rulesLink')}}></span>
               </Link>
             </div>
@@ -281,7 +273,7 @@ class About extends Component {
             }
           </div>
         </div>
-        <Footer />
+        <Footer noborder />
       </div>
     );
   }

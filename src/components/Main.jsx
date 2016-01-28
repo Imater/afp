@@ -81,7 +81,7 @@ class Main extends Component {
         </div>
         <Partner />
         <Counter />
-        <Footer />
+        <Footer noborder />
       </div>
     );
   }

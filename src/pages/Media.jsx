@@ -74,9 +74,12 @@ class Media extends Component {
     const { language } = this.props;
     const types = typesSport;
     const main = typesSport;
-    let count = parseInt(this.state.windowWidth / 400);
+    let count = parseInt(this.state.windowWidth / 550);
     if(count <= 0) {
       count = 1;
+    }
+    if(count > 3) {
+      count = 3;
     }
     let box = parseInt((this.state.windowWidth-275)/count)/1.5;
     if(box < 200) {
@@ -126,7 +129,7 @@ class Media extends Component {
             })
           }
         </div>
-        <Footer />
+        <Footer noborder />
       </div>
     );
   }

@@ -134,6 +134,7 @@ class AlbumAll extends Component {
           }
         </div>
       </div>
+      <Footer noborder />
     </div>
     );
   }

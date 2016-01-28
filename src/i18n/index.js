@@ -174,7 +174,7 @@ const resources = {
         scene_5: 'scenes',
         dj_1: 'dj',
         dj_2: 'djs',
-        dj_1: 'djs',
+        dj_5: 'djs',
         sound_1: 'sound',
         sound_2: 'sound',
         sound_5: 'sound',

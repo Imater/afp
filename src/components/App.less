@@ -343,18 +343,26 @@ a, img, p {
             li {
               display: block;
               float: none;
-              margin-bottom: 20px;
-              img {
+              background: none;
+              border-top: 1px solid #444;
+              &:last-child {
+                border-bottom: 1px solid #444;
+              }
+              .img {
                 width: 100%;
                 height: auto;
+                min-height: auto;
+                background-image: none !important;
               }
               .news-overlay {
                 overflow: hidden;
                 opacity: 1;
-                background-color: rgba(0, 0, 0, 0.55);
+                background: none;
                 font-size: 14px;
                 line-height: 19px;
                 padding: 20px;
+                position: static;
+                height: auto;
               }
             }
           }

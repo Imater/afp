@@ -40,11 +40,14 @@ function scrollTo(name) {
   }
 }
 
+let oldPath;
+
 function defaultPath(defaultName) {
   return function(nextState, replaceState) {
     if(!nextState.params.part) {
       replaceState(null, `${nextState.location.pathname}/${defaultName}`);
     }
+    const pathname = nextState.location.pathname;
     if (typeof document !== 'undefined') {
       const hash = window.location.hash;
       const self = this;
@@ -53,9 +56,18 @@ function defaultPath(defaultName) {
           scrollTo(hash.replace('#', ''))();
         }, 300);
       } else {
-        smoothScroll(0);
+        if(
+          (pathname === '/about/main/rules' && oldPath === '/about/map') ||
+          (pathname === '/about/map' && oldPath === '/about/main/rules') ||
+          false
+        ) {
+          //do nothing
+        } else {
+          smoothScroll(0);
+        }
       }
     }
+    oldPath = nextState.location.pathname;
   }
 }
 
