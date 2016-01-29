@@ -25,6 +25,9 @@ class About extends Component {
   };
   render() {
     const {language} = this.props;
+    const screenWidth = process.env.BROWSER ? window.innerWidth : 1200;
+    const paddingLeft = (screenWidth - 720 - 250 - 40) / 2;
+    console.info(paddingLeft);
     return (
       <div className="About">
         <TopPageMenu
@@ -222,7 +225,7 @@ class About extends Component {
                 <li className="aboutGood-arrow disable"><img src="/assets/img/about/icon-arrow-back.svg" width=""/></li>
                 <li className="aboutGood-arrow"><img src="/assets/img/about/icon-arrow-back.svg" width=""/></li>
               </ul>
-              <Scrollable x={true} y={false} navigator={true}>
+              <Scrollable x={true} y={false} navigator={true} paddingLeft={paddingLeft}>
                 <div className="aboutGood-track">
                   {
                     aboutMain.goodsList.map((good, index) => {

@@ -19,6 +19,7 @@ const resources = {
         media: 'фото и видео',
         contacts: 'контакты',
         buyTicket: 'Купить билет',
+        buyTour: 'Купить тур',
         close: 'ЗАКРЫТЬ',
         menu: 'МЕНЮ'
       },
@@ -132,6 +133,7 @@ const resources = {
         media: 'media',
         contacts: 'contacts',
         buyTicket: 'Buy ticket',
+        buyTour: 'Buy tour',
         close: 'CLOSE',
         menu: 'MENU'
       },

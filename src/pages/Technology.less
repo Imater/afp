@@ -1,6 +1,6 @@
 @import '../utils/common.less';
 
-.Technology {
+.Technology, .Sport, .Partners, .Contacts {
   color: #FFF;
   .page-block {
     background-image: url('../../assets/img/bg-robot.png');
@@ -8,14 +8,21 @@
     background-size: cover;
     height: 600px;
     position: relative;
+    vertical-align: bottom;
     .bg-gradient();
-    h2 {
-      font-family: @semibold;
-      max-width: 80%;
-      font-size: 40px;
-      line-height: 120%;
-      @media (max-width: @phone) {
-        font-size: 25px;
+    .screen {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      h2 {
+        font-family: @semibold;
+        font-size: 40px;
+        line-height: 120%;
+        margin-bottom: 50px;
+        @media (max-width: @phone) {
+          font-size: 25px;
+        }
       }
     }
   }
@@ -27,16 +34,18 @@
     }
   }
   .items {
-    h3{
-      font-family: @semibold;
-      font-size: 30px;
-      line-height: 120%;
-    }
     .item {
-      max-width: 800px;
+      max-width: @textWidth;
+      margin: 0 auto;
       font-family: @regular;
       font-size: 18px;
       line-height: 155%;
+      position: relative;
+      h3{
+        font-family: @semibold;
+        font-size: 30px;
+        line-height: 120%;
+      }
     }
   }
 

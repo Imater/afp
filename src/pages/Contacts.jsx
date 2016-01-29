@@ -34,8 +34,8 @@ class Contacts extends Component {
         ]}/>
         <div className="row">
         </div>
-        <div className="page-text">
-          <div className="row">
+        <div className="items">
+          <div className="row item">
             <div className="addressName">
               {i18n.t('contacts.addressName')}:
             </div>
@@ -43,7 +43,7 @@ class Contacts extends Component {
               {i18n.t('contacts.address')}
             </div>
           </div>
-          <div className="row">
+          <div className="row item">
             {
               personList.map((person, keyPerson) => {
                 return (

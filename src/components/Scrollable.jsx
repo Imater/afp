@@ -11,7 +11,8 @@ class Scrollable extends Component {
   static propTypes = {
     children: PropTypes.element,
     x: PropTypes.bool,
-    y: PropTypes.bool
+    y: PropTypes.bool,
+    paddingLeft: PropTypes.number
   };
 
   dist = 0;
@@ -119,7 +120,9 @@ class Scrollable extends Component {
 
   render() {
     const navigator = this.props.navigator ? (
-      <div className="navigator noselect">
+      <div className="navigator noselect" style={{
+        right: this.props.paddingLeft
+      }}>
         <div className="left" onClick={this.move(60).bind(this)}></div>
         <div className="right" onClick={this.move(-60).bind(this)}></div>
       </div>
@@ -134,6 +137,9 @@ class Scrollable extends Component {
           onMouseDown={this.onDown.bind(this)}
           onTouchStart={this.onDown.bind(this)}
           ref={c => this.wrapper = c}
+          style={{
+            paddingLeft: this.props.paddingLeft
+          }}
         >
           <div className="viewport" ref={c => this.viewport = c}>
             {this.props.children}
@@ -146,7 +152,8 @@ class Scrollable extends Component {
 
 Scrollable.defaultProps = {
   x: true,
-  y: false
+  y: false,
+  paddingLeft: 0
 };
 
 Scrollable.scrollable = false;

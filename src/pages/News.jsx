@@ -74,7 +74,7 @@ class News extends Component {
             <div className='imageWrapper' style={{
               width: isMain ? `${boxProcentCorrected}%` : 'auto',
             }}>
-              <img className="image" title={0} src={`/upload/images/news/${image}`} />
+              <img className="image" src={`/upload/images/news/${image}`} />
             </div>
             <div className='info' style={{
               width: isMain ? `${100-boxProcentCorrected}%` : 'auto',
@@ -101,6 +101,9 @@ class News extends Component {
     let count = parseInt(this.state.windowWidth / 400);
     if(count <= 0) {
       count = 1;
+    }
+    if(count > 3) {
+      count = 3;
     }
     let box = parseInt((this.state.windowWidth-275)/count)/1.5;
     if(box < 200) {

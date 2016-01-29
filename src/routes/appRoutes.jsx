@@ -25,13 +25,13 @@ import Rules from '../containers/Rules';
 import Faq from '../containers/Faq';
 import Store from '../containers/Store';
 
-function scrollTo(name) {
+function scrollTo(name, duration=1) {
   return () => {
     if (typeof document !== 'undefined') {
       setTimeout(() => {
         let scrollToElement = $(`#${name}`);
         if(scrollToElement.length) {
-          smoothScroll(scrollToElement.offset().top);
+          smoothScroll(scrollToElement.offset().top, duration);
         } else {
           console.error(`${name} element not found for scroll`);
         }
@@ -63,7 +63,7 @@ function defaultPath(defaultName) {
         ) {
           //do nothing
         } else {
-          smoothScroll(0);
+          smoothScroll(0, 0);
         }
       }
     }
@@ -74,7 +74,7 @@ function defaultPath(defaultName) {
 function scrollTop() {
   return function(nextState, replaceState) {
     if (typeof document !== 'undefined') {
-      smoothScroll(0);
+      smoothScroll(0, 0);
     }
   }
 }

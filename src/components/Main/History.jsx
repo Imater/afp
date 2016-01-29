@@ -3,6 +3,8 @@ import { findDOMNode } from 'react-dom';
 import { Link } from 'react-router';
 import i18n from 'i18next-client';
 import { noun } from '../../utils/noun.js';
+import Mobile from '../Mobile';
+import Social from '../Social';
 
 import classNames from 'classnames';
 
@@ -72,6 +74,7 @@ class History extends Component {
     return (
       <div className="page set-height second-page hide-on-video" style={{
         marginTop: this.props.margin,
+        transform: `scale(${this.props.scale})`
       }}>
       <div className="row mainIcons-header" style={{
         opacity: this.props.opacity*5
@@ -111,6 +114,9 @@ class History extends Component {
             }
           </div>
         </div>
+        <Mobile>
+          <Social />
+        </Mobile>
       </div>
     );
   }

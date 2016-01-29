@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import { tween } from 'react-imation';
 import History from './History.jsx';
 import isMobile from '../is-mobile.js';
+import Mobile from '../Mobile';
 
 class About extends Component {
   state = {
@@ -77,6 +78,7 @@ class About extends Component {
     const marginDate = 0; //  tween(scrollY, [[0, 0], [screenHeight/2, 0], [screenHeight*0.8, -screenHeight/2]]);
     const historyMargin = 0; //  tween(scrollY, [[0, screenWidth], [screenHeight*0.5, 0]]);
     const historyOpacity = this.state.isMobile ? 1 : tween(scrollY, [[0, 0], [screenHeightCorrected*0.8, 0.2], [screenHeightCorrected*1, 1]]);
+    const historyScale = this.state.isMobile ? 1 : tween(scrollY, [[0, 0.85], [screenHeightCorrected*0.4, 0.85], [screenHeightCorrected*0.6, 1.05], [screenHeightCorrected*0.8, 1]]);
     const footerOpacity = this.state.isMobile ? 1 :tween(scrollY, [[0, 1], [screenHeightCorrected*2, 1], [screenHeightCorrected*2.1, 0]]);
     const isHide =scrollY > 2 * screenHeightCorrected;
     return (
@@ -123,38 +125,47 @@ class About extends Component {
             <div className="festival-date" style={{
             }}>{i18n.t('about.festivalDate')}</div>
           </div>
+          <Mobile>
+            <div className="buy-ticket-mobile">
+              <Link className="ticket" to='/ticket'>{i18n.t('menu.buyTicket')}</Link>
+              <a className="tour" target="_blank" href='http://viptravelnn.wikiplanet.ru/tour/komfortniy_tur_na_mejdunarodniy_festival_elektronnoy_muziki_i_tehnologiy_alfa_future_people_2016?month_at=07.2016&month_to=07.2016&decodeNums=2&chosenDates=' className="buy-tour">{i18n.t('menu.buyTour')}</a>
+            </div>
+            <div className="plus18">18+</div>
+          </Mobile>
 
         </div>
-        <History language={this.props.language} changeLanguage={this.props.changeLanguage} margin={0} opacity={historyOpacity}/>
+        <History language={this.props.language} changeLanguage={this.props.changeLanguage} margin={0} scale={historyScale} opacity={historyOpacity}/>
         <div className={classNames({
           hide: isHide
         })}>
-          <div className="row how-was-row" style={{
+          <Mobile mobile={false}>
+            <div className="row how-was-row" style={{
 
-          }}>
-            <div className="left-col padding-left-50">
-              <div className="how-it-was" onClick={this.play.bind(this)}>
-                Alfa Future People 2015<br />{i18n.t('about.howItWas')}
+            }}>
+              <div className="left-col padding-left-50">
+                <div className="how-it-was" onClick={this.play.bind(this)}>
+                  Alfa Future People 2015<br />{i18n.t('about.howItWas')}
+                </div>
+              </div>
+              <div className="right-col padding-right-40 text-right hide-on-video">
+                <a href="http://www.eubeafestival.com/" target="_blank" className="eubea"></a>
+                <a href="http://kudago.com/" target="_blank" className="kudago"></a>
               </div>
             </div>
-            <div className="right-col padding-right-40 text-right hide-on-video">
-              <a href="http://www.eubeafestival.com/" target="_blank" className="eubea"></a>
-              <a href="http://kudago.com/" target="_blank" className="kudago"></a>
-            </div>
-          </div>
-          <div className="row social-row" style={{
-            opacity: footerOpacity
-          }}>
-            <div className="left-col padding-left-50 text-left">
-              <div className="festival-location">
-                <Link to='/about/map'>{i18n.t('about.novgorod')}</Link>
+            <div className="row social-row" style={{
+              opacity: footerOpacity
+            }}>
+              <div className="left-col padding-left-50 text-left">
+                <div className="festival-location">
+                  <Link to='/about/map'>{i18n.t('about.novgorod')}</Link>
+                </div>
+                <div className="plus18">18+</div>
               </div>
-              <div className="plus18">18+</div>
+              <div className="right-col padding-right-40 text-right">
+                <Social />
+              </div>
             </div>
-            <div className="right-col padding-right-40 text-right">
-              <Social />
-            </div>
-          </div>
+          </Mobile>
         </div>
       </div>
     );

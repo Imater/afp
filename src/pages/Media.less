@@ -37,6 +37,12 @@
         position: relative;
         cursor: pointer;
         .bg-gradient();
+        transition: 0.8s transform;
+        &:hover {
+          transition: 0.2s transform;
+          transform: scale(1.15);
+          z-index: 5;
+        }
         h4 {
           margin: 0;
           padding: 0;

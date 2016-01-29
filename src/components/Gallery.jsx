@@ -18,9 +18,9 @@ class Gallery extends Component {
     }
     var nextIndex = this.state.index + increment;
     if(nextIndex <= 0) {
-      nextIndex = this.props.images.length-1;
-    } else if (nextIndex >= this.props.images.length){
       nextIndex = 0;
+    } else if (nextIndex >= this.props.images.length){
+      nextIndex = this.props.images.length-1;
     } else {
     }
     this.setState({
@@ -46,52 +46,47 @@ class Gallery extends Component {
     return (
       <div className='Gallery noselect'>
         <div className="galleryItems">
-          <div className="galleryItem galleryItemPrev">
-            <div className="galleryImage" style={{
+          <div className="galleryItem galleryItemPrev" onClick={() => this.nextSlide(-1)}>
+            <div className="galleryImage"
+              style={{
                 backgroundImage: `url('${getPhoto(-1)}')`
-              }}>
+              }}
+            >
             </div>
           </div>
           <div className="galleryItem">
-            <div className="galleryImage" style={{
+            <div className="galleryImage"
+              style={{
                 backgroundImage: `url('${getPhoto(0)}')`
-              }}>
+              }}
+            >
             </div>
             <div className="galleryInfo">
               <div className="galleryInfoName">{this.props.title}</div>
             </div>
           </div>
-          <div className="galleryItem galleryItemNext">
-            <div className="galleryImage" style={{
+          <div className="galleryItem galleryItemNext" onClick={() => this.nextSlide(1)}>
+            <div className="galleryImage"
+              style={{
                 backgroundImage: `url('${getPhoto(1)}')`
-              }}>
+              }}
+            >
             </div>
           </div>
           <div className="galleryCounter">
             <span>{this.state.index + 1}</span> из <span>{images.length}</span>
           </div>
-          <div className="galleryPrev" onClick={() => this.nextSlide(-1)}>
+          <div style={{
+            display: getPhoto(-1) ? undefined : 'none'
+          }} className="galleryPrev" onClick={() => this.nextSlide(-1)}>
             <img src='/assets/svg/left-arrow.svg' />
           </div>
-          <div className="galleryNext" onClick={() => this.nextSlide(1)}>
+          <div style={{
+            display: getPhoto(1) ? undefined : 'none'
+          }} className="galleryNext" onClick={() => this.nextSlide(1)}>
             <img src='/assets/svg/right-arrow.svg' />
           </div>
         </div>
-        {
-          images.map((image, key) => {
-            if(key === this.state.index) {
-              return (
-                <div key={key}
-                  style={{
-                  backgroundImage: `url(${image.url})`
-                  }}
-                  className='image'
-                  onClick={this.nextSlide.bind(this, 1)}>
-                </div>
-              )
-            }
-          })
-        }
       </div>
     );
   }

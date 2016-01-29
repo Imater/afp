@@ -28,10 +28,12 @@
           height: 100%;
           background-size: cover;
           background-position: center;
-          opacity: 0.95;
-          transition: 0.3s opacity;
+          transition: 0.8s transform;
           &:hover {
-            opacity: 1;
+            transition: 0.2s transform;
+            transform: scale(1.05);
+            position: relative;
+            z-index: 5;
           }
         }
         .videoOverlay {

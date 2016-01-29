@@ -78,7 +78,7 @@ class Album extends Component {
     const mainImageName = imageInfo.get('name');
     const youTubeLink = imageInfo.get('link');
     const youtubeOpts = {
-      height: '90%',
+      height: '100%',
       width: '100%',
       id: 'fullscreenVideo',
       playerVars: { // https://developers.google.com/youtube/player_parameters

@@ -21,19 +21,21 @@ class Partners extends Component {
       <div className="page Partners">
         <TopPageMenu items={partnerItems} language={language} />
         <div className="page-block">
-          <h2>
-            {i18n.t('about.partners')} <br/>
-            Alfa future people 2015
-          </h2>
+          <div className="screen">
+            <h2>
+              {i18n.t('about.partners')} <br/>
+              Alfa future people 2015
+            </h2>
+          </div>
           <div className="row">
           </div>
         </div>
         <div className="row">
-          <ul className="partners-list">
+          <ul className="partners-list items">
             {
               partners.map((partner, index) => {
                 return (
-                  <li className="partnerItem" key={index} id={partner.name}>
+                  <li className="partnerItem item" key={index} id={partner.name}>
                     <img src={`/assets/svg/partner-new/${partner.logo}`} width="100" className="partnerLogo"/>
                     <h3 className="title">
                       {partner[language === 'eng' ? 'title_eng': 'title']}

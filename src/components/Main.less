@@ -61,3 +61,54 @@
 }
 .Main {
 }
+
+.buy-ticket-mobile {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+	font-family: 'sf_ui_displaysemibold';
+	font-size: 13px;
+	color: rgba(255, 255, 255, 0.8);
+  box-shadow: inset -3px 0px 3px rgba(0, 0, 0, 0.15);
+	width: 100%;
+	display: inline-block;
+	position: absolute;
+	bottom: 0px;
+	transition: @time all;
+  .ticket {
+    display: block;
+    color: #FFF;
+    padding: 7px;
+    padding-left: 100px;
+    background-color: @blue;
+    &:hover{
+      background-color: darken(@blue, 5%);
+    }
+  }
+  .buy-tour {
+    display: block;
+    color: #FFF;
+    padding: 4px;
+    padding-left: 100px;
+    background-color: @blueDark;
+    &:hover{
+      background-color: darken(@blueDark, 5%);
+    }
+  }
+
+  &:before{
+    background-image: url('/assets/img/materials.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 15px;
+    bottom: 0px;
+    width: 59px;
+    height: 78px;
+    content: '';
+  }
+	&:hover{
+		color: rgba(255, 255, 255, 1);
+	}
+}

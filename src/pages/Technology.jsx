@@ -38,14 +38,18 @@ class Technology extends Component {
           img_url: 'http://afp.ru/assets/img/share.jpg'
         }} />
         <div className="page-block">
-          <h2>
-            {i18n.t('pages.wonderTechnology')}
-          </h2>
+          <div className="screen">
+            <h2>
+              {i18n.t('pages.wonderTechnology')}
+            </h2>
+          </div>
           <div className="row">
           </div>
         </div>
-        <div className="page-text">
-          {main[language]}
+        <div className="items">
+          <div className="item">
+            {main[language]}
+          </div>
         </div>
         <div className="items">
           {

@@ -38,9 +38,11 @@ class Sport extends Component {
           img_url: 'http://afp.ru/assets/img/share.jpg'
         }} />
         <div className="page-block">
-          <h2>
-            {i18n.t('pages.sportAndExtrime')}
-          </h2>
+          <div className="screen aboutTop">
+            <h2>
+              {i18n.t('pages.sportAndExtrime')}
+            </h2>
+          </div>
           <div className="row">
           </div>
         </div>

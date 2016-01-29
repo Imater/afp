@@ -6,7 +6,7 @@
     padding-top: 70px;
     height: 700px;
     @media (max-width: @phone){
-      height: 400px;
+      height: 450px;
       min-height: 400px;
     }
     .navigator {
@@ -53,26 +53,29 @@
             opacity: 1;
             display: block;
             position: absolute;
-            bottom: 10px;
-            left: 10px;
-            right: 10px;
+            bottom: 15px;
+            left: 20px;
+            right: 20px;
             transition: 0.2s opacity;
             font-family: @semibold;
+            transition: 0.5s all;
           }
           .dj-preview {
             opacity: 0;
             display: block;
             display: -webkit-box;
             position: absolute;
-            bottom: 0px;
-            left: 10px;
-            right: 10px;
+            bottom: -200px;
+            overflow: hidden;
+            left: 20px;
+            right: 20px;
             font-size: 13px;
             transition: 0.5s opacity;
             font-family: @regular;
             -webkit-line-clamp: 7;
             -webkit-box-orient: vertical;
             text-overflow: ellipsis;
+            transition: 0.5s all;
           }
           .dj-top {
             opacity: 1;
@@ -84,25 +87,25 @@
             transition: 0.2s opacity;
             background-color: #0C5AF2;
             padding: 3px 10px;
-            border-radius: 10px;
+            border-radius: 15px;
             font-family: @semibold;
           }
           .dj-overlay {
             .gradient-overlay();
-            opacity: 0.5;
             transition: 0.5s opacity;
           }
         }
         &:hover {
           .dj-title {
-            opacity: 0;
+            bottom: 70%;
           }
           .dj-preview {
             opacity: 1;
+            bottom: 20px;
           }
           .dj-overlay {
             top: 0;
-            background: rgba(0,0,0,0.8);
+            background: rgba(26, 26, 26, 0.9);
           }
         }
       }

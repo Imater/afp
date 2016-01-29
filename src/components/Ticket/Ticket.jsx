@@ -140,7 +140,7 @@ if (process.env.BROWSER) {
         <div className="Ticket">
           <div className="ticket-back-overlay"></div>
           <Link to="/" className="close-page"></Link>
-          <div className="result-block t4b-cart-summary">
+          <div className="result-block t4b-cart-summary t4b-hidden">
             <span>{i18n.t('ticket.itog')}</span>
             <div className="summ"><span className="t4b-cart-summary-price"></span> ₽</div>
             <span>{i18n.t('ticket.tickets')} <span className="t4b-cart-summary-count"></span> {i18n.t('ticket.sht')}</span><br />
