@@ -11,6 +11,22 @@ apiRoutes.get('/hello', (req, res) => {
   res.end('hello');
 });
 
+apiRoutes.post('/upload/image', (req, res) => {
+  api.uploadImage(req.body).then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
+apiRoutes.post('/news/update/:id', (req, res) => {
+  api.updateOneNews(req.params.id, req.body).then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
 apiRoutes.get('/test', (req, res) => {
   console.info('test');
   api.getTest().then(function(result){
@@ -62,8 +78,15 @@ apiRoutes.put('/user/email', (req, res) => {
 });
 
 apiRoutes.get('/news', (req, res) => {
-  console.info('get news');
   api.getNews().then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
+apiRoutes.get('/djs', (req, res) => {
+  api.getAllDjs().then(function(result){
     res.status(200).send(result);
   }).catch(function(err){
     res.status(400).send(err);

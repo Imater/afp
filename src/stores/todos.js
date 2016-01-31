@@ -1,12 +1,15 @@
 import { List } from 'immutable';
 import request from 'superagent';
 import Immutable from 'immutable';
+import Promise from 'promise-polyfill';
 
 export const TODO_CREATE = 'TODO_CREATE';
 export const TODO_COMPLETE = 'TODO_COMPLETE';
 export const TODO_DESTROY = 'TODO_DESTROY';
 export const ADD_BID = 'ADD_BID';
 export const REFRESH_LOT = 'REFRESH_LOT';
+export const LOAD_NEWS = 'LOAD_NEWS';
+export const LOAD_DJS = 'LOAD_DJS';
 
 const setDate = ()=> {
   return new Date(Date.parse('2015/09/30 13:00:00'));
@@ -21,8 +24,25 @@ export default function(state = defaultState, action) {
       return state.delete(action.payload.id);
     case ADD_BID:
       return state;
+    case LOAD_NEWS:
+      var body = action.payload.body;
+      var newState = state.map(function(item, key){
+        if (key === 'news'){
+          return Immutable.fromJS(body);
+        }
+        return item;
+      });
+      return newState;
+    case LOAD_DJS:
+      var body = action.payload.body;
+      var newState = state.map(function(item, key){
+        if (key === 'djs'){
+          return Immutable.fromJS(body);
+        }
+        return item;
+      });
+      return newState;
     case REFRESH_LOT:
-      console.log('bid added by socket', action);
       var body = action.payload.body;
       return state.map(function(item){
         if (item.toObject().id == body.id){
@@ -130,6 +150,38 @@ export function refreshLot(body) {
     payload: {
       body: body
     }
+  };
+}
+
+export function loadNews(amount) {
+  return {
+    type: LOAD_NEWS,
+    payload: new Promise((resolve, reject) => {
+      request
+      .get('/api/news')
+      .end(function(err, res) {
+        if(err){
+          return reject(err);
+        }
+        resolve({body: res.body});
+      });
+    })
+  };
+}
+
+export function loadDjs(amount) {
+  return {
+    type: LOAD_DJS,
+    payload: new Promise((resolve, reject) => {
+      request
+      .get('/api/djs')
+      .end(function(err, res) {
+        if(err){
+          return reject(err);
+        }
+        resolve({body: res.body});
+      });
+    })
   };
 }
 

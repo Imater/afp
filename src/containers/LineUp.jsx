@@ -6,6 +6,9 @@ import LineUp from '../pages/LineUp';
 import {
   changeLanguage
 } from '../stores/i18';
+import {
+  loadDjs
+} from '../stores/todos';
 
 function mapStateToProps(state) {
   return {
@@ -18,7 +21,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    changeLanguage: (language) => dispatch(changeLanguage(language))
+    changeLanguage: (language) => dispatch(changeLanguage(language)),
+    loadDjs: (language) => dispatch(loadDjs(language))
   };
 }
 

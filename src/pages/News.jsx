@@ -20,7 +20,7 @@ class News extends Component {
   }
 
   componentWillMount() {
-    this.newsList = this.props.listData.get('news');
+    this.props.loadNews.bind(this, 600)();
   }
 
   componentDidMount() {
@@ -45,55 +45,65 @@ class News extends Component {
     }
   }
 
-  renderItem(news, key, language, boxProcent, box, isMain) {
+  renderItem(news, key, language, boxProcent, box, isMain, isAdmin) {
     const images = JSON.parse(news.get('images'));
-    const image = images.length ? images[images.length-1].name : undefined;
+    const image = images.length ? images[images.length-1].name : '';
     const group = news.get('group_name');
     const title = this.getTranslate(news, 'title', language);
 
     const defaultPreview = this.getTranslate(news, 'description', language)
-    const preview = this.getTranslate(news, 'description', language)
+    const preview = !isMain ? '' : this.getTranslate(news, 'description', language)
 
     const dateFormat = (dateString) => {
       return moment(dateString).locale(language).format('LL'); // padding
     }
     const date = dateFormat(news.get('date'));
     const boxProcentCorrected = boxProcent === 100 ? 50 : boxProcent;
+    const adminButton = isAdmin === true ? (
+      <Link to={`/admin/news/${news.get('item_id')}`}>
+        Редактировать новость
+      </Link>
+    ):(<div></div>);
     return (
       <div className="newsItem" key={key} style={{
         width: `${isMain ? 100 : boxProcent}%`,
         minHeight: box
       }}>
       <div className="wrapper">
-        <Link to={`/news/main/${news.get('item_id')}`}>
           <div className="newsBlock">
-            <div className='imageWrapper' style={{
-              width: isMain ? `${boxProcentCorrected}%` : 'auto',
-            }}>
-              <img className="image" src={`/upload/images/news/${image}`} />
-            </div>
-            <div className='info' style={{
-              width: isMain ? `${100-boxProcentCorrected}%` : 'auto',
-            }}>
-              <div className="group">
-                <span className="groupLink">{group}</span>
+              <Link to={`/news/main/${news.get('item_id')}`}>
+                <div className='imageWrapper' style={{
+                  width: isMain ? `${boxProcentCorrected}%` : 'auto',
+                }}>
+                  <img className="image" src={`/upload/images/news/${image}`} />
+                </div>
+              </Link>
+              <div className='info' style={{
+                width: isMain ? `${100-boxProcentCorrected}%` : 'auto',
+              }}>
+                <div className="group">
+                  <span className="groupLink">{group}</span>
+                </div>
+                <div className="title">
+                  <span className="titleLink">{title}</span>
+                </div>
+                <div className="preview">
+                  <span className="titleLink" dangerouslySetInnerHTML={{__html: preview}}></span>
+                </div>
+                <div className="date">{date}</div>
+                {
+                  adminButton
+                }
               </div>
-              <div className="title">
-                <span className="titleLink">{title}</span>
-              </div>
-              <div className="preview">
-                <span className="titleLink" dangerouslySetInnerHTML={{__html: preview}}></span>
-              </div>
-              <div className="date">{date}</div>
-            </div>
           </div>
-        </Link>
       </div>
     </div>
     );
   }
 
   render() {
+    const isAdmin = this.props.location.query ? this.props.location.query.admin === 'afp990990' : false;
+    this.newsList = this.props.listData.get('news');
     let count = parseInt(this.state.windowWidth / 400);
     if(count <= 0) {
       count = 1;
@@ -115,7 +125,7 @@ class News extends Component {
           {
             this.newsList.map((news, key) => {
               if(key === 0) {
-                return this.renderItem(news, key, language, boxProcent, box, 'main')
+                return this.renderItem(news, key, language, boxProcent, box, 'main', isAdmin)
               }
             })
           }
@@ -125,7 +135,7 @@ class News extends Component {
             {
               this.newsList.map((news, key) => {
                 if(key>0) {
-                  return this.renderItem(news, key, language, boxProcent, box)
+                  return this.renderItem(news, key, language, boxProcent, box, false, isAdmin)
                 }
               })
             }

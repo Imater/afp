@@ -6,6 +6,9 @@ import NewsContent from '../pages/NewsContent';
 import {
   changeLanguage
 } from '../stores/i18';
+import {
+  loadNews
+} from '../stores/todos';
 
 function mapStateToProps(state) {
   return {
@@ -18,7 +21,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    changeLanguage: (language) => dispatch(changeLanguage(language))
+    changeLanguage: (language) => dispatch(changeLanguage(language)),
+    loadNews: (language) => dispatch(loadNews(language))
   };
 }
 

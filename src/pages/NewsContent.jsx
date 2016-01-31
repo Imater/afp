@@ -36,6 +36,9 @@ class NewsContent extends Component {
   componentWillUnmount() {
     window.onresize = () => {};
   }
+  componentWillMount() {
+    this.props.loadNews.bind(this, 600)();
+  }
   getTranslate(news, translate_id, language) {
     if(language === 'eng' && news.get(translate_id+'_eng').length) {
       return news.get(translate_id+'_eng');
@@ -59,7 +62,6 @@ class NewsContent extends Component {
 
     const textPreview = this.getTranslate(news, 'content', language)
     const text = this.getTranslate(news, 'content', language)
-    console.info(text);
 
     const dateFormat = (dateString) => {
       return moment(dateString).locale(language).format('LL'); // padding
@@ -106,6 +108,11 @@ class NewsContent extends Component {
     this.news = newsList.find((item) => {
       return item.get('item_id') === parseInt(newsId);
     });
+    if(!this.news) {
+      return (
+        <div>Loading...</div>
+      );
+    }
     const title = this.getTranslate(this.news, 'title', language);
     const count = parseInt(this.state.windowWidth / 400);
     const box = parseInt((this.state.windowWidth-275)/count)/1.5;

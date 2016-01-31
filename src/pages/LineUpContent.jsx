@@ -80,6 +80,9 @@ class LineUpContent extends Component {
       windowWidth: window.innerWidth
     })
   }
+  componentWillMount() {
+    this.props.loadDjs.bind(this, 600)();
+  }
   componentWillUnmount() {
     window.onresize = () => {};
   }
@@ -93,6 +96,13 @@ class LineUpContent extends Component {
     let dj = djs.find((djOne) => {
       return djOne.get('id') === parseInt(this.props.params.id);
     });
+    if(!dj) {
+      return (
+        <div>
+          Loading...
+        </div>
+      );
+    }
     const title = dj.get(`title${lang}`);
     const preview = dj.get(`preview${lang}`);
     const text = dj.get(`description${lang}`);

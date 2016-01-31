@@ -1,17 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 
-class Test extends Component {
+class Admin extends Component {
 
   render() {
-    console.info('render test');
     return (
       <div>
-        <h1>
-          TEST WORKS
-        </h1>
+        {this.props.children}
       </div>
     );
   }
 }
 
-module.exports = Test;
+module.exports = Admin;

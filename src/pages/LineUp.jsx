@@ -68,6 +68,10 @@ class LineUp extends Component {
     }
   }
 
+  componentWillMount() {
+    this.props.loadDjs.bind(this, 600)();
+  }
+
   componentDidMount() {
     let self = this;
     window.onresize = function() {

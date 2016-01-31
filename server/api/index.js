@@ -2,6 +2,7 @@ import async from 'async';
 import db from '../models';
 import nodemailer from 'nodemailer';
 import smtpTransport from 'nodemailer-smtp-transport';
+import crypto from 'crypto';
 
 
 var api = {};
@@ -24,17 +25,51 @@ const addInfoToItems = function(items){
 
 const JSONify = (items) => items.map((item) => item.toJSON());
 
-api.getAllDjs = function(id){
+api.updateOneNews = function(item_id, body){
+  return new Promise((request, reject) => {
+    db.models.news.findOne({
+      where: {
+        item_id: item_id
+      }
+    }).then(function(news) {
+      news.updateAttributes(body.news).then(function(newsDb){
+        return request({
+          news: newsDb
+        });
+      }).catch(function(err){
+        return reject(err);
+      });
+    });
+  });
+};
+
+api.getAllDjs = function(limit=10000){
   return new Promise((request, reject) => {
     db.models.dj.findAll({
       where: {
         visible: 1
       },
-      order: [['stage', 'ASC'], ['order', 'ASC']],
+      order: [['id', 'DESC'], ['stage', 'ASC'], ['order', 'ASC']],
+      limit: limit
     }).then(function(djsFromDb){
       request(JSONify(djsFromDb));
     }).catch(function(err){
       console.error(err);
+    });
+  });
+};
+
+api.uploadImage = function(body){
+  return new Promise((request, reject) => {
+    var base64Data = body.image.replace(/^data:image\/png;base64,/, "");
+    var hash = crypto.createHash('md5').update(base64Data).digest('hex');
+    require("fs").writeFile("upload/images/news/" + hash + ".png", base64Data, 'base64', function(err) {
+      if(err) {
+        reject(err);
+      }
+      request({
+        name: hash + ".png"
+      });
     });
   });
 };
@@ -47,7 +82,7 @@ api.getTest = function(id){
   });
 };
 
-api.getNews = function(id){
+api.getNews = function(limit=600){
   return new Promise((request, reject) => {
     db.models.news.findAll({
       where: {
@@ -56,7 +91,7 @@ api.getNews = function(id){
       include: [
       ],
       order: [['date', 'DESC']],
-      limit: 600
+      limit: limit
     }).then(function(newsFromDb){
       request(JSONify(newsFromDb));
     }).catch(function(err){
@@ -98,7 +133,6 @@ api.updateNews = function(id){
       limit: 6000
     }).then(function(newsFromDb){
       async.eachLimit(newsFromDb, 10, function(news, callback){
-        console.info(news.title);
         var translate = function(news, key){
           var found = news.cms_lang_translate_values.find(function(el){ return el.translate_id === key});
           if(!found) {
@@ -117,12 +151,12 @@ api.updateNews = function(id){
         };
         var newsDb = news.toJSON();
         var newsItem = {
-          title: newsDb.title,
-          title_eng: translate(newsDb, 8),
-          content: content(newsDb, 'content'),
-          content_eng: translate(newsDb, 10) ,
-          description: content(newsDb, 'description'),
-          description_eng: translate(newsDb, 9) ,
+          title: newsDb.title.replace(/\\"/g, '"'),
+          title_eng: translate(newsDb, 8).replace(/\\"/g, '"'),
+          content: content(newsDb, 'content').replace(/\\"/g, '"'),
+          content_eng: translate(newsDb, 10).replace(/\\"/g, '"') ,
+          description: content(newsDb, 'description').replace(/\\"/g, '"'),
+          description_eng: translate(newsDb, 9).replace(/\\"/g, '"') ,
           images: JSON.stringify(newsDb.cms_news_item_images),
           enabled: newsDb.enabled,
           group_name: newsDb.group_name,
@@ -130,7 +164,6 @@ api.updateNews = function(id){
           date: newsDb.date
         };
         db.models.news.create(newsItem).then(function(newNews){
-          console.info(newsItem);
           callback();
         }).catch(function(err){
           console.error(err);

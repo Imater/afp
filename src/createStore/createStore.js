@@ -3,13 +3,16 @@ import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import promiseMiddleware from 'redux-promise';
 import * as reducers from '../stores';
 import * as i18n from '../i18n';
+import {reducer as formReducer} from 'redux-form';
 
 export default function createAppStore(initialState){
   const finalCreateStore = compose(
     applyMiddleware(promiseMiddleware),
-    //devTools()
+    //devTools,
     //persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/)),
   )(createStore);
+
+  reducers.form = formReducer;
 
   const reducer = combineReducers(reducers);
   var store;

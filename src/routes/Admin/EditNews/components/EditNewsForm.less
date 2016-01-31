@@ -1,0 +1,51 @@
+.EditNewsForm {
+  padding: 30px;
+  .space-row {
+    height: 20px;
+  }
+  .form-row {
+    margin: 10px 0;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 5px 10px;
+  }
+  label {
+    color: #FFF;
+  }
+  .editor {
+    margin: 10px 0;
+    label {
+      color: #EEE;
+    }
+    .quill-toolbar {
+      background: #EEE;
+    }
+    .ql-container {
+      background: #FFF;
+    }
+    &.description {
+      .ql-container {
+        height: 100px;
+      }
+    }
+    &.content {
+      .ql-container {
+        height: 200px;
+      }
+    }
+  }
+  button {
+    padding: 10px 20px;
+    margin-right: 30px;
+    border: none;
+    border-radius: 3px;
+    &.green {
+      background-color: #BFC9FF;
+      font-weight: bold;
+    }
+    &.gray {
+      background-color: #A4A4A4;
+    }
+  }
+}

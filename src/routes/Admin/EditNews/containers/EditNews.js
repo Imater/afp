@@ -1,18 +1,16 @@
 import { connect } from 'react-redux';
 
-import LineUpContent from '../pages/LineUpContent';
+import EditNews from '../components/EditNews.jsx';
 
 // Actions
 import {
-  changeLanguage
-} from '../stores/i18';
-import {
-  loadDjs
-} from '../stores/todos';
+  loadNews
+} from '../../../../stores/todos';
 
 function mapStateToProps(state) {
   return {
     listData: state.todos,
+    form: state.form,
     language: state.i18.toObject ? state.i18.toObject().language : state.i18.language,
     user: state.user.toObject ? state.user.toObject() : state.user,
     options: state.options
@@ -21,9 +19,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    changeLanguage: (language) => dispatch(changeLanguage(language)),
-    loadDjs: (language) => dispatch(loadDjs(language))
+    loadNews: (limit) => dispatch(loadNews(limit)),
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LineUpContent);
+module.exports = connect(mapStateToProps, mapDispatchToProps)(EditNews);

@@ -144,7 +144,7 @@ class About extends Component {
           <Mobile>
             <div className="buy-ticket-mobile">
               <Link className="ticket" to='/ticket'>{i18n.t('menu.buyTicket')}</Link>
-              <a className="tour" target="_blank" href='http://viptravelnn.wikiplanet.ru/tour/komfortniy_tur_na_mejdunarodniy_festival_elektronnoy_muziki_i_tehnologiy_alfa_future_people_2016?month_at=07.2016&month_to=07.2016&decodeNums=2&chosenDates=' className="buy-tour">{i18n.t('menu.buyTour')}</a>
+              <a target="_blank" href='http://viptravelnn.wikiplanet.ru/tour/komfortniy_tur_na_mejdunarodniy_festival_elektronnoy_muziki_i_tehnologiy_alfa_future_people_2016?month_at=07.2016&month_to=07.2016&decodeNums=2&chosenDates=' className="buy-tour tour">{i18n.t('menu.buyTour')}</a>
             </div>
             <div className="plus18">18+</div>
           </Mobile>

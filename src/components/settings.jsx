@@ -229,10 +229,6 @@ export const menuItems = [
     title: 'menu.contacts',
     url: '/contacts',
   },
-  {
-    title: 'admin.name',
-    url: '/admin',
-  },
 ];
 
 export const lineUpItems = {

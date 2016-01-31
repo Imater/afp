@@ -6,5 +6,12 @@ module.exports = {
     require.ensure([], (require) => {
       cb(null, require('./containers/Admin'))
     })
-  }
+  },
+  getChildRoutes(location, cb) {
+    require.ensure([], (require) => {
+      cb(null, [
+        require('./EditNews/index.js')
+      ])
+    })
+  },
 }

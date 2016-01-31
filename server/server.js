@@ -40,8 +40,8 @@ if (!isTest){
 }
 process.env.__DEVELOPMENT__ = !isProduction;
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({limit: '5mb'}));
+app.use(bodyParser.urlencoded({ extended: true, limit: '5mb' }));
 app.use(cookieParser());
 
 app.use('/assets', express.static(path.join(__dirname, '..', 'assets')));
@@ -83,9 +83,9 @@ app.use((req, res, next) => {
       res.send(404, 'Not found');
     } else {
       Promise.all([
-        api.getAllDjs(),
-        api.getNews(),
-        api.getGallery()
+        api.getAllDjs(10),
+        api.getNews(10),
+        api.getGallery(0)
       ]).then(function(results){
         const store = createAppStore({
           todos: fromJS({
