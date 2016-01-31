@@ -12,32 +12,40 @@ import Mobile from '../Mobile';
 
 class About extends Component {
   state = {
-    isMobile: isMobile(),
+    isMobile: typeof window === 'undefined' ? true : isMobile(),
     silence: true
   };
 
   componentDidMount () {
-    var video = this.refs.video;
     this.isMobile = isMobile();
-    if(!this.isMobile) {
-      this.playSilence()
-    }
-    video.addEventListener('ended', () => {
-      if(!this.state.silence) {
-        this.stopPlay();
-      } else {
-        this.stopPlay();
+    setTimeout(()=>{
+      if(!this.refs.video) {
+        return;
       }
-    });
+      var video = this.refs.video;
+      if(!this.isMobile) {
+        this.playSilence()
+      }
+      video.addEventListener('ended', () => {
+        if(!this.state.silence) {
+          this.stopPlay();
+        } else {
+          this.stopPlay();
+        }
+      });
+    }, 0);
   }
 
   stopPlay() {
     $('html').removeClass('hide-bg').removeClass('play');
-    this.refs.video.currentTime = 0;;
+    this.refs.video.currentTime = 0;
     this.refs.video.load();
   }
 
   playSilence () {
+    if(!this.refs.video || this.isMobile) {
+      return;
+    }
     if(this.refs.video.paused) {
       this.refs.video.play();
       this.refs.video.muted = true;
@@ -52,7 +60,11 @@ class About extends Component {
   }
 
   play () {
+    if(!this.refs.video) {
+      return;
+    }
     if(this.refs.video.paused || this.state.silence) {
+      this.refs.video.currentTime = 0;
       this.refs.video.play();
       this.refs.video.muted = false;
       this.setState({
@@ -78,7 +90,7 @@ class About extends Component {
     const marginDate = 0; //  tween(scrollY, [[0, 0], [screenHeight/2, 0], [screenHeight*0.8, -screenHeight/2]]);
     const historyMargin = 0; //  tween(scrollY, [[0, screenWidth], [screenHeight*0.5, 0]]);
     const historyOpacity = this.state.isMobile ? 1 : tween(scrollY, [[0, 0], [screenHeightCorrected*0.8, 0.2], [screenHeightCorrected*1, 1]]);
-    const historyScale = this.state.isMobile ? 1 : tween(scrollY, [[0, 0.85], [screenHeightCorrected*0.4, 0.85], [screenHeightCorrected*0.6, 1.05], [screenHeightCorrected*0.8, 1]]);
+    const historyScale = 1; //this.state.isMobile ? 1 : tween(scrollY, [[0, 0.85], [screenHeightCorrected*0.4, 0.85], [screenHeightCorrected*0.6, 1.05], [screenHeightCorrected*0.8, 1]]);
     const footerOpacity = this.state.isMobile ? 1 :tween(scrollY, [[0, 1], [screenHeightCorrected*2, 1], [screenHeightCorrected*2.1, 0]]);
     const isHide =scrollY > 2 * screenHeightCorrected;
     return (
@@ -108,9 +120,13 @@ class About extends Component {
           </div>
           <div className="row logoBlock">
             <div className="fullscreen-bg">
-              <video ref="video" className="bg-video">
-                <source src="assets/video/afp.mp4" type="video/mp4" />
-              </video>
+              <Mobile mobile={false} >
+                <video ref="video" className="bg-video">
+                  <source src="assets/video/afp.mp4" type="video/mp4" />
+                  <source src="assets/video/afp.ogg" type="video/ogg" />
+                  <source src="assets/video/afp.webm" type="video/webm" />
+                </video>
+              </Mobile>
             </div>
             <div className="left-col padding-left-50 hide-on-video float-left" style={{
             }}>

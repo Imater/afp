@@ -11,6 +11,14 @@ apiRoutes.get('/hello', (req, res) => {
   res.end('hello');
 });
 
+apiRoutes.get('/test', (req, res) => {
+  console.info('test');
+  api.getTest().then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
 
 apiRoutes.get('/bid', (req, res) => {
   console.info('get bid');

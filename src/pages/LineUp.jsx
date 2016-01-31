@@ -118,7 +118,9 @@ class LineUp extends Component {
                       <Link to="/lineup/2016/main/134" onClick={this._disableIfScroll.bind(this)}>
                         <li className="dj2"></li>
                       </Link>
-                      <li className="dj3"></li>
+                      <Link to="/lineup/2016/main/138" onClick={this._disableIfScroll.bind(this)}>
+                        <li className="dj3"></li>
+                      </Link>
                       <li className="dj4"></li>
                       <li className="dj5"></li>
                       <li className="dj6"></li>

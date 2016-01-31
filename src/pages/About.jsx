@@ -25,9 +25,8 @@ class About extends Component {
   };
   render() {
     const {language} = this.props;
-    const screenWidth = process.env.BROWSER ? window.innerWidth : 1200;
+    const screenWidth = typeof window !== 'undefined' ? window.innerWidth : 1200;
     const paddingLeft = (screenWidth - 720 - 250 - 40) / 2;
-    console.info(paddingLeft);
     return (
       <div className="About">
         <TopPageMenu

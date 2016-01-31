@@ -39,6 +39,14 @@ api.getAllDjs = function(id){
   });
 };
 
+api.getTest = function(id){
+  return new Promise((request, reject) => {
+    const indexHtml = fs.readFileSync(path.join(__dirname, '..', 'assets', 'index.html'), { encoding: 'utf-8' });
+    console.info(indexHtml);
+    request({done: indexHtml})
+  });
+};
+
 api.getNews = function(id){
   return new Promise((request, reject) => {
     db.models.cms_news_item.findAll({
