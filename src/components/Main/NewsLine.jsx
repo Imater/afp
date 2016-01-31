@@ -32,27 +32,22 @@ class NewsLine extends Component {
     this.newsList = this.props.listData.get('news').setSize(10);
   }
 
-  getTranslate(news, translate_id, language, defaultValue) {
-    if(language === 'eng') {
-      let text = news.get('cms_lang_translate_values').find((item) => {
-        return item.get('translate_id') === translate_id;
-      });
-      if(text && text.get('value') && text.get('value').length) {
-        return text.get('value');
-      }
+  getTranslate(news, translate_id, language) {
+    if(language === 'eng' && news.get(translate_id+'_eng').length) {
+      return news.get(translate_id+'_eng');
+    } else {
+      return news.get(translate_id+'');
     }
-    return defaultValue;
   }
 
   renderItem(news, key, language) {
-    const image = news.get('cms_news_item_images').last().get('name');
+    const images = JSON.parse(news.get('images'));
+    const image = images.length ? images[images.length-1].name : undefined;
     const group = news.get('group_name');
-    const title = this.getTranslate(news, 8, language, news.get('title'));
+    const title = this.getTranslate(news, 'title', language);
 
-    const defaultPreview = news.get('cms_news_item_data').filter((item) => {
-      return item.get('key') === 'description'
-    }).first().get('data');
-    const preview = this.getTranslate(news, 9, language, defaultPreview)
+    const defaultPreview = this.getTranslate(news, 'description', language)
+    const preview = this.getTranslate(news, 'description', language)
 
     const dateFormat = (dateString) => {
       return moment(dateString).locale(language).format('LL'); // padding

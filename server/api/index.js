@@ -49,6 +49,24 @@ api.getTest = function(id){
 
 api.getNews = function(id){
   return new Promise((request, reject) => {
+    db.models.news.findAll({
+      where: {
+        enabled: true
+      },
+      include: [
+      ],
+      order: [['date', 'DESC']],
+      limit: 600
+    }).then(function(newsFromDb){
+      request(JSONify(newsFromDb));
+    }).catch(function(err){
+      console.error(err);
+    });
+  });
+};
+
+api.updateNews = function(id){
+  return new Promise((request, reject) => {
     db.models.cms_news_item.findAll({
       where: {
         enabled: true
@@ -77,9 +95,50 @@ api.getNews = function(id){
         }
       ],
       order: [['date', 'DESC']],
-      limit: 60
+      limit: 6000
     }).then(function(newsFromDb){
-      request(JSONify(newsFromDb));
+      async.eachLimit(newsFromDb, 10, function(news, callback){
+        console.info(news.title);
+        var translate = function(news, key){
+          var found = news.cms_lang_translate_values.find(function(el){ return el.translate_id === key});
+          if(!found) {
+            return '';
+          } else {
+            return found.value;
+          }
+        };
+        var content = function(news, key){
+          var found = news.cms_news_item_data.find(function(el){ return el.key === key});
+          if(!found) {
+            return '';
+          } else {
+            return found.data;
+          }
+        };
+        var newsDb = news.toJSON();
+        var newsItem = {
+          title: newsDb.title,
+          title_eng: translate(newsDb, 8),
+          content: content(newsDb, 'content'),
+          content_eng: translate(newsDb, 10) ,
+          description: content(newsDb, 'description'),
+          description_eng: translate(newsDb, 9) ,
+          images: JSON.stringify(newsDb.cms_news_item_images),
+          enabled: newsDb.enabled,
+          group_name: newsDb.group_name,
+          showdate: newsDb.showdate,
+          date: newsDb.date
+        };
+        db.models.news.create(newsItem).then(function(newNews){
+          console.info(newsItem);
+          callback();
+        }).catch(function(err){
+          console.error(err);
+          callback(err);
+        })
+      }, function(){
+        request(JSONify(newsFromDb));
+      })
     }).catch(function(err){
       console.error(err);
     });
@@ -351,5 +410,5 @@ api.soldBid = function(body){
   });
 };
 
-export default api;
+module.exports = api;
 

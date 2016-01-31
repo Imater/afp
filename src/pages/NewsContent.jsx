@@ -36,16 +36,12 @@ class NewsContent extends Component {
   componentWillUnmount() {
     window.onresize = () => {};
   }
-  getTranslate(news, translate_id, language, defaultValue) {
-    if(language === 'eng') {
-      let text = news.get('cms_lang_translate_values').find((item) => {
-        return item.get('translate_id') === translate_id;
-      });
-      if(text && text.get('value') && text.get('value').length) {
-        return text.get('value');
-      }
+  getTranslate(news, translate_id, language) {
+    if(language === 'eng' && news.get(translate_id+'_eng').length) {
+      return news.get(translate_id+'_eng');
+    } else {
+      return news.get(translate_id+'');
     }
-    return defaultValue;
   }
   renderItem(news, key, language, boxProcent, box, isMain) {
     if(!news) {
@@ -53,19 +49,17 @@ class NewsContent extends Component {
         <div>Новость не найдена</div>
       );
     }
-    const images = news.get('cms_news_item_images');
+    const images = JSON.parse(news.get('images'));
+    const title = this.getTranslate(news, 'title', language);
+
     const group = news.get('group_name');
-    const title = this.getTranslate(news, 8, language, news.get('title'));
 
-    const defaultPreview = news.get('cms_news_item_data').filter((item) => {
-      return item.get('key') === 'description'
-    }).first().get('data');
-    const preview = !isMain ? '' : this.getTranslate(news, 9, language, defaultPreview)
+    const defaultPreview = this.getTranslate(news, 'description', language)
+    const preview = this.getTranslate(news, 'description', language)
 
-    const textDefault = news.get('cms_news_item_data').find((item) => {
-      return item.get('key') === 'content'
-    }).get('data').replace(/\\/ig, '');
-    const text = !isMain ? '' : this.getTranslate(news, 10, language, textDefault)
+    const textPreview = this.getTranslate(news, 'content', language)
+    const text = this.getTranslate(news, 'content', language)
+    console.info(text);
 
     const dateFormat = (dateString) => {
       return moment(dateString).locale(language).format('LL'); // padding
@@ -81,7 +75,7 @@ class NewsContent extends Component {
           url: 'http://alfafuture.com', //(typeof window === 'undefined') ? '' : window.location.href,
           title: title,
           descr: preview,
-          img_url: `http://alfafuture.com/images/news/${images.last().get('name')}`
+          img_url: `http://alfafuture.com/images/news/${images.length ? images[images.length-1].name : ''}`
         }} />
         <div className="wrapper">
           <div className="newsBlock">
@@ -92,7 +86,7 @@ class NewsContent extends Component {
             {
               images.map((image, key) => {
                 return (
-                  <img key={key} src={`/upload/images/news/${image.get('name')}`} onError={() => {
+                  <img key={key} src={`/upload/images/news/${image.name}`} onError={() => {
                   }}/>
                 );
               })
@@ -108,15 +102,14 @@ class NewsContent extends Component {
 
   render() {
     const newsList = this.props.listData.get('news');
-    const { params: {newsId} } = this.props;
+    const { language, params: {newsId} } = this.props;
     this.news = newsList.find((item) => {
       return item.get('item_id') === parseInt(newsId);
     });
-    const title = this.getTranslate(this.news, 8, language, this.news.get('title'));
+    const title = this.getTranslate(this.news, 'title', language);
     const count = parseInt(this.state.windowWidth / 400);
     const box = parseInt((this.state.windowWidth-275)/count)/1.5;
     const boxProcent = 100/count;
-    const { language } = this.props;
     const types = typesNews;
     return (
       <div className="page NewsContent" id="lineup">

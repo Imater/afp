@@ -79,7 +79,104 @@ function scrollTop() {
   }
 }
 
-export default (
+const routeConfig = [
+  {
+    path: '/',
+    component: App,
+    indexRoute: {
+      component: Main
+    },
+    childRoutes: [
+      require('./Admin'),
+      {
+        name: "lineup",
+        path: '/lineup(/:year)(/:part)',
+        component: LineUp,
+        onEnter: defaultPath('2016/main'),
+      },
+      {
+        name: "lineup",
+        path: '/lineup(/:year)(/:part)(/:id)',
+        component: LineUpContent,
+        onEnter: scrollTop(),
+      },
+      {
+        path: '/about(/:part)',
+        component: About,
+        onEnter: defaultPath('map'),
+        childRoutes: [
+          {
+            path: 'rules',
+            component: Rules
+          }
+        ],
+      },
+      {
+        path: '/faq',
+        component: Faq,
+      },
+      {
+        path: '/store',
+        component: Store,
+      },
+      {
+        path: '/technology(/:part)',
+        component: Technology,
+        onEnter: defaultPath('virtuality')
+      },
+      {
+        path: '/sport(/:part)',
+        component: Sport,
+        onEnter: defaultPath('workout')
+      },
+      {
+        path: '/news(/:part)',
+        component: News,
+        onEnter: defaultPath('main')
+      },
+      {
+        path: '/news(/:part)(/:newsId)',
+        component: NewsContent,
+        onEnter: scrollTop()
+      },
+      {
+        path: '/partners(/:part)',
+        component: Partners,
+        onEnter: defaultPath('main')
+      },
+      {
+        path: '/media(/:part)',
+        component: Media,
+        onEnter: defaultPath('2015')
+      },
+      {
+        path: '/media/:part/:album/all/images',
+        component: AlbumAll
+      },
+      {
+        path: '/media(/:part)(/:album)(/:photo)',
+        component: Album
+      },
+      {
+        path: '/media(/:part)(/:album)(/:photo)/all/images/one',
+        component: Album
+      },
+      {
+        path: '/contacts(/:part)',
+        component: Contacts,
+        onEnter: defaultPath('main')
+      },
+      {
+        path: '/ticket',
+        component: Ticket,
+      },
+    ]
+  }
+];
+
+export default routeConfig;
+
+export const old = (
   <Route path='/' component={App} scrollStrategy='imitateBrowser'>
     <IndexRoute component={Main}/>
     <Route name="lineup" path='/lineup(/:year)(/:part)' component={LineUp} onEnter={defaultPath('2016/main')}/>
@@ -93,6 +190,7 @@ export default (
     <Route path='/sport(/:part)' component={Sport} onEnter={defaultPath('workout')} />
     <Route path='/news(/:part)' component={News} onEnter={defaultPath('main')} />
     <Route path='/news(/:part)(/:newsId)' component={NewsContent} onEnter={scrollTop()} />
+
     <Route path='/partners(/:part)' component={Partners} onEnter={defaultPath('main')} />
     <Route path='/media(/:part)' component={Media} onEnter={defaultPath('2015')} />
     <Route path='/media/:part/:album/all/images' component={AlbumAll} />

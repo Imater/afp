@@ -30,15 +30,16 @@ module.exports = {
 
   output: {
     path: '/build/',
-    filename: 'bundle.js',
+    filename: '[name].js',
+    chunkFilename: '[id].chunk.js',
     publicPath: '/build/'
   },
 
   module: {
     loaders: [
       {
-        test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.(jsx|js)?$/,
+        exclude: /(node_modules|bower_components|server)/,
         loaders: ['react-hot', 'babel?compact=false']
       },
       {
@@ -51,11 +52,11 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
-        loader: 'url?limit=98192'
+        loader: 'url?limit=1000'
       },
       {
         test : /\.(woff|woff2|ttf|eot)$/,
-        loader: 'url'
+        loader: 'url?limit=1000'
       }
     ],
   },
@@ -64,6 +65,9 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx', '.css', '.scss'],
     alias: {
+      'isomorphic-ensure': 'isomorphic-ensure/mock',
+      'raw-loader': 'isomorphic-ensure/mock',
+      'json-loader': 'isomorphic-ensure/mock',
     }
   },
 
@@ -72,6 +76,7 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin('shared.js'),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {

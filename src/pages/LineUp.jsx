@@ -13,6 +13,7 @@ if (process.env.BROWSER) {
   require('./Lineup.less');
 }
 
+
 const scenes = [
   {
     id: 1,

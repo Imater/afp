@@ -35,7 +35,6 @@ const isProduction = process.env.NODE_ENV === 'production';
 const isTest = process.env.NODE_ENV === 'test';
 const app = express();
 
-
 if (!isTest){
   process.env.BROWSER = false;
 }

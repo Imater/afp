@@ -27,7 +27,8 @@ module.exports = {
 
   output: {
     path: 'build/',
-    filename: 'bundle.js',
+    chunkFilename: '[id].chunk.js',
+    filename: '[name].js',
     publicPath: '/build/'
   },
 
@@ -64,6 +65,9 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx', '.css', '.scss'],
     alias: {
+      'isomorphic-ensure': 'isomorphic-ensure/mock',
+      'raw-loader': 'isomorphic-ensure/mock',
+      'json-loader': 'isomorphic-ensure/mock',
     }
   },
 
@@ -72,6 +76,7 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin('shared.js'),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({

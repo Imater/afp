@@ -2,6 +2,9 @@ import i18n from 'i18next-client';
 const resources = {
   ru: {
     translation: {
+      admin: {
+        name: 'Админ.панель'
+      },
       ticket: {
         itog: 'Итого:',
         tickets: 'Билетов:',
@@ -116,6 +119,9 @@ const resources = {
   },
   eng: {
     translation: {
+      admin: {
+        name: 'Admin panel'
+      },
       ticket: {
         itog: 'Sum:',
         tickets: 'Tickets:',
