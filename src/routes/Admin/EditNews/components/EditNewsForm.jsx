@@ -12,6 +12,7 @@ export const fields = [
   'images',
   'title',
   'title_eng',
+  'date'
 ];
 
 if (process.env.BROWSER === true) {
@@ -24,6 +25,7 @@ class SimpleForm extends Component {
     fields: PropTypes.object.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     resetForm: PropTypes.func.isRequired,
+    deleteNews: PropTypes.func,
     submitting: PropTypes.bool.isRequired
   };
 
@@ -48,9 +50,11 @@ class SimpleForm extends Component {
         images,
         title,
         title_eng,
+        date
       },
       handleSubmit,
       resetForm,
+      deleteNews,
       submitting
     } = this.props;
     return (
@@ -66,6 +70,10 @@ class SimpleForm extends Component {
             <div className="form-row">
               <label>Название (english)</label>
               <input type="text" placeholder="Title" {...title_eng}/>
+            </div>
+            <div className="form-row">
+              <label>Дата</label>
+              <input type="text" placeholder="2017-01-31 12:30:30" {...date}/>
             </div>
             <div className="space-row"></div>
             <div className="editor description">
@@ -113,6 +121,15 @@ class SimpleForm extends Component {
             <button className="gray" type="button" disabled={submitting} onClick={resetForm}>
               Отменить изменения
             </button>
+            {
+              deleteNews ? (
+                <button className="red" type="button" disabled={submitting} onClick={deleteNews}>
+                  Удалить новость
+                </button>
+              ) : (
+                <div></div>
+              )
+            }
           </div>
         </form>
       </div>

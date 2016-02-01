@@ -8,7 +8,7 @@ if (process.env.BROWSER === true) {
 
 class ImagesUpload extends Component {
   state = {
-    scale: 1.2
+    scale: 1.05
   };
   _remove(image) {
     const { value } = this.props;
@@ -68,9 +68,9 @@ class ImagesUpload extends Component {
           <div>
             <AvatarEditor
               ref="editor"
-              image="http://localhost:3001/upload/images/news/GRwdRTnh84U.jpg"
-              width={400}
-              height={264}
+              image="/upload/images/news/c47cb7f47b5215af.jpg"
+              width={600}
+              height={396}
               border={50}
               color={[255, 255, 255, 0.6]} // RGBA
               scale={this.state.scale} />

@@ -8,6 +8,7 @@ import TopPageMenu from '../components/TopPageMenu';
 import { newsItems, typesNews } from '../components/settings';
 import Footer from '../components/Main/Footer';
 import moment from 'moment';
+import classnames from 'classnames';
 
 if (process.env.BROWSER) {
   require('./News.less');
@@ -65,9 +66,11 @@ class News extends Component {
       </Link>
     ):(<div></div>);
     return (
-      <div className="newsItem" key={key} style={{
+      <div className={classnames("newsItem", {
+        'disabled': !news.get('enabled')
+       })} key={key} style={{
         width: `${isMain ? 100 : boxProcent}%`,
-        minHeight: box
+        minHeight: box,
       }}>
       <div className="wrapper">
           <div className="newsBlock">
@@ -103,7 +106,18 @@ class News extends Component {
 
   render() {
     const isAdmin = this.props.location.query ? this.props.location.query.admin === 'afp990990' : false;
-    this.newsList = this.props.listData.get('news');
+    const addNewsButton = isAdmin ? (
+      <div className="newsItem">
+        <div className="wrapper">
+          <Link to="/admin/news/add">
+            Добавить новость
+          </Link>
+        </div>
+      </div>
+    ) : (<div></div>);
+    this.newsList = this.props.listData.get('news').filter((item) => {
+      return item.get('enabled') === true || isAdmin;
+    });
     let count = parseInt(this.state.windowWidth / 400);
     if(count <= 0) {
       count = 1;
@@ -122,6 +136,9 @@ class News extends Component {
       <div className="page News" id="lineup">
         <TopPageMenu items={newsItems} language={language} />
         <div className="newsItems main">
+          {
+            addNewsButton
+          }
           {
             this.newsList.map((news, key) => {
               if(key === 0) {

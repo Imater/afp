@@ -39,6 +39,37 @@ api.updateOneNews = function(item_id, body){
       }).catch(function(err){
         return reject(err);
       });
+    }).catch(function(err){
+      return reject(err);
+    });
+  });
+};
+
+api.addOneNews = function(body){
+  return new Promise((request, reject) => {
+    db.models.news.create(body.news).then(function(newsDb) {
+      return request({
+        news: newsDb
+      });
+    }).catch(function(err){
+      return reject(err);
+    });
+  });
+};
+
+api.deleteOneNews = function(item_id){
+  return new Promise((request, reject) => {
+    db.models.news.destroy({
+      where: {
+        item_id: item_id
+      }
+    }).then(function(news) {
+      console.info('remove', news);
+      return request({
+        news: news
+      });
+    }).catch(function(err){
+      return reject(err);
     });
   });
 };
@@ -85,9 +116,6 @@ api.getTest = function(id){
 api.getNews = function(limit=600){
   return new Promise((request, reject) => {
     db.models.news.findAll({
-      where: {
-        enabled: true
-      },
       include: [
       ],
       order: [['date', 'DESC']],

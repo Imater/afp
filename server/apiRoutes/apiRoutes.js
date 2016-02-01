@@ -27,6 +27,22 @@ apiRoutes.post('/news/update/:id', (req, res) => {
   });
 });
 
+apiRoutes.put('/news/add', (req, res) => {
+  api.addOneNews(req.body).then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
+apiRoutes.delete('/news/delete/:id', (req, res) => {
+  api.deleteOneNews(req.params.id).then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
 apiRoutes.get('/test', (req, res) => {
   console.info('test');
   api.getTest().then(function(result){
