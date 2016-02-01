@@ -29,14 +29,16 @@ class NewsLine extends Component {
   }
 
   componentWillMount() {
-    this.newsList = this.props.listData.get('news').setSize(10);
+    this.newsList = this.props.listData.get('news').filter((item) => {
+      return item.get('enabled') === true;
+    }).setSize(10);
   }
 
   getTranslate(news, translate_id, language) {
     if(language === 'eng' && news.get(translate_id+'_eng').length) {
-      return news.get(translate_id+'_eng');
+      return news.get(translate_id+'_eng').replace(/\\"/g, '"');;
     } else {
-      return news.get(translate_id+'');
+      return news.get(translate_id+'').replace(/\\"/g, '"');;
     }
   }
 
