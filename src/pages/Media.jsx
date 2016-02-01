@@ -17,7 +17,7 @@ if (process.env.BROWSER) {
 class Media extends Component {
   state = {
     windowWidth: ((typeof window === "object") ? window.innerWidth : 1024)
-  }
+  };
 
   componentWillMount() {
     const galleries = this.props.listData.get('gallery');

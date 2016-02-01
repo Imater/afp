@@ -12,7 +12,7 @@ class Mobile extends Component {
   state = {
     mobileWidth: 737,
     screenWidth: 0
-  }
+  };
 
   static propTypes = {
     mobile: PropTypes.bool,

@@ -9,7 +9,7 @@ class NewsLine extends Component {
 
   state = {
     disableClick: false
-  }
+  };
 
   disableClick() {
     this.setState({

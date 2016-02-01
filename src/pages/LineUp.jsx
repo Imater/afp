@@ -49,7 +49,7 @@ class LineUp extends Component {
   state = {
     windowWidth: ((typeof window === "object") ? window.innerWidth : 1024),
     disableClick: false
-  }
+  };
 
   disableClick() {
     this.setState({

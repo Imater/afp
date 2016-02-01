@@ -18,7 +18,7 @@ if (process.env.BROWSER) {
 class News extends Component {
   state = {
     windowWidth: ((typeof window === 'object') ? window.innerWidth : 1024)
-  }
+  };
 
   componentWillMount() {
     this.props.loadNews.bind(this, 600)();

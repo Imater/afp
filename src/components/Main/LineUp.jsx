@@ -8,7 +8,7 @@ import Scrollable from '../Scrollable';
 class Lineup extends Component {
   state = {
     disableClick: false
-  }
+  };
 
   disableClick() {
     this.setState({

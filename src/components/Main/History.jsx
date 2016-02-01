@@ -61,7 +61,7 @@ const params = [
 class History extends Component {
   state = {
     tab: '2015'
-  }
+  };
 
   selectTab(tab) {
     this.setState({

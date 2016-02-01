@@ -68,7 +68,7 @@ const scenes = [
 class LineUpContent extends Component {
   state = {
     windowWidth: ((typeof window === "object") ? window.innerWidth : 1024)
-  }
+  };
   componentDidMount() {
     let self = this;
     window.onresize = function() {

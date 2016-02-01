@@ -12,7 +12,7 @@ class Counter extends Component {
       hours: 0,
       minutes: 0
     }
-  }
+  };
 
   componentDidMount() {
     this.interval = setInterval(this.tick.bind(this), 30000);

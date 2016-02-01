@@ -10,7 +10,7 @@ if (process.env.BROWSER) {
 class Gallery extends Component {
   state = {
     index: 0
-  }
+  };
 
   nextSlide(increment = 1) {
     if(!this.props.images) {

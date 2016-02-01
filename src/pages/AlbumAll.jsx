@@ -18,7 +18,7 @@ if (process.env.BROWSER) {
 class AlbumAll extends Component {
   state = {
     windowWidth: ((typeof window === 'object') ? window.innerWidth : 1024)
-  }
+  };
 
   componentWillMount() {
     const galleries = this.props.listData.get('gallery');
