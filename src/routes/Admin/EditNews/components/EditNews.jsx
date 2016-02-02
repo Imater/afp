@@ -9,7 +9,10 @@ class EditNews extends Component {
   }
 
   handleUpdateSubmit(data) {
-    const newNews = _.merge(this.news.toJS(), data);
+    let newNews = _.merge(this.news.toJS(), data);
+    if(!newNews.images) {
+      newNews.images = '[]';
+    }
     const self = this;
     $.ajax({
       url: '/api/news/update/'+newNews.item_id,
@@ -45,7 +48,10 @@ class EditNews extends Component {
   }
 
   handleAddSubmit(data) {
-    const newNews = _.merge(this.newsNew, data);
+    let newNews = _.merge(this.newsNew, data);
+    if(!newNews.images) {
+      newNews.images = JSON.stringify([]);
+    }
     const self = this;
     $.ajax({
       url: '/api/news/add',
@@ -73,7 +79,7 @@ class EditNews extends Component {
         description: '',
         description_eng: '',
         enabled: false,
-        images: [],
+        images: '[]',
         group_name: 'AFP2016',
         date: new Date()
       };
