@@ -19,6 +19,7 @@ class Faq extends Component {
     return (
 
       <div className="Faq">
+        <Link to="/about" className="close-page"></Link>
 
         <div className="Faq-inner">
           <div className="content">

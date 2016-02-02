@@ -266,7 +266,7 @@ class About extends Component {
 
             }
             {
-              language === 'ru_off' ? (
+              language === 'ru' ? (
                 <Link className="aboutCategory-item aboutCategory-item--3" to="/faq">
                   <img className="aboutCategory-img" src="/assets/img/about/icon-messages.svg" width="73"/>
                   <span className="aboutCategory-label">{'FAQ'}</span>

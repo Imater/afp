@@ -31,7 +31,9 @@ class NewsLine extends Component {
   componentWillMount() {
     this.newsList = this.props.listData.get('news').filter((item) => {
       return item.get('enabled') === true;
-    }).setSize(10);
+    }).filter((el, key) => {
+      return key <= 10;
+    });
   }
 
   getTranslate(news, translate_id, language) {
