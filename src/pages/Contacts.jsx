@@ -16,26 +16,31 @@ if (process.env.BROWSER) {
 
 class Contacts extends Component {
   render() {
+    let mapAddress = false ? (
+      <Map center={
+        {lat: 55.694488, lng: 37.662083}
+      } markers={[
+        {
+          position: {
+            lat: 55.694488, lng: 37.662083
+          },
+          defaultAnimation: 2,
+          title: language === 'eng' ? 'Moscow, Andropov prospect, 18, building 3' : 'Москва, проспект Андропова 18 стр. 3',
+          label: 'Afp',
+          clickable: true
+        }
+      ]}/>
+    ) : (<div></div>);
     const { language } = this.props;
     return (
       <div className="page Contacts">
-        <Map center={
-          {lat: 55.694488, lng: 37.662083}
-        } markers={[
-          {
-            position: {
-              lat: 55.694488, lng: 37.662083
-            },
-            defaultAnimation: 2,
-            title: language === 'eng' ? 'Moscow, Andropov prospect, 18, building 3' : 'Москва, проспект Андропова 18 стр. 3',
-            label: 'Afp',
-            clickable: true
-          }
-        ]}/>
+        {mapAddress}
         <div className="row">
         </div>
         <div className="items">
-          <div className="row item">
+          <div className="row item" style={{
+            display: 'none'
+          }}>
             <div className="addressName">
               {i18n.t('contacts.addressName')}:
             </div>
@@ -55,6 +60,17 @@ class Contacts extends Component {
                 );
               })
             }
+          </div>
+          <div className="row item">
+            <div className="addressName">
+              {i18n.t('contacts.restEmail')}
+            </div>
+            <div className="address">
+              <a href={`mailto:${i18n.t('contacts.restEmailInfo')}`} target='blank' className='email'>{i18n.t('contacts.restEmailInfo')}</a>
+            </div>
+            <div className="phones">
+              {i18n.t('contacts.phones')}
+            </div>
           </div>
         </div>
         <Footer />

@@ -8,6 +8,7 @@ import cx from 'classnames';
 import Footer from '../components/Main/Footer';
 import Share from '../components/Share';
 import Scrollable from '../components/Scrollable';
+import Gallery from '../components/Gallery';
 
 if (process.env.BROWSER) {
   require('./About.less');
@@ -21,8 +22,16 @@ class About extends Component {
   };
   state = {
     tabGetIndex: 0,
-    tabLiveIndex: 0
+    tabLiveIndex: 0,
+    showGallery: false
   };
+
+  _triggerGallery() {
+    this.setState({
+      showGallery: !this.state.showGallery
+    });
+  }
+
   render() {
     const {language} = this.props;
     const screenWidth = typeof window !== 'undefined' ? window.innerWidth : 1200;
@@ -138,7 +147,7 @@ class About extends Component {
                 }
               </div>
 
-              <Link to="/about/main/rules">
+              <Link to="/about/main/rules?part=camping">
                 <span className="aboutWay-rules" dangerouslySetInnerHTML={{__html: i18n.t('about.rulesLink')}}></span>
               </Link>
             </div>
@@ -156,11 +165,20 @@ class About extends Component {
                 className="screen-text aboutVip-text"
                 dangerouslySetInnerHTML={{__html: aboutMain.vipZone[language === 'eng' ? 'text_eng' : 'text']}}
               ></div>
-              <Link to="/media" className="aboutVip-btn">
+              <a href="javascript:void(0)" onClick={this._triggerGallery.bind(this)} className="aboutVip-btn">
                 <img src="/assets/img/about/icon-photo.svg" width="16" height="13"/>
                 <span className="white">{aboutMain.vipZone[language === 'eng' ? 'button_eng' : 'button']}</span>
-              </Link>
+              </a>
             </div>
+          </article>
+          <article>
+            {
+              this.state.showGallery ? (
+                <div className="screen-inner">
+                  <Gallery images={aboutMain.vipZone.images} title={''} />
+                </div>
+              ) : (<div></div>)
+            }
           </article>
           <article className="screen aboutInfo">
             <div className="screen-inner">

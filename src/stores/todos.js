@@ -10,6 +10,7 @@ export const ADD_BID = 'ADD_BID';
 export const REFRESH_LOT = 'REFRESH_LOT';
 export const LOAD_NEWS = 'LOAD_NEWS';
 export const LOAD_DJS = 'LOAD_DJS';
+export const LOAD_GALLERY = 'LOAD_GALLERY';
 
 const setDate = ()=> {
   return new Date(Date.parse('2015/09/30 13:00:00'));
@@ -37,6 +38,15 @@ export default function(state = defaultState, action) {
       var body = action.payload.body;
       var newState = state.map(function(item, key){
         if (key === 'djs'){
+          return Immutable.fromJS(body);
+        }
+        return item;
+      });
+      return newState;
+    case LOAD_GALLERY:
+      var body = action.payload.body;
+      var newState = state.map(function(item, key){
+        if (key === 'gallery'){
           return Immutable.fromJS(body);
         }
         return item;
@@ -184,4 +194,21 @@ export function loadDjs(amount) {
     })
   };
 }
+
+export function loadGallery(amount) {
+  return {
+    type: LOAD_GALLERY,
+    payload: new Promise((resolve, reject) => {
+      request
+      .get('/api/gallery')
+      .end(function(err, res) {
+        if(err){
+          return reject(err);
+        }
+        resolve({body: res.body});
+      });
+    })
+  };
+}
+
 

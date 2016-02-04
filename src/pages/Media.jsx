@@ -20,27 +20,7 @@ class Media extends Component {
   };
 
   componentWillMount() {
-    const galleries = this.props.listData.get('gallery');
-    this.galleryParts = [
-      {
-        title: 'ALFA FUTURE PEOPLE<br>2015',
-        year: '2015',
-        imageName: 'scene2015.jpg',
-        anchor: 'media2015',
-        items: new List(galleries.filter((item) => {
-          return item.get('gallery_id') >= 31
-        }))
-      },
-      {
-        title: 'ALFA FUTURE PEOPLE<br>2014',
-        imageName: 'scene2014.jpg',
-        year: '2014',
-        anchor: 'media2014',
-        items: new List(galleries.filter((item) => {
-          return item.get('gallery_id') < 31
-        }))
-      }
-    ];
+    this.props.loadGallery.bind(this, 10000)();
   }
 
   componentDidMount() {
@@ -71,6 +51,27 @@ class Media extends Component {
   }
 
   render() {
+    const galleries = this.props.listData.get('gallery');
+    this.galleryParts = [
+      {
+        title: 'ALFA FUTURE PEOPLE<br>2015',
+        year: '2015',
+        imageName: 'scene2015.jpg',
+        anchor: 'media2015',
+        items: new List(galleries.filter((item) => {
+          return item.get('gallery_id') >= 31
+        }))
+      },
+      {
+        title: 'ALFA FUTURE PEOPLE<br>2014',
+        imageName: 'scene2014.jpg',
+        year: '2014',
+        anchor: 'media2014',
+        items: new List(galleries.filter((item) => {
+          return item.get('gallery_id') < 31
+        }))
+      }
+    ];
     const { language } = this.props;
     const types = typesSport;
     const main = typesSport;
@@ -104,6 +105,9 @@ class Media extends Component {
                     part.items.map((album, keyAlbum) => {
                       let image_name = album.get('cms_gallery_items').first().get('name');
                       let albumName = this.getTranslate(album, 16, language, album.get('name'));
+                      if(album.get('video')) {
+                        albumName = '';
+                      }
                       return (
                         <Link to={`/media/${part.year}/${album.get('gallery_id')}`} key={keyAlbum}>
                           <div className='cover' style={{

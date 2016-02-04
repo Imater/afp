@@ -21,12 +21,7 @@ class AlbumAll extends Component {
   };
 
   componentWillMount() {
-    const galleries = this.props.listData.get('gallery');
-    const gallery_id = this.props.params.album;
-    this.galleryMain = galleries.find((item) => {
-      return item.get('gallery_id') === parseInt(gallery_id)
-    });
-    this.gallery = this.galleryMain.get('cms_gallery_items');
+    this.props.loadGallery.bind(this, 100000)();
   }
 
   componentDidMount() {
@@ -57,6 +52,15 @@ class AlbumAll extends Component {
   }
 
   render() {
+    const galleries = this.props.listData.get('gallery');
+    const gallery_id = this.props.params.album;
+    this.galleryMain = galleries.find((item) => {
+      return item.get('gallery_id') === parseInt(gallery_id)
+    });
+    if(typeof this.galleryMain === 'undefined') {
+      return (<div>Loading...</div>);
+    }
+    this.gallery = this.galleryMain.get('cms_gallery_items');
     const { language } = this.props;
     const types = typesSport;
     const main = typesSport;

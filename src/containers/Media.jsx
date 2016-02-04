@@ -7,6 +7,10 @@ import {
   changeLanguage
 } from '../stores/i18';
 
+import {
+  loadGallery
+} from '../stores/todos';
+
 function mapStateToProps(state) {
   return {
     listData: state.todos,
@@ -18,7 +22,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    changeLanguage: (language) => dispatch(changeLanguage(language))
+    changeLanguage: (language) => dispatch(changeLanguage(language)),
+    loadGallery: (language) => dispatch(loadGallery(language))
   };
 }
 

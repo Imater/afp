@@ -85,7 +85,7 @@ app.use((req, res, next) => {
       Promise.all([
         api.getAllDjs(10),
         api.getNews(10),
-        api.getGallery(0)
+        api.getGallery(1)
       ]).then(function(results){
         const store = createAppStore({
           todos: fromJS({

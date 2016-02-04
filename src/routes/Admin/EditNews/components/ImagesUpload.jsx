@@ -8,7 +8,12 @@ if (process.env.BROWSER === true) {
 
 class ImagesUpload extends Component {
   state = {
-    scale: 1.05
+    scale: 1.05,
+    width: 600,
+    height: 396,
+    _width: 600,
+    _height: 396,
+    show: false
   };
   _remove(image) {
     const { value } = this.props;
@@ -41,7 +46,46 @@ class ImagesUpload extends Component {
 
   _zoom(dif) {
     this.setState({
-      scale: parseInt((this.state.scale + dif/10)*100, 10)/100
+      scale: parseInt((this.state.scale + dif/20)*100, 10)/100
+    });
+  }
+
+  _changeWidth(event) {
+    this.setState({
+      _width: event.target.value
+    });
+  }
+
+  _changeHeight(event) {
+    this.setState({
+      _height: event.target.value
+    });
+  }
+
+  _changeHeight(event) {
+    this.setState({
+      _height: event.target.value
+    });
+  }
+
+  _toggleView() {
+    this.setState({
+      show: !this.state.show
+    });
+  }
+
+  _applySize() {
+    const safeValue = (size, maxSize) => {
+      const value = parseInt(size, 10);
+      return value < maxSize ? value : maxSize;
+    };
+    const width = safeValue(this.state._width, 800);
+    const height = safeValue(this.state._height, 900);
+    this.setState({
+      height: height,
+      width: width,
+      _height: height,
+      _width: width
     });
   }
 
@@ -66,13 +110,20 @@ class ImagesUpload extends Component {
           }
           </div>
           <div>
+            <button type="button" onClick={this._toggleView.bind(this)}>
+              {this.state.show ? 'Добавление фотографии ▼' : 'Добавление фотографии ▲'}
+            </button>
+          </div>
+          <div className="AvatarEditor" style={{
+            display: this.state.show ? 'block' : 'none'
+          }}>
             <AvatarEditor
               ref="editor"
               image="/upload/images/news/c47cb7f47b5215af.jpg"
-              width={600}
-              height={396}
+              width={this.state.width}
+              height={this.state.height}
               border={50}
-              color={[255, 255, 255, 0.6]} // RGBA
+              color={[255, 255, 255, 0.3]} // RGBA
               scale={this.state.scale} />
             <div>
               <button type="button" onClick={this._zoom.bind(this, -1)}>–</button>
@@ -82,6 +133,10 @@ class ImagesUpload extends Component {
                   `x ${this.state.scale}`
                 }
               </span>
+              <br />
+              <input className="width" value={this.state._width} onChange={this._changeWidth.bind(this)} onBlur={this._applySize.bind(this)} />
+              <span>x</span>
+              <input className="height" value={this.state._height} onChange={this._changeHeight.bind(this)} onBlur={this._applySize.bind(this)} />
               <div>
                 <button type="button" className="green" onClick={this.onClickSave.bind(this)}>Добавить изображение</button>
               </div>

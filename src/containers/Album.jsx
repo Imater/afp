@@ -6,6 +6,9 @@ import Album from '../pages/Album';
 import {
   changeLanguage
 } from '../stores/i18';
+import {
+  loadGallery
+} from '../stores/todos';
 
 function mapStateToProps(state) {
   return {
@@ -18,7 +21,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    changeLanguage: (language) => dispatch(changeLanguage(language))
+    changeLanguage: (language) => dispatch(changeLanguage(language)),
+    loadGallery: (limit) => dispatch(loadGallery(limit))
   };
 }
 

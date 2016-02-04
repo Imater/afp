@@ -54,9 +54,9 @@ const resources = {
         share: 'Поделиться',
         title: 'Вы вернетесь <br/>совершенно другим',
         titleText: 'Свежий воздух и яркое солнце. Тайный аэродром на берегу Волги. Музыка, которая меняет настроение. Технологии, которые меняют мир. Что нужно, чтобы услышать и увидеть будущее? Все просто. Быть на фестивале Alfa Future People',
-        rules: 'Правила',
+        rules: 'Правила фестиваля',
         store: 'Магазин',
-        rulesLink: 'Правила поведения <br/>на фестивале'
+        rulesLink: 'Правила кемпингов'
       },
       history: {
         howItWas: 'Как это было',
@@ -88,7 +88,10 @@ const resources = {
       },
       contacts: {
         addressName: 'Адрес',
-        address: 'Москва, проспект Андропова 18 стр. 3'
+        address: 'Москва, проспект Андропова 18 стр. 3',
+        restEmail: 'все остальные вопросы:',
+        restEmailInfo: 'info@afp.ru',
+        phones: '8 (495) 909 98 93, 8 (495) 909 98 94',
       },
       partners:{
         more: 'узнать больше'
@@ -160,9 +163,9 @@ const resources = {
         share: 'Share',
         title: 'You will come back<br/> completely different',
         titleText: 'The fresh air and bright sunshine. Mystery airfield on the banks of the Volga. Music that changes the mood. The technologies that are changing the world. What do you need to hear and see the future? It\'s simple. Being at the festival Alfa Future People',
-        rules: 'Rules',
+        rules: 'Rules of festival',
         store: 'Store',
-        rulesLink: 'Behavior rules<br/> on festival'
+        rulesLink: 'Camping rules'
       },
       counter: {
         day_1: 'day',
@@ -205,7 +208,10 @@ const resources = {
       },
       contacts: {
         addressName: 'Address',
-        address: 'Moscow, prospect Andropov 18 building 3'
+        address: 'Moscow, prospect Andropov 18 building 3',
+        restEmail: 'all questions:',
+        restEmailInfo: 'info@afp.ru',
+        phones: '8 (495) 909 98 93, 8 (495) 909 98 94',
       },
       partners:{
         more: 'more'

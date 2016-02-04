@@ -164,8 +164,9 @@ class About extends Component {
                 </div>
               </div>
               <div className="right-col padding-right-40 text-right hide-on-video">
-                <a href="http://www.eubeafestival.com/" target="_blank" className="eubea"></a>
-                <a href="http://kudago.com/" target="_blank" className="kudago"></a>
+                <a href="http://premia.event.ru/nominees/2014/festival-muzyiki-i-tehnologiy-alfa-future-people/" target="_blank" className="best"></a>
+                <a href="http://www.eubeafestival.com/events/alfa-future-people/" target="_blank" className="eubea"></a>
+                <a href="http://award.kudago.com/the-nomination/" target="_blank" className="kudago"></a>
               </div>
             </div>
             <div className="row social-row" style={{

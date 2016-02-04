@@ -16,7 +16,9 @@ if (process.env.BROWSER) {
 class Partners extends Component {
 
   componentWillMount () {
+    if (typeof window !== 'undefined') {
      $('body').addClass('overflow-hidden');
+    }
    }
    componentWillUnmount () {
      $('body').removeClass('overflow-hidden');
@@ -26,6 +28,7 @@ class Partners extends Component {
     const { language } = this.props;
     const types = typesSport;
     const main = typesSport;
+    const part = this.props.location.query.part ? this.props.location.query.part : 'festival';
     return (
       <div className="Popup">
         <div className="wrap" onClick={() => {
@@ -35,7 +38,7 @@ class Partners extends Component {
           <a href="javascript:void();" className="close" onClick={() => {
             this.props.history.goBack()
           }}></a>
-          {aboutMain.rules[language === 'eng' ? 'text_eng' : 'text']}
+          {aboutMain.rules[part][language === 'eng' ? 'text_eng' : 'text']}
         </div>
       </div>
     );

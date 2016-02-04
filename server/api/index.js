@@ -206,7 +206,7 @@ api.updateNews = function(id){
   });
 };
 
-api.getGallery = function(id){
+api.getGallery = function(limit=100000){
   return new Promise((request, reject) => {
     db.models.cms_gallery_gallery.findAll({
       where: {
@@ -234,7 +234,8 @@ api.getGallery = function(id){
           ],
         }
       ],
-      order: [['gallery_id', 'DESC']],
+      limit: limit,
+      order: [['pos', 'ASC'], ['gallery_id', 'DESC']],
     }).then(function(galleryFromDb){
       request(JSONify(galleryFromDb));
     }).catch(function(err){
