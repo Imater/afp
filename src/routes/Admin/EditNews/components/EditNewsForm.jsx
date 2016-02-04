@@ -2,6 +2,10 @@ import React, {Component, PropTypes} from 'react';
 import {reduxForm} from 'redux-form';
 import ReactQuill from 'react-quill';
 import ImagesUpload from './ImagesUpload';
+import Editor from './Editor';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+
 export const fields = [
   'content',
   'content_eng',
@@ -17,10 +21,13 @@ export const fields = [
 
 if (process.env.BROWSER === true) {
   require('./EditNewsForm.less');
-  require('./quill.less');
+  require('react-datepicker/dist/react-datepicker.css');
 }
 
 class SimpleForm extends Component {
+  state = {
+    date: moment()
+  };
   static propTypes = {
     fields: PropTypes.object.isRequired,
     handleSubmit: PropTypes.func.isRequired,
@@ -33,9 +40,19 @@ class SimpleForm extends Component {
     this.props.initializeForm(
       this.props.news
     );
+    this.setState({
+      date: this.props.news ? moment(this.props.news.date) : moment()
+    });
   }
 
   changeContent(newValue) {
+  }
+
+  changeDate(date) {
+    this.setState({
+      date: moment(date)
+    });
+    this.props.fields.date.onUpdate(date.format("YYYY-MM-DD HH:mm:ss"));
   }
 
   render() {
@@ -73,25 +90,29 @@ class SimpleForm extends Component {
             </div>
             <div className="form-row">
               <label>Дата</label>
-              <input type="text" placeholder="2017-01-31 12:30:30" {...date}/>
+              <DatePicker
+                selected={this.state.date}
+                onChange={this.changeDate.bind(this)}
+              />
+
             </div>
             <div className="space-row"></div>
             <div className="editor description">
               <label>Краткое содержание</label>
-              <ReactQuill theme="snow" {...description}/>
+              <Editor theme="snow" {...description}/>
             </div>
             <div className="editor description">
               <label>Краткое содержание (english)</label>
-              <ReactQuill theme="snow" {...description_eng}/>
+              <Editor theme="snow" {...description_eng}/>
             </div>
             <div className="space-row"></div>
             <div className="editor content">
               <label>Полное содержание</label>
-              <ReactQuill theme="snow" {...content}/>
+              <Editor theme="snow" {...content}/>
             </div>
             <div className="editor content">
               <label>Полное содержание (english)</label>
-              <ReactQuill theme="snow" {...content_eng}/>
+              <Editor theme="snow" {...content_eng}/>
             </div>
           </div>
 

@@ -44,8 +44,12 @@ module.exports = {
         loaders: ['react-hot', 'babel?compact=false']
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.(scss)$/,
         loaders: ['style', 'css', 'postcss', 'sass']
+      },
+      {
+        test: /\.(css)$/,
+        loaders: ['style', 'css', 'postcss']
       },
       {
         test: /\.(less)$/,
