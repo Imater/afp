@@ -69,7 +69,10 @@ class Contacts extends Component {
               <a href={`mailto:${i18n.t('contacts.restEmailInfo')}`} target='blank' className='email'>{i18n.t('contacts.restEmailInfo')}</a>
             </div>
             <div className="phones">
-              {i18n.t('contacts.phones')}
+              {i18n.t('contacts.phone1')}
+            </div>
+            <div className="phones">
+              {i18n.t('contacts.phone2')}
             </div>
           </div>
         </div>

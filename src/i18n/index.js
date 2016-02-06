@@ -89,9 +89,10 @@ const resources = {
       contacts: {
         addressName: 'Адрес',
         address: 'Москва, проспект Андропова 18 стр. 3',
-        restEmail: 'все остальные вопросы:',
+        restEmail: 'Контакты:',
         restEmailInfo: 'info@afp.ru',
-        phones: '8 (495) 909 98 93, 8 (495) 909 98 94',
+        phone1: '+7 (495) 909 98 93',
+        phone2: '+7 (495) 909 98 94',
       },
       partners:{
         more: 'узнать больше'
@@ -211,7 +212,8 @@ const resources = {
         address: 'Moscow, prospect Andropov 18 building 3',
         restEmail: 'all questions:',
         restEmailInfo: 'info@afp.ru',
-        phones: '8 (495) 909 98 93, 8 (495) 909 98 94',
+        phone1: '+7 (495) 909 98 93',
+        phone2: '+7 (495) 909 98 94',
       },
       partners:{
         more: 'more'

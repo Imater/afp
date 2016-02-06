@@ -117,13 +117,13 @@ class LineUp extends Component {
                 <Scrollable x={true} y={false} navigator="true" disableClick={this.disableClick.bind(this)}>
                   <div className="row line-up">
                     <ul>
-                      <Link to="/lineup/2016/main/136" onClick={this._disableIfScroll.bind(this)}>
+                      <Link to="/lineup/2016/main/138" onClick={this._disableIfScroll.bind(this)}>
                         <li className="dj1"></li>
                       </Link>
                       <Link to="/lineup/2016/main/134" onClick={this._disableIfScroll.bind(this)}>
                         <li className="dj2"></li>
                       </Link>
-                      <Link to="/lineup/2016/main/138" onClick={this._disableIfScroll.bind(this)}>
+                      <Link to="/lineup/2016/main/136" onClick={this._disableIfScroll.bind(this)}>
                         <li className="dj3"></li>
                       </Link>
                       <li className="dj4"></li>
