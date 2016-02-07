@@ -5,6 +5,8 @@ import smtpTransport from 'nodemailer-smtp-transport';
 import crypto from 'crypto';
 import fs from 'fs';
 import path from 'path';
+import { templates } from '../../common/templates.js';
+
 const simpleGit = require('simple-git')(path.join(__dirname, '..'));
 
 
@@ -28,15 +30,6 @@ const addInfoToItems = function(items){
 
 const JSONify = (items) => items.map((item) => item.toJSON());
 
-const templates = {
-  sport: {
-    file: path.join(__dirname, '..', '..', 'src', 'components', 'settings.jsx')
-  },
-  menuItems: {
-    file: path.join(__dirname, '..', '..', 'src', 'components', 'settings', 'menuItems.jsx')
-  },
-}
-
 api.getTemplate = function(params){
   return new Promise((request, reject) => {
     fs.readFile(templates[params.id].file, { encoding: 'utf-8' }, (err, data) => {
@@ -50,20 +43,23 @@ api.getTemplate = function(params){
   });
 };
 
+const saveToGit = (id, cb) => {
+  simpleGit
+  .add('-A')
+  .diff((err, data) => {
+    console.info(err, data);
+  })
+  .commit(`_auto commit from admin ${id}`)
+  .then(cb);
+};
+
 api.saveTemplate = function(req){
   return new Promise((request, reject) => {
     fs.writeFile(templates[req.query.id].file, req.body.template, { encoding: 'utf-8' }, (err, data) => {
       if(err) {
         return reject(err);
       }
-      simpleGit
-      .add('-A')
-      //.commit(`auto commit from admin ${req.query.id}`)
-      .diff((err, data) => {
-        console.info(err, data);
-      })
-      .commit(`auto commit from admin ${req.query.id}`)
-      .then((err, data) => {
+      saveToGit(req.query.id, (err, data) => {
         console.info(err, data);
         return request({
           template: data

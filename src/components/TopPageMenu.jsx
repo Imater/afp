@@ -8,6 +8,7 @@ import $ from 'jquery';
 import cx from 'classnames';
 import raf from 'raf'; // request next animation frame
 import Scrollable from './Scrollable';
+import AdminButton from './AdminButton';
 
 if (process.env.BROWSER) {
   require('./TopPageMenu.less');
@@ -110,6 +111,7 @@ class TopPageMenu extends Component {
     const { language } = this.props;
     return (
       <div className={cx('top-page-menu', {fixed: this.props.fixed})}>
+        <AdminButton />
         <Scrollable x={true} y={false} disableClick={this.disableClick.bind(this)}>
           <ul>
             {
