@@ -56,7 +56,12 @@ api.saveTemplate = function(req){
       if(err) {
         return reject(err);
       }
-      simpleGit.commit(`auto commit from admin ${req.query.id}`, (err, data) => {
+      simpleGit
+      .add('./*')
+      .log(function(err, log) {
+        console.log(log);
+      })
+      .commit(`auto commit from admin ${req.query.id}`, (err, data) => {
         console.info(err, data);
         return request({
           template: data
@@ -251,7 +256,7 @@ api.getGallery = function(limit=100000){
   return new Promise((request, reject) => {
     db.models.cms_gallery_gallery.findAll({
       where: {
-       enabled: true
+        enabled: true
       },
       include: [
         {
@@ -492,23 +497,23 @@ api.soldBid = function(body){
         id: body.lotId
       }
     }).then(
-      function(oldLot){
-        var status = 'sold';
-        if (oldLot.status === 'sold'){
-          status = 'active';
-        }
-        oldLot.updateAttributes({
-          status: status
-        }).then(function(){
-          api.getLotById(body.lotId).then(
-            function(res){
-              request(res);
-            }
-          );
-        }).catch(function(err){
-          reject(err);
-        });
+    function(oldLot){
+      var status = 'sold';
+      if (oldLot.status === 'sold'){
+        status = 'active';
       }
+      oldLot.updateAttributes({
+        status: status
+      }).then(function(){
+        api.getLotById(body.lotId).then(
+          function(res){
+            request(res);
+          }
+        );
+      }).catch(function(err){
+        reject(err);
+      });
+    }
     );
   });
 };
