@@ -61,6 +61,7 @@ apiRoutes.post('/admin/template', (req, res) => {
   }).then(function(result){
     res.status(200).send(result);
   }).catch(function(err){
+    console.info(err);
     res.status(400).send(err);
   });
 });

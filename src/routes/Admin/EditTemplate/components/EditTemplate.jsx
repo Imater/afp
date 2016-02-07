@@ -59,7 +59,10 @@ class EditTemplate extends Component {
   }
 
   componentWillMount() {
-    this.loadTemplate()
+    if (typeof window === 'undefined') {
+      return;
+    }
+    this.loadTemplate();
   }
 
   _onChange (newText) {

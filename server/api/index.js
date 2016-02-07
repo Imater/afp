@@ -5,6 +5,7 @@ import smtpTransport from 'nodemailer-smtp-transport';
 import crypto from 'crypto';
 import fs from 'fs';
 import path from 'path';
+const simpleGit = require('simple-git')(path.join(__dirname, '..'));
 
 
 var api = {};
@@ -49,15 +50,18 @@ api.getTemplate = function(params){
   });
 };
 
-api.saveTemplate = function(params){
+api.saveTemplate = function(req){
   return new Promise((request, reject) => {
-    fs.readFile(templates[params.id].file, { encoding: 'utf-8' }, (err, data) => {
+    fs.writeFile(templates[req.query.id].file, req.body.template, { encoding: 'utf-8' }, (err, data) => {
       if(err) {
         return reject(err);
       }
-      return request({
-        template: data
-      });
+      simpleGit.commit(`auto commit from admin ${req.query.id}`, (err, data) => {
+        console.info(err, data);
+        return request({
+          template: data
+        });
+      })
     });
   });
 };
