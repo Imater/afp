@@ -32,7 +32,7 @@ export const menuItems = [
     url: '/contacts',
   },
   {
-    title: 'menu.admin.github',
+    title: 'menu.admin.god7',
     url: '/admin/template/menuItems',
   },
 ];
