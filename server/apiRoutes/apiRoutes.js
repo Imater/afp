@@ -3,6 +3,10 @@ import api from '../api';
 
 const apiRoutes = Router();
 
+const isAdmin = (req) => {
+  return req.headers.host.match(/^admin\./) !== null;
+};
+
 apiRoutes.get('/', (req, res) => {
   res.end('Welcome to api routes');
 });
@@ -20,6 +24,11 @@ apiRoutes.post('/upload/image', (req, res) => {
 });
 
 apiRoutes.post('/news/update/:id', (req, res) => {
+  if(!isAdmin(req)) {
+    return res.status(403).send({
+      err: 'need auth'
+    });
+  }
   api.updateOneNews(req.params.id, req.body).then(function(result){
     res.status(200).send(result);
   }).catch(function(err){
@@ -27,7 +36,41 @@ apiRoutes.post('/news/update/:id', (req, res) => {
   });
 });
 
+apiRoutes.get('/admin/template', (req, res) => {
+  if(!isAdmin(req)) {
+    return res.status(403).send({
+      err: 'need auth'
+    });
+  }
+  api.getTemplate(req.query).then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
+apiRoutes.post('/admin/template', (req, res) => {
+  if(!isAdmin(req)) {
+    return res.status(403).send({
+      err: 'need auth'
+    });
+  }
+  api.saveTemplate({
+    query: req.query,
+    body: req.body
+  }).then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
 apiRoutes.put('/news/add', (req, res) => {
+  if(!isAdmin(req)) {
+    return res.status(403).send({
+      err: 'need auth'
+    });
+  }
   api.addOneNews(req.body).then(function(result){
     res.status(200).send(result);
   }).catch(function(err){
@@ -36,6 +79,11 @@ apiRoutes.put('/news/add', (req, res) => {
 });
 
 apiRoutes.delete('/news/delete/:id', (req, res) => {
+  if(!isAdmin(req)) {
+    return res.status(403).send({
+      err: 'need auth'
+    });
+  }
   api.deleteOneNews(req.params.id).then(function(result){
     res.status(200).send(result);
   }).catch(function(err){

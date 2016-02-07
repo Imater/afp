@@ -3,6 +3,8 @@ import db from '../models';
 import nodemailer from 'nodemailer';
 import smtpTransport from 'nodemailer-smtp-transport';
 import crypto from 'crypto';
+import fs from 'fs';
+import path from 'path';
 
 
 var api = {};
@@ -24,6 +26,41 @@ const addInfoToItems = function(items){
 };
 
 const JSONify = (items) => items.map((item) => item.toJSON());
+
+const templates = {
+  sport: {
+    file: path.join(__dirname, '..', '..', 'src', 'components', 'settings.jsx')
+  },
+  menuItems: {
+    file: path.join(__dirname, '..', '..', 'src', 'components', 'settings', 'menuItems.jsx')
+  },
+}
+
+api.getTemplate = function(params){
+  return new Promise((request, reject) => {
+    fs.readFile(templates[params.id].file, { encoding: 'utf-8' }, (err, data) => {
+      if(err) {
+        return reject(err);
+      }
+      return request({
+        template: data
+      });
+    });
+  });
+};
+
+api.saveTemplate = function(params){
+  return new Promise((request, reject) => {
+    fs.readFile(templates[params.id].file, { encoding: 'utf-8' }, (err, data) => {
+      if(err) {
+        return reject(err);
+      }
+      return request({
+        template: data
+      });
+    });
+  });
+};
 
 api.updateOneNews = function(item_id, body){
   return new Promise((request, reject) => {

@@ -29,6 +29,7 @@ import { List, fromJS } from 'immutable';
 import * as reducers from '../src/stores';
 import createAppStore from '../src/createStore/createStore';
 import api from './api';
+import basicAuth from 'basic-auth-connect';
 
 const proxy = httpProxy.createProxyServer();
 const isProduction = process.env.NODE_ENV === 'production';
@@ -40,6 +41,16 @@ if (!isTest){
 }
 process.env.__DEVELOPMENT__ = !isProduction;
 
+app.use((req, res, next) => {
+  var isAdmin = req.get('host').match(/admin\./) !== null;
+  if(!isAdmin) {
+    return next();
+  }
+  return basicAuth(function(user, pass){
+    return 'admin' === user && '990990' === pass;
+  })(req, res, next);
+});
+
 app.use(bodyParser.json({limit: '5mb'}));
 app.use(bodyParser.urlencoded({ extended: true, limit: '5mb' }));
 app.use(cookieParser());
@@ -48,8 +59,6 @@ app.use('/assets', express.static(path.join(__dirname, '..', 'assets')));
 app.use('/upload', express.static(path.join(__dirname, '..', 'upload')));
 app.use('/locales', express.static(path.join(__dirname, '..', 'assets', 'locales')));
 app.use('/favicon.ico', express.static(path.join(__dirname, '..', 'assets', 'images', 'favicon.ico')));
-
-const indexHtml = fs.readFileSync(path.join(__dirname, '..', 'assets', 'index.html'), { encoding: 'utf-8' });
 
 app.use('/api', apiRoutes);
 
@@ -65,8 +74,11 @@ if (!isProduction && !isTest) {
   app.use('/build', express.static(path.join(__dirname, '..', 'build')));
 }
 
+const indexHtml = fs.readFileSync(path.join(__dirname, '..', 'assets', 'index.html'), { encoding: 'utf-8' });
+
 app.use((req, res, next) => {
   var needEng = (req.get('host').indexOf('help') !== -1);
+  var isAdmin = req.get('host').match(/admin\./) !== null;
   if (req.cookies.lang && req.cookies.lang === 'eng'){
     if (!req.cookies.lang){
       res.cookie('lang', 'eng', { maxAge: 900000, httpOnly: false });

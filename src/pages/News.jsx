@@ -9,6 +9,7 @@ import { newsItems, typesNews } from '../components/settings';
 import Footer from '../components/Main/Footer';
 import moment from 'moment';
 import classnames from 'classnames';
+import { checkAdmin } from '../components/admin.jsx';
 
 if (process.env.BROWSER) {
   require('./News.less');
@@ -105,7 +106,7 @@ class News extends Component {
   }
 
   render() {
-    const isAdmin = this.props.location.query ? this.props.location.query.admin === 'afp990990' : false;
+    const isAdmin = checkAdmin();
     const addNewsButton = isAdmin ? (
       <div className="newsItem">
         <div className="wrapper">

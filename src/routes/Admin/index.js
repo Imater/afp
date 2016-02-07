@@ -10,7 +10,8 @@ module.exports = {
   getChildRoutes(location, cb) {
     require.ensure([], (require) => {
       cb(null, [
-        require('./EditNews/index.js')
+        require('./EditNews/index.js'),
+        require('./EditTemplate/index.js')
       ])
     })
   },

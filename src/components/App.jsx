@@ -6,7 +6,7 @@ import i18n from 'i18next-client';
 import ScrollLink from 'react-scroll';
 import $ from 'jquery';
 
-import { menuItems } from './settings';
+import { menuItems } from './settings/menuItems';
 import smoothScroll from '../utils/smoothScroll';
 import Mobile from './Mobile';
 
