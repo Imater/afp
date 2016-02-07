@@ -58,15 +58,13 @@ api.saveTemplate = function(req){
       }
       simpleGit
       .add('./*')
-      .log(function(err, log) {
-        console.log(log);
-      })
-      .commit(`auto commit from admin ${req.query.id}`, (err, data) => {
+      .commit(`auto commit from admin ${req.query.id}`)
+      .then((err, data) => {
         console.info(err, data);
         return request({
           template: data
         });
-      })
+      });
     });
   });
 };
