@@ -57,7 +57,7 @@ api.saveTemplate = function(req){
         return reject(err);
       }
       simpleGit
-      .add('.')
+      .add(['./**/*', './**/*'])
       //.commit(`auto commit from admin ${req.query.id}`)
       .diff((err, data) => {
         console.info(err, data);
