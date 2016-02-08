@@ -24,6 +24,7 @@ import Contacts from '../containers/Contacts';
 import Rules from '../containers/Rules';
 import Faq from '../containers/Faq';
 import Store from '../containers/Store';
+import StoreImage from '../containers/StoreImage';
 
 function scrollTo(name, duration=1) {
   return () => {
@@ -118,6 +119,12 @@ const routeConfig = [
       {
         path: '/store',
         component: Store,
+        childRoutes: [
+          {
+            path: ':index',
+            component: StoreImage
+          }
+        ],
       },
       {
         path: '/technology(/:part)',
@@ -185,7 +192,9 @@ export const old = (
       <Route path='rules' component={Rules}></Route>
     </Route>
     <Route path='/faq' component={Faq}></Route>
-    <Route path='/store' component={Store}></Route>
+    <Route path='/store' component={Store}>
+      <Route path='/:index' component={StoreImage}></Route>
+    </Route>
     <Route path='/technology(/:part)' component={Technology} onEnter={defaultPath('virtuality')}/>
     <Route path='/sport(/:part)' component={Sport} onEnter={defaultPath('workout')} />
     <Route path='/news(/:part)' component={News} onEnter={defaultPath('main')} />
@@ -203,3 +212,4 @@ export const old = (
     <Route path='/ticket/status' component={Status} />
   </Route>
 );
+

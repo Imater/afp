@@ -1,0 +1,73 @@
+@import '../utils/common.less';
+
+.StoreImage {
+  padding-top: 0;
+  text-align: center;
+  padding-bottom: 0;
+  @media (max-width: @mobile) {
+    padding: 0;
+  }
+  .block {
+    height: 100%;
+    padding: 0;
+    width: auto;
+    display: inline-block;
+    background: transparent;
+    @media (max-width: @mobile) {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+  .close {
+    @media (max-width: @mobile) {
+      right: 20px;
+    }
+  }
+  .photo {
+    position: relative;
+    height: 100%;
+    width: auto;
+    display: block;
+  }
+  .controls {
+    position: absolute;
+    right: 100%;
+    margin: 0 20px 0 0;
+    white-space: nowrap;
+    z-index: 1;
+    @media (max-width: @mobile) {
+      white-space: normal;
+      margin: 10px 10px;
+      right: auto;
+      left: 0;
+    }
+    img {
+      width: 60px;
+      margin: 20px 10px;
+      @media (max-width: @mobile) {
+        width: 40px;
+        margin: 10px 5px;
+      }
+    }
+  }
+  .storesLogo {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: left;
+    padding: 20px;
+
+    a {
+      margin-top: 20px;
+      display: block;
+      @media (max-width: @mobile) {
+        max-width: 50px;
+      }
+    }
+    img {
+      max-width: 60px;
+    }
+  }
+}
+
+

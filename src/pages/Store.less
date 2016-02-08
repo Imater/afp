@@ -1,7 +1,137 @@
 @import '../utils/common.less';
 
 .Store {
-
-
+  color: #FFF;
+  .page-block {
+    max-height: 100%;
+    max-height: calc(~'100% - 20px');
+  }
+  h2 {
+    text-transform: uppercase;
+    font-family: @medium;
+    max-width: 80%;
+    line-height: 120%;
+  }
+  .icons {
+    text-align: center;
+    padding: 50px 0;
+    img {
+      margin: 0 auto;
+    }
+  }
 }
 
+.storeTop {
+  display: table;
+  margin-bottom: 100px;
+  .inner {
+    display: table-cell;
+    vertical-align: bottom;
+    height: 100%;
+    padding: 0 10%;
+    position: relative;
+  }
+  h2 {
+    max-width: 100%;
+    position: relative;
+    left: 0;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+    color: #fff;
+  }
+  .btn {
+    display: inline-block;
+    font-size: 16px;
+    font-family: @regular;
+    line-height: 40px;
+    color: #fff;
+    background: #126BEE;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all .4s ease;
+    margin: 30px 0 -20px;
+    padding: 0 25px 0 15px;
+    position: relative;
+    z-index: 11;
+    &:hover {
+      opacity: .8;
+    }
+    img,
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    span {
+      margin-left: 6px;
+    }
+  }
+}
+
+.storePartners {
+  padding: 0 20px;
+}
+
+.storePartner {
+  position: relative;
+  margin: 50px auto 90px;
+  padding-left: 140px;
+  min-height: 120px;
+  width: auto;
+  max-width: 80%;
+  font-family: @regular;
+  font-size: 18px;
+  line-height: 155%;
+
+  &:last-of-type {
+    //margin-bottom: 0;
+  }
+  @media (max-width: @phone) {
+    padding-left: 0;
+  }
+  .logo {
+    position: absolute;
+    left: 0px;
+    top: 0;
+    border: none;
+    margin-bottom: 0px;
+    background: none;
+    width: auto;
+    height: auto;
+    @media (max-width: @phone) {
+      position: relative;
+    }
+  }
+  .title {
+    font-size: 30px;
+    font-family: @semibold;
+    line-height: 120%;
+  }
+  .desc {
+    a{
+      color: #fff;
+    }
+  }
+  .more {
+    color: #126BEE;
+    position: relative;
+    transition: all .2s;
+    cursor: pointer;
+    &:hover {
+      opacity: .8;
+    }
+    &:after {
+      content: '';
+      display: inline-block;
+      background: url('../../assets/svg/arrow-bottom-blue.svg');
+      background-size: 100% 100%;
+      width: 12px;
+      height: 6px;
+      vertical-align: middle;
+      margin-left: 10px;
+      display: none;
+    }
+  }
+
+}

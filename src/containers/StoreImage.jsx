@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Store from '../pages/Store';
+import StoreImage from '../pages/StoreImage';
 
 // Actions
 import {
@@ -22,4 +22,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Store);
+export default connect(mapStateToProps, mapDispatchToProps)(StoreImage);

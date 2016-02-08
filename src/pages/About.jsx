@@ -266,12 +266,12 @@ class About extends Component {
             }}
           >
             {
-              /*
+
               <Link className="aboutCategory-item aboutCategory-item--1" to="/store">
                 <img className="aboutCategory-img" src="/assets/img/about/icon-market.svg" width="66"/>
                 <span className="aboutCategory-label">{i18n.t('about.store')}</span>
               </Link>
-              */
+
             }
             {
 
