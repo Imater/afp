@@ -32,7 +32,20 @@ const JSONify = (items) => items.map((item) => item.toJSON());
 
 api.getTemplate = function(params){
   return new Promise((request, reject) => {
-    fs.readFile(templates[params.id].file, { encoding: 'utf-8' }, (err, data) => {
+    const foundPart = templates.find((item) => {
+      return item.name === params.id
+    });
+    if(!foundPart) {
+      reject('unknown part of admin page');
+    }
+    const index = parseInt(params.index, 10);
+    const file = foundPart.files[index];
+    if(!file) {
+      reject('unknown fileName of admin page');
+    }
+    const fileName = file.file;
+
+    fs.readFile(fileName, { encoding: 'utf-8' }, (err, data) => {
       if(err) {
         return reject(err);
       }
@@ -44,6 +57,7 @@ api.getTemplate = function(params){
 };
 
 const saveToGit = (id, cb) => {
+  return cb();
   simpleGit
   .add('-A')
   .diff((err, data) => {
@@ -55,7 +69,20 @@ const saveToGit = (id, cb) => {
 
 api.saveTemplate = function(req){
   return new Promise((request, reject) => {
-    fs.writeFile(templates[req.query.id].file, req.body.template, { encoding: 'utf-8' }, (err, data) => {
+    const foundPart = templates.find((item) => {
+      return item.name === req.query.id
+    });
+    if(!foundPart) {
+      reject('unknown part of admin page');
+    }
+    const index = parseInt(req.query.index, 10);
+    const file = foundPart.files[index];
+    if(!file) {
+      reject('unknown fileName of admin page');
+    }
+    const fileName = file.file;
+
+    fs.writeFile(fileName, req.body.template, { encoding: 'utf-8' }, (err, data) => {
       if(err) {
         return reject(err);
       }
@@ -124,7 +151,7 @@ api.getAllDjs = function(limit=10000){
       where: {
         visible: 1
       },
-      order: [['id', 'DESC'], ['stage', 'ASC'], ['order', 'ASC']],
+      order: [['title', 'ASC'], ['id', 'DESC'], ['stage', 'ASC'], ['order', 'ASC']],
       limit: limit
     }).then(function(djsFromDb){
       request(JSONify(djsFromDb));

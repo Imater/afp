@@ -1,25 +1,39 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 import $ from 'jquery';
+import { templates } from '../../../../../common/templates.js';
 
-let AceEditor;
+let AceEditor = class Empty extends Component {
+  render() {
+    return <div></div>;
+  }
+};
 
 if (process.env.BROWSER === true) {
   AceEditor = require('react-ace');
   require('./EditTemplate.less');
   require('brace');
   require('brace/mode/javascript');
+  require('brace/mode/less');
+  require('brace/mode/jsx');
   require('brace/theme/github');
 }
 
 class EditTemplate extends Component {
   state = {
-    text: ''
+    text: '',
+  }
+
+  findTemplate() {
+    return templates.find((item) => {
+      return item.name === this.props.params.id
+    });
   }
 
   loadTemplate() {
     const self = this;
     $.ajax({
-      url: '/api/admin/template?id=menuItems',
+      url: `/api/admin/template?id=${this.props.params.id}&index=${this.props.params.index}`,
       dataType: 'json',
       data: {
       },
@@ -35,16 +49,13 @@ class EditTemplate extends Component {
   saveTemplate() {
     const self = this;
     $.ajax({
-      url: '/api/admin/template?id=menuItems',
+      url: `/api/admin/template?id=${this.props.params.id}&index=${this.props.params.index}`,
       dataType: 'json',
       data: {
         template: this.state.text
       },
       type: 'POST',
       success: function(data) {
-        self.setState({
-          text: data.template
-        })
       }
     });
   }
@@ -71,12 +82,36 @@ class EditTemplate extends Component {
     });
   }
 
+  componentWillReceiveProps() {
+    if (typeof window === 'undefined') {
+      return;
+    }
+    setTimeout(()=>{
+      this.loadTemplate();
+    })
+  }
+
   render() {
+    const template = this.findTemplate();
+    const file = template.files[parseInt(this.props.params.index, 10)];
     return (
       <div className="EditTemplate">
-        <h2>Шаблон для страницы Sport</h2>
+        <ul className="menu">
+        {
+          template.files.map((el, key) => {
+            const path = `/admin/template/${template.name}/${key}`;
+            return (
+              <li key={key}>
+                <Link to={path} activeClassName='active'>
+                  {el.title}
+                </Link>
+              </li>
+            )
+          })
+        }
+        </ul>
         <AceEditor
-          mode="javascript"
+          mode={file.type}
           theme="github"
           width="100%"
           height="800px"

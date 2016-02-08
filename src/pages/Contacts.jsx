@@ -5,7 +5,7 @@ import i18n from 'i18next-client';
 import Social from '../components/Social';
 import Gallery from '../components/Gallery';
 import TopPageMenu from '../components/TopPageMenu';
-import { personList } from '../components/settings';
+import { personList } from '../components/settings/personList';
 import Footer from '../components/Main/Footer';
 import Map from '../components/Map';
 import AdminButton from '../components/AdminButton';
