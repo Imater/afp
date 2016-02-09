@@ -8,6 +8,7 @@ import TopPageMenu from '../components/TopPageMenu';
 import { lineUpItems } from '../components/settings';
 import Scrollable from '../components/Scrollable';
 import Footer from '../components/Main/Footer';
+import { checkAdmin } from '../components/admin.jsx';
 
 if (process.env.BROWSER) {
   require('./Lineup.less');
@@ -96,6 +97,7 @@ class LineUp extends Component {
       box = 200;
     }
     let boxProcent = 100/count;
+    const isAdmin = checkAdmin();
     return (
       <div className="page djs-page" id="lineup">
         <TopPageMenu items={lineUpItems[this.props.routeParams.year]} language={language} />
@@ -121,10 +123,10 @@ class LineUp extends Component {
                         <li className="dj1"></li>
                       </Link>
                       <Link to="/lineup/2016/main/134" onClick={this._disableIfScroll.bind(this)}>
-                        <li className="dj2"></li>
+                        <li className="dj3"></li>
                       </Link>
                       <Link to="/lineup/2016/main/136" onClick={this._disableIfScroll.bind(this)}>
-                        <li className="dj3"></li>
+                        <li className="dj2"></li>
                       </Link>
                       <li className="dj4"></li>
                       <li className="dj5"></li>
@@ -159,6 +161,13 @@ class LineUp extends Component {
                             width: `${boxProcent}%`,
                             height: box
                           }}>
+                            {
+                              isAdmin ? (
+                                <div className="adminButton">
+                                  <Link to={`/admin/dj/${dj.get('id')}`}>Edit</Link>
+                                </div>
+                              ) : (<div></div>)
+                            }
                             <Link to={`/lineup/${this.props.params.year}/${this.props.params.part}/${dj.get('id')}`}>
                               <div className="dj-item">
                                 <div className="dj-overlay">

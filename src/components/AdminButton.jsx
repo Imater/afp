@@ -4,8 +4,6 @@ import i18n from 'i18next-client';
 import { checkAdmin } from './admin.jsx';
 import { templates } from '../../common/templates.js';
 
-console.info(templates);
-
 if (process.env.BROWSER) {
   require('./AdminButton.less');
 }
