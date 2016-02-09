@@ -100,7 +100,7 @@ class ImagesUpload extends Component {
               const image = img.name;
               return (
                 <div className="imageWrapper" key={key}>
-                  <img className="image" src={`/upload/images/news/${image}`} />
+                  <img className="image" src={`${this.props.imagePath}${image}`} />
                   <div>
                     <button type="button" onClick={this._remove.bind(this, image)} className="remove">Удалить</button>
                   </div>

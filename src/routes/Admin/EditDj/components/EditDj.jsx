@@ -77,6 +77,7 @@ class EditDj extends Component {
     if(id === 'add') {
       this.djNew = {
         image: '',
+        images: '[]',
         year: '',
         top: '',
         title: '',
@@ -102,7 +103,11 @@ class EditDj extends Component {
         <h1>Новость не найдена</h1>
       );
     }
-    const djJs = this.dj.toJS();
+    let djJs = this.dj.toJS();
+    djJs.images = JSON.stringify([{
+      name: djJs.image
+    }])
+
     return (
       <div>
         <EditDjForm dj={djJs} deleteNews={this.deleteNews.bind(this)} onSubmit={this.handleUpdateSubmit.bind(this)} />

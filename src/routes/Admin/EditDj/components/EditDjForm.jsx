@@ -7,6 +7,7 @@ import moment from 'moment';
 
 export const fields = [
   'image',
+  'images',
   'year',
   'top',
   'title',
@@ -46,6 +47,7 @@ class SimpleForm extends Component {
     const {
       fields: {
         image,
+        images,
         year,
         top,
         title,
@@ -63,10 +65,15 @@ class SimpleForm extends Component {
       deleteNews,
       submitting
     } = this.props;
+    console.info(visible);
+
     return (
       <div className="EditNewsForm">
         <form onSubmit={handleSubmit}>
           <div>
+            <div className="form-row">
+              <ImagesUpload imagePath="/upload/content/" {...images} />
+            </div>
             <div className="form-row">
               <label>Название</label>
               <input type="text" placeholder="Title" {...title}/>

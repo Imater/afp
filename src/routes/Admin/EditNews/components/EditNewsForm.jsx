@@ -78,7 +78,7 @@ class SimpleForm extends Component {
       <div className="EditNewsForm">
         <form onSubmit={handleSubmit}>
           <div>
-            <ImagesUpload {...images} />
+            <ImagesUpload imagePath="/upload/images/news/" {...images} />
             <div className="space-row"></div>
             <div className="form-row">
               <label>Название</label>

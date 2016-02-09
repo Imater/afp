@@ -54,10 +54,10 @@ class Lineup extends Component {
                     <li className="dj1"></li>
                   </Link>
                   <Link to="/lineup/2016/main/134" onClick={this._disableIfScroll.bind(this)}>
-                    <li className="dj2"></li>
+                    <li className="dj3"></li>
                   </Link>
                   <Link to="/lineup/2016/main/136" onClick={this._disableIfScroll.bind(this)}>
-                    <li className="dj3"></li>
+                    <li className="dj2"></li>
                   </Link>
                   <li className="dj4"></li>
                   <li className="dj5"></li>
