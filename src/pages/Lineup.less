@@ -39,6 +39,22 @@
         box-sizing: border-box;
         position: relative;
         overflow: hidden;
+        .adminButton {
+          position: absolute;
+          left: 5px;
+          top: 5px;
+          a {
+            padding: 5px 5px;
+            color: #000;
+            display: inline-block;
+            font-size: 10px;
+            background-color: rgba(252, 255, 141, 0.5);
+            &:hover {
+              background-color: rgba(252, 255, 141, 0.9);
+            }
+            border-radius: 3px;
+          }
+        }
         a {
           color: #FFF;
         }

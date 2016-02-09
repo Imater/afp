@@ -114,6 +114,7 @@ const routeConfig = [
       {
         path: '/faq',
         component: Faq,
+        onEnter: scrollTop()
       },
       {
         path: '/store',

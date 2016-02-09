@@ -11,7 +11,8 @@ module.exports = {
     require.ensure([], (require) => {
       cb(null, [
         require('./EditNews/index.js'),
-        require('./EditTemplate/index.js')
+        require('./EditTemplate/index.js'),
+        require('./EditDj/index.js'),
       ])
     })
   },

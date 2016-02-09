@@ -47,7 +47,7 @@ if (process.env.BROWSER) {
 
       tm = setTimeout(() => {
         init();
-      }, 10);
+      }, 200);
     }
 
     renderIcons(ticket) {
