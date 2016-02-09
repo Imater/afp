@@ -1,4 +1,25 @@
+@import '../utils/common.less';
+
 .Rules {
+  @media (max-width: @mobile) {
+    padding: 20px;
+    .block {
+      padding: 15px;
+      max-width: 100%;
+    }
+
+    .close {
+      background-image: url("../../assets/svg/close-black.svg");
+      background-size: 100% 100%;
+      right: 20px;
+      top: 20px;
+    }
+
+    h3{
+      padding: 30px 0;
+    }
+  }
+
 }
 
 

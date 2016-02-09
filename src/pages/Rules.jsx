@@ -30,7 +30,7 @@ class Partners extends Component {
     const main = typesSport;
     const part = this.props.location.query.part ? this.props.location.query.part : 'festival';
     return (
-      <div className="Popup">
+      <div className="Popup Rules">
         <div className="wrap" onClick={() => {
             this.props.history.goBack()
           }}></div>
