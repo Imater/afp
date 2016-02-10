@@ -83,10 +83,9 @@ class EditNews extends Component {
         group_name: 'AFP2016',
         date: new Date()
       };
-      const newsJsAdd = this.news.toJS();
       return (
         <div>
-          <EditNewsForm news={newsJsAdd} onSubmit={this.handleAddSubmit.bind(this)} />
+          <EditNewsForm news={this.newsNew} onSubmit={this.handleAddSubmit.bind(this)} />
         </div>
       );
     }

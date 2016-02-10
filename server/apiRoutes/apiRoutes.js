@@ -15,14 +15,7 @@ apiRoutes.get('/hello', (req, res) => {
   res.end('hello');
 });
 
-apiRoutes.post('/upload/image', (req, res) => {
-  api.uploadImage(req.body).then(function(result){
-    res.status(200).send(result);
-  }).catch(function(err){
-    res.status(400).send(err);
-  });
-});
-
+// news
 apiRoutes.post('/news/update/:id', (req, res) => {
   if(!isAdmin(req)) {
     return res.status(403).send({
@@ -30,6 +23,81 @@ apiRoutes.post('/news/update/:id', (req, res) => {
     });
   }
   api.updateOneNews(req.params.id, req.body).then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
+apiRoutes.put('/news/add', (req, res) => {
+  if(!isAdmin(req)) {
+    return res.status(403).send({
+      err: 'need auth'
+    });
+  }
+  api.addOneNews(req.body).then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
+apiRoutes.delete('/news/delete/:id', (req, res) => {
+  if(!isAdmin(req)) {
+    return res.status(403).send({
+      err: 'need auth'
+    });
+  }
+  api.deleteOneNews(req.params.id).then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
+// dj
+apiRoutes.post('/dj/update/:id', (req, res) => {
+  if(!isAdmin(req)) {
+    return res.status(403).send({
+      err: 'need auth'
+    });
+  }
+  api.updateOneDj(req.params.id, req.body).then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
+apiRoutes.put('/dj/add', (req, res) => {
+  if(!isAdmin(req)) {
+    return res.status(403).send({
+      err: 'need auth'
+    });
+  }
+  api.addOneDj(req.body).then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
+apiRoutes.delete('/dj/delete/:id', (req, res) => {
+  if(!isAdmin(req)) {
+    return res.status(403).send({
+      err: 'need auth'
+    });
+  }
+  api.deleteOneDj(req.params.id).then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
+
+apiRoutes.post('/upload/image', (req, res) => {
+  api.uploadImage(req.body).then(function(result){
     res.status(200).send(result);
   }).catch(function(err){
     res.status(400).send(err);
@@ -66,31 +134,6 @@ apiRoutes.post('/admin/template', (req, res) => {
   });
 });
 
-apiRoutes.put('/news/add', (req, res) => {
-  if(!isAdmin(req)) {
-    return res.status(403).send({
-      err: 'need auth'
-    });
-  }
-  api.addOneNews(req.body).then(function(result){
-    res.status(200).send(result);
-  }).catch(function(err){
-    res.status(400).send(err);
-  });
-});
-
-apiRoutes.delete('/news/delete/:id', (req, res) => {
-  if(!isAdmin(req)) {
-    return res.status(403).send({
-      err: 'need auth'
-    });
-  }
-  api.deleteOneNews(req.params.id).then(function(result){
-    res.status(200).send(result);
-  }).catch(function(err){
-    res.status(400).send(err);
-  });
-});
 
 apiRoutes.get('/test', (req, res) => {
   console.info('test');
@@ -151,7 +194,7 @@ apiRoutes.get('/news', (req, res) => {
 });
 
 apiRoutes.get('/djs', (req, res) => {
-  api.getAllDjs().then(function(result){
+  api.getAllDjs(10000, isAdmin(req)).then(function(result){
     res.status(200).send(result);
   }).catch(function(err){
     res.status(400).send(err);

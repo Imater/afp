@@ -96,6 +96,7 @@ api.saveTemplate = function(req){
   });
 };
 
+// news
 api.updateOneNews = function(item_id, body){
   return new Promise((request, reject) => {
     db.models.news.findOne({
@@ -145,12 +146,63 @@ api.deleteOneNews = function(item_id){
   });
 };
 
-api.getAllDjs = function(limit=10000){
+// dj
+api.updateOneDj = function(item_id, body){
   return new Promise((request, reject) => {
-    db.models.dj.findAll({
+    db.models.dj.findOne({
       where: {
-        visible: 1
-      },
+        id: item_id
+      }
+    }).then(function(dj) {
+      dj.updateAttributes(body.dj).then(function(djDb){
+        return request({
+          dj: djDb
+        });
+      }).catch(function(err){
+        return reject(err);
+      });
+    }).catch(function(err){
+      return reject(err);
+    });
+  });
+};
+
+api.addOneDj = function(body){
+  return new Promise((request, reject) => {
+    db.models.dj.create(body.dj).then(function(djDb) {
+      return request({
+        dj: djDb
+      });
+    }).catch(function(err){
+      return reject(err);
+    });
+  });
+};
+
+api.deleteOneDj = function(item_id){
+  return new Promise((request, reject) => {
+    db.models.dj.destroy({
+      where: {
+        id: item_id
+      }
+    }).then(function(dj) {
+      console.info('remove', dj);
+      return request({
+        dj: dj
+      });
+    }).catch(function(err){
+      return reject(err);
+    });
+  });
+};
+
+api.getAllDjs = function(limit=10000, isAdmin = false){
+  return new Promise((request, reject) => {
+    const query = isAdmin ? undefined : {
+        visible: true
+    };
+    db.models.dj.findAll({
+      where: query,
       order: [['title', 'ASC'], ['id', 'DESC'], ['stage', 'ASC'], ['order', 'ASC']],
       limit: limit
     }).then(function(djsFromDb){
@@ -165,7 +217,7 @@ api.uploadImage = function(body){
   return new Promise((request, reject) => {
     var base64Data = body.image.replace(/^data:image\/png;base64,/, "");
     var hash = crypto.createHash('md5').update(base64Data).digest('hex');
-    require("fs").writeFile("upload/images/news/" + hash + ".png", base64Data, 'base64', function(err) {
+    require("fs").writeFile(body.path + hash + ".png", base64Data, 'base64', function(err) {
       if(err) {
         reject(err);
       }

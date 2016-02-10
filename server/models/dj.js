@@ -37,7 +37,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER
     },
     visible: {
-      type: DataTypes.INTEGER
+      type: DataTypes.BOOLEAN
     },
     order: {
       type: DataTypes.INTEGER

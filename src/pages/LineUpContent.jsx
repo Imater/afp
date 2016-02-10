@@ -122,10 +122,9 @@ class LineUpContent extends Component {
                 title
               }
             </div>
-            <div className="dj-text">
-              {
-                text ? text : preview
-              }
+            <div className="dj-text" dangerouslySetInnerHTML={{
+              __html: text ? text : preview
+            }}>
             </div>
             {
               dj.get(`top`) ? (

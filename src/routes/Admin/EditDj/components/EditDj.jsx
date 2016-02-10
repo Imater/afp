@@ -9,62 +9,66 @@ class EditDj extends Component {
   }
 
   handleUpdateSubmit(data) {
-    //let newDjs = _.merge(this.djs.toJS(), data);
-    //if(!newDjs.images) {
-    //  newNews.images = '[]';
-    //}
-    //const self = this;
-    //$.ajax({
-    //  url: '/api/news/update/'+newNews.item_id,
-    //  dataType: 'json',
-    //  data: {
-    //    news: newNews
-    //  },
-    //  type: 'POST',
-    //  success: function(data) {
-    //    self.props.loadNews();
-    //    self.props.history.pushState(null, '/news/main?admin=afp990990');
-    //  }
-    //});
+    let newDj = _.merge(this.dj.toJS(), data);
+    if(!newDj.images) {
+      newDj.images = '[]';
+    }
+    const images = JSON.parse(newDj.images);
+    newDj.image = images.length > 0 ? images[0].name : '';
+    const self = this;
+    $.ajax({
+      url: '/api/dj/update/'+newDj.id,
+      dataType: 'json',
+      data: {
+        dj: newDj
+      },
+      type: 'POST',
+      success: function(data) {
+        self.props.loadDjs();
+        self.props.history.pushState(null, '/lineup');
+      }
+    });
   }
 
-  deleteNews(data) {
-    //if(!confirm('Вы действительно хотите удалить новость?')) {
-    //  return;
-    //}
-    //const newNews = _.merge(this.news.toJS(), data);
-    //const self = this;
-    //$.ajax({
-    //  url: '/api/news/delete/'+newNews.item_id,
-    //  dataType: 'json',
-    //  data: {
-    //  },
-    //  type: 'DELETE',
-    //  success: function(data) {
-    //    self.props.loadNews();
-    //    self.props.history.pushState(null, '/news/main?admin=afp990990');
-    //  }
-    //});
+  deleteDj(data) {
+    if(!confirm('Вы действительно хотите удалить dj?')) {
+      return;
+    }
+    const newDj = _.merge(this.dj.toJS(), data);
+    const self = this;
+    $.ajax({
+      url: '/api/dj/delete/'+newDj.id,
+      dataType: 'json',
+      data: {
+      },
+      type: 'DELETE',
+      success: function(data) {
+        self.props.loadDjs();
+        self.props.history.pushState(null, '/lineup');
+      }
+    });
   }
 
   handleAddSubmit(data) {
-    //let newNews = _.merge(this.newsNew, data);
-    //if(!newNews.images) {
-    //  newNews.images = JSON.stringify([]);
-    //}
-    //const self = this;
-    //$.ajax({
-    //  url: '/api/news/add',
-    //  dataType: 'json',
-    //  data: {
-    //    news: newNews
-    //  },
-    //  type: 'PUT',
-    //  success: function(data) {
-    //    self.props.loadNews();
-    //    self.props.history.pushState(null, '/news/main?admin=afp990990');
-    //  }
-    //});
+    let newDj = _.merge(this.djNew, data);
+    if(!newDj.images) {
+      newDj.images = '[]';
+    }
+    const images = JSON.parse(newDj.images);
+    newDj.image = images.length > 0 ? images[0].name : '';
+    const self = this;
+    $.ajax({
+      url: '/api/dj/add',
+      dataType: 'json',
+      data: {
+        dj: newDj
+      },
+      type: 'PUT',
+      success: function(data) {
+        self.props.loadDjs();
+        self.props.history.pushState(null, '/lineup');
+      }
+    });
   }
 
   render() {
@@ -90,10 +94,9 @@ class EditDj extends Component {
         stage: '1',
         visible: false
       };
-      const djNewJs = this.dj.toJS();
       return (
         <div>
-          <EditDjForm dj={djNewJs} onSubmit={this.handleAddSubmit.bind(this)} />
+          <EditDjForm dj={this.djNew} onSubmit={this.handleAddSubmit.bind(this)} />
         </div>
       );
     }
@@ -107,10 +110,11 @@ class EditDj extends Component {
     djJs.images = JSON.stringify([{
       name: djJs.image
     }])
+    djJs.visible = djJs.visible === 1;
 
     return (
       <div>
-        <EditDjForm dj={djJs} deleteNews={this.deleteNews.bind(this)} onSubmit={this.handleUpdateSubmit.bind(this)} />
+        <EditDjForm dj={djJs} deleteDj={this.deleteDj.bind(this)} onSubmit={this.handleUpdateSubmit.bind(this)} />
       </div>
     );
   }

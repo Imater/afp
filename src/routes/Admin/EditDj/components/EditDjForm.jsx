@@ -30,7 +30,7 @@ class SimpleForm extends Component {
     fields: PropTypes.object.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     resetForm: PropTypes.func.isRequired,
-    deleteNews: PropTypes.func,
+    deleteDj: PropTypes.func,
     submitting: PropTypes.bool.isRequired
   };
 
@@ -62,17 +62,16 @@ class SimpleForm extends Component {
       },
       handleSubmit,
       resetForm,
-      deleteNews,
+      deleteDj,
       submitting
     } = this.props;
-    console.info(visible);
 
     return (
       <div className="EditNewsForm">
         <form onSubmit={handleSubmit}>
           <div>
             <div className="form-row">
-              <ImagesUpload imagePath="/upload/content/" {...images} />
+              <ImagesUpload imagePath="upload/content/" {...images} />
             </div>
             <div className="form-row">
               <label>Название</label>
@@ -132,9 +131,9 @@ class SimpleForm extends Component {
               Отменить изменения
             </button>
             {
-              deleteNews ? (
-                <button className="red" type="button" disabled={submitting} onClick={deleteNews}>
-                  Удалить новость
+              deleteDj ? (
+                <button className="red" type="button" disabled={submitting} onClick={deleteDj}>
+                  Удалить Dj
                 </button>
               ) : (
                 <div></div>

@@ -98,9 +98,74 @@ class LineUp extends Component {
     }
     let boxProcent = 100/count;
     const isAdmin = checkAdmin();
+    const addDjButton = isAdmin ? (
+      <Link className="addDj" to="/admin/dj/add">
+        Добавить диджея
+      </Link>
+    ) : (<div></div>);
+    const djsList = () => {
+      let djsFiltered = djs.filter((dj) => {
+        return (dj.get('year') === this.props.routeParams.year);
+      });
+      if(djsFiltered.size === 0) {
+        return (<div></div>);
+      }
+      return (
+        <div className="scene-wrapper">
+          <div>
+            {
+              djsFiltered.map((dj, key) => {
+                return (
+                  <div className="dj-wrapper" key={`${key}`} style={{
+                    width: `${boxProcent}%`,
+                    height: box
+                  }}>
+                    {
+                      isAdmin ? (
+                        <div className="adminButton">
+                          <Link to={`/admin/dj/${dj.get('id')}`}>Edit</Link>
+                        </div>
+                      ) : (<div></div>)
+                    }
+                    <Link to={`/lineup/${this.props.params.year}/${this.props.params.part}/${dj.get('id')}`}>
+                      <div className="dj-item">
+                        <div className="dj-overlay">
+                        </div>
+                        <div className="dj-image" style={{
+                          backgroundImage: `url("/upload/content/${dj.get('image') ? dj.get('image') : 'bro.jpg'}")`
+                        }}>
+                        </div>
+                        <div className="dj-title">
+                          {
+                            dj.get(`title${lang}`)
+                          }
+                        </div>
+                        <div className="dj-preview">
+                          <span dangerouslySetInnerHTML={{
+                            __html: dj.get(`preview${lang}`)
+                          }}></span>
+                        </div>
+                        {
+                          dj.get(`top`) ? (
+                            <div className="dj-top" title="DJ MAG TOP 100">
+                              {
+                                `#${dj.get('top')}`
+                              }
+                            </div>
+                          ) : ''
+                        }
+                      </div>
+                    </Link>
+                  </div>
+                );
+              })
+            }
+          </div>
+        </div>
+      );
+    }
     return (
       <div className="page djs-page" id="lineup">
-        <TopPageMenu items={lineUpItems[this.props.routeParams.year]} language={language} />
         <div className="years-selector">
           <Link to="/lineup/2016/main" activeClassName="active">2016</Link>
           <Link to="/lineup/2015/main" activeClassName="active">2015</Link>
@@ -138,73 +203,10 @@ class LineUp extends Component {
             </div>
           ) : (<div></div>)
         }
+        {addDjButton}
         <div className="djs-list">
           {
-            scenes.map((scene, keyScene) => {
-              let djsFiltered = djs.filter((dj) => {
-                return (dj.get('year') === this.props.routeParams.year && dj.get('stage') === scene.id);
-              });
-              if(djsFiltered.size === 0) {
-                return (<div key={keyScene}></div>);
-              }
-              const sceneTitle = scene.title;
-              return (
-                <div className="scene-wrapper" key={keyScene}>
-                  {
-                    sceneTitle ? <h3>{scene.title}</h3> : <div></div>
-                  }
-                  <div>
-                    {
-                      djsFiltered.map((dj, key) => {
-                        return (
-                          <div className="dj-wrapper" key={`${keyScene} ${key}`} style={{
-                            width: `${boxProcent}%`,
-                            height: box
-                          }}>
-                            {
-                              isAdmin ? (
-                                <div className="adminButton">
-                                  <Link to={`/admin/dj/${dj.get('id')}`}>Edit</Link>
-                                </div>
-                              ) : (<div></div>)
-                            }
-                            <Link to={`/lineup/${this.props.params.year}/${this.props.params.part}/${dj.get('id')}`}>
-                              <div className="dj-item">
-                                <div className="dj-overlay">
-                                </div>
-                                <div className="dj-image" style={{
-                                  backgroundImage: `url("/upload/content/${dj.get('image') ? dj.get('image') : 'bro.jpg'}")`
-                                }}>
-                                </div>
-                                <div className="dj-title">
-                                  {
-                                    dj.get(`title${lang}`)
-                                  }
-                                </div>
-                                <div className="dj-preview">
-                                  {
-                                    dj.get(`preview${lang}`)
-                                  }
-                                </div>
-                                {
-                                  dj.get(`top`) ? (
-                                    <div className="dj-top" title="DJ MAG TOP 100">
-                                      {
-                                        `#${dj.get('top')}`
-                                      }
-                                    </div>
-                                  ) : ''
-                                }
-                              </div>
-                            </Link>
-                          </div>
-                        );
-                      })
-                    }
-                  </div>
-                </div>
-              );
-            })
+            djsList()
           }
         </div>
         <Footer />

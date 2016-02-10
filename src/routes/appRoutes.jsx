@@ -120,6 +120,7 @@ const routeConfig = [
       {
         path: '/store',
         component: Store,
+        onEnter: scrollTop(),
         childRoutes: [
           {
             path: ':index',
