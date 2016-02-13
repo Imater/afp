@@ -8,6 +8,7 @@ import Gallery from '../components/Gallery';
 import TopPageMenu from '../components/TopPageMenu';
 import { mediaItems, typesSport, mainSport, partners } from '../components/settings';
 import Footer from '../components/Main/Footer';
+import { checkAdmin } from '../components/admin.jsx';
 import $ from 'jquery';
 
 if (process.env.BROWSER) {
@@ -105,6 +106,10 @@ class Media extends Component {
                     part.items.map((album, keyAlbum) => {
                       let image_name = album.get('cms_gallery_items').first().get('name');
                       let albumName = this.getTranslate(album, 16, language, album.get('name'));
+                      const isAdmin = checkAdmin();
+                      const editButton = isAdmin ? (
+                        <button className="editButton">Edit</button>
+                        ) : (<div></div>);
                       if(album.get('video')) {
                         albumName = '';
                       }
@@ -122,6 +127,7 @@ class Media extends Component {
                                 </div>
                               ) : ''
                             }
+                            {editButton}
                           </div>
                         </Link>
                       );

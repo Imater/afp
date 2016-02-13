@@ -1,4 +1,4 @@
-export const checkAdmin = (location) => {
+export const checkAdmin = () => {
   if (typeof window === 'undefined') {
     return false;
   }
