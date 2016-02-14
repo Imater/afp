@@ -338,6 +338,7 @@ api.getGallery = function(limit=100000){
       include: [
         {
           model: db.models.cms_gallery_item,
+          as: 'images',
           attributes: [
             'name',
             'link',
@@ -348,14 +349,6 @@ api.getGallery = function(limit=100000){
           },
           order: [['pos', 'ASC']]
         },
-        {
-          model: db.models.cms_lang_translate_value,
-          attributes: [
-            'translate_id',
-            'lang_id',
-            'value',
-          ],
-        }
       ],
       limit: limit,
       order: [['pos', 'ASC'], ['gallery_id', 'DESC']],

@@ -21,6 +21,11 @@ export default function() {
         cache: true,
         quiet: false,
         noInfo: false,
+        watch: true,
+        watchOptions: {
+          aggregateTimeout: 300,
+          poll: 1000
+        },
         headers: {
             'Access-Control-Allow-Origin': '*'
         },

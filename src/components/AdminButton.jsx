@@ -24,7 +24,9 @@ class AdminButton extends Component {
     return (
       <div className="AdminButton">
         <Link to={`/admin/template/${this.id}/0`}>
-          <button type="button">Edit</button>
+          <button type="button">
+            Edit
+          </button>
         </Link>
       </div>
     );

@@ -8,13 +8,28 @@ var logger = require('../config/logger');
 
 var Sequelize = require('sequelize');
 
-var sequelize = new Sequelize(
+console.info('db',
     config.db.name,
     config.db.username,
     config.db.password, {
         host: config.db.host,
         port: config.db.port,
         logging: (['test1', 'development'].indexOf(config.env) !== -1) ?
+            false : logger.db_log,
+        dialect: config.db.dialect,
+        pool: {
+            max: 200
+        }
+    }
+);
+
+var sequelize = new Sequelize(
+    config.db.name,
+    config.db.username,
+    config.db.password, {
+        host: config.db.host,
+        port: config.db.port,
+        logging: (['test1', 'developme1nt'].indexOf(config.env) !== -1) ?
             false : logger.db_log,
         dialect: config.db.dialect,
         pool: {

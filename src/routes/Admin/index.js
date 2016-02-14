@@ -13,6 +13,7 @@ module.exports = {
         require('./EditNews/index.js'),
         require('./EditTemplate/index.js'),
         require('./EditDj/index.js'),
+        require('./EditMedia/index.js'),
       ])
     })
   },

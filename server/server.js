@@ -90,9 +90,9 @@ app.use((req, res, next) => {
     if (redirectLocation) {
       res.redirect(301, redirectLocation.pathname + redirectLocation.search);
     } else if (err) {
-      res.send(500, err.message);
+      res.status(500).send(err.message);
     } else if (renderProps == null) {
-      res.send(404, 'Not found');
+      res.status(400).send('Not found');
     } else {
       Promise.all([
         api.getAllDjs(10),

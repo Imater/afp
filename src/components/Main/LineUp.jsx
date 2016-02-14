@@ -61,6 +61,7 @@ class Lineup extends Component {
                   </Link>
                   <li className="dj4"></li>
                   <li className="dj5"></li>
+                  <li className="dj6"></li>
                 </ul>
               </div>
             </Scrollable>

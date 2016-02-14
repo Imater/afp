@@ -9,10 +9,15 @@ import TopPageMenu from '../components/TopPageMenu';
 import { mediaItems, typesSport, mainSport, partners } from '../components/settings';
 import Footer from '../components/Main/Footer';
 import $ from 'jquery';
-import YouTube from 'react-youtube';
+let YouTube = class Empty extends Component {
+  render () {
+    return (<div></div>);
+  }
+}
 
 if (process.env.BROWSER) {
   require('./Album.less');
+  YouTube = require('react-youtube').default;
 }
 
 class Album extends Component {
@@ -39,18 +44,6 @@ class Album extends Component {
     window.onresize = () => {};
   }
 
-  getTranslate(news, translate_id, language, defaultValue) {
-    if(language === 'eng') {
-      let text = news.get('cms_lang_translate_values').find((item) => {
-        return item.get('translate_id') === translate_id;
-      });
-      if(text && text.get('value') && text.get('value').length) {
-        return text.get('value');
-      }
-    }
-    return defaultValue;
-  }
-
   keyPress(prevImageIndex, nextImageIndex) {
     return (key, event) => {
       if(key.keyCode === 39){ //next
@@ -70,7 +63,7 @@ class Album extends Component {
     if(typeof this.galleryMain === 'undefined') {
       return (<div>Loading...</div>);
     }
-    this.gallery = this.galleryMain.get('cms_gallery_items');
+    this.gallery = this.galleryMain.get('images');
     const { language } = this.props;
     const types = typesSport;
     const main = typesSport;
@@ -89,7 +82,7 @@ class Album extends Component {
         autoplay: 1,
         controls: 1
       }
-    }
+    };
     const showImageOrYouTube = youTubeLink ? (
         <YouTube opts={youtubeOpts} videoId={youTubeLink} />
     ) : (
@@ -98,7 +91,8 @@ class Album extends Component {
       }}>
       </div>
     );
-    const albumName = this.getTranslate(this.galleryMain, 16, language, this.galleryMain.get('name'));
+    const lang = language === 'eng' ? '_eng' : '';
+    const albumName = this.galleryMain.get('name' + lang);
     const prevImageIndex = mainImageIndex > 0 ? mainImageIndex - 1 : 0;
     const nextImageIndex = mainImageIndex < this.gallery.size-1 ? mainImageIndex + 1 : this.gallery.size-1;
     return (

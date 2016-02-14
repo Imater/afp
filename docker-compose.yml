@@ -1,0 +1,30 @@
+afp:
+  build: .
+  dockerfile: Dockerfile
+  container_name: afp.node
+  ports:
+    - "3001:3001"
+    - "8085:8085"
+  volumes:
+    - .:/usr/src/app
+  links:
+    - mysql:mysql
+  environment:
+    DB_NAME: auction
+    DB_USER: auctionuser
+    DB_PASS: auctionpassword
+    NODE_ENV: development
+
+mysql:
+  image: mysql:latest
+  container_name: afp.mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: 911911
+    MYSQL_DATABASE: auction
+    MYSQL_USER: auctionuser
+    MYSQL_PASSWORD: auctionpassword
+    MYSQL_PORT_3306_TCP_PORT: 3306
+  ports:
+    - "3306:3306"
+  volumes:
+    - ./db:/docker-entrypoint-initdb.d

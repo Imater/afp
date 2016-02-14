@@ -202,7 +202,6 @@ apiRoutes.get('/djs', (req, res) => {
 });
 
 apiRoutes.get('/news/update', (req, res) => {
-  console.info('update news');
   api.updateNews().then(function(result){
     res.status(200).send(result);
   }).catch(function(err){
@@ -211,7 +210,6 @@ apiRoutes.get('/news/update', (req, res) => {
 });
 
 apiRoutes.get('/gallery', (req, res) => {
-  console.info('get gallery');
   api.getGallery().then(function(result){
     res.status(200).send(result);
   }).catch(function(err){
