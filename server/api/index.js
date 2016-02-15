@@ -96,6 +96,149 @@ api.saveTemplate = function(req){
   });
 };
 
+// media
+api.updateOneMedia = function(gallery_id, body){
+  return new Promise((request, reject) => {
+    async.waterfall([
+      function(cb){
+        db.models.cms_gallery_gallery.findOne({
+          where: {
+            gallery_id: gallery_id
+          },
+          include: [
+            {
+              model: db.models.cms_gallery_item,
+              as: 'images',
+              where: {
+                enabled: true
+              },
+              order: [['pos', 'ASC']],
+              required: false
+            },
+          ],
+        }).then(function(gallery) {
+          cb(null, gallery);
+        }).catch(function(err){
+          cb(err);
+        });
+      },
+      function(gallery, cb) {
+        gallery.updateAttributes(body.media).then(function(mediaDb){
+          console.info('updated');
+          cb(null, mediaDb);
+        }).catch(function(err){
+          console.info('updated error', err);
+          cb(err);
+        });
+      },
+      function(mediaDb, cb) {
+        db.models.cms_gallery_item.destroy({
+          where: {
+            gallery_id: gallery_id
+          }
+        }).then(function(){
+          cb(null, mediaDb);
+        }).catch(function(err){
+          cb(err);
+        });
+      },
+      function(mediaDb, cb) {
+        async.each(body.media.images, function(image, cbImage){
+          image.gallery_id = gallery_id;
+          db.models.cms_gallery_item.create(image).then(function(){
+            cbImage(null, mediaDb);
+          }).catch(function(err){
+            cbImage(err);
+          });
+        }, function(err) {
+          if(err){
+            return cb(err);
+          }
+          return cb(null, mediaDb);
+        });
+      }
+    ], function(err, result){
+      if(err) {
+        return reject(err);
+      }
+      return request(result);
+    });
+  });
+};
+
+api.addOneMedia = function(gallery_id, body){
+  return new Promise((request, reject) => {
+    async.waterfall([
+      function(cb){
+        db.models.cms_gallery_gallery.create(body.media).then(function(gallery) {
+          cb(null, gallery);
+        }).catch(function(err){
+          cb(err);
+        });
+      },
+      function(gallery, cb) {
+        db.models.cms_gallery_item.destroy({
+          where: {
+            gallery_id: gallery.gallery_id
+          }
+        }).then(function(){
+          cb(null, gallery);
+        }).catch(function(err){
+          cb(err);
+        });
+      },
+      function(gallery, cb) {
+        async.each(body.media.images, function(image, cbImage){
+          image.gallery_id = gallery.gallery_id;
+          db.models.cms_gallery_item.create(image).then(function(){
+            cbImage(null, gallery);
+          }).catch(function(err){
+            cbImage(err);
+          });
+        }, function(err) {
+          if(err){
+            return cb(err);
+          }
+          return cb(null, gallery);
+        });
+      }
+    ], function(err, result){
+      if(err) {
+        return reject(err);
+      }
+      return request(result);
+    });
+  });
+};
+
+//api.addOneMedia = function(body){
+//  return new Promise((request, reject) => {
+//    db.models.cms_gallery_gallery.create(body.media).then(function(mediaDb) {
+//      return request({
+//        media: mediaDb
+//      });
+//    }).catch(function(err){
+//      return reject(err);
+//    });
+//  });
+//};
+
+api.deleteOneMedia = function(gallery_id){
+  return new Promise((request, reject) => {
+    db.models.cms_gallery_gallery.destroy({
+      where: {
+        gallery_id: gallery_id
+      }
+    }).then(function(media) {
+      return request({
+        media: media
+      });
+    }).catch(function(err){
+      return reject(err);
+    });
+  });
+};
+
 // news
 api.updateOneNews = function(item_id, body){
   return new Promise((request, reject) => {
@@ -342,7 +485,9 @@ api.getGallery = function(limit=100000){
           attributes: [
             'name',
             'link',
-            'title'
+            'title',
+            'pos',
+            'gallery_id',
           ],
           where: {
             enabled: true

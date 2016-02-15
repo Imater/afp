@@ -59,7 +59,7 @@ class SimpleForm extends Component {
         <form onSubmit={handleSubmit}>
           <div>
             <div className="form-row">
-              <ImagesUploads imagePath="upload/images/gallery/" maxWidth="100" {...images} />
+              <ImagesUploads imagePath="upload/images/gallery/" maxWidth="20%" {...images} />
             </div>
             <div className="form-row">
               <label>Название</label>
@@ -69,11 +69,13 @@ class SimpleForm extends Component {
               <label>Название (english)</label>
               <input type="text" placeholder="Title" {...name_eng}/>
             </div>
+            <div className="space-row"></div>
             <div className="form-row">
               <label>Позиция сортировки</label>
               <input type="number" placeholder="pos" {...pos}/>
             </div>
           </div>
+          <div className="space-row"></div>
 
           <div className="form-row">
             <select

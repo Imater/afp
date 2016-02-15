@@ -15,6 +15,46 @@ apiRoutes.get('/hello', (req, res) => {
   res.end('hello');
 });
 
+// media
+apiRoutes.post('/media/update/:id', (req, res) => {
+  if(!isAdmin(req)) {
+    return res.status(403).send({
+      err: 'need auth'
+    });
+  }
+  api.updateOneMedia(req.params.id, req.body).then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
+apiRoutes.put('/media/add', (req, res) => {
+  if(!isAdmin(req)) {
+    return res.status(403).send({
+      err: 'need auth'
+    });
+  }
+  api.addOneMedia(req.body).then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
+apiRoutes.delete('/media/delete/:id', (req, res) => {
+  if(!isAdmin(req)) {
+    return res.status(403).send({
+      err: 'need auth'
+    });
+  }
+  api.deleteOneMedia(req.params.id).then(function(result){
+    res.status(200).send(result);
+  }).catch(function(err){
+    res.status(400).send(err);
+  });
+});
+
 // news
 apiRoutes.post('/news/update/:id', (req, res) => {
   if(!isAdmin(req)) {

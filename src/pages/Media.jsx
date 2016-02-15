@@ -65,7 +65,7 @@ class Media extends Component {
       },
       {
         imageName: 'scene2014.jpg',
-        group: 'AFP2015',
+        group: 'AFP2014',
         year: '2014',
         anchor: 'media2014',
       }

@@ -9,25 +9,23 @@ class EditMedia extends Component {
   }
 
   handleUpdateSubmit(data) {
-    //let newMedia = _.merge(this.dj.toJS(), data);
-    //if(!newMedia.images) {
-    //  newMedia.images = '[]';
-    //}
-    //const images = JSON.parse(newDj.images);
-    //newDj.image = images.length > 0 ? images[0].name : '';
-    //const self = this;
-    //$.ajax({
-    //  url: '/api/media/update/'+newDj.id,
-    //  dataType: 'json',
-    //  data: {
-    //    dj: newDj
-    //  },
-    //  type: 'POST',
-    //  success: function(data) {
-    //    self.props.loadDjs();
-    //    self.props.history.pushState(null, '/lineup');
-    //  }
-    //});
+    let newMedia = _.merge(this.media.toJS(), data);
+    if(!newMedia.images) {
+      newMedia.images = [];
+    }
+    const self = this;
+    $.ajax({
+      url: '/api/media/update/'+this.media.get('gallery_id'),
+      dataType: 'json',
+      data: {
+        media: newMedia
+      },
+      type: 'POST',
+      success: function(data) {
+        self.props.loadGallery();
+        self.props.history.pushState(null, '/media');
+      }
+    });
   }
 
   deleteMedia(data) {
