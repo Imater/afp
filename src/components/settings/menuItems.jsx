@@ -28,6 +28,10 @@ export const menuItems = [
     url: '/media',
   },
   {
+    title: 'menu.store',
+    url: '/store',
+  },
+  {
     title: 'menu.contacts',
     url: '/contacts',
   },

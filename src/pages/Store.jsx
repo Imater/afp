@@ -40,7 +40,7 @@ class Store extends Component {
                   <li className="storePartner" key={index} id={partner.name}>
                     <img src={`/assets/img/store/${partner.logo}`} width="100" className="logo"/>
                     <h3 className="title">{partner[language === 'eng' ? 'title_eng': 'title']}</h3>
-                    <a className="more" target='blank' href={`http://${partner.url}`}>{partner.url}</a>
+                    <a className="more" target='blank' href={`http://${partner.url}`}>{partner.urlShort ? partner.urlShort : partner.url}</a>
                     <p className="desc" dangerouslySetInnerHTML={{__html: partner[language === 'eng' ? 'desc_eng': 'desc']}}></p>
                   </li>
                 );

@@ -24,6 +24,7 @@ const resources = {
         buyTicket: 'Купить билет',
         buyTour: 'Купить тур',
         close: 'ЗАКРЫТЬ',
+        store: 'МАГАЗИН',
         menu: 'МЕНЮ'
       },
       counter: {
@@ -145,6 +146,7 @@ const resources = {
         buyTicket: 'Buy ticket',
         buyTour: 'Buy tour',
         close: 'CLOSE',
+        store: 'STORE',
         menu: 'MENU'
       },
       about: {

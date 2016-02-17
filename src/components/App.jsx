@@ -78,7 +78,7 @@ if (process.env.BROWSER) {
             <Mobile mobile={false}>
               <div className="buy-ticket">
                 <Link className="ticket" to='/ticket'>{i18n.t('menu.buyTicket')}</Link>
-                <a  className="buy-tour tour" target="_blank" href='http://viptravelnn.wikiplanet.ru/tour/komfortniy_tur_na_mejdunarodniy_festival_elektronnoy_muziki_i_tehnologiy_alfa_future_people_2016?month_at=07.2016&month_to=07.2016&decodeNums=2&chosenDates='>{i18n.t('menu.buyTour')}</a>
+                <a  className="buy-tour tour" target="_blank" href='http://viptravelnn.wikiplanet.ru/tour/komfortniy_tur_na_mejdunarodniy_festival_elektronnoy_muziki_i_tehnologiy_alfa_future_people_20166?month_at=07.2016&month_to=07.2016&decodeNums=2&chosenDates='>{i18n.t('menu.buyTour')}</a>
               </div>
             </Mobile>
           </div>

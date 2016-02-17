@@ -180,7 +180,8 @@ a, img, p {
   display: none;
 }
 
-//for Mobile
+
+//for Mobile width
 @media (max-width: @phone) {
   .topMobileMenu {
     position: fixed;
@@ -501,6 +502,18 @@ a, img, p {
             }
           }
         }
+      }
+    }
+  }
+}
+
+//for Mobile height
+@media (max-height: @menuPhoneHeight) {
+  .sidebar {
+    ul.menu {
+      li {
+        margin-bottom: 5px;
+
       }
     }
   }

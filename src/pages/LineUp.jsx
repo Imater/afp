@@ -5,7 +5,7 @@ import i18n from 'i18next-client';
 import $ from 'jquery';
 import Social from '../components/Social';
 import TopPageMenu from '../components/TopPageMenu';
-import { lineUpItems } from '../components/settings';
+import { lineUpItems, lineUpMain } from '../components/settings';
 import Scrollable from '../components/Scrollable';
 import Footer from '../components/Main/Footer';
 import { checkAdmin } from '../components/admin.jsx';
@@ -13,38 +13,6 @@ import { checkAdmin } from '../components/admin.jsx';
 if (process.env.BROWSER) {
   require('./Lineup.less');
 }
-
-
-const scenes = [
-  {
-    id: 1,
-    title: 'Main stage'
-  },
-  {
-    id: 2,
-    title: 'Live & Bass stage'
-  },
-  {
-    id: 3,
-    title: 'Tot:Spot'
-  },
-  {
-    id: 4,
-    title: 'Mendeleev Stage'
-  },
-  {
-    id: 5,
-    title: 'Flat 247'
-  },
-  {
-    id: 6,
-    title: 'Circle'
-  },
-  {
-    id: 7,
-    title: ''
-  }
-]
 
 class LineUp extends Component {
   state = {
@@ -79,14 +47,17 @@ class LineUp extends Component {
       self.tick();
     };
   }
+
   tick() {
     this.setState({
       windowWidth: window.innerWidth
     })
   }
+
   componentWillUnmount() {
     window.onresize = () => {};
   }
+
   render() {
     const { language } = this.props;
     const lang = language === 'eng' ? '_eng' : '';
@@ -202,6 +173,18 @@ class LineUp extends Component {
               </div>
             </div>
           ) : (<div></div>)
+        }
+        {
+          lineUpMain[this.props.routeParams.year] ? (
+            <div className="djsText">
+                <span dangerouslySetInnerHTML={{
+                   __html: lineUpMain[this.props.routeParams.year][`text${lang}`]
+                }}></span>
+            </div>
+          ) : (
+            <div>
+            </div>
+          )
         }
         {addDjButton}
         <div className="djs-list">

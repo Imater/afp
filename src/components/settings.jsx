@@ -196,6 +196,36 @@ export const tickets = [
   },
 ];
 
+export const lineUpMain = {
+  '2016': {
+    text: '<p>Музыкальная часть в 2016 году будет представлена особенно ярко и' +
+    ' можно без сомнений сказать, что фестиваль уверенно занял место' +
+    ' крупнейших и самых значимых европейский событий.<p>' +
+    '<p>Хедлайнерами фестиваля-гиганта станут: легендарный Армин Ван Бююрен' +
+    ' (Armin Van Buuren) - обладатель пожалуй самой широкой и лояльной' +
+    ' аудитории в постсоветском пространстве, а также самый титулованный' +
+    ' диджей мира по версии Dj MAG TOP 100 и фактические икона транс музыки,' +
+    ' сенсационные диджеи номер 1 в мире - братья Dimitri Vegas & Like Mike,' +
+    ' которые буквально ворвались на первые места клубных и радио чартов всего' +
+    ' мира и взорвав своими феерическими выступлениями крупнейшие фестивальные' +
+    ' площадки планеты, безусловно самые ожидаемые в России - Axwell ^' +
+    ' Ingrosso - диджеи с безупречным и культовым прошлым из Swedish House Mafia,' +
+    ' готовящие свое уникальное шоу специально для фестиваля AFP 2016</p>',
+    text_eng: '<p>About the musical part of AFP 2016 we can say with confidence' +
+    ' that the festival took place among the largest and most important European' +
+    ' events.</p> <p>Headliners will be the legend Armin Van Buuren, who is the owner' +
+    ' of the broadest and most loyal audience in the post-Soviet space. As well' +
+    ' as the most titled DJ in the world by Dj MAG TOP 100 and the actual icon of' +
+    ' trance music, sensational DJ #1 in the world - Dimitry Vegas & Like Mike,' +
+    ' who literally broke in the first place club and radio charts around the' +
+    ' world and blowing up their enchanting performances largest festival site' +
+    ' of the planet.</p> <p>By far the most anticipated in Russia - Axwell ^ Ingrosso' +
+    ' - DJs with flawless and iconic past of the Swedish House Mafia,' +
+    ' preparing his unique show specifically for AFP festival 2016</p>'
+  }
+
+};
+
 export const lineUpItems = {
   '2016': [
     {
@@ -1642,7 +1672,8 @@ export const storePartners = [
     name: 'mastercard',
     title: 'Магазин AcidWear',
     title_eng: '',
-    url: 'acidwear.ru/afp',
+    url: 'www.acidwear.ru/index.php?id=4751&fid=3&pricefrom=0&priceto=12000&tags%5B%5D=ALFA+FUTURE+PEOPLE',
+    urlShort: 'acidwear.ru/afp',
     desc: 'Адрес: г.Москва, Холодильный пер., 3 пав. 83 <br/>Телефон: <a href="tel:+74954819966">+7 (495) 481-99-66</a>, <a href="tel:+74959846060">(495) 984-60-60</a> <br/>Электронная почта: <a href="mailto:info@acidwear.ru">info@acidwear.ru</a> <br/>Доставка по России',
     desc_eng: ''
   },
