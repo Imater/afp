@@ -10,7 +10,9 @@ const resources = {
         tickets: 'Билетов:',
         sht: 'шт',
         buy: 'Купить',
-        selectTicket: 'Выбор билетов'
+        selectTicket: 'Выбор билетов',
+        title: 'Выбор и покупка электронных билетов',
+        phone: 'Заказ и доставка<br />билетов'
       },
       menu: {
         about: 'о фестивале',
@@ -132,7 +134,9 @@ const resources = {
         tickets: 'Tickets:',
         sht: 'pc.',
         buy: 'Buy',
-        selectTicket: 'Select tickets'
+        selectTicket: 'Select tickets',
+        title: 'Choosing and buying electronic tickets',
+        phone: 'Buy and delivery<br />ticket'
       },
       menu: {
         about: 'about',

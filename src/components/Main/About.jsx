@@ -117,6 +117,12 @@ class About extends Component {
             <a href='javascript:void(0)' className="language" onClick={this.props.changeLanguage.bind(this, this.props.language==='eng' ? 'ru' : 'eng')}>
               {this.props.language==='eng' ? 'en' : 'ru'}
             </a>
+            <div className="phone-block hide-on-video">
+              <div
+                dangerouslySetInnerHTML={{__html: i18n.t('ticket.phone')}}
+              ></div>
+              <div>+7 (495) 909 98 93</div>
+            </div>
           </div>
           <div className="row logoBlock">
             <div className="fullscreen-bg">

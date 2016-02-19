@@ -85,6 +85,9 @@ module.exports = {
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
+      options: {
+        sourceMap: false,
+      },
       compress: {
         screw_ie8: true,
         warnings: false
