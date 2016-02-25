@@ -5,7 +5,7 @@ import i18n from 'i18next-client';
 import Social from '../components/Social';
 import Gallery from '../components/Gallery';
 import TopPageMenu from '../components/TopPageMenu';
-import { typesTechnology, mainTechnology } from '../components/settings';
+import { typesTechnology, mainTechnology } from '../components/settings/technology';
 import Footer from '../components/Main/Footer';
 import Share from '../components/Share';
 

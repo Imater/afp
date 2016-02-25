@@ -10,22 +10,27 @@ if (process.env.BROWSER) {
 
 class AdminButton extends Component {
   componentWillMount() {
+  }
+  render() {
+    if (!checkAdmin()) {
+      return (<div></div>);
+    }
     const url = typeof window === 'undefined' ? '' : window.location.pathname;
     const found = templates.find((item) => {
       return url.indexOf(item.url) !== -1
     });
-    this.id = found ? found.name : undefined;
-  }
-  render() {
-    if (!checkAdmin() || !this.id) {
+    const id = found ? found.name : undefined;
+    if (!id) {
       return (<div></div>);
     }
+    const filesCount = found.files.length;
+    const filesTitle = found.files.map((item, key) => `${key+1} – ${item.title}`).join('\n');
 
     return (
       <div className="AdminButton">
-        <Link to={`/admin/template/${this.id}/0`}>
-          <button type="button">
-            Edit
+        <Link to={`/admin/template/${id}/0`}>
+          <button type="button" title={filesTitle}>
+            Edit {`(${filesCount})`}
           </button>
         </Link>
       </div>

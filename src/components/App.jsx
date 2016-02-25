@@ -9,6 +9,7 @@ import $ from 'jquery';
 import { menuItems } from './settings/menuItems';
 import smoothScroll from '../utils/smoothScroll';
 import Mobile from './Mobile';
+import AdminButton from '../components/AdminButton';
 
 const SLink = ScrollLink.Link;
 
@@ -87,6 +88,7 @@ if (process.env.BROWSER) {
               <div className="topMobileMenu" onClick={() => {
                 $('body').addClass('showMenu');
               }}><span className="menuButton">{i18n.t('menu.menu')}</span></div>
+              <AdminButton />
               {this.props.children}
             </div>
           </div>

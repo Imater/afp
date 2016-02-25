@@ -5,7 +5,7 @@ import i18n from 'i18next-client';
 import Social from '../components/Social';
 import Gallery from '../components/Gallery';
 import TopPageMenu from '../components/TopPageMenu';
-import { store, storePartners } from '../components/settings';
+import { store, storePartners } from '../components/settings/store.jsx';
 import Footer from '../components/Main/Footer';
 
 if (process.env.BROWSER) {

@@ -8,7 +8,6 @@ import TopPageMenu from '../components/TopPageMenu';
 import { personList } from '../components/settings/personList';
 import Footer from '../components/Main/Footer';
 import Map from '../components/Map';
-import AdminButton from '../components/AdminButton';
 
 if (process.env.BROWSER) {
   require('./Contacts.less');
@@ -35,7 +34,6 @@ class Contacts extends Component {
     const { language } = this.props;
     return (
       <div className="page Contacts">
-        <AdminButton />
         {mapAddress}
         <div className="row">
         </div>

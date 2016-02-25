@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router';
 import i18n from 'i18next-client';
 import TopPageMenu from '../components/TopPageMenu';
-import {aboutItems, aboutMain} from '../components/settings';
+import {aboutItems, aboutMain} from '../components/settings/about';
 import Map from '../components/Map';
 import cx from 'classnames';
 import Footer from '../components/Main/Footer';

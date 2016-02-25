@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 import { Link } from 'react-router';
 import i18n from 'i18next-client';
-import { partners } from '../settings';
+import { partners } from '../settings/partners';
 
 
 class News extends Component {

@@ -5,7 +5,7 @@ import i18n from 'i18next-client';
 import $ from 'jquery';
 import Social from '../components/Social';
 import TopPageMenu from '../components/TopPageMenu';
-import { lineUpItems, lineUpMain } from '../components/settings';
+import { lineUpItems, lineUpMain } from '../components/settings/lineup';
 import Scrollable from '../components/Scrollable';
 import Footer from '../components/Main/Footer';
 import { checkAdmin } from '../components/admin.jsx';

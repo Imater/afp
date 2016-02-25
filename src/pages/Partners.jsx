@@ -5,7 +5,7 @@ import i18n from 'i18next-client';
 import Social from '../components/Social';
 import Gallery from '../components/Gallery';
 import TopPageMenu from '../components/TopPageMenu';
-import { partnerItems, typesSport, mainSport, partners } from '../components/settings';
+import { partnerItems, partners } from '../components/settings/partners';
 import Footer from '../components/Main/Footer';
 
 if (process.env.BROWSER) {
@@ -15,8 +15,6 @@ if (process.env.BROWSER) {
 class Partners extends Component {
   render() {
     const { language } = this.props;
-    const types = typesSport;
-    const main = typesSport;
     return (
       <div className="page Partners">
         <TopPageMenu items={partnerItems} language={language} />
@@ -49,24 +47,6 @@ class Partners extends Component {
               })
             }
           </ul>
-        </div>
-        <div className="page-text">
-          {main[language]}
-        </div>
-        <div className="items">
-          {
-            //types.map((type, key) => {
-            //  return (
-            //    <div className="item" key={key}>
-            //      <h3>{type[language === 'eng' ? 'title_eng': 'title']}</h3>
-            //      <div>{type[language === 'eng' ? 'text_eng': 'text']}</div>
-            //      <div>
-            //        <Gallery images={type.images} />
-            //      </div>
-            //    </div>
-            //  );
-            //})
-          }
         </div>
         <Footer />
       </div>

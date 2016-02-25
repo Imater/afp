@@ -57,7 +57,6 @@ api.getTemplate = function(params){
 };
 
 const saveToGit = (id, cb) => {
-  return cb();
   simpleGit
   .add('-A')
   .diff((err, data) => {

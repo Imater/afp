@@ -5,7 +5,7 @@ import i18n from 'i18next-client';
 import Social from '../components/Social';
 import Gallery from '../components/Gallery';
 import TopPageMenu from '../components/TopPageMenu';
-import { partnerItems, typesSport, mainSport, partners, aboutMain } from '../components/settings';
+import { aboutMain } from '../components/settings/about';
 import Footer from '../components/Main/Footer';
 import $ from 'jquery'
 
@@ -26,8 +26,6 @@ class Partners extends Component {
 
   render() {
     const { language } = this.props;
-    const types = typesSport;
-    const main = typesSport;
     const part = this.props.location.query.part ? this.props.location.query.part : 'festival';
     return (
       <div className="Popup Rules">
