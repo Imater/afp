@@ -27,7 +27,7 @@ module.exports = {
   entry: {
     app: [
       'webpack/hot/only-dev-server',
-      'webpack-dev-server/client?http://localhost:8085',
+      'webpack-dev-server/client?http://0.0.0.0:8085',
       entryPath
     ]
   },
