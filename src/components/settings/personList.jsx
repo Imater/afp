@@ -48,6 +48,13 @@ export const personList = [
     job_eng: 'Vip zone',
     email: 'akuklin@alfabank.ru'
   },
+  {
+    name: 'Станислав Завьялов',
+    name_eng: 'Stanislav Zavialov',
+    job: 'Вопросы по билетам',
+    job_eng: 'Tickets',
+    email: 'zavialov@afp.ru'
+  },
 ];
 
 
