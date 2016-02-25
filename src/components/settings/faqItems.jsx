@@ -1,6 +1,6 @@
 export const faqItems = [
   {
-    heading: 'Вопросы и ответы по фестивалю ALFA FUTURE PEOPLE',
+    heading: 'Вопросы и ответы по фестивалю ALFA FUTURE PEOPLE.',
     heading_eng: 'How to get?',
     title: 'Что такое фестиваль Alfa Future People?',
     title_eng: '',
