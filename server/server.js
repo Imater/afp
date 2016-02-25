@@ -66,7 +66,7 @@ if (!isProduction && !isTest) {
   webpackDevServer();
   app.all('/build/*', (req, res) => {
     proxy.web(req, res, {
-      target: 'http://localhost:8085'
+      target: 'http://0.0.0.0:8085'
     });
   });
 } else {
