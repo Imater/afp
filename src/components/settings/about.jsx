@@ -33,7 +33,7 @@ export const aboutItems = [
     anchor: 'faq'
   },
   {
-    title: 'Правила-',
+    title: 'Правила',
     title_eng: 'Rules',
     url: '/about/rules',
     anchor: 'rules'
