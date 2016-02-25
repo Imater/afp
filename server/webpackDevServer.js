@@ -35,7 +35,7 @@ export default function() {
     });
 
     console.info('try to listen 8085');
-    bundler.listen(8085, 'localhost', () => {
+    bundler.listen(82, '0.0.0.0', () => {
         console.log('Bundling project, please wait...');
     });
 }
