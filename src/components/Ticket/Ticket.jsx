@@ -154,10 +154,12 @@ class Ticket extends Component {
                  data-t4b-cart-buy="true">{i18n.t('ticket.buy')}</a>
           </div>
           <div className="phone-block">
-            <div
-              dangerouslySetInnerHTML={{__html: i18n.t('ticket.phone')}}
-            ></div>
-            <div>+7 (495) 909 98 93</div>
+            <div className="bordered">
+              <div
+                dangerouslySetInnerHTML={{__html: i18n.t('ticket.phone')}}
+              ></div>
+              <div><b>+7 (495) 909 98 93</b></div>
+            </div>
           </div>
         </div>
         <div className="tickets">
