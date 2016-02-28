@@ -21,6 +21,7 @@ import apiRoutes from './apiRoutes/apiRoutes.js';
 // Webpack
 import httpProxy from 'http-proxy';
 import webpackDevServer from './webpackDevServer.js';
+import webpackProd from './webpackProd.js';
 
 // Redux
 import { createStore, combineReducers } from 'redux';
@@ -66,13 +67,25 @@ if (!isProduction && !isTest) {
   webpackDevServer();
   app.all('/build/*', (req, res) => {
     proxy.web(req, res, {
-      target: 'http://0.0.0.0:8085'
+      target: 'http://127.0.0.1:3000'
     });
   });
 } else {
   console.info('PRODUCTION MODE');
   app.use('/build', express.static(path.join(__dirname, '..', 'build')));
 }
+
+app.use('/rebuild', (req, res) => {
+  const compiler = webpackProd();
+  console.info('start compile');
+  compiler.run((err, stats) => {
+    if(err) {
+      return res.status(400).send(err);
+    }
+
+    res.status(200).send(stats.toJson());
+  });
+});
 
 const indexHtml = fs.readFileSync(path.join(__dirname, '..', 'assets', 'index.html'), { encoding: 'utf-8' });
 
