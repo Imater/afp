@@ -96,7 +96,11 @@ class EditTemplate extends Component {
     const file = template.files[parseInt(this.props.params.index, 10)];
     return (
       <div className="EditTemplate">
-        <button type="button" className="red right" onClick={this._clickSave.bind(this)}>Опубликовать все изменения на основном сайте</button>
+        <Link to="/admin/template/publish">
+          <button type="button" className="red right">
+              Опубликовать
+          </button>
+        </Link>
         <ul className="menu">
         {
           template.files.map((el, key) => {

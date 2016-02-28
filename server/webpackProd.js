@@ -2,13 +2,9 @@ import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import webpackConfig from '../webpack.prod.config.js';
 
-var ProgressPlugin = require('webpack/lib/ProgressPlugin');
 
 export default function() {
   const compiler = webpack(webpackConfig);
-  compiler.apply(new ProgressPlugin(function(percentage, msg) {
-    console.log((percentage * 100) + '%', msg);
-  }));
   return compiler;
   //let bundleStart = null;
 

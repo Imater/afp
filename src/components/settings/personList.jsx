@@ -1,6 +1,6 @@
 export const personList = [
   {
-    name: 'Екатерина Осадчая/',
+    name: 'Екатерина Осадчая',
     name_eng: 'Ekaterina Osadchaya',
     job: 'Директор по работе со спонсорами и партнерами',
     job_eng: 'Partnership Director',

@@ -31,6 +31,7 @@ import * as reducers from '../src/stores';
 import createAppStore from '../src/createStore/createStore';
 import api from './api';
 import basicAuth from 'basic-auth-connect';
+var ProgressPlugin = require('webpack/lib/ProgressPlugin');
 
 const proxy = httpProxy.createProxyServer();
 const isProduction = process.env.NODE_ENV === 'production';
@@ -75,17 +76,36 @@ if (!isProduction && !isTest) {
   app.use('/build', express.static(path.join(__dirname, '..', 'build')));
 }
 
+let progress = 0;
+
+const compiler = webpackProd();
+compiler.apply(new ProgressPlugin(function(percentage, msg) {
+  progress = parseInt(percentage*100*10, 10)/10;
+  console.log((percentage * 100) + '%', msg);
+}));
+
 app.use('/rebuild', (req, res) => {
-  const compiler = webpackProd();
   console.info('start compile');
   compiler.run((err, stats) => {
     if(err) {
       return res.status(400).send(err);
     }
-
-    res.status(200).send(stats.toJson());
+    const result = stats.toJson();
+    res.status(200).send({
+      errors: result.errors,
+      warnings: result.warnings,
+      hash: result.hash,
+      time: result.time
+    });
   });
 });
+
+app.use('/progress', (req, res) => {
+  res.status(200).send({
+    percentage: progress
+  });
+});
+
 
 const indexHtml = fs.readFileSync(path.join(__dirname, '..', 'assets', 'index.html'), { encoding: 'utf-8' });
 

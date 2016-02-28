@@ -14,6 +14,7 @@ module.exports = {
         require('./EditTemplate/index.js'),
         require('./EditDj/index.js'),
         require('./EditMedia/index.js'),
+        require('./Publish/index.js'),
       ])
     })
   },
