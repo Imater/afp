@@ -5,15 +5,12 @@
     padding: 5px 10px;
     margin: 10px 0;
     color: #000;
-    border: none;1
+    border: none;
     border-radius: 3px;
-    padding: 10px 20px;
+    padding: 5px 20px;
     &.red {
-      background: #C60000;
+      background: red;
       color: #FFF;
-    }
-    &.right {
-      float: right;
     }
   }
   ul.menu {
