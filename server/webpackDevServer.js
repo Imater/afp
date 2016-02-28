@@ -35,7 +35,7 @@ export default function() {
     });
 
     console.info('try to listen 8085');
-    bundler.listen(3000, '127.0.0.1', () => {
+    bundler.listen(3009, '0.0.0.0', () => {
         console.log('Bundling project, please wait...');
     });
 }

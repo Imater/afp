@@ -68,7 +68,7 @@ var baseConfig = {
     db: {
         host: '127.0.0.1',
         port: 3306,
-        name: 'auction',
+        name: 'Auction',
         username: 'auctionuser',
         password: 'auctionpassword',
         dialect: 'mysql'

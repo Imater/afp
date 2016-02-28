@@ -68,7 +68,7 @@ if (!isProduction && !isTest) {
   webpackDevServer();
   app.all('/build/*', (req, res) => {
     proxy.web(req, res, {
-      target: 'http://127.0.0.1:3000'
+      target: 'http://127.0.0.1:3009'
     });
   });
 } else {
@@ -81,11 +81,9 @@ let progress = 0;
 const compiler = webpackProd();
 compiler.apply(new ProgressPlugin(function(percentage, msg) {
   progress = parseInt(percentage*100*10, 10)/10;
-  console.log((percentage * 100) + '%', msg);
 }));
 
 app.use('/rebuild', (req, res) => {
-  console.info('start compile');
   compiler.run((err, stats) => {
     if(err) {
       return res.status(400).send(err);
