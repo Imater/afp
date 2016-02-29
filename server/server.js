@@ -31,6 +31,8 @@ import * as reducers from '../src/stores';
 import createAppStore from '../src/createStore/createStore';
 import api from './api';
 import basicAuth from 'basic-auth-connect';
+var timeout = require('connect-timeout'); //express v4
+
 var ProgressPlugin = require('webpack/lib/ProgressPlugin');
 
 const proxy = httpProxy.createProxyServer();
@@ -42,6 +44,8 @@ if (!isTest){
   process.env.BROWSER = false;
 }
 process.env.__DEVELOPMENT__ = !isProduction;
+
+app.use(timeout(210000));
 
 app.use((req, res, next) => {
   var isAdmin = req.get('host').match(/admin\./) !== null;
