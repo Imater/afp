@@ -4057,3 +4057,37 @@
 {"level":"trace","message":"| Update db model: subscribe","timestamp":"2016-02-29T07:32:18.254Z"}
 {"level":"trace","message":"| Update db model: user","timestamp":"2016-02-29T07:32:18.278Z"}
 {"level":"trace","message":"sync tables finished","timestamp":"2016-02-29T07:32:43.034Z"}
+{"level":"trace","message":"| Update db model: bid","timestamp":"2016-02-29T09:23:50.902Z"}
+{"level":"trace","message":"| Update db model: dj","timestamp":"2016-02-29T09:23:50.941Z"}
+{"level":"trace","message":"| Update db model: cms_gallery_gallery","timestamp":"2016-02-29T09:23:50.969Z"}
+{"level":"trace","message":"| Update db model: cms_gallery_item","timestamp":"2016-02-29T09:23:50.993Z"}
+{"level":"trace","message":"| Update db model: lot","timestamp":"2016-02-29T09:23:51.047Z"}
+{"level":"trace","message":"| Update db model: lotphoto","timestamp":"2016-02-29T09:23:51.081Z"}
+{"level":"trace","message":"| Update db model: cms_news_item_data","timestamp":"2016-02-29T09:23:51.094Z"}
+{"level":"trace","message":"| Update db model: cms_news_item_image","timestamp":"2016-02-29T09:23:51.119Z"}
+{"level":"trace","message":"| Update db model: cms_news_item","timestamp":"2016-02-29T09:23:51.147Z"}
+{"level":"trace","message":"| Update db model: cms_lang_translate_value","timestamp":"2016-02-29T09:23:51.166Z"}
+{"level":"trace","message":"| Update db model: news","timestamp":"2016-02-29T09:23:51.198Z"}
+{"level":"trace","message":"| Update db model: oauthAccessToken","timestamp":"2016-02-29T09:23:51.221Z"}
+{"level":"trace","message":"| Update db model: oauthClient","timestamp":"2016-02-29T09:23:51.257Z"}
+{"level":"trace","message":"| Update db model: oauthRefreshToken","timestamp":"2016-02-29T09:23:51.276Z"}
+{"level":"trace","message":"| Update db model: subscribe","timestamp":"2016-02-29T09:23:51.292Z"}
+{"level":"trace","message":"| Update db model: user","timestamp":"2016-02-29T09:23:51.317Z"}
+{"level":"trace","message":"| Update db model: bid","timestamp":"2016-02-29T09:24:11.984Z"}
+{"level":"trace","message":"| Update db model: dj","timestamp":"2016-02-29T09:24:12.028Z"}
+{"level":"trace","message":"| Update db model: cms_gallery_gallery","timestamp":"2016-02-29T09:24:12.055Z"}
+{"level":"trace","message":"| Update db model: cms_gallery_item","timestamp":"2016-02-29T09:24:12.076Z"}
+{"level":"trace","message":"| Update db model: lot","timestamp":"2016-02-29T09:24:12.124Z"}
+{"level":"trace","message":"| Update db model: lotphoto","timestamp":"2016-02-29T09:24:12.148Z"}
+{"level":"trace","message":"| Update db model: cms_news_item_data","timestamp":"2016-02-29T09:24:12.162Z"}
+{"level":"trace","message":"| Update db model: cms_news_item_image","timestamp":"2016-02-29T09:24:12.190Z"}
+{"level":"trace","message":"| Update db model: cms_news_item","timestamp":"2016-02-29T09:24:12.227Z"}
+{"level":"trace","message":"| Update db model: cms_lang_translate_value","timestamp":"2016-02-29T09:24:12.285Z"}
+{"level":"trace","message":"| Update db model: news","timestamp":"2016-02-29T09:24:12.371Z"}
+{"level":"trace","message":"| Update db model: oauthAccessToken","timestamp":"2016-02-29T09:24:12.389Z"}
+{"level":"trace","message":"| Update db model: oauthClient","timestamp":"2016-02-29T09:24:12.402Z"}
+{"level":"trace","message":"| Update db model: oauthRefreshToken","timestamp":"2016-02-29T09:24:12.422Z"}
+{"level":"trace","message":"| Update db model: subscribe","timestamp":"2016-02-29T09:24:12.454Z"}
+{"level":"trace","message":"| Update db model: user","timestamp":"2016-02-29T09:24:12.520Z"}
+{"level":"trace","message":"sync tables finished","timestamp":"2016-02-29T09:24:15.902Z"}
+{"level":"trace","message":"sync tables finished","timestamp":"2016-02-29T09:24:42.126Z"}
