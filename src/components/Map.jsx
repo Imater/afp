@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import {GoogleMapLoader, GoogleMap, Marker} from "react-google-maps";
+import {GoogleMapLoader, GoogleMap, Marker, Polyline} from "react-google-maps";
 import isMobile from './is-mobile.js';
 
 const styleMap = [
@@ -279,6 +279,33 @@ class Map extends Component {
     })
   }
   render() {
+    var flightPlanCoordinates = [
+      { lng: 43.902054, lat: 56.314633 },
+      { lng: 43.844032, lat: 56.312538 },
+      { lng: 43.785324, lat: 56.310253 },
+      { lng: 43.710136, lat: 56.307206 },
+      { lng: 43.664131, lat: 56.305872 },
+      { lng: 43.560448, lat: 56.301872 },
+      { lng: 43.558731, lat: 56.326056 },
+      { lng: 43.577957, lat: 56.337095 },
+      { lng: 43.594780, lat: 56.358974 },
+      { lng: 43.615379, lat: 56.366391 },
+      { lng: 43.654861, lat: 56.401744 },
+      { lng: 43.691940, lat: 56.391104 },
+      { lng: 43.689880, lat: 56.393764 },
+      { lng: 43.691940, lat: 56.391056 },
+      { lng: 43.686705, lat: 56.391056 },
+    ];
+    var flightPlanCoordinatesMoscow = [
+      { lng: 43.371964, lat: 56.292919 },
+      { lng: 43.559418, lat: 56.301301 },
+      { lng: 43.558044, lat: 56.326246 },
+      { lng: 43.575897, lat: 56.337286 },
+      { lng: 43.592720, lat: 56.359545 },
+      { lng: 43.615036, lat: 56.367342 },
+      { lng: 43.654861, lat: 56.403834 },
+      { lng: 43.691940, lat: 56.391104 },
+    ];
     return (
       <div style={{height: "500px"}}>
         <GoogleMapLoader
@@ -295,7 +322,7 @@ class Map extends Component {
               <GoogleMap
                 ref={(map) => {
                 }}
-                defaultZoom={13}
+                defaultZoom={10}
                 defaultOptions={{
                   styles: styleMap,
                   scrollwheel: false,
@@ -313,6 +340,26 @@ class Map extends Component {
                       onRightclick1={this.handleMarkerRightclick.bind(this, index)} />
                     );
                 })}
+                <Polyline defaultOptions={{
+                  path: flightPlanCoordinates,
+                  strokeColor: '#8267FF',
+                  strokeOpacity: 0.8,
+                  strokeWeight: 3,
+                  icons: [{
+                    path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+                    offset: '100%'
+                  }]
+                }} />
+                <Polyline defaultOptions={{
+                  path: flightPlanCoordinatesMoscow,
+                  strokeColor: '#FF5769',
+                  strokeOpacity: 0.6,
+                  strokeWeight: 2,
+                  icons: [{
+                    path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+                    offset: '100%'
+                  }]
+                }} />
               </GoogleMap>
               }
             />

@@ -152,6 +152,15 @@ export const partners = [
     desc: 'Профессиональная билетная платформа для организаторов, артистов и билетных операторов. Уникальное сочетание стоимости, надежности и гибкости. Платформа позволяет полностью обеспечить весь цикл управления билетной массой проекта.',
     desc_eng: ''
   },
+  {
+    logo: 'logo-festicket.svg',
+    name: 'festicket',
+    title: '',
+    title_eng: 'festicket',
+    url: 'https://www.festicket.com/packages/alfa-future-people-2016/?referrer=alfa-future-people-llc&campaign=afp.ru&shared_from=partner_linkgen&utm_source=afp.ru&utm_medium=Festival%20&utm_campaign=Alfa%20Future%20People%202016',
+    desc: '',
+    desc_eng: 'TICKET + ACCOMMODATION PACKAGES, Alfa Future People Festival has partnered with Festicket to offer you a large choice of Packages including your Ticket and your accommodation in hotel for the entire duration of the festival. Discover their packages here.'
+  },
 ];
 
 export const partnerItems = [

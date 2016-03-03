@@ -15,6 +15,7 @@ if (process.env.BROWSER) {
 class Partners extends Component {
   render() {
     const { language } = this.props;
+    const lang = language === 'eng' ? '_eng' : '';
     return (
       <div className="page Partners">
         <TopPageMenu items={partnerItems} language={language} />
@@ -32,6 +33,9 @@ class Partners extends Component {
           <ul className="partners-list items">
             {
               partners.map((partner, index) => {
+                if(partner[`title${lang}`] === '') {
+                  return <div key={index} ></div>;
+                }
                 return (
                   <li className="partnerItem item" key={index} id={partner.name}>
                     <img src={`/assets/svg/partner-new/${partner.logo}`} width="100" className={`partnerLogo ${partner.name}`}/>

@@ -5,8 +5,9 @@ import i18n from 'i18next-client';
 import { partners } from '../settings/partners';
 
 
-class News extends Component {
+class Partner extends Component {
   render() {
+    const language = this.props.language === 'eng' ? '_eng' : '';
     return (
       <div className="page news-page" id="partners">
         <div className="row">
@@ -29,6 +30,9 @@ class News extends Component {
           <ul className="partners-list">
             {
               partners.map((partner, index) => {
+                if(partner[`title${language}`] === '') {
+                  return <div key={index} ></div>;
+                }
                 return (
                   <li className="partner-item" key={index}>
                     <Link to={`/partners/main#${partner.name}`}>
@@ -45,4 +49,4 @@ class News extends Component {
   }
 }
 
-export default News;
+export default Partner;

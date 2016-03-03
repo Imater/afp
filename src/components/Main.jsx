@@ -79,7 +79,7 @@ class Main extends Component {
           <Technology />
           <NewsLine />
         </div>
-        <Partner />
+        <Partner language={this.props.language} />
         <Counter />
         <Footer noborder />
       </div>
