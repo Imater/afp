@@ -141,7 +141,7 @@ const resources = {
       menu: {
         about: 'about',
         lineUp: 'line-up',
-        technology: 'technology',
+        technology: 'technologies',
         sport: 'sport',
         news: 'news',
         partners: 'partners',
@@ -155,12 +155,12 @@ const resources = {
       },
       about: {
         mainFestival: 'The main festival',
-        musicAndTechnology: 'of music and technology',
+        musicAndTechnology: 'of music and technologies',
         howItWas: 'how it was',
         festivalDate: '22-24 July 2016',
         lineup: 'Line-up',
         novgorod: 'Nizhny Novgorod, on the Volga River airport',
-        technology: 'Technology',
+        technology: 'Technologies',
         sport: 'Sport',
         news: 'News',
         allNews: 'All news',
