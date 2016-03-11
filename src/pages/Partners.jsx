@@ -14,8 +14,9 @@ if (process.env.BROWSER) {
 
 class Partners extends Component {
   render() {
-    const { language } = this.props;
+    const { language, params: { part } } = this.props;
     const lang = language === 'eng' ? '_eng' : '';
+    const year = part || '2016';
     return (
       <div className="page Partners">
         <TopPageMenu items={partnerItems} language={language} />
@@ -33,8 +34,8 @@ class Partners extends Component {
           <ul className="partners-list items">
             {
               partners.map((partner, index) => {
-                if(partner[`title${lang}`] === '') {
-                  return <div key={index} ></div>;
+                if(partner[`title${lang}`] === '' || partner.years.indexOf(year) === -1) {
+                  return <span key={index} ></span>;
                 }
                 return (
                   <li className="partnerItem item" key={index} id={partner.name}>

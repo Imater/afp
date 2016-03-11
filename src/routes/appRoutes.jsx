@@ -151,7 +151,7 @@ const routeConfig = [
       {
         path: '/partners(/:part)',
         component: Partners,
-        onEnter: defaultPath('main')
+        onEnter: defaultPath('2016')
       },
       {
         path: '/media(/:part)',
