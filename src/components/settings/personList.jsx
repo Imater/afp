@@ -1,4 +1,11 @@
 export const personList = [
+    
+     {
+    name: 'Виктор Шкипин',
+    name_eng: 'Victor Shkipin',
+    job: 'Генеральный директор',
+    job_eng: 'CEO'
+  },
   {
     name: 'Екатерина Осадчая',
     name_eng: 'Ekaterina Osadchaya',
@@ -54,6 +61,10 @@ export const personList = [
     job: 'Вопросы по билетам',
     job_eng: 'Tickets',
     email: 'zavialov@afp.ru'
+  },
+  {
+    name: '127521, г. Москва, а/я  48',
+    name_eng: '127521, Moscow, post mail  48',
   },
 ];
 

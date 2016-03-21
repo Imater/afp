@@ -1,4 +1,4 @@
 supervisorctl stop afp
-fuser -k 3001/tcp
+fuser -k 3000/tcp
 supervisorctl start afp
 

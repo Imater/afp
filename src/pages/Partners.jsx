@@ -24,7 +24,7 @@ class Partners extends Component {
           <div className="screen">
             <h2>
               {i18n.t('about.partners')} <br/>
-              Alfa future people 2015
+              Alfa future people {year}
             </h2>
           </div>
           <div className="row">

@@ -187,10 +187,5 @@ export const partnerItems = [
     title_eng: '2016',
     url: '/partners/2016'
   },
-  {
-    title: '2015',
-    title_eng: '2015',
-    url: '/partners/2015'
-  },
 ];
 

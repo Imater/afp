@@ -19,6 +19,14 @@
          ga('linker:autoLink', ['tickets.afp.ru'] );
          ga('send', 'pageview');
     </script>
+	<script type="text/javascript">
+	(function() {
+	    var ra = document.createElement('script'); ra.type = 'text/javascript'; ra.async = true;
+	    ra.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'bn.adblender.ru/c/afp/all.js?' + Math.floor((new Date()).valueOf()/1000/3600);
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ra, s);
+	})();
+	</script>
+
     <script>
       if (!Array.prototype.find) {
         Array.prototype.find = function(predicate) {
