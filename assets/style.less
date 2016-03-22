@@ -187,7 +187,7 @@ body{
 		padding-left: 30px;
 
 		li{
-			margin-bottom: 18px;
+			margin-bottom: 15px;
 		}
 		a{
 			font-family: 'sf_ui_displaysemibold';
@@ -195,8 +195,11 @@ body{
 			color: #9B9B9B;
 			text-transform: uppercase;
 			text-decoration: none;
-      &:hover, &.active{
+      &:active {
         color: #ffffff;
+      }
+      &:hover {
+        color: #ffffff !important;
       }
 		}
 	}
@@ -540,9 +543,9 @@ h1{
   .buy-tour {
     display: block;
     color: #FFF;
-    padding: 7px;
+    padding: 14px 0;
     padding-left: 100px;
-    background-color: @blueDark;
+    background-color: @blue;
     &:hover{
       background-color: darken(@blueDark, 5%);
     }

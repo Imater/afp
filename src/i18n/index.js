@@ -15,6 +15,7 @@ const resources = {
         phone: 'Заказ и доставка<br />билетов'
       },
       menu: {
+        ticket: 'купить билет',
         about: 'о фестивале',
         lineUp: 'лайн-ап',
         technology: 'технологии',
@@ -139,6 +140,7 @@ const resources = {
         phone: 'Buy and delivery<br />ticket'
       },
       menu: {
+        ticket: 'buy ticket',
         about: 'about',
         lineUp: 'line-up',
         technology: 'technologies',

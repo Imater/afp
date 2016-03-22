@@ -54,7 +54,13 @@ class Partner extends Component {
                 return (
                   <li className="partner-item" key={index}>
                     <Link to={`/partners/main#${partner.name}`}>
-                      <img src={`/assets/svg/partner-new/${partner.logo}`} className={`partnerImage ${partner.name}`} />
+                      <img
+                        src={`/assets/svg/partner-new/${partner.logo}`}
+                        className={`partnerImage ${partner.name}`}
+                        style={{
+                          transform: `scale(${partner.zoom ? partner.zoom : 1})`
+                        }}
+                      />
                     </Link>
                   </li>
                 );

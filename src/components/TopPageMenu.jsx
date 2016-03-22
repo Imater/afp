@@ -62,9 +62,12 @@ class TopPageMenu extends Component {
     const update = () => {
       const scrollY = -document.documentElement.getBoundingClientRect().top;
       const screenHeight = process.env.BROWSER ? window.innerHeight : 0;
+      const screenWidth = process.env.BROWSER ? window.innerWidth : 0;
       let activeItems = [];
+      let leftWidth = 0;
       this.props.items.map((item, key) => {
         const element = $(`#${item.anchor}`);
+        leftWidth += $(`.top-page-menu a[href='${item.url}']`).width();
         if(!element.length) {
           return;
         }
@@ -77,6 +80,9 @@ class TopPageMenu extends Component {
             anchor: element.attr('id'),
             progress: progress
           });
+          const menuScrollLeft = leftWidth - screenWidth/2;
+          console.info('menuScrollLeft', menuScrollLeft);
+          $(`.top-page-menu .ScrollWrapper`).stop().animate({scrollLeft: menuScrollLeft});
         }
       });
 

@@ -306,6 +306,10 @@ class Map extends Component {
       { lng: 43.654861, lat: 56.403834 },
       { lng: 43.691940, lat: 56.391104 },
     ];
+    if(typeof google === 'undefined') {
+      return <div></div>;
+    }
+
     return (
       <div style={{height: "500px"}}>
         <GoogleMapLoader
@@ -342,9 +346,9 @@ class Map extends Component {
                 })}
                 <Polyline defaultOptions={{
                   path: flightPlanCoordinates,
-                  strokeColor: '#8267FF',
+                  strokeColor: '#FF000D',
                   strokeOpacity: 0.8,
-                  strokeWeight: 3,
+                  strokeWeight: 4,
                   icons: [{
                     path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
                     offset: '100%'
@@ -352,9 +356,9 @@ class Map extends Component {
                 }} />
                 <Polyline defaultOptions={{
                   path: flightPlanCoordinatesMoscow,
-                  strokeColor: '#FF5769',
-                  strokeOpacity: 0.6,
-                  strokeWeight: 2,
+                  strokeColor: '#FFE501',
+                  strokeOpacity: 0.8,
+                  strokeWeight: 4,
                   icons: [{
                     path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
                     offset: '100%'

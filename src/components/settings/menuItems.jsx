@@ -1,5 +1,10 @@
 export const menuItems = [
   {
+    title: 'menu.ticket',
+    url: '/ticket',
+    color: '#50C257',
+  },
+  {
     title: 'menu.about',
     url: '/about',
   },
