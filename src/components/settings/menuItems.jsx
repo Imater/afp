@@ -3,6 +3,7 @@ export const menuItems = [
     title: 'menu.ticket',
     url: '/ticket',
     color: '#50C257',
+    icon: '/assets/svg/ticket-01.svg',
   },
   {
     title: 'menu.about',

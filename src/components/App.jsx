@@ -72,6 +72,11 @@ if (process.env.BROWSER) {
                         }}
                         className={this.props.location.pathname.indexOf(item.url) !== -1 ? 'active' : ''}
                         onClick={this.scrollTo.bind(this, item.url)}>
+                          {
+                            item.icon ? (
+                              <img src={item.icon} className="sidebar-icon" />
+                            ) : (<span></span>)
+                          }
                           {i18n.t(item.title)}
                       </Link>
                     </li>
