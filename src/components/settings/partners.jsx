@@ -11,6 +11,46 @@ export const partners = [
     desc_eng: ''
   },
   {
+    logo: 'logo-europeplus.svg',
+    name: 'europeplus',
+    title: 'Европа Плюс',
+    title_eng: 'Europe plus',
+    years: ['2016', '2015'],
+    url: 'http://www.europaplus.ru/',
+    desc: 'Радиостанция № 1 в России и крупнейшая сеть музыкальных станций в России и СНГ. Ежедневно Европу Плюс выбирают около 10,4 миллионов слушателей, а ее еженедельная аудитория составляет около 24 миллионов человек. Европа Плюс — это качественная современная популярная музыка:',
+    desc_eng: ''
+  },
+  {
+    logo: 'logo-mentos.svg',
+    name: 'mentos',
+    title: 'Mentos',
+    title_eng: 'Mentos',
+    years: ['2016', '2015'],
+    url: 'http://www.mentos.ru/',
+    desc: 'Глобальный бренд, который можно купить более чем в 150 странах мира.В России бренд присутствует с 1994 года. Это  культ для целого поколения молодых людей! Линейку продуктов Mentos  составляют уникальные жевательные резинки и драже самых разнообразных вкусов. Бренд широко известен российскому',
+    desc_eng: ''
+  },
+  {
+    logo: 'effect_logo-white.svg',
+    name: 'effect',
+    title: 'effect®',
+    title_eng: 'effect',
+    years: ['2016'],
+    url: 'https://www.facebook.com/Russiaeffect/',
+    desc: 'Премиальный бренд с неиссякаемой энергией и музыкальным вдохновением. Популярный энергетический напиток представлен в более чем 40 странах по всему миру. Разработан в Германии, в России производится с 2009 года по лицензии и под контролем MBG International Premium brands, Германия. effect® ценит творчество, креатив, хорошую музыку и дарит своим поклонникам положительные эмоции!',
+    desc_eng: ''
+  },
+  {
+    logo: 'Perrier-white-01.svg',
+    name: 'perrier',
+    title: 'Perrier',
+    title_eng: 'Perrier',
+    years: ['2016'],
+    url: 'http://www.nestle-waters.com/brands/perrier',
+    desc: '',
+    desc_eng: ''
+  },
+  {
     logo: 'logo-mastercard.svg',
     name: 'mastercard',
     title: 'MasterCard',
@@ -51,16 +91,6 @@ export const partners = [
     desc_eng: ''
   },
   {
-    logo: 'logo-europeplus.svg',
-    name: 'europeplus',
-    title: 'Европа Плюс',
-    title_eng: 'Europe plus',
-    years: ['2016', '2015'],
-    url: 'http://www.europaplus.ru/',
-    desc: 'Радиостанция № 1 в России и крупнейшая сеть музыкальных станций в России и СНГ. Ежедневно Европу Плюс выбирают около 10,4 миллионов слушателей, а ее еженедельная аудитория составляет около 24 миллионов человек. Европа Плюс — это качественная современная популярная музыка:',
-    desc_eng: ''
-  },
-  {
     logo: 'logo-mini.svg',
     name: 'mini',
     title: 'Mini',
@@ -81,16 +111,6 @@ export const partners = [
     desc_eng: ''
   },
   {
-    logo: 'logo-mf.svg',
-    name: 'mf',
-    title: 'Холдинг MF Group',
-    title_eng: 'Holding MF Group',
-    years: ['2016', '2015'],
-    url: 'http://mf-group.com/',
-    desc: 'MF Group осуществляет полный технический продакшн фестиваля ALFA FUTURE PEOPLE: подготовка всей технической документации, монтаж сценических конструкций, декорационное оформление, световое и звуковое оформление, энергообеспечение, прокладка инженерных коммуникаций для всей инфраструктуры фестиваля',
-    desc_eng: ''
-  },
-  {
     logo: 'logo-alfastrah.svg',
     name: 'alfastrah',
     title: 'Группа «АльфаСтрахование»',
@@ -108,16 +128,6 @@ export const partners = [
     years: ['2015'],
     url: 'https://vk.com/k_player',
     desc: 'Cообщество для тех, кто интересуется актуальными событиями из мира музыки, кино, дизайна, технологий и самой жизни. K_player стремится быть в курсе тенденций во всех областях современного искусства, следит за творчеством талантливых людей, освещает актуальные мероприятия и делится наблюдениями на своих',
-    desc_eng: ''
-  },
-  {
-    logo: 'logo-mentos.svg',
-    name: 'mentos',
-    title: 'Mentos',
-    title_eng: 'Mentos',
-    years: ['2015'],
-    url: 'http://www.mentos.ru/',
-    desc: 'Глобальный бренд, который можно купить более чем в 150 странах мира.В России бренд присутствует с 1994 года. Это  культ для целого поколения молодых людей! Линейку продуктов Mentos  составляют уникальные жевательные резинки и драже самых разнообразных вкусов. Бренд широко известен российскому',
     desc_eng: ''
   },
   {
@@ -180,6 +190,16 @@ export const partners = [
     url: 'https://www.festicket.com/packages/alfa-future-people-2016/?referrer=alfa-future-people-llc&campaign=afp.ru&shared_from=partner_linkgen&utm_source=afp.ru&utm_medium=Festival%20&utm_campaign=Alfa%20Future%20People%202016',
     desc: '',
     desc_eng: 'TICKET + ACCOMMODATION PACKAGES, Alfa Future People Festival has partnered with Festicket to offer you a large choice of Packages including your Ticket and your accommodation in hotel for the entire duration of the festival. Discover their packages here.'
+  },
+  {
+    logo: 'logo-mf.svg',
+    name: 'mf',
+    title: 'Холдинг MF Group',
+    title_eng: 'Holding MF Group',
+    years: ['2016', '2015'],
+    url: 'http://mf-group.com/',
+    desc: 'MF Group осуществляет полный технический продакшн фестиваля ALFA FUTURE PEOPLE: подготовка всей технической документации, монтаж сценических конструкций, декорационное оформление, световое и звуковое оформление, энергообеспечение, прокладка инженерных коммуникаций для всей инфраструктуры фестиваля',
+    desc_eng: ''
   },
 ];
 
