@@ -22,22 +22,6 @@ class Ticket extends Component {
     store: (process.env.BROWSER) ? React.PropTypes.object.isRequired : React.PropTypes.object
   };
 
-  saveGAparamsToCookie() {
-    // Parse the URL
-    function getParameterByName(name) {
-        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        var regex = new RegExp("[\\?&amp;]" + name + "=([^&amp;#]*)"),
-            results = regex.exec(location.search);
-        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-    }
-    // Set the cookies
-    window.Cookies('utm_source', getParameterByName('utm_source'));
-    window.Cookies('utm_medium', getParameterByName('utm_medium'));
-    window.Cookies('utm_term', getParameterByName('utm_term'));
-    window.Cookies('utm_content', getParameterByName('utm_content'));
-    window.Cookies('utm_campaign', getParameterByName('utm_campaign'));
-  }
-
   componentDidMount() {
     let done = false;
     let tm;
@@ -58,8 +42,6 @@ class Ticket extends Component {
       done = true;
       clearInterval(tm);
     };
-
-    this.saveGAparamsToCookie();
 
     tm = setTimeout(() => {
       init();
