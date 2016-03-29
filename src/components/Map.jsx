@@ -344,26 +344,28 @@ class Map extends Component {
                       onRightclick1={this.handleMarkerRightclick.bind(this, index)} />
                     );
                 })}
-                <Polyline defaultOptions={{
-                  path: flightPlanCoordinates,
-                  strokeColor: '#FF000D',
-                  strokeOpacity: 0.8,
-                  strokeWeight: 4,
-                  icons: [{
-                    path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-                    offset: '100%'
-                  }]
-                }} />
-                <Polyline defaultOptions={{
-                  path: flightPlanCoordinatesMoscow,
-                  strokeColor: '#FFE501',
-                  strokeOpacity: 0.8,
-                  strokeWeight: 4,
-                  icons: [{
-                    path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-                    offset: '100%'
-                  }]
-                }} />
+                {
+                  //<Polyline defaultOptions={{
+                  //  path: flightPlanCoordinates,
+                  //  strokeColor: '#FF000D',
+                  //  strokeOpacity: 0.8,
+                  //  strokeWeight: 4,
+                  //  icons: [{
+                  //    path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+                  //    offset: '100%'
+                  //  }]
+                  //}} />
+                  //<Polyline defaultOptions={{
+                  //  path: flightPlanCoordinatesMoscow,
+                  //  strokeColor: '#FFE501',
+                  //  strokeOpacity: 0.8,
+                  //  strokeWeight: 4,
+                  //  icons: [{
+                  //    path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+                  //    offset: '100%'
+                  //  }]
+                  //}} />
+                }
               </GoogleMap>
               }
             />
