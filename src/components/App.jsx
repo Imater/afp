@@ -86,7 +86,11 @@ if (process.env.BROWSER) {
             </ul>
             <Mobile mobile={false}>
               <div className="buy-ticket">
-                <a  className="buy-tour tour" target="_blank" href='http://viptravelnn.wikiplanet.ru/tour/komfortniy_tur_na_mejdunarodniy_festival_elektronnoy_muziki_i_tehnologiy_alfa_future_people_20166?month_at=07.2016&month_to=07.2016&decodeNums=2&chosenDates='>{i18n.t('menu.buyTour')}</a>
+                <a  className="buy-tour tour"
+                  onClick={() => {
+                    ga('send', 'event', 'buy_tour', 'click', 'buy tour click');
+                  }}
+                  target="_blank" href='http://viptravelnn.wikiplanet.ru/tour/komfortniy_tur_na_mejdunarodniy_festival_elektronnoy_muziki_i_tehnologiy_alfa_future_people_20166?month_at=07.2016&month_to=07.2016&decodeNums=2&chosenDates='>{i18n.t('menu.buyTour')}</a>
               </div>
             </Mobile>
           </div>
