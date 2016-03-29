@@ -49,10 +49,14 @@ if (process.env.BROWSER) {
       }
       // Parse the URL
       function getParameterByName(name) {
-          name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-          var regex = new RegExp("[\\?&amp;]" + name + "=([^&amp;#]*)"),
-              results = regex.exec(location.search);
-          return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        let url = window.location.href;
+        url = url.toLowerCase(); // This is just to avoid case sensitiveness
+        name = name.replace(/[\[\]]/g, "\\$&").toLowerCase();// This is just to avoid case sensitiveness for query parameter name
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return '';
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
       }
       // Set the cookies
       window.Cookies('utm_source', getParameterByName('utm_source'));
