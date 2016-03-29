@@ -62,6 +62,13 @@ export const personList = [
     job_eng: 'Tickets',
     email: 'zavialov@afp.ru'
   },
+   {
+    name: 'Алина Мелихова',
+    name_eng: 'Alina Melikhova',
+    job: 'Вопросы по Alfa Future Lounge',
+    job_eng: 'Alfa Future Lounge',
+    email: '+7 (916) 788-43-70'
+  },
   {
     name: '127521, г. Москва, а/я  48',
     name_eng: '127521, Moscow, post mail  48',
