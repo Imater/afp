@@ -152,7 +152,7 @@ class Ticket extends Component {
                 className="t4b-cart-summary-count"></span> {i18n.t('ticket.sht')}</span><br />
               <a href="#" className="buy-button"
                 onClick={() => {
-                  ga('send', 'event', 'buy_ticket', 'click', 'standart');
+                  //ga('send', 'event', 'buy_ticket', 'click', 'standart');
                 }}
                  data-t4b-cart-buy="true">{i18n.t('ticket.buy')}</a>
           </div>
